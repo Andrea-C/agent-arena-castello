@@ -1,0 +1,2721 @@
+{
+  "commonInteractors": {
+    "gradini": {
+      "label": "i gradini",
+      "pattern": "gradin(?:i|o)",
+      "on": {
+        "sali": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+        },
+        "scendi": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+        }
+      }
+    },
+    "scala": {
+      "label": "la scala",
+      "pattern": "scal(?:a|e|one)",
+      "description": "E' a gradini",
+      "on": {
+        "sali": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+        },
+        "scendi": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+        }
+      }
+    },
+    "pareti": {
+      "label": "le pareti",
+      "pattern": "(muro|mura|pareti|parete)",
+      "on": {
+        "rompi": "Il muro è duro",
+        "premi|spingi": "Sii Serio!"
+      }
+    },
+    "armatura": {
+      "label": "l'armatura",
+      "pattern": "armatur(?:a|e)",
+      "description": "Ciascuna armatura sembra guardarti dall'alto in basso con aria altezzosa.",
+      "peso": 99,
+      "on": {
+        "prendi|indossa": "Scherzi? Pesa il doppio di te. A quei tempi non erano certo dei rammolliti, come al giorno d'oggi."
+      }
+    },
+    "corridoio": {
+      "label": "il corridoio",
+      "pattern": "corridoio"
+    },
+    "scheletri": {
+      "label": "gli scheletri",
+      "pattern": "(scheletr(?:o|i)|ossa)",
+      "description": "E' la nostra comune sorte. Ma non puoi pensare a qualcosa di più allegro?",
+      "peso": 99
+    },
+    "labirinto": {
+      "label": "il labirinto",
+      "pattern": "(labirinto|passaggi(?:o)?)",
+      "description": "Sembra facile! In questo incrociarsi sfumato di piani inclinati lungo curve impossibili, non si distingue il pavimento dal soffitto, e tutte le direzioni sembrano uguali."
+    },
+    "porta": {
+      "label": "la porta",
+      "pattern": "porta",
+      "on": {
+        "apri": {
+          "__fn__": true,
+          "source": "async () => this.stanzaCorrente.interactors.porta.description"
+        }
+      }
+    },
+    "tavolo": {
+      "label": "il tavolo",
+      "pattern": "tavol(?:o|a|ino)",
+      "peso": 99
+    },
+    "archi": {
+      "label": "gli archi",
+      "pattern": "arc(?:o|hi)",
+      "peso": 99
+    },
+    "scudi": {
+      "label": "gli scudi",
+      "pattern": "scud(?:o|i)",
+      "peso": 99
+    },
+    "camino": {
+      "label": "il camino",
+      "pattern": "camino|focolare"
+    },
+    "poltrone": {
+      "label": "le poltrone",
+      "pattern": "poltron(?:a|e)",
+      "peso": 99
+    },
+    "sedie": {
+      "label": "le sedie",
+      "pattern": "sedi(?:a|e)",
+      "peso": 99
+    },
+    "mostro": {
+      "label": "il mostro",
+      "pattern": "(mostr(?:o|i)|nessie)"
+    },
+    "scaffali": {
+      "label": "gli scaffali",
+      "pattern": "scaffal(?:e|i)",
+      "peso": 99
+    },
+    "letto": {
+      "label": "il letto",
+      "pattern": "baldacchino|letto"
+    },
+    "armi": {
+      "label": "le armi",
+      "pattern": "arm(?:a|i)",
+      "peso": 99
+    },
+    "nebbia": {
+      "label": "la nebbia",
+      "pattern": "nebbia",
+      "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+    },
+    "corvi": {
+      "label": "i corvi",
+      "pattern": "corv(?:o|i)",
+      "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+      "on": {
+        "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+      }
+    },
+    "spalti": {
+      "label": "gli spalti",
+      "pattern": "(mura|spalti)",
+      "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+    },
+    "passaggio": {
+      "label": "il passaggio",
+      "pattern": "passaggi(?:o)?"
+    },
+    "cunicolo": {
+      "label": "il cunicolo",
+      "pattern": "cunicolo"
+    },
+    "roccia": {
+      "label": "la roccia",
+      "pattern": "roccia"
+    },
+    "torre": {
+      "label": "la torre",
+      "pattern": "torre"
+    }
+  },
+  "stanzeComuni": {
+    "scalaChiocciola": {
+      "description": "Sei in una stanza con una scala a chiocciola.",
+      "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+      "interactors": {
+        "gradini": {
+          "label": "i gradini",
+          "pattern": "gradin(?:i|o)",
+          "on": {
+            "sali": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+            },
+            "scendi": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+            }
+          }
+        },
+        "scala": {
+          "label": "la scala",
+          "pattern": "scal(?:a|e|one)",
+          "description": "E' a gradini",
+          "on": {
+            "sali": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+            },
+            "scendi": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+            }
+          }
+        }
+      }
+    },
+    "spaltiMura": {
+      "description": [
+        "Sei sugli spalti delle mura. La visibilità è molto ridotta dalla nebbia che sale dalla brughiera in larghe, lente spirali. Senti, senza vederli, il gracchiare dei corvi che volteggiano sopra di te.",
+        "Una scala a chiocciola porta in basso."
+      ],
+      "shortDescription": "Sei sugli spalti delle mura.",
+      "interactors": {
+        "gradini": null,
+        "scala": null,
+        "spalti": {
+          "label": "gli spalti",
+          "pattern": "(mura|spalti)",
+          "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+        },
+        "nebbia": {
+          "label": "la nebbia",
+          "pattern": "nebbia",
+          "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+        },
+        "corvi": {
+          "label": "i corvi",
+          "pattern": "corv(?:o|i)",
+          "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+          "on": {
+            "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+          }
+        }
+      },
+      "override": {
+        "verbs": {
+          "salta": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[1]);\n\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          }
+        }
+      }
+    },
+    "labirinto": {
+      "description": "Sei nel labirinto.",
+      "shortDescription": "Sei nel labirinto.",
+      "interactors": {
+        "labirinto": {
+          "label": "il labirinto",
+          "pattern": "(labirinto|passaggi(?:o)?)",
+          "description": "Sembra facile! In questo incrociarsi sfumato di piani inclinati lungo curve impossibili, non si distingue il pavimento dal soffitto, e tutte le direzioni sembrano uguali."
+        }
+      },
+      "override": {
+        "verbs": {
+          "lascia": {
+            "__fn__": true,
+            "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+          }
+        },
+        "commands": {
+          "esci": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+          },
+          "pensa": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[0]);\n\t\t\t\t\t\t\tthis.altriDati.pensa++;\n\t\t\t\t\t\t\tfor (let i=0; i<=30*this.altriDati.pensa; i++){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping( i == 0 ? i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[1] : i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[2],{printDelay: 75, cr: false});\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tawait this.CRT.printTyping( i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[3], {nlBefore:2} );\n\t\t\t\t\t\t\tlet answer = await this.yesNoQuestion(\"\\n\"+i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThinkQuestion);\n\t\t\t\t\t\t\tif(answer){\n\t\t\t\t\t\t\t\tthis.CRT.println(\"\");\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.override.commands.pensa();\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          },
+          "usaSenno": {
+            "__fn__": true,
+            "source": "async () => this.stanzaCorrente.override.commands.pensa()"
+          }
+        }
+      }
+    }
+  },
+  "datiAvventura": {
+    "stanzaIniziale": "aereo",
+    "stanze": {
+      "aereo": {
+        "description": "Stai precipitando!",
+        "shortDescription": "Stai precipitando!",
+        "directions": {
+          "b": {
+            "__fn__": true,
+            "source": "async () => i18n.AvventuraNelCastelloJS.rooms.plane.directions.down"
+          }
+        },
+        "override": {
+          "commands": {
+            "aiuto": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++]);\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++]);\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++],{nlAfter: 1});\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(500);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++], {printDelay: 100});\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++], {printDelay: 100});\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(500);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.commands.help[i++], {printDelay: 150});\n\t\t\t\t\t\t\t\t//return true;\n\t\t\t\t\t\t\t}"
+            }
+          },
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async (targets) => {\n\t\t\t\t\t\t\t\tif(targets !== undefined) {\n\t\t\t\t\t\t\t\t\tif(targets[0] == this.datiAvventura.objects.paracadute && this.inventario.paracadute == undefined)\n\t\t\t\t\t\t\t\t\t\treturn this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.verbs.jump);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif(this.inventario.paracadute == undefined){\n\t\t\t\t\t\t\t\t\tthis.runSequence(\"volo\");\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"saltoAereo\");\n\t\t\t\t\t\t\t\t\tthis.runSequence(\"saltoAereo\");\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}"
+            },
+            "guarda": {
+              "__fn__": true,
+              "source": "async (targets) => {\n\t\t\t\t\t\t\t\tif(targets !== undefined){\n\t\t\t\t\t\t\t\t\tif(targets[0] == this.datiAvventura.objects.paracadute && this.inventario.paracadute)\n\t\t\t\t\t\t\t\t\treturn this.inventario.paracadute.on.guarda\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.plane.verbs.look\n\t\t\t\t\t\t\t}"
+            },
+            "atterra": {
+              "__fn__": true,
+              "source": "async () => i18n.AvventuraNelCastelloJS.rooms.plane.verbs.land"
+            }
+          }
+        },
+        "interactors": {
+          "cloche": {
+            "label": "la cloche",
+            "pattern": "cloche",
+            "on": {
+              "tira|spingi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.interactors.cloche.onPullOrPush[0]);\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.plane.interactors.cloche.onPullOrPush[1]);\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "motore": {
+            "label": "il motore",
+            "pattern": "motore",
+            "on": {
+              "aggiusta": "Non me ne intendo."
+            }
+          },
+          "aereo": {
+            "label": "l'aereo",
+            "pattern": "aereo"
+          }
+        },
+        "onEnter": {
+          "__fn__": true,
+          "source": "async () => this.runSequence(\"intro\")"
+        },
+        "onExit": {
+          "__fn__": true,
+          "source": "async () => this.stopTimedEvent(\"aereo\")"
+        }
+      },
+      "piazzaArmi": {
+        "description": [
+          "Sei nella piazza d'armi: un vasto spiazzo quadrato in terra battuta cinto da alte mura di pietra grigia.",
+          "Al centro della spianata, un lastrone massiccio copre l'imboccatura di quello che era il pozzo del castello.",
+          "Sento, in lontananza, ululati di lupi."
+        ],
+        "shortDescription": [
+          "Sei nella piazza d'armi.",
+          "Sento lupi ululare."
+        ],
+        "override": {
+          "verbs": {
+            "entra": {
+              "pattern": "entra(?: in)?",
+              "singolo": true,
+              "defaultMessage": "Da che parte ? (N/S/E/O/A/B)",
+              "callback": {
+                "__fn__": true,
+                "source": "async (targets) => {\n\n\t\t\t\t\t\t\t\t\t\tif(targets === undefined || targets[0].key == \"portone\")\n\t\t\t\t\t\t\t\t\t\t\treturn await this._vai(\"n\");\n\n\t\t\t\t\t\t\t\t\t\treturn null;\n\n\t\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        },
+        "directions": {
+          "n": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.portone.status == 1){\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"entrato\");\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.paradeGround.directions.north.success, {nlAfter:1});\n\t\t\t\t\t\t\t\tthis.entra('atrioCastello');\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t} \n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.paradeGround.directions.north.fail;\n\t\t\t\t\t\t}"
+          },
+          "s": {
+            "__fn__": true,
+            "source": "async () => i18n.AvventuraNelCastelloJS.rooms.paradeGround.directions.south"
+          },
+          "a": {
+            "__fn__": true,
+            "source": "async () => i18n.AvventuraNelCastelloJS.rooms.paradeGround.directions.up"
+          }
+        },
+        "interactors": {
+          "ponteLevatoio": {
+            "label": "un ponte levatoio alzato",
+            "pattern": "ponte",
+            "description": "E' alzato, ma lo si può abbassare senza difficoltà.",
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "abbassa": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.paradeGround.interactors.drawbridge.onLower);\n\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "portone": {
+            "dlabel": "un portone",
+            "label": [
+              "un portone chiuso",
+              "un portone aperto"
+            ],
+            "pattern": "portone",
+            "description": "E' molto massiccio.",
+            "status": 0,
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "apri|spingi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.portone.status == 0){\n\t\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.portone.status = 1;\n\t\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"apertoPortone\");\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.FATTO;\n\t\t\t\t\t\t\t\t\t} \n\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.GIA_APERTO;\n\t\t\t\t\t\t\t\t}"
+              },
+              "chiudi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.portone.status == 1){\n\t\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.portone.status = 0;\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.FATTO;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.paradeGround.interactors.doorway.onClose;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "lastrone": {
+            "label": "il lastrone di pietra",
+            "pattern": "lastrone|pozzo",
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.paradeGround.interactors.stoneSlab.onLook[0], {printDelay: 54});\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.paradeGround.interactors.stoneSlab.onLook[1], {printDelay: 54});\n\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "mura": {
+            "label": "gli spalti",
+            "pattern": "(mura|spalti)",
+            "description": "Sono massicce, squadrate e solidamente costruite per resistere ad ogni assalto."
+          },
+          "spianata": {
+            "label": "la spianata",
+            "pattern": "spianata"
+          },
+          "castello": {
+            "label": "il castello",
+            "pattern": "castello"
+          }
+        }
+      },
+      "atrioCastello": {
+        "description": [
+          "Sei in un grande atrio immerso nella penombra. Una lugubre fosforescenza che emana dalle pareti ti permette di distinguere i contorni della stanza.",
+          "Uno scalone di marmo sale perdendosi nell'oscurità attenuata soltanto dal diffuso chiarore verdastro."
+        ],
+        "shortDescription": "Sei nell'atrio.",
+        "directions": {
+          "n": "corridoio",
+          "s": {
+            "__fn__": true,
+            "source": "async () => i18n.AvventuraNelCastelloJS.rooms.atrium.directions.south"
+          },
+          "e": "salaGuardie",
+          "o": "salaServitori",
+          "a": "cimaScale"
+        },
+        "interactors": {
+          "gradini": {
+            "label": "i gradini",
+            "pattern": "gradin(?:i|o)",
+            "on": {
+              "sali": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+              },
+              "scendi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+              }
+            }
+          },
+          "scala": {
+            "label": "la scala",
+            "pattern": "scal(?:a|e|one)",
+            "description": "E' a gradini",
+            "on": {
+              "sali": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"a\",this.Thesaurus.commands.alto.defaultMessage)\n\t\t\t\t\t}"
+              },
+              "scendi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\treturn await this._vai(\"b\",this.Thesaurus.commands.basso.defaultMessage)\n\t\t\t\t\t}"
+              }
+            }
+          },
+          "blasone": {
+            "label": "un blasone dipinto sul soffitto",
+            "pattern": "blasone",
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.atrium.interactors.blazon.onLook[0]+\"\\n\\n\\t\"+i18n.AvventuraNelCastelloJS.rooms.atrium.interactors.blazon.onLook[1]);\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.atrium.interactors.blazon.onLook[2],{nlAfter:1, nlBefore: 1});\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"cadutoInSegreta\");\n\t\t\t\t\t\t\t\t\tthis.entra('segretaCastello');\t\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "portone": {
+            "label": "un portone",
+            "pattern": "portone",
+            "peso": -1,
+            "on": {
+              "guarda|apri|spingi": {
+                "__fn__": true,
+                "source": "async () => this._vai(\"s\")"
+              }
+            }
+          }
+        }
+      },
+      "scalaChiocciolaSudOvest": {
+        "description": "Sei in una stanza con una scala a chiocciola.",
+        "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+        "interactors": {
+          "gradini": null,
+          "scala": null
+        },
+        "directions": {
+          "e": "salaServitori",
+          "a": "spaltiMuraSudOvest"
+        }
+      },
+      "salone": {
+        "description": [
+          "Sei nel grande salone, arredato con numerosi divani e comode poltrone. Al centro di una parete è posto un monumentale camino costruito con blocchi di pietra lavorata.",
+          "Benché‚ il fuoco sia spento da secoli, la stanza sembra illuminata da una ondeggiante luce rossastra."
+        ],
+        "shortDescription": "Sei nel salone.",
+        "directions": {
+          "s": "salaArazzi",
+          "e": "salaTrofei"
+        },
+        "interactors": {
+          "divano": {
+            "label": "il divano",
+            "pattern": "divan(?:o|i)",
+            "peso": 99
+          },
+          "poltrone": {
+            "label": "le poltrone",
+            "pattern": "poltron(?:a|e)",
+            "peso": 99
+          },
+          "camino": {
+            "label": "il camino",
+            "pattern": "camino|focolare",
+            "description": "E' tanto grande che ci potresti agevolmente passare, se ci fosse un passaggio. Peccato che non se ne veda traccia. Forse a cercare..."
+          },
+          "luce": {
+            "label": "la luce",
+            "pattern": "luce",
+            "description": "Strano, quando volgi lo sguardo dove pensavi di intravvedere la luce, questa pare spostarsi da un'altra parte. Forse è solo un riflesso, o la secolare memoria del sangue versato tra queste mura."
+          },
+          "passaggio": {
+            "label": "il passaggio",
+            "pattern": "passaggio(?: segreto)?",
+            "on": {
+              "cerca": "Nel camino non c'è proprio traccia di passaggi segreti. Tu leggi troppi libri di avventure."
+            }
+          }
+        }
+      },
+      "corridoio": {
+        "description": [
+          "Sei in un largo corridoio, il cui pavimento porta i segni del passaggio di innumerevoli generazioni. Lungo la parete è allineata una fila di armature, reggenti ciascuna una lunga picca.",
+          "Verso il centro del corridoio sembra esservi stata una porta, ora murata."
+        ],
+        "shortDescription": "Sei nel corridoio.",
+        "directions": {
+          "n": "salaPranzo",
+          "s": "atrioCastello",
+          "o": "galleriaRitratti"
+        },
+        "interactors": {
+          "corridoio": {
+            "label": "il corridoio",
+            "pattern": "corridoio"
+          },
+          "armature": {
+            "label": "l'armatura",
+            "pattern": "armatur(?:a|e)",
+            "description": "Ciascuna armatura sembra guardarti dall'alto in basso con aria altezzosa.",
+            "peso": 99,
+            "on": {
+              "prendi|indossa": "Scherzi? Pesa il doppio di te. A quei tempi non erano certo dei rammolliti, come al giorno d'oggi."
+            }
+          },
+          "picche": {
+            "label": "le picche",
+            "pattern": "picc(?:a|he)",
+            "peso": 99,
+            "description": "Lunga e munita di un'acuta punta in ferro, si direbbe un'arma micidiale. Chissà come veniva usata?",
+            "on": {
+              "prendi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tlet answer = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.question+\" \");\n\t\t\t\t\t\t\t\t\tif(answer){\n\t\t\t\t\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.answer[i++],{nlAfter:1});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1200);\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.answer[i++], {printDelay: 100, cr: false});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.answer[i++], {printDelay: 1000});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.answer[i++],{printDelay: 150});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.hallway.interactors.spades.onTake.answer[i++]);\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "porta": {
+            "label": "la porta",
+            "pattern": "porta",
+            "on": {
+              "apri": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.interactors.porta.description"
+              }
+            },
+            "description": "Ho detto che sembra esservi stata una porta, della quale non resta che la traccia di un profilo sul muro."
+          }
+        }
+      },
+      "salaPranzo": {
+        "description": [
+          "Sei nella grande sala da pranzo, occupata per tutta la sua lunghezza da un enorme tavolo in quercia, circondato da molte pesanti sedie con alti schienali.",
+          "A differenza di tutte le altre stanze, la finestra è aperta."
+        ],
+        "shortDescription": "Sei nella sala da pranzo.",
+        "directions": {
+          "s": "corridoio",
+          "e": "salaMusica",
+          "o": "cucina",
+          "b": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tlet res = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.rooms.diningRoom.directions.down.question);\n\t\t\t\t\t\t\tif(res){\n\t\t\t\t\t\t\t\t//this.CRT.println(\"\");\n\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.interactors.finestra.on.salta;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          }
+        },
+        "interactors": {
+          "poltrone": null,
+          "tavola": {
+            "label": "il tavolo",
+            "pattern": "tavol(?:o|a|ino)",
+            "peso": 99,
+            "description": "E' solido e ben costruito: serviva per i Banchetti Reali."
+          },
+          "sedie": {
+            "label": "le sedie",
+            "pattern": "sedi(?:a|e)",
+            "peso": 99,
+            "description": "Vedendo le sedie intorno al tavolo, ti immagini il Re e la Regina graziosamente accomodati alle due estremità, con gli invitati disposti secondo il proprio grado di nobiltà, in base al rigido protocollo imposto dal cerimoniale di corte."
+          },
+          "mostri": {
+            "label": "il mostro",
+            "pattern": "(mostr(?:o|i)|nessie)"
+          },
+          "finestra": {
+            "label": "la finestra",
+            "pattern": "(da )?finestra",
+            "description": "Dalla finestra si gode una magnifica vista sulle torbide acque del fossato, popolate di mostri scagliosi dai denti aguzzi.",
+            "on": {
+              "salta": "Non sono mica scemo!",
+              "chiudi": {
+                "__fn__": true,
+                "source": "async () => this.Thesaurus.defaultMessages.NON_E_POSSIBILE"
+              }
+            }
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => this.stanzaCorrente.interactors.finestra.on.salta"
+            }
+          }
+        }
+      },
+      "scalaChiocciolaNordOvest": {
+        "description": "Sei in una stanza con una scala a chiocciola.",
+        "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+        "interactors": null,
+        "directions": {
+          "e": "cucina",
+          "s": "cellaAlchimista",
+          "a": "spaltiMuraNordOvest"
+        }
+      },
+      "scalaChiocciolaNordEst": {
+        "description": "Sei in una stanza con una scala a chiocciola.",
+        "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+        "interactors": null,
+        "directions": {
+          "o": "salaMusica",
+          "a": "spaltiMuraNordEst"
+        }
+      },
+      "scalaChiocciolaSudEst": {
+        "description": "Sei in una stanza con una scala a chiocciola.",
+        "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+        "interactors": null,
+        "directions": {
+          "o": "passaggio",
+          "a": "spaltiMuraSudEst",
+          "b": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\t\tif(this.inventario.gatto && this.inventario.coppaLattemiele && this.inventario.coppaLattemiele.status == 0){\n\t\t\t\t\t\t\t\t\tawait this.inventario.gatto.on.nutri();\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"scesoInSotterranei\");\n\t\t\t\t\t\t\t\tthis.entra('scalaChiocciolaSotterranei');\n\t\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "biblioteca": {
+        "description": "Sei nella biblioteca del castello, le cui pareti sono completamente occupate da scaffali e scaffali, carichi di libri d'ogni genere. Al centro del pavimento, davanti ad una comoda poltrona, è fissato un leggio in ferro lavorato.",
+        "shortDescription": "Sei in biblioteca.",
+        "unavaiableDirections": [
+          "o"
+        ],
+        "directions": {
+          "s": "passaggio",
+          "e": "salaSpecchi",
+          "o": "salaTrono"
+        },
+        "HUGE": "Il peso dell'antica sapienza è molto maggiore di quanto potessi sospettare.",
+        "override": {
+          "commands": {
+            "cercaDizionario": {
+              "__fn__": true,
+              "source": "async () => i18n.AvventuraNelCastelloJS.rooms.library.override.commands.lookForDictionary"
+            },
+            "iotaid": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\t\tlet self = this.altriDati.iotaid;\n\t\t\t\t\t\t\t\tif(self.id && self.iota && self.pronunciato == false){\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.library.override.commands.iotid[0]);\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.library.override.commands.iotid[1]);\n\t\t\t\t\t\t\t\t\tthis.abilitaDirezione(\"o\");\n\t\t\t\t\t\t\t\t\tself.pronunciato = true;\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"pronunciatoIotaid\");\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\treturn this.Thesaurus.commands.iotaid.callback();\n\t\t\t\t\t\t\t}"
+            }
+          }
+        },
+        "interactors": {
+          "poltrone": null,
+          "scaffali": {
+            "label": "gli scaffali",
+            "pattern": "scaffal(?:e|i)",
+            "peso": 99,
+            "description": "Veramente una Biblioteca Reale! C'è tutto o quasi. Sono convinto che a ben cercare si possa trovare qualunque cosa, qui dentro."
+          },
+          "leggio": {
+            "label": "il leggio",
+            "pattern": "leggio",
+            "description": "Un'opera davvero pregevole.",
+            "peso": 99
+          },
+          "libri": {
+            "label": "i libri",
+            "pattern": "libri",
+            "description": "Veramente una Biblioteca Reale! C'è tutto o quasi. Sono convinto che a ben cercare si possa trovare qualunque cosa, qui dentro.",
+            "peso": 99,
+            "on": {
+              "prendi": "Sono un po' troppi per trasportarli.",
+              "leggi": "Ci vorrebbero secoli per sfogliarli tutti. Quelli che prendi in mano sono indubbiamente interessanti, ma non risolvono alcuno dei tuoi problemi. Dovresti almeno dirmi cosa cercare."
+            }
+          },
+          "libro": {
+            "dlabel": "un libro",
+            "label": [
+              "un libro chiuso sul leggio",
+              "un libro sul leggio"
+            ],
+            "pattern": "libro",
+            "description": "E' posato sul leggio, e sembra insieme antico e nuovissimo.",
+            "posizione": "biblioteca",
+            "status": 0,
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "prendi": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.HUGE"
+              },
+              "apri": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.libro.status == 1){\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.GIA_APERTO;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.libro.status = 1;\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"apertoLibro\");\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.library.interactors.book.onOpen);\n\t\t\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.foglio);\n\t\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t\t}"
+              },
+              "leggi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.libro.status == 0){\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.E_CHIUSO;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"scopertoDizionario\");\n\t\t\t\t\t\t\t\t\tdelete this.stanzaCorrente.interactors.dizionario.visibile\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.library.interactors.book.onRead\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "dizionario": {
+            "label": "un dizionario",
+            "pattern": "(dizionario|vocabolario)",
+            "description": "E' posato sul leggio, e sembra insieme antico e nuovissimo.",
+            "posizione": "biblioteca",
+            "visibile": false,
+            "peso": -1,
+            "on": {
+              "prendi": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.interactors.libro.on.prendi()"
+              },
+              "apri": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.interactors.libro.on.apri()"
+              },
+              "leggi": "E' costituito da un elenco di parole in gaelico, ciascuna corredata dalla traduzione (con alcuni commenti) in lingua moderna. Le parole sono in ordine alfabetico, dalla A alla Z. C'è anche un elenco di proverbi, modi di dire e regole grammaticali e di pronuncia. Ma possibile che tu non abbia mai visto un dizionario?"
+            }
+          }
+        }
+      },
+      "spaltiMuraSudOvest": {
+        "description": [
+          "Sei sugli spalti delle mura. La visibilità è molto ridotta dalla nebbia che sale dalla brughiera in larghe, lente spirali. Senti, senza vederli, il gracchiare dei corvi che volteggiano sopra di te.",
+          "Una scala a chiocciola porta in basso."
+        ],
+        "shortDescription": "Sei sugli spalti delle mura.",
+        "interactors": {
+          "gradini": null,
+          "scala": null,
+          "spalti": {
+            "label": "gli spalti",
+            "pattern": "(mura|spalti)",
+            "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+          },
+          "nebbia": {
+            "label": "la nebbia",
+            "pattern": "nebbia",
+            "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+          },
+          "corvi": {
+            "label": "i corvi",
+            "pattern": "corv(?:o|i)",
+            "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+            "on": {
+              "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+            }
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[1]);\n\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+            }
+          }
+        },
+        "directions": {
+          "n": "spaltiMuraNordOvest",
+          "e": "spaltiMuraSudEst",
+          "b": "scalaChiocciolaSudOvest"
+        }
+      },
+      "spaltiMuraNordOvest": {
+        "description": null,
+        "shortDescription": "Sei sugli spalti delle mura.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "s": "spaltiMuraSudOvest",
+          "e": "spaltiMuraNordEst",
+          "b": "scalaChiocciolaNordOvest"
+        }
+      },
+      "spaltiMuraNordEst": {
+        "description": null,
+        "shortDescription": "Sei sugli spalti delle mura.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "s": "spaltiMuraSudEst",
+          "o": "spaltiMuraNordOvest",
+          "b": "scalaChiocciolaNordEst"
+        }
+      },
+      "spaltiMuraSudEst": {
+        "description": null,
+        "shortDescription": "Sei sugli spalti delle mura.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "spaltiMuraNordEst",
+          "o": "spaltiMuraSudOvest",
+          "b": "scalaChiocciolaSudEst"
+        }
+      },
+      "largoCunicolo": {
+        "description": "Stai percorrendo un largo cunicolo, ricavato nella roccia che costituisce le fondamenta del castello.",
+        "shortDescription": "Sei in un largo cunicolo.",
+        "directions": {
+          "n": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.orco){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.wideTunnel.directions.north.fail);\n\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.entra(\"strettoCunicolo\");\n\t\t\t\t\t\t}"
+          },
+          "s": "scalaChiocciolaSotterranei"
+        },
+        "interactors": {
+          "roccia": {
+            "label": "la roccia",
+            "pattern": "roccia"
+          },
+          "cunicolo": {
+            "label": "il cunicolo",
+            "pattern": "cunicolo"
+          }
+        }
+      },
+      "segretaCastello": {
+        "description": "Sei nella segreta del castello, un tempo chiamata 'La Tomba'. Il pavimento è coperto di scheletri.",
+        "shortDescription": "Sei nella segreta.",
+        "directions": {
+          "o": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"uscitoDaSegreta\");\n\t\t\t\t\t\t\tthis.entra('depositoAttrezzi');\n\t\t\t\t\t\t}"
+          }
+        },
+        "unavaiableDirections": [
+          "o"
+        ],
+        "override": {
+          "verbs": {
+            "infilaIn|infila": {
+              "__fn__": true,
+              "source": "async (mSubjects) => this.runSequence(\"segretaCastello\", mSubjects)"
+            }
+          }
+        },
+        "interactors": {
+          "scheletri": {
+            "label": "gli scheletri",
+            "pattern": "(scheletr(?:o|i)|ossa)",
+            "description": "E' la nostra comune sorte. Ma non puoi pensare a qualcosa di più allegro?",
+            "peso": 99
+          },
+          "foro": {
+            "label": "un foro sulla parete",
+            "pattern": "foro|buco",
+            "description": "E' stretto e profondo: in fondo c'è qualcosa che sembra un bottone.",
+            "visibile": true,
+            "peso": -1
+          },
+          "bottone": {
+            "label": "bottone",
+            "pattern": "bottone|pulsante",
+            "description": "Guardarlo non serve a niente. Forse a premerlo...",
+            "peso": 99,
+            "on": {
+              "premi|spingi": {
+                "__fn__": true,
+                "source": "async () => this.runSequence(\"braccio\")"
+              }
+            }
+          },
+          "fessura": {
+            "label": "la fessura",
+            "pattern": "fessura",
+            "description": "E' nella parete a ovest, ed è abbastanza larga per passarci.",
+            "visibile": false,
+            "invisibleMessage": "Non c'è nessuna fessura qui.",
+            "on": {
+              "entra": {
+                "__fn__": true,
+                "source": "async () => this._vai(\"o\")"
+              }
+            }
+          },
+          "braccio": {
+            "label": "il braccio",
+            "pattern": "braccio"
+          }
+        }
+      },
+      "depositoAttrezzi": {
+        "description": "Sei in una piccola stanza quadrata, adibita un tempo a deposito degli attrezzi.",
+        "shortDescription": "Sei nel deposito degli attrezzi.",
+        "directions": {
+          "e": "segretaCastello",
+          "a": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.toolshed.directions.up,{nlAfter:1});\n\t\t\t\t\t\t\tawait this.CRT.sleep(1200);\n\t\t\t\t\t\t\tthis.entra('scalaChiocciolaSudOvest');\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "strettoCunicolo": {
+        "description": "Sei in uno stretto cunicolo, le cui pareti sono ricoperte da muffe verdastre e funghi putrescenti.",
+        "shortDescription": "Sei in uno stretto cunicolo.",
+        "directions": {
+          "s": "largoCunicolo",
+          "o": "lungoCunicolo"
+        },
+        "interactors": {
+          "cunicolo": null,
+          "muffe": {
+            "label": "le muffe",
+            "pattern": "muff(?:a|e)",
+            "description": "Sono affascinanti, nella loro venefica peluria vellutata.",
+            "on": {
+              "mangia": {
+                "__fn__": true,
+                "source": "async () => this.runSequence(\"mangia\")"
+              }
+            }
+          },
+          "funghi": {
+            "label": "i funghi",
+            "pattern": "fung(?:o|hi)(?: putrescent(?:e|i))?",
+            "description": "Da quello che puoi capire in base alla tua limitata competenza in materia, sono uno pi— velenoso dell'altro.",
+            "on": {
+              "mangia": {
+                "__fn__": true,
+                "source": "async () => this.runSequence(\"mangia\")"
+              }
+            }
+          }
+        }
+      },
+      "lungoCunicolo": {
+        "description": "Sei in un lungo cunicolo, ricavato in parte nella roccia e in parte nel terreno. Le pareti mostrano tracce di scavi.",
+        "shortDescription": "Sei in un lungo cunicolo.",
+        "directions": {
+          "s": "cameraTesoro",
+          "e": "strettoCunicolo",
+          "o": "legnaia"
+        },
+        "interactors": {
+          "cunicolo": null,
+          "roccia": null,
+          "terreno": {
+            "label": "il terreno",
+            "pattern": "terreno"
+          },
+          "scavi": {
+            "label": "gli scavi",
+            "pattern": "scavi|tracce",
+            "description": "Sono solo dei tentativi, evidentemente falliti. Forse era qualche prigioniero del castello che faceva un ultimo tentativo disperato."
+          }
+        }
+      },
+      "cameraTesoro": {
+        "description": "Sei nella camera del tesoro, un immenso locale sostenuto da possenti archi e posto esattamente sotto la sala del trono.",
+        "shortDescription": "Sei nella camera del tesoro.",
+        "directions": {
+          "n": "lungoCunicolo",
+          "e": "trappola"
+        },
+        "interactors": {
+          "archi": {
+            "label": "gli archi",
+            "pattern": "arc(?:o|hi)",
+            "peso": 99
+          },
+          "forziere": {
+            "dlabel": "un forziere",
+            "label": [
+              "un pesante forziere",
+              "un pesante forziere aperto"
+            ],
+            "pattern": "(?:pesante )?forziere",
+            "status": 0,
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async() => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.forziere.status == 0)\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.E_CHIUSO;\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.corno);\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"trovatoCorno\");\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.corno){\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.coffer.onLook[0];\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.coffer.onLook[1]\n\t\t\t\t\t\t\t\t}"
+              },
+              "apri": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.fantasma.neutralizzato === false){\n\t\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.fantasma.visibile === false){\n\t\t\t\t\t\t\t\t\t\t\tthis.scopri(this.stanzaCorrente.interactors.fantasma);\n\t\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.coffer.onOpen[0]\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.coffer.onOpen[1], {printDelay: 125});\n\t\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.forziere.status == 1)\n\t\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.GIA_APERTO\n\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.forziere.status = 1;\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"apertoForziere\");\n\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.FATTO;\n\t\t\t\t\t\t\t\t}"
+              },
+              "chiudi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\treturn this.stanzaCorrente.interactors.forziere.status == 0 ?\n\t\t\t\t\t\t\t\t\t\tthis.Thesaurus.defaultMessages.E_CHIUSO :\n\t\t\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.coffer.onClose;\n\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "fantasma": {
+            "label": "un fantasma",
+            "pattern": "fantasma",
+            "description": "Lo vedi e non lo vedi. A tratti pare incorporeo, tanto che puoi chiaramente osservare i dettagli del muro retrostante. Ma in altri momenti sembra prendere sostanza, e farsi pi— minaccioso.",
+            "visibile": false,
+            "neutralizzato": false,
+            "peso": -1,
+            "on": {
+              "uccidi": "E' già morto da settecento anni.",
+              "parla": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.ghost.onTalk[0]);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.rooms.treasureChamber.interactors.ghost.onTalk[1], {printDelay: 150});\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        }
+      },
+      "legnaia": {
+        "description": "Sei nel deposito della legna, dove sono accatastati in perfetto ordine rami secchi e ceppi di varie grandezze.",
+        "shortDescription": "Sei nella legnaia.",
+        "directions": {
+          "s": "dispensaVini",
+          "e": "lungoCunicolo"
+        },
+        "interactors": {
+          "legna": {
+            "label": "la legna",
+            "pattern": "legna|ram(?:o|i)|cepp(?:o|i)",
+            "description": "Si direbbe legna da ardere.",
+            "peso": 99,
+            "on": {
+              "prendi": "- Ehi! Giù le mani dalle mie scorte per l'inverno! Fa freddo, da queste parti."
+            }
+          }
+        },
+        "override": {
+          "commands": {
+            "ciao": {
+              "pattern": {
+                "__fn__": true,
+                "source": "() => \"(?:\"+this.commonPatterns.pronuncia+\")?\"+this.Thesaurus.verbs.ciao.pattern+\"( \"+this.stanzaCorrente.objects.nano.pattern+\")?\""
+              },
+              "callback": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.woodshed.override.commands.helloPrefix, {nlAfter:1});\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.objects.nano.on.saluta();\n\t\t\t\t\t\t\t\t}"
+              }
+            },
+            "buongiorno": {
+              "pattern": {
+                "__fn__": true,
+                "source": "() => \"(?:\"+this.commonPatterns.pronuncia+\")?\"+this.Thesaurus.verbs.buongiorno.pattern+\"( \"+this.stanzaCorrente.objects.nano.pattern+\")?\""
+              },
+              "callback": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.objects.nano.on.saluta()"
+              }
+            },
+            "presentati": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\t\tif(this.datiAvventura.objects.diamante.visibile)\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.woodshed.override.commands.introduceYourself[0];\n\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.woodshed.override.commands.introduceYourself[1],{nlAfter: 1,printDelay: 75});\n\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.objects.nano.on.saluta();\n\t\t\t\t\t\t\t}"
+            }
+          },
+          "verbs": {
+            "chiedi": {
+              "__fn__": true,
+              "source": "async (targets) => {\n\t\t\t\t\t\t\t\tif(targets[0] == this.datiAvventura.objects.diamante){\n\n\t\t\t\t\t\t\t\t\tif(this.datiAvventura.objects.nano.status == 1){\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.woodshed.override.verbs.askForDiamond[0];\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.woodshed.override.verbs.askForDiamond[1];\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\treturn this.Thesaurus.verbs.chiedi.defaultMessage;\n\t\t\t\t\t\t\t}"
+            },
+            "chiediA": {
+              "__fn__": true,
+              "source": "async (targets) => {\n\t\t\t\t\t\t\t\tif(targets[0] == this.datiAvventura.objects.diamante && targets[1] == this.datiAvventura.objects.nano){\n\t\t\t\t\t\t\t\t\treturn this.stanzaCorrente.override.verbs.chiedi(targets);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\treturn this.Thesaurus.verbs.chiedi.defaultMessage;\t\n\t\t\t\t\t\t\t}"
+            }
+          }
+        }
+      },
+      "cimaScale": {
+        "description": "Sei in cima alle scale. I gradini terminano bruscamente di fronte ad una liscia parete di pietra.",
+        "shortDescription": "Sei in cima alle scale.",
+        "directions": {
+          "b": "atrioCastello"
+        },
+        "interactors": {
+          "gradini": null,
+          "scale": null,
+          "pareti": {
+            "label": "le pareti",
+            "pattern": "(muro|mura|pareti|parete)",
+            "on": {
+              "spingi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.topOfStairs.interactors.walls.onPush[0],{cr:false});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.topOfStairs.interactors.walls.onPush[1],{nlAfter:1});\n\t\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"entratoLabirinto\");\n\t\t\t\t\t\t\t\t\t\tthis.entra('entrataLabirinto');\n\t\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t\t}"
+              },
+              "rompi": "Il muro è duro"
+            },
+            "description": "Non vedo appigli o fessure."
+          }
+        }
+      },
+      "entrataLabirinto": {
+        "description": [
+          "Sei all'entrata dell'immenso labirinto magico, del quale si dice che tutti i passaggi portano a quest'unica stanza, alla cui attrazione non possono sfuggire né uomini né cose.",
+          "Per terra ci sono due scheletri. Sul muro è scritto col sangue:",
+          "",
+          "        'Impossibile uscire di qui'"
+        ],
+        "shortDescription": "Sei all'entrata del labirinto.",
+        "interactors": {
+          "labirinto": {
+            "label": "il labirinto",
+            "pattern": "(labirinto|passaggi(?:o)?)",
+            "description": "Sembra facile! In questo incrociarsi sfumato di piani inclinati lungo curve impossibili, non si distingue il pavimento dal soffitto, e tutte le direzioni sembrano uguali."
+          },
+          "scheletri": null,
+          "scritta": {
+            "label": "la scritta",
+            "pattern": "scritta"
+          }
+        },
+        "override": {
+          "commands": {
+            "pensa": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
+        "directions": {
+          "n": "L32",
+          "s": "L26",
+          "e": "L32",
+          "o": "L31",
+          "a": "L30",
+          "b": "L32"
+        }
+      },
+      "stanzaSegreta": {
+        "description": "Sei nella grande stanza segreta, sotto la torre del castello. Una corrente di aria gelida sibila entrando da invisibili fessure.",
+        "shortDescription": "Sei nella stanza segreta.",
+        "directions": {
+          "e": "L29",
+          "a": "cimaTorre"
+        },
+        "unavaiableDirections": [
+          "a"
+        ],
+        "interactors": {
+          "torre": {
+            "label": "la torre",
+            "pattern": "torre"
+          },
+          "fessure": {
+            "label": "le fessure",
+            "pattern": "fessure",
+            "description": "Come ho detto, sono invisibili."
+          },
+          "leva": {
+            "label": "una leva",
+            "pattern": "leva",
+            "visibile": true,
+            "peso": -1,
+            "on": {
+              "spingi": {
+                "__fn__": true,
+                "source": "async() => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.lever.onPush,{nlAfter: 1});\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\tthis.entra('corridoio');\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              },
+              "tira": "Non succede niente."
+            }
+          },
+          "orologio": {
+            "dlabel": "un orologio",
+            "label": [
+              "un vecchio orologio a pendolo fermo",
+              "un vecchio orologio a pendolo",
+              "un vecchio orologio a pendolo",
+              "un vecchio orologio a pendolo",
+              "un vecchio orologio a pendolo",
+              "un vecchio orologio a pendolo",
+              "un vecchio orologio a pendolo"
+            ],
+            "pattern": "(?:vecchio )?orologio(?: a pendolo)?",
+            "description": [
+              "Segna le undici e cinquantasei.",
+              "",
+              "Segna le undici e cinquantasette.",
+              "Segna le undici e cinquantotto.",
+              "Segna le undici e cinquantanove.",
+              "",
+              "Le lancette sono bloccate su mezzanotte."
+            ],
+            "status": 0,
+            "peso": 99,
+            "visibile": true,
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.orologio.status == 0)\n\t\t\t\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.orologio.status < 5){\n\t\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.orologio.status++;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.orologio.status == 5){\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onLook[0]);\n\t\t\t\t\t\t\t\t\t\tawait this.s2();\n\t\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"suonaMezzanotte\");\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onLook[1], {nlBefore:2});\n\t\t\t\t\t\t\t\t\t\tthis.abilitaDirezione(\"a\");\n\t\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.orologio.status++;\n\t\t\t\t\t\t\t\t\t\treturn true;\t\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t\t\t}"
+              },
+              "carica": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.inventario.chiave === undefined)\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onCharge.fail;\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.orologio.status == 0){\n\t\t\t\t\t\t\t\t\t\tawait this.s1();\n\t\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"caricatoOrologio\");\n\t\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.orologio.status++;\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onCharge.success;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.orologio.status < 5)\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onCharge.working\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.secretRoom.interactors.pendulumClock.onCharge.blocked;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        },
+        "onEnter": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\tthis.aggiungiPunti(\"risoltoLabirinto\");\n\t\t\t\t\t\treturn null;\n\t\t\t\t\t}"
+        }
+      },
+      "L26": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[0]);\n\t\t\t\t\t\t\tthis.altriDati.pensa++;\n\t\t\t\t\t\t\tfor (let i=0; i<=30*this.altriDati.pensa; i++){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping( i == 0 ? i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[1] : i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[2],{printDelay: 75, cr: false});\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tawait this.CRT.printTyping( i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThink[3], {nlBefore:2} );\n\t\t\t\t\t\t\tlet answer = await this.yesNoQuestion(\"\\n\"+i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onThinkQuestion);\n\t\t\t\t\t\t\tif(answer){\n\t\t\t\t\t\t\t\tthis.CRT.println(\"\");\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.override.commands.pensa();\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzaCorrente.override.commands.pensa()"
+            }
+          }
+        },
+        "directions": {
+          "n": "L32",
+          "s": "L31",
+          "e": "L27",
+          "o": "L32",
+          "a": "entrataLabirinto",
+          "b": "L30"
+        }
+      },
+      "L27": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "L28",
+          "s": "L31",
+          "e": "L31",
+          "o": "L32",
+          "a": "L30",
+          "b": "L31"
+        }
+      },
+      "L28": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "L29",
+          "s": "L31",
+          "e": "L30",
+          "o": "L31",
+          "a": "L32",
+          "b": "entrataLabirinto"
+        }
+      },
+      "L29": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "L30",
+          "s": "L31",
+          "e": "L30",
+          "o": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\t\tif(this.datiAvventura.objects.pergamena.tradotta){\n\t\t\t\t\t\t\t\t\tthis.entra('stanzaSegreta');\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tawait this.CRT.clear();\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.L29.dodgersHatch,{nlAfter:1});\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\tthis.entra('atrioCastello');\n\t\t\t\t\t\t\t}"
+          },
+          "a": "L32",
+          "b": "L32"
+        }
+      },
+      "L30": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "L30",
+          "s": "L30",
+          "e": "entrataLabirinto",
+          "o": "entrataLabirinto",
+          "a": "L31",
+          "b": "L32"
+        }
+      },
+      "L31": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "L30",
+          "s": "entrataLabirinto",
+          "e": "L31",
+          "o": "L31",
+          "a": "L30",
+          "b": "L32"
+        }
+      },
+      "L32": {
+        "description": "Sei nel labirinto.",
+        "shortDescription": "Sei nel labirinto.",
+        "interactors": null,
+        "override": null,
+        "directions": {
+          "n": "entrataLabirinto",
+          "s": "L32",
+          "e": "L31",
+          "o": "L32",
+          "a": "L30",
+          "b": "L31"
+        }
+      },
+      "salaTrono": {
+        "description": "Sei nell'antica sala del trono, dove il Re soleva amministrare la giustizia e ricevere gli ambasciatori. Ai lati della stanza, due file di nicchie in cui trovavano posto le guardie personali del Sovrano. L'imponente trono in legno è finemente lavorato nei minimi dettagli. Di fronte al trono, una porta murata che doveva costituire un tempo l'ingresso principale dal corridoio.",
+        "shortDescription": "Sei nella sala del trono.",
+        "directions": {
+          "n": "salaConsiglio",
+          "e": "biblioteca"
+        },
+        "override": {
+          "verbs": {
+            "siedi": {
+              "__fn__": true,
+              "source": "async (target) => {\n\t\t\t\t\t\t\t\tif(!target){\n\t\t\t\t\t\t\t\t\tlet res = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.rooms.throneRoom.interactors.throne.onSitDown.question);\n\t\t\t\t\t\t\t\t\tif(res){\n\t\t\t\t\t\t\t\t\t\t//this.CRT.println(\"\");\n\t\t\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.interactors.trono.on.siedi();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tif(target == this.stanzaCorrente.interactors.trono)\n\t\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.interactors.trono.on.siedi();\n\t\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t\t}"
+            }
+          }
+        },
+        "interactors": {
+          "porta": {
+            "label": "la porta",
+            "pattern": "porta",
+            "on": null,
+            "description": "Ovviamente è murata anche da questa parte."
+          },
+          "nicchie": {
+            "label": "le nicchie",
+            "pattern": "nicchi(?:a|e)",
+            "description": "Sono delle semplici rientranze nelle pareti. Il lavoro delle guardie personali del Re doveva essere alquanto noioso, se consisteva nello stare lì impalati per tutto il santo giorno."
+          },
+          "trono": {
+            "label": "il trono",
+            "pattern": "trono",
+            "description": "Troneggia in mezzo alla stanza. Su di esso sedeva il Potere.",
+            "peso": 99,
+            "on": {
+              "siedi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.cuscino) \n\t\t\t\t\t\t\t\t\t\tdelete this.stanzaCorrente.objects.cuscino.visibile;\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.throneRoom.interactors.throne.onSitDown.answer\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        },
+        "onEnter": {
+          "__fn__": true,
+          "source": "async () => this.aggiungiPunti(\"entratoSalaTrono\")"
+        }
+      },
+      "cimaTorre": {
+        "description": "Sei in cima alla torre, dove lo sguardo può spaziare al di sopra della nebbia che copre la brughiera, fino alle lontane montagne.",
+        "shortDescription": "Sei in cima alla torre.",
+        "directions": {
+          "b": "stanzaSegreta"
+        },
+        "interactors": {
+          "nebbia": {
+            "label": "la nebbia",
+            "pattern": "nebbia",
+            "description": "La superficie della nebbia è increspata da onde in lento perenne movimento, come se la torre fosse un'isola galleggiante in questo strano mare senza pesci."
+          },
+          "brughiera": {
+            "label": "la brughiera",
+            "pattern": "brughiera",
+            "description": "E' nascosta sotto la nebbia, ma a tratti, in lontananza, questa si affievolisce un poco, lasciando intravvedere il brullo e giallastro terreno sottostante."
+          },
+          "montagne": {
+            "label": "le montagne",
+            "pattern": "montagn(?:a|e)",
+            "description": "Dai picchi innevati più lontani, le montagne digradano in una successione di alture, colline, dolci declivi, fino a confondersi con la brughiera sommersa nel mare di nebbia. Hai l'impressione che qualcosa di minuscolo si muova intorno alle cime, ma probabilmente è solo un'illusione ottica."
+          },
+          "bandiera": {
+            "label": "una bandiera a brandelli",
+            "pattern": "bandiera",
+            "description": "Portata con gloria in cento battaglie, sventola ancora sulle terre che un tempo dominava.",
+            "visibile": true,
+            "peso": 99,
+            "on": {
+              "prendi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.topOfTower.interactors.flag.onTake[0],{cr:false});\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.topOfTower.interactors.flag.onTake[1]);\n\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              },
+              "alza": "Queste cerimonie mi commuovono sempre..."
+            }
+          },
+          "torre": {
+            "label": "la torre",
+            "pattern": "torre",
+            "description": "Non sapresti dire di quanto s'innalza al di sopra delle mura, perché la nebbia arriva con le sue spire inconsistenti fino a rendere a tratti invisibili i tuoi stessi piedi."
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\t\tthis.CRT.println(i18n.AvventuraNelCastelloJS.rooms.topOfTower.override.verbs.jump,{reversed: true});\n\t\t\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}"
+            }
+          }
+        },
+        "onEnter": {
+          "__fn__": true,
+          "source": "async () => this.aggiungiPunti(\"salitoTorre\")"
+        }
+      },
+      "scalaChiocciolaSotterranei": {
+        "description": "Sei in una stanza con una scala a chiocciola ed uno stretto passaggio verso nord.",
+        "shortDescription": "Sei in una stanza con una scala a chiocciola.",
+        "interactors": {
+          "passaggio": {
+            "label": "il passaggio",
+            "pattern": "passaggi(?:o)?",
+            "description": "Si addentra nei sotterranei del castello. Meglio tornare indietro, non credi?"
+          }
+        },
+        "directions": {
+          "a": "scalaChiocciolaSudEst",
+          "n": "largoCunicolo"
+        }
+      },
+      "trappola": {
+        "description": "Sei nella stanza della trappola, che sembra completamente vuota.",
+        "shortDescription": "Sei nella stanza della trappola.",
+        "uscito": false,
+        "directions": {
+          "o": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.uscito == false){\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.uscito = true;\n\t\t\t\t\t\t\t\tthis.entra(\"cameraTesoro\");\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.trap.directions.west[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.trap.directions.west[1],{printDelay: 100, cr:false});\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.trap.directions.west[2],{printDelay: 100, reversed: true});\n\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t}"
+          }
+        },
+        "interactors": {
+          "trappola": {
+            "label": "la trappola",
+            "pattern": "trappola",
+            "on": {
+              "guarda|cerca": "Non vedo proprio nessuna trappola. Non capisco perché la stanza abbia questo curioso nome."
+            }
+          }
+        }
+      },
+      "dispensaVini": {
+        "description": "Sei nella dispensa dove venivano conservati i vini. Sugli scaffali sono rimasti solo alcuni cocci di vetro.",
+        "shortDescription": "Sei nella dispensa dei vini.",
+        "directions": {
+          "n": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.timedEvents.indexOf(\"whisky\") < 0){\n\t\t\t\t\t\t\t\tthis.entra('legnaia');\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.winePantry.directions.north.join(\"\\n\"));\n\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          },
+          "s": "dispensaSalumi"
+        },
+        "interactors": {
+          "scaffali": {
+            "label": "gli scaffali",
+            "pattern": "scaffal(?:e|i)",
+            "peso": 99
+          },
+          "cocci": {
+            "label": "i cocci",
+            "pattern": "cocci(?:o)?",
+            "on": {
+              "prendi": "Oltre a rischiare di tagliarti malamente, non vedo proprio a cosa potrebbero servirti."
+            }
+          }
+        }
+      },
+      "dispensaSalumi": {
+        "description": "Sei nella dispensa dove venivano conservati i salumi. Rimangono ormai soltanto dei ganci arrugginiti.",
+        "shortDescription": "Sei nella dispensa dei salumi.",
+        "directions": {
+          "n": "dispensaVini",
+          "e": "dispensaVerdura"
+        },
+        "interactors": {
+          "ganci": {
+            "label": "i ganci",
+            "pattern": "ganci(?:o)?",
+            "on": {
+              "prendi": "Oltre a rischiare di prendere il tetano, non vedo proprio cosa potresti fartene."
+            }
+          }
+        }
+      },
+      "dispensaVerdura": {
+        "description": "Sei nella dispensa dove venivano tenute le provviste di verdura, unica traccia delle quali sono alcune viscide macchie verdastre sul pavimento.",
+        "shortDescription": "Sei nella dispensa della verdura.",
+        "directions": {
+          "e": "dispensaFormaggi",
+          "o": "dispensaSalumi"
+        },
+        "interactors": {
+          "macchie": {
+            "label": "le macchie",
+            "pattern": "macchi(?:a|e)(?: verdastr(?:a|e))?"
+          }
+        }
+      },
+      "dispensaFormaggi": {
+        "description": "Sei nella dispensa dove venivano conservati i formaggi, dei quali non rimangono che alcune croste mangiucchiate dai topi.",
+        "shortDescription": "Sei nella dispensa dei formaggi.",
+        "directions": {
+          "e": "dispensaCacciagione",
+          "o": "dispensaVerdura"
+        },
+        "interactors": {
+          "croste": {
+            "label": "le croste",
+            "pattern": "crost(?:a|e)",
+            "on": {
+              "prendi|mangia": "Non puoi avere TANTA fame!"
+            }
+          }
+        }
+      },
+      "dispensaCacciagione": {
+        "description": "Sei nella dispensa dove venivano tenute le provviste di cacciagione, delle quali non resta che la carcassa raggrinzita di un vecchio cervo.",
+        "shortDescription": "Sei nella dispensa della cacciagione.",
+        "directions": {
+          "n": "dispensaWhisky",
+          "o": "dispensaFormaggi"
+        },
+        "interactors": {
+          "cervo": {
+            "label": "il cervo",
+            "pattern": "cervo|carcassa",
+            "on": {
+              "prendi": "Oltre che portarti dietro un carico supplementare, non vedo proprio di che utilità potrebbe esserti."
+            }
+          }
+        }
+      },
+      "dispensaWhisky": {
+        "description": "Sei nella dispensa dove venivano tenute consistenti scorte del celebre whisky della regione. Tutto ciò che ne resta è una botticella dall'aria straordinariamente ben conservata.",
+        "shortDescription": "Sei nella dispensa del whisky.",
+        "directions": {
+          "s": "dispensaCacciagione"
+        },
+        "interactors": {
+          "botticella": {
+            "label": "la botticella di whisky",
+            "pattern": "botticella",
+            "description": "C'è scritto sopra: '700 yrs old'",
+            "peso": 99,
+            "on": {
+              "apri": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.rooms.whiskeyPantry.interactors.keg.onOpenQuestion)){\n\t\t\t\t\t\t\t\t\t\t//this.CRT.println(\"\");\n\t\t\t\t\t\t\t\t\t\treturn await this.stanzaCorrente.interactors.whisky.on[\"prendi|bevi\"]();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "whisky": {
+            "label": "il whisky",
+            "pattern": "whisky",
+            "peso": 99,
+            "on": {
+              "prendi|bevi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tthis.startTimedEvent(\"whisky\");\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.whiskeyPantry.interactors.whiskey.onTakeOrDrink\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        }
+      },
+      "salaGuardie": {
+        "description": "La stanza dove ti trovi doveva essere la sala delle guardie che vigilavano sull'ingresso del castello. A parte una rozza tavola e delle pesanti panche, la stanza è completamente spoglia.",
+        "shortDescription": "Sei nella sala delle guardie.",
+        "directions": {
+          "e": "catapulta",
+          "o": "atrioCastello"
+        },
+        "interactors": {
+          "tavolo": {
+            "label": "il tavolo",
+            "pattern": "tavol(?:o|a|ino)",
+            "peso": 99,
+            "description": "E' una tavolaccia di legno non certo elegante ma molto robusto."
+          },
+          "panche": {
+            "label": "le panche",
+            "pattern": "panc(?:a|he)",
+            "description": "Sono dello stesso legno della tavola, levigato dal lungo uso.",
+            "peso": 99
+          }
+        }
+      },
+      "catapulta": {
+        "description": [
+          "Sei in una stanza di forma irregolare, occupata da ingombranti strutture in legno e metallo. Sembrano pezzi di un'antica macchina da guerra, probabilmente una piccola catapulta.",
+          "Pesanti palle di pietra sono allineate lungo la parete."
+        ],
+        "shortDescription": "Sei nella stanza della catapulta.",
+        "directions": {
+          "n": "armeria",
+          "o": "salaGuardie"
+        },
+        "risposteComuni": [
+          "Ma chi ti credi di essere? Maciste?",
+          "Non sono mai stato molto bravo col meccano."
+        ],
+        "interactors": {
+          "catapulta": {
+            "label": "la catapulta",
+            "pattern": "catapulta|macchina",
+            "description": "E' stata smontata in tanti pezzi, per occupare meno spazio e conservarla in condizioni migliori.",
+            "peso": 99,
+            "on": {
+              "carica": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.risposteComuni[0]"
+              },
+              "monta": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.risposteComuni[1]"
+              }
+            }
+          },
+          "palle": {
+            "label": "le palle",
+            "pattern": "(pall(?:a|e))",
+            "peso": 99,
+            "on": {
+              "prendi|alza": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.risposteComuni[0]"
+              },
+              "rompi": {
+                "__fn__": true,
+                "source": "async () => i18n.AvventuraNelCastelloJS.rooms.catapultRoom.interactors.balls.onBreak"
+              }
+            }
+          },
+          "pezzi": {
+            "label": "i pezzi",
+            "pattern": "(pezz(?:o|i)|struttur(?:a|e))",
+            "description": "Andrebbero montati insieme per avere la catapulta, o almeno credo.",
+            "on": {
+              "monta": {
+                "__fn__": true,
+                "source": "async () => this.stanzaCorrente.risposteComuni[1]"
+              }
+            }
+          }
+        }
+      },
+      "armeria": {
+        "description": "Sei nell'armeria del castello. Fissati alle pareti sono alcuni archi, pugnali, scudi, lance, asce ed altre armi, tutte corrose e rese inutilizzabili dal tempo.",
+        "shortDescription": "Sei nell'armeria.",
+        "directions": {
+          "s": "catapulta",
+          "o": "sottoscala"
+        },
+        "interactors": {
+          "archi": null,
+          "scudi": {
+            "label": "gli scudi",
+            "pattern": "scud(?:o|i)",
+            "peso": 99
+          },
+          "pugnali": {
+            "label": "i pugnali",
+            "pattern": "pugnal(?:e|i)",
+            "peso": 99
+          },
+          "lance": {
+            "label": "le lance",
+            "pattern": "lanc(?:ia|e)",
+            "peso": 99
+          },
+          "asce": {
+            "label": "le asce",
+            "pattern": "asc(?:ia|e)",
+            "peso": 99
+          },
+          "armi": {
+            "label": "le armi",
+            "pattern": "arm(?:a|i)",
+            "peso": 99,
+            "description": "Come ti ho detto, sono tutte corrose e rese inutilizzabili dal tempo."
+          }
+        }
+      },
+      "sottoscala": {
+        "description": "Sei in un piccolo sottoscala, completamente vuoto.",
+        "shortDescription": "Sei nel sottoscala.",
+        "directions": {
+          "e": "armeria"
+        },
+        "interactors": {
+          "understais": {
+            "label": "il sottoscala",
+            "pattern": "sottoscala"
+          }
+        }
+      },
+      "salaServitori": {
+        "description": "In questa stanza, dove alloggiavano i servitori del Re, non c'è proprio niente di particolare.",
+        "shortDescription": "Sei nella sala dei servitori.",
+        "directions": {
+          "e": "atrioCastello",
+          "n": "salaColonne",
+          "o": "scalaChiocciolaSudOvest"
+        }
+      },
+      "salaColonne": {
+        "description": "Sei in una lunga sala, ai lati della quale si innalzano due file di alte colonne, che sostengono il soffitto arcuato. Le colonne, benché‚ corrose dal tempo, portano ancora i segni di una paziente lavorazione per mano di abili artigiani. Al centro della sala, una piccola colonna in pietra poggia su un basso piedestallo.",
+        "shortDescription": "Sei nella sala delle colonne.",
+        "directions": {
+          "s": "salaServitori",
+          "o": "salaArazzi"
+        },
+        "interactors": {
+          "colonna": {
+            "label": "la colonna",
+            "pattern": "(?:piccol(?:a|o) )?(colonna|capitello)",
+            "description": "Sul capitello è scolpita in lucenti lettere d'argento metà di una potente parola magica: 'ID'",
+            "peso": 99,
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"lettoId\");\n\t\t\t\t\t\t\t\t\tthis.altriDati.iotaid.id = true;\n\t\t\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "colonne": {
+            "label": "le colonne",
+            "pattern": "colonne",
+            "description": "Le colonne ai lati della sala sono in stile alquanto austero: semplici cilindri di pietra rastremati verso l'estremità superiore."
+          },
+          "piedistallo": {
+            "label": "il piedistallo",
+            "pattern": "piedistallo",
+            "description": "Il piedestallo che sorregge la piccola colonna è un parallelepipedo di pietra grezza, probabilmente granito."
+          }
+        }
+      },
+      "salaArazzi": {
+        "description": "Sei in una sala le cui pareti sono completamente tappezzate di arazzi di squisita fattura. La maggior parte sono raffigurazioni di scene di caccia, ma non mancano campi di battaglia e scene di vita agreste. I colori sono ben conservati, nonostante i secoli.",
+        "shortDescription": "Sei nella sala degli arazzi.",
+        "directions": {
+          "e": "salaColonne",
+          "n": "salone"
+        },
+        "interactors": {
+          "arazzi": {
+            "label": "arazzi",
+            "pattern": "arazz(?:o|i)",
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.tapestriesRoom.interactors.tapestries.onLook[0]);\n\t\t\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.tapestriesRoom.interactors.tapestries.onLook[1]);\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        }
+      },
+      "galleriaRitratti": {
+        "description": [
+          "Sei in una sala di forma allungata e senza alcun mobile. Sulle pareti si allineano i ritratti dei Re e dei dignitari che nel corso dei secoli hanno governato il castello ed i suoi feudi.",
+          "I ritratti paiono fissarti con occhio malevolo. Uno in particolare, quello di Malcolm IV, sembra seguire i tuoi movimenti con uno sguardo carico di odio mortale."
+        ],
+        "shortDescription": "Sei nella galleria dei ritratti.",
+        "directions": {
+          "n": "salaTrofei",
+          "e": "corridoio"
+        },
+        "interactors": {
+          "ritratti": {
+            "label": "il ritratto",
+            "pattern": "(ritratt(?:o|i)|quadr(?:o|i)|malcolm|tel(?:a|e))",
+            "on": {
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tlet res = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.rooms.portraitsGallery.interactors.portrait.onLookQuestion);\n\t\t\t\t\t\t\t\t\tif(res){\n\t\t\t\t\t\t\t\t\t\t//this.CRT.println(\"\");\n\t\t\t\t\t\t\t\t\t\tawait this.runSequence(\"ritratti\");\n\t\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}"
+              }
+            }
+          }
+        }
+      },
+      "salaTrofei": {
+        "description": "Sei in una corta sala letteralmente stipata di trofei di caccia e di guerra. Fissati alle pareti vedo animali d'ogni specie, armi, scudi, perfino un'intera armatura appartenuta probabilmente ad un Re nemico ucciso in battaglia dal Sovrano in persona.",
+        "shortDescription": "Sei nella sala dei trofei.",
+        "directions": {
+          "n": "cucina",
+          "s": "galleriaRitratti",
+          "o": "salone"
+        },
+        "interactors": {
+          "armatura": {
+            "label": "l'armatura",
+            "pattern": "armatur(?:a|e)",
+            "description": "Ciascuna armatura sembra guardarti dall'alto in basso con aria altezzosa.",
+            "peso": 99,
+            "on": {
+              "prendi|indossa": "Scherzi? Pesa il doppio di te. A quei tempi non erano certo dei rammolliti, come al giorno d'oggi.",
+              "guarda": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\t\t\tlet spada = this.datiAvventura.objects.spada.visibile ? \"\" : i18n.AvventuraNelCastelloJS.rooms.trophiesRoom.interactors.armor.spadeText\n\t\t\t\t\t\t\t\t\t\t\tif(spada.length > 0)\n\t\t\t\t\t\t\t\t\t\t\t\tdelete this.datiAvventura.objects.spada.visibile;\n\t\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.trophiesRoom.interactors.armor.onLook(spada);\n\t\t\t\t\t\t\t\t\t\t}"
+              }
+            }
+          },
+          "scudi": null,
+          "trofei": {
+            "label": "trofei",
+            "pattern": "trofe(?:o|i)|animal(?:e|i)",
+            "peso": 99
+          },
+          "armi": {
+            "label": "le armi",
+            "pattern": "arm(?:a|i)",
+            "peso": 99
+          }
+        }
+      },
+      "cucina": {
+        "description": "La stanza in cui ti trovi doveva essere la cucina del castello. Vedo infatti un grande focolare ed i resti di vasellame, pentolame e grosse tinozze.",
+        "shortDescription": "Sei in cucina.",
+        "directions": {
+          "s": "salaTrofei",
+          "e": "salaPranzo",
+          "o": "scalaChiocciolaNordOvest"
+        },
+        "interactors": {
+          "focolare": {
+            "label": "il camino",
+            "pattern": "camino|focolare"
+          },
+          "cucina": {
+            "label": "cucina",
+            "pattern": "(cucina|tinozz(?:a|e)|vasellame|pentolame|resti)",
+            "description": "Sono del tutto inutilizzabili."
+          }
+        }
+      },
+      "cellaAlchimista": {
+        "description": [
+          "Sei nella cella dell'Alchimista. Tutto intorno crogiuoli, pestelli, alambicchi e bizzarri recipienti in vetro di forma quanto mai contorta. Sugli scaffali sono molti pesanti in-folio di magia, alchimia, sortilegi. Al centro, un tavolino che poggia su tre gambe sagomate a forma di zampe di qualche mostruoso animale. Sul tavolino, un unico pesante volume rilegato in cuoio nero:",
+          "",
+          "        \"L'Apprendista Stregone\""
+        ],
+        "shortDescription": "Sei nella cella dell'Alchimista.",
+        "directions": {
+          "n": "scalaChiocciolaNordOvest"
+        },
+        "interactors": {
+          "scaffali": null,
+          "tavolino": {
+            "label": "il tavolo",
+            "pattern": "tavol(?:o|a|ino)",
+            "peso": 99
+          },
+          "infolio": {
+            "label": "in-folio",
+            "pattern": "pestell(?:o|i)|recipient(?:e|i)|crogiuol(?:o|i)|in-folio|alambicc(?:o|hi)",
+            "description": "E' il tipico armamentario di un alchimista dell'epoca, mago, studioso e guaritore al tempo stesso. Gli alchimisti erano tenuti in alta considerazione e molto temuti e rispettati, a meno che non cadessero in disgrazia per qualche fatale errore commesso ai danni del Re.",
+            "peso": 99,
+            "on": {
+              "prendi|leggi": "Una forza occulta pare metterti in guardia: frugare tra le proprietà personali di un alchimista può essere molto pericoloso."
+            }
+          },
+          "segnalibro": {
+            "label": "il segnalibro",
+            "pattern": "segnalibro",
+            "peso": 99
+          },
+          "volume": {
+            "label": "volume",
+            "pattern": "volume|librone|pagina",
+            "description": "Ora che lo vedo più da vicino, mi accorgo che forse non è cuoio, ma pelle umana conciata.",
+            "aperto": false,
+            "on": {
+              "apri": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\treturn this.stanzaCorrente.interactors.volume.aperto ?\n\t\t\t\t\t\t\t\t\t\tthis.Thesaurus.defaultMessages.GIA_APERTO :\n\t\t\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.rooms.alchemistCell.interactors.volume.onOpen;\n\t\t\t\t\t\t\t\t}"
+              },
+              "leggi": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.volume.aperto){\n\t\t\t\t\t\t\t\t\t\tthis.altriDati.bigmeow.attivo=true;\n\t\t\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"lettoBigMeow\");\n\t\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.rooms.alchemistCell.interactors.volume.onRead.join(\"\\n\");\n\t\t\t\t\t\t\t\t\t} \n\t\t\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.E_CHIUSO;\n\t\t\t\t\t\t\t\t}"
+              },
+              "prendi": "E' impossibile smuoverlo.",
+              "alza": "Alzare il volume ?  Ma sei sordo ??"
+            }
+          }
+        }
+      },
+      "salaConsiglio": {
+        "description": "Sei nella sala del consiglio, dove venivano prese le decisioni più gravi ed importanti. Tutto il mobilio consiste in una tavola rotonda circondata da otto sedie.",
+        "shortDescription": "Sei nella sala del consiglio.",
+        "directions": {
+          "s": "salaTrono"
+        },
+        "interactors": {
+          "tavola": {
+            "label": "il tavolo",
+            "pattern": "tavol(?:o|a|ino)",
+            "peso": 99,
+            "description": "Sul bordo del tavolo è incisa una saggia massima:\n'Non tutte le spade feriscono di lama.'"
+          },
+          "sedie": {
+            "label": "le sedie",
+            "pattern": "sedi(?:a|e)",
+            "peso": 99,
+            "description": "Qui sedevano i nobili cavalieri del Re, per aiutare il Sovrano nelle difficili decisioni sulla condotta delle interminabili guerre."
+          }
+        }
+      },
+      "guardaroba": {
+        "description": "Sei nel guardaroba del Re. Tarme e tarli hanno ridotto gli imponenti armadi e le ricercate vesti a pochi brandelli e mucchi di segatura.",
+        "shortDescription": "Sei nel guardaroba.",
+        "directions": {
+          "n": "salaMusica",
+          "e": "stanzaRe"
+        },
+        "interactors": {
+          "brandelli": {
+            "label": "i brandelli",
+            "pattern": "brandell(?:o|i)|mucchi(?:o)?",
+            "description": "Sic transit gloria mundi."
+          }
+        }
+      },
+      "salaMusica": {
+        "description": [
+          "Sei nella sala di musica, dove si svolgevano feste, trattenimenti e rappresentazioni che rallegravano la vita del castello.",
+          "Tutto è ormai ricoperto da ragnatele."
+        ],
+        "shortDescription": "Sei nella sala di musica.",
+        "directions": {
+          "s": "guardaroba",
+          "e": "scalaChiocciolaNordEst",
+          "o": "salaPranzo"
+        },
+        "interactors": {
+          "ragnatele": {
+            "label": "le ragnatele",
+            "pattern": "ragnatel(?:a|e)",
+            "description": "Anche le ragnatele sono ormai deserte. Nulla rimane della vita che faceva di questa stanza il luogo più allegro del castello."
+          }
+        }
+      },
+      "stanzaPrincipessa": {
+        "description": "Sei nella stanza della Principessa. Il passare degli anni ha lasciato quasi intatti i delicati colori dei tendaggi ed il fragile baldacchino a cui manca soltanto il morbidissimo piumino che addolciva il lieve riposo della esile fanciulla.",
+        "shortDescription": "Sei nella stanza della Principessa.",
+        "directions": {
+          "s": "stanzaRe"
+        },
+        "interactors": {
+          "letto": {
+            "label": "il letto",
+            "pattern": "baldacchino|letto",
+            "description": "E' decorato con tinte delicate dai toni sfumati."
+          },
+          "tende": {
+            "label": "le tende",
+            "pattern": "tend(?:a|e|aggi)",
+            "description": "Sulle tende è ricamato con un sottile filo d'oro:\n'Saggio è colui che distrugge la propria ricchezza per prendere le vie del cielo'"
+          }
+        }
+      },
+      "stanzaRe": {
+        "description": "Sei nella camera da letto del Re. Un sontuoso baldacchino troneggia in mezzo alla stanza, occupandone la maggior parte. Dei ricchi arredi non è rimasto altro.",
+        "shortDescription": "Sei nella camera del Re.",
+        "directions": {
+          "n": "stanzaPrincipessa",
+          "s": "salaSpecchi",
+          "o": "guardaroba"
+        },
+        "interactors": {
+          "letto": {
+            "label": "il letto",
+            "pattern": "baldacchino|letto",
+            "description": "E' dipinto a colori forti e sanguigni."
+          }
+        }
+      },
+      "salaSpecchi": {
+        "description": "Sei in un salone dalle pareti coperte di specchi di ogni forma e dimensione. Specchi curvi, specchi giganti, specchi concavi riflettono infinite volte la tua immagine dando l'impressione che facce maligne ti scrutino da ogni angolo della stanza. Era la stanza preferita dalla vanitosa Regina.",
+        "shortDescription": "Sei nella sala degli specchi.",
+        "directions": {
+          "n": {
+            "__fn__": true,
+            "source": "async () => this.stanzaCorrente.bonk()"
+          },
+          "o": {
+            "__fn__": true,
+            "source": "async () => this.stanzaCorrente.bonk()"
+          }
+        },
+        "bonk": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\tif(this.getRandomIntInclusive(1,100) < 26){\n\t\t\t\t\t\t\tthis.entra('stanzaRe');\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\tawait this.CRT.print( \"- \");\n\t\t\t\t\t\tawait this.CRT.print(`&gt;${i18n.AvventuraNelCastelloJS.rooms.mirrorsHall.bonk}&lt;`, {reversed: true});\n\t\t\t\t\t\tawait this.CRT.println( \" -\");\n\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.mirrorsHall.notADoor);\n\t\t\t\t\t\treturn true;\n\t\t\t\t\t}"
+        },
+        "override": {
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async () => i18n.AvventuraNelCastelloJS.rooms.mirrorsHall.override.commands.getOut"
+            }
+          }
+        },
+        "interactors": {
+          "specchi": {
+            "label": "gli specchi",
+            "pattern": "specchi(?:o)?",
+            "description": "Vedo una brutta faccia.",
+            "peso": 99,
+            "on": {
+              "rompi": "Non ci tengo proprio ad andare incontro a sette anni di guai."
+            }
+          }
+        }
+      },
+      "passaggio": {
+        "description": "Sei in uno scuro, stretto, tortuoso passaggio che sei costretto a percorrere carponi avanzando in direzione del barlume di luce che riesce a penetrare dall'altra estremità.",
+        "shortDescription": "Sei nel tortuoso passaggio.",
+        "directions": {
+          "e": "scalaChiocciolaSudEst",
+          "n": "biblioteca"
+        },
+        "interactors": {
+          "passaggio": {
+            "label": "il passaggio",
+            "pattern": "passaggi(?:o)?",
+            "description": " Che buio! Non si vede un accidente."
+          }
+        }
+      },
+      "scoglio": {
+        "description": [
+          "Sei solo e abbandonato su un nero scoglio che emerge dalle acque gelide.",
+          "Mi correggo, non sei solo: ti fa compagnia il mostro di Loch Ness (Nessie per gli amici)."
+        ],
+        "shortDescription": "Sei sullo scoglio.",
+        "interactors": {
+          "mostro": {
+            "label": "il mostro",
+            "pattern": "(mostr(?:o|i)|nessie)",
+            "description": "Sta guardando te.",
+            "on": {
+              "saluta": {
+                "__fn__": true,
+                "source": "async () => {\n\t\t\t\t\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.rock.interactors.nessie.onGreet[i++]+\" \", {cr:false});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.rock.interactors.nessie.onGreet[i++], {reversed: true, cr:false});\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(\" \"+i18n.AvventuraNelCastelloJS.rooms.rock.interactors.nessie.onGreet[i++]);\n\t\t\t\t\t\t\t\t\t}"
+              },
+              "uccidi": "Fai presto a dirlo!"
+            }
+          },
+          "scoglio": {
+            "label": "lo scoglio",
+            "pattern": "scoglio",
+            "description": "E' costituito da roccia persilicica a struttura granulare oligocristallina, per lo più a grana medio-fine.\nL'aggregato cristallino fondamentale è composto in prevalenza da quarzo e feldspati, con laminette micacee in quantità subordinata.\nOsservando in dettaglio i feldspati, si possono notare ortoclasio (o microclino), albite ed altri plagioclasi sodici. Le miche sono rappresentate da biotite e muscovite, frammiste ad altri componenti femici, anfiboli in particolare.\nNella struttura sono presenti anche piccoli cristalli di apatite e zircone, come pure granuli di magnetite e pirite."
+          },
+          "lago": {
+            "label": "il lago",
+            "pattern": "lago|acqua"
+          }
+        },
+        "override": {
+          "commands": {
+            "nuota": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.rock.override.commands.swim[i++]);\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(1200);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.rock.override.commands.swim[i++]+\" \",{cr:false});\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.rooms.rock.override.commands.swim[i++],{reversed: true, cr:false});\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(\" \"+i18n.AvventuraNelCastelloJS.rooms.rock.override.commands.swim[i++]);\n\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}"
+            }
+          }
+        },
+        "onEnter": {
+          "__fn__": true,
+          "source": "async() => {\n\t\t\t\t\t\tthis.startTimedEvent(\"nessie\");\n\t\t\t\t\t\tthis.altriDati.punti = 999;\n\t\t\t\t\t}"
+        }
+      }
+    },
+    "objects": {
+      "paracadute": {
+        "label": "un paracadute",
+        "pattern": "paracadute",
+        "posizione": "aereo",
+        "on": {
+          "cerca|prendi|usa|indossa": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tif(this.inventario.paracadute)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.parachute.onWear\n\t\t\t\t\t\t\tif(this.stanzaCorrente.key == 'aereo')\n\t\t\t\t\t\t\t\treturn await this.runSequence(\"paracadute\");\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}"
+          },
+          "guarda": "Non hai mai visto un paracadute? Ma da dove vieni?",
+          "apri": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\treturn this.inventario.paracadute ?\n\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.objects.parachute.onOpen.notHere :\n\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.objects.parachute.onOpen.dontHaveIt\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "osso": {
+        "dlabel": "un osso",
+        "label": [
+          "un osso",
+          "un osso tranciato"
+        ],
+        "pattern": "osso|femore|tibia",
+        "posizione": "segretaCastello",
+        "status": 0,
+        "on": {
+          "guarda": "Potrebbe essere un femore, o forse una tibia. Non so, non me ne intendo di anatomia.",
+          "cerca": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\treturn this.inventario.osso == undefined ? \n\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.objects.bone.onLookFor.dontHaveIt :\n\t\t\t\t\t\t\t\ti18n.AvventuraNelCastelloJS.objects.bone.onLookFor.inYourHand;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "mazza": {
+        "label": "una mazza ferrata",
+        "pattern": "mazza(?: ferrata)?",
+        "description": "E' un'arma da battaglia. Non può sfondare un muro, ma può senz'altro venirti utile.",
+        "posizione": "depositoAttrezzi",
+        "visibile": true
+      },
+      "gatto": {
+        "dlabel": "un gatto",
+        "label": [
+          "un gatto accovacciato per terra",
+          "un gatto"
+        ],
+        "pattern": "(gatto|micio)",
+        "description": "E' un caro, piccolo, simpatico micino.",
+        "posizione": "salone",
+        "status": 0,
+        "visibile": true,
+        "on": {
+          "prendi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.inventario.gatto !== undefined)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.cat.onTake.alreadyIn;\n\t\t\t\t\t\t\tif(await this.canITakeThat(this.stanzaCorrente.objects.gatto)){\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.objects.gatto.status=1;\n\t\t\t\t\t\t\t\tthis._aggiungiInInventario(this.stanzaCorrente.objects.gatto);\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.cat.onTake.gotIt;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          },
+          "lascia": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tthis.inventario.gatto.status=0;\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}"
+          },
+          "accarezza": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cat.onPet[0],{printDelay: 75, cr:false});\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cat.onPet[1]);\n\t\t\t\t\t\t}"
+          },
+          "parla|saluta": "Il gatto ti fissa con aria interessata, le oblique pupille ridotte a due strette fessure, poi decide (probabilmente) che la tua intelligenza è solo apparente, e volge altrove lo sguardo.",
+          "uccidi": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\tdelete this.inventario.gatto;\n\t\t\t\t\t\t\tthis.datiAvventura.objects.gatto.posizione = null;\n\t\t\t\t\t\t\tthis.refreshOggettiInStanza();\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.cat.onKill.join(\"\\n\");\n\t\t\t\t\t\t}"
+          },
+          "nutri": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.inventario.coppaLattemiele == undefined){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cat.onFeed.nothingSuitable);\n\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tswitch(this.inventario.coppaLattemiele.status){\n\t\t\t\t\t\t\t\tcase 0:\n\t\t\t\t\t\t\t\t\tfor(let i=1; i<=10; i++){\n\t\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cat.onFeed.lep,{printDelay:75});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cat.onFeed.finished.join(\"\\n\"));\n\t\t\t\t\t\t\t\t\tthis.inventario.coppaLattemiele.status = 1;\n\t\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t\tcase 1:\n\t\t\t\t\t\t\t\t\treturn this.inventario.coppaLattemiele.EMPTY;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "spada": {
+        "dlabel": "una spada",
+        "label": [
+          "una spada",
+          "una spada incantata"
+        ],
+        "pattern": "spada",
+        "description": "E' di pregevole fattura.",
+        "posizione": "salaTrofei",
+        "status": 0,
+        "visibile": false,
+        "on": {
+          "guarda": {
+            "__fn__": true,
+            "source": "() => {\n\t\t\t\t\t\t\tif(this.inventario.spada){\n\t\t\t\t\t\t\t\tthis.inventario.spada.status = 1;\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"vistoSortilegio\");\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sword.onLook\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}"
+          }
+        },
+        "linkedObjects": [
+          "sortilegio"
+        ],
+        "sortilegio": {
+          "__fn__": true,
+          "source": "async (ask) =>{\n\t\t\t\t\t\tif(this.inventario.spada === undefined){\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.spada.status == 0)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sword.spell.dontKnow\n\t\t\t\t\t\t\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sword.spell.dontRemember\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif(this.inventario.spada){\n\t\t\t\t\t\t\tif(this.inventario.spada.status == 0)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sword.spell.dontKnow\n\n\t\t\t\t\t\t\tif(ask){\n\t\t\t\t\t\t\t\tlet res = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.objects.sword.spell.question);\n\t\t\t\t\t\t\t\tif(res == false){\n\t\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tlet pre = ask ? \"\\n\" : \"\";\n\n\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.fantasma !== undefined && this.stanzaCorrente.interactors.fantasma.visibile){\n\t\t\t\t\t\t\t\tif(this.altriDati.golaSecca){\n\t\t\t\t\t\t\t\t\tawait this.CRT.printTyping(pre+i18n.AvventuraNelCastelloJS.objects.sword.spell.fail.join(\"\\n\"), {printDelay: 100});\n\t\t\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.fantasma.neutralizzato = true;\n\t\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.fantasma.visibile = false;\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"eliminatoFantasma\");\n\t\t\t\t\t\t\t\treturn pre+i18n.AvventuraNelCastelloJS.objects.sword.spell.success;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\treturn pre+this.Thesaurus.defaultMessages.NON_SUCCEDE_NIENTE;\n\t\t\t\t\t\t}\n\t\t\t\t\t}"
+        }
+      },
+      "sortilegio": {
+        "label": "il sortilegio",
+        "pattern": "sortilegio|incantesimo",
+        "posizione": null,
+        "on": {
+          "guarda": {
+            "__fn__": true,
+            "source": "async () =>{\n\t\t\t\t\t\t\tif(this.inventario.spada && this.inventario.spada.status == 1){\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.spell.onLook;\n\t\t\t\t\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn this.Thesaurus.defaultMessages.QUI_NON_NE_VEDO;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "coppaLattemiele": {
+        "dlabel": "una coppa",
+        "label": [
+          "una coppa colma di lattemiele",
+          "una coppa vuota"
+        ],
+        "pattern": "coppa",
+        "description": [
+          "E' piena di lattemiele.",
+          "E' completamente vuota."
+        ],
+        "posizione": "salaPranzo",
+        "status": 0,
+        "visibile": true,
+        "linkedObjects": [
+          "latteMiele"
+        ],
+        "EMPTY": "La coppa è vuota."
+      },
+      "latteMiele": {
+        "label": "il lattemiele",
+        "pattern": "lattemiele",
+        "description": "A guardarlo ed annusarlo sembra buono.",
+        "posizione": null,
+        "bevuto": false,
+        "on": {
+          "bevi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.inventario.coppaLattemiele){\n\t\t\t\t\t\t\t\tif(this.inventario.coppaLattemiele.status == 0){\n\t\t\t\t\t\t\t\t\tthis.inventario.coppaLattemiele.status = 1;\n\t\t\t\t\t\t\t\t\tthis.datiAvventura.objects.latteMiele.bevuto = true;\n\t\t\t\t\t\t\t\t\tthis.altriDati.golaSecca = false;\n\t\t\t\t\t\t\t\t\tthis.startTimedEvent(\"latteMiele\");\n\t\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.milkAndHoney.onDrink.success;\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\treturn this.inventario.coppaLattemiele.EMPTY;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.milkAndHoney.onDrink.fail;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+          },
+          "offri": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\t// Gatto?\n\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.gatto || this.inventario.gatto){\n\t\t\t\t\t\t\t\tlet gatto = this.stanzaCorrente.objects.gatto ? \n\t\t\t\t\t\t\t\t\tthis.stanzaCorrente.objects.gatto :\n\t\t\t\t\t\t\t\t\tthis.inventario.gatto;\n\t\t\t\t\t\t\t\tawait gatto.on.nutri();\n\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.fantasma)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.milkAndHoney.onOffer.toGhost;\n\n\t\t\t\t\t\t\tif(this.stanzaCorrente.objects.orco)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.milkAndHoney.onOffer.toOgre;\n\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.milkAndHoney.onOffer.toWho;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "liuto": {
+        "label": "un liuto",
+        "pattern": "liuto",
+        "description": "Questo strumento rallegrava le feste danzanti che si svolgevano in occasione dei raccolti, delle vittorie, delle cerimonie, e di tutti i pretesti che potessero giustificare una festa danzante.",
+        "posizione": "salaMusica",
+        "visibile": true,
+        "on": {
+          "suona": "Le corde sono rotte."
+        }
+      },
+      "arpa": {
+        "label": "un'arpa",
+        "pattern": "arpa",
+        "description": "Questo strumento accompagnava le tristi e le liete storie che il bardo del castello cantilenava nelle lunghe sere d'inverno, mentre tutti erano raccolti intorno, rapiti dall'incanto delle antiche leggende.",
+        "posizione": "salaMusica",
+        "visibile": true,
+        "on": {
+          "suona": "Le corde sono rotte."
+        }
+      },
+      "cornamusa": {
+        "label": "una cornamusa",
+        "pattern": "cornamusa",
+        "description": "Questo strumento accompagnava le spedizioni militari condotte personalmente dal Re, scandendo con il suo alto lamento ritmato il passo pesante dei soldati in marcia.",
+        "posizione": "salaMusica",
+        "visibile": true,
+        "on": {
+          "suona": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.key != 'cellaAlchimista'){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.bagpipe.onPlay.fail[0]);\n\t\t\t\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.bagpipe.onPlay.fail[1]);\n\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.volume.aperto){\n\t\t\t\t\t\t\t\tawait this.CRT.printTyping(this.Thesaurus.defaultMessages.ANCORA);\n\t\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.bagpipe.onPlay.success);\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"apertoVolume\");\n\t\t\t\t\t\t\tthis.stanzaCorrente.interactors.volume.aperto = true;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "foglio": {
+        "label": "un foglio bruciacchiato",
+        "pattern": "foglio|carta",
+        "description": "Benché‚ sia parzialmente consumato dalle fiamme, si riesce ancora a leggere.",
+        "posizione": "biblioteca",
+        "visibile": false,
+        "on": {
+          "leggi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.inventario.foglio === undefined){\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sheet.onRead.dontHaveIt;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.altriDati.iotaid.iota = true;\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"lettoIota\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.sheet.onRead.success;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "cuscino": {
+        "label": "un cuscino",
+        "pattern": "cuscino",
+        "description": "Non pensare a dormire: pensa a come uscire di qui.",
+        "posizione": "salaTrono",
+        "on": {
+          "alza|spingi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.cuscino.posizione != \"salaTrono\"){\n\t\t\t\t\t\t\t\treturn this.Thesaurus.verbs.alza.defaultMessage\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.astuccio);\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"trovatoAstuccio\");\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.cushion.onLiftUp);\n\t\t\t\t\t\t}"
+          },
+          "prendi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(await this.canITakeThat(this.stanzaCorrente.objects.cuscino) == false){\n\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\tif( this.stanzaCorrente.objects.cuscino ){\n\t\t\t\t\t\t\t\tawait this.stanzaCorrente.objects.cuscino.on['alza|spingi']();\n\t\t\t\t\t\t\t\tawait this.CRT.println(\"\");\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "astuccio": {
+        "label": "un astuccio",
+        "pattern": "astuccio",
+        "description": "Il legno dell'astuccio è intarsiato con grande cura.",
+        "posizione": "salaTrono",
+        "visibile": false,
+        "peso": -1,
+        "on": {
+          "prendi": "E' avvitato al sedile del trono.",
+          "svita": "Non possiedi lo strumento adatto.",
+          "apri": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.pergamena);\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"trovataPergamena\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.case.onOpen;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "pergamena": {
+        "label": "una pergamena",
+        "pattern": "pergamena",
+        "description": "E' scolorita dal tempo, ma si legge ancora bene.",
+        "posizione": "salaTrono",
+        "visibile": false,
+        "tradotta": false,
+        "on": {
+          "leggi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.inventario.pergamena === undefined){\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.scroll.onRead.dontHaveIt;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.scroll.onRead.fail;\n\t\t\t\t\t\t}"
+          },
+          "traduci": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.interactors.dizionario && this.stanzaCorrente.interactors.dizionario.visibile === undefined){\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"tradottaPergamena\");\n\t\t\t\t\t\t\t\tthis.datiAvventura.objects.pergamena.tradotta = true;\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.scroll.onTranslate.success.join(\"\\n\");\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.scroll.onTranslate.fail;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "orco": {
+        "label": "un feroce orco dalle zanne aguzze",
+        "pattern": "(?:feroce )?orco",
+        "posizione": "largoCunicolo",
+        "visibile": true,
+        "peso": -1,
+        "on": {
+          "guarda": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.ogre.onLook[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(1800)\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.ogre.onLook[1]);\n\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t}"
+          },
+          "uccidi": "Fai presto a dirlo!",
+          "nutri": "Non ha fame (per fortuna!).",
+          "parla|saluta": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.objects.ogre.onTalkOrGreet, {reversed:true});\n\t\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\t\treturn true;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "nano": {
+        "dlabel": "un nano",
+        "label": [
+          "un piccolo nano con un grosso diamante",
+          "un piccolo nano molto simpatico"
+        ],
+        "pattern": "(?:piccolo )?nano",
+        "description": "E' piuttosto piccolo.",
+        "posizione": "legnaia",
+        "status": 0,
+        "visibile": true,
+        "peso": -1,
+        "on": {
+          "saluta": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.diamante.visibile)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.dwarf.onGreet.withoutDiamond;\n\n\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.diamante);\n\t\t\t\t\t\t\tthis.stanzaCorrente.objects.nano.status = 1;\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"salutatoNano\");\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.dwarf.onGreet.withDiamond, {printDelay:80});\n\t\t\t\t\t\t}"
+          },
+          "nutri": "Ha appena cenato.",
+          "uccidi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.objects.dwarf.onKill.join(\"\\n\"));\n\t\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+          },
+          "parla": "Sii più specifico."
+        }
+      },
+      "diamante": {
+        "label": "un diamante",
+        "pattern": "diamante",
+        "description": "Più osservi il meraviglioso gioiello, più cresce dentro di te una sfrenata bramosia di possederlo.",
+        "posizione": "legnaia",
+        "on": {
+          "prendi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.nano.status == 0)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.diamond.MINE;\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tif(await this.canITakeThat(this.stanzaCorrente.objects.diamante) == false){\n\t\t\t\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tthis._aggiungiInInventario(this.datiAvventura.objects.diamante);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(this.Thesaurus.defaultMessages.FATTO);\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"presoDiamante\");\t\t\t\t\t\t\t\n\t\t\t\t\t\t}"
+          },
+          "rompi": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.nano.status == 0)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.diamond.MINE;\n\t\t\t\t\t\t\tif(this.inventario.mazza === undefined)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.diamond.onBreak.needSomethingHard;\n\t\t\t\t\t\t\tdelete this.inventario.diamante;\n\t\t\t\t\t\t\tthis.datiAvventura.objects.diamante.posizione = null;\n\t\t\t\t\t\t\tthis.datiAvventura.objects.chiave.posizione = this.stanzaCorrente.key;\n\t\t\t\t\t\t\tthis.scopri(this.datiAvventura.objects.chiave);\n\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"trovataChiave\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.diamond.onBreak.success;\n\t\t\t\t\t\t}"
+          },
+          "guarda": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tif(this.datiAvventura.objects.diamante.visibile)\n\t\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.diamond.onLook;\n\t\t\t\t\t\t\treturn null;\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "chiave": {
+        "label": "una piccola chiave di cristallo",
+        "pattern": "(piccola )?chiave",
+        "description": "E' molto strana, troppo piccola per essere la chiave di una porta o di un portone. E sembra anche fragile. A cosa mai potrà servire?",
+        "posizione": null,
+        "visibile": false
+      },
+      "corno": {
+        "label": "un corno",
+        "pattern": "corno",
+        "description": "E' decorato con scene di caccia che si avvolgono a spirale partendo dall'imboccatura. Cavalieri al galoppo inseguono la preda, mentre grandi uccelli volteggiano sopra le loro teste.",
+        "posizione": "cameraTesoro",
+        "visibile": false,
+        "on": {
+          "suona": {
+            "__fn__": true,
+            "source": "async() => {\n\t\t\t\t\t\t\tif(this.stanzaCorrente.key == \"cimaTorre\"){\n\t\t\t\t\t\t\t\tthis.aggiungiPunti(\"presoDaAquila\");\n\t\t\t\t\t\t\t\tthis.runSequence(\"aquila\");\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tif(this.stanzaCorrente.key == \"scoglio\"){\n\t\t\t\t\t\t\t\tthis.runSequence(\"finale\");\n\t\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.objects.horn.onPlay\n\t\t\t\t\t\t}"
+          }
+        }
+      }
+    },
+    "sequenze": {
+      "titolo": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tthis.CRT.clear();\n\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\tawait this.CRT.println(\"    |>                    |>\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"    |                     |\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"   / \\\\     _   _   _     / \\\\\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"  /   \\\\   | |_| |_| |   /   \\\\\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\" /  #  \\\\  |         |  /  #  \\\\\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"/=======\\\\ |   <#>   | /=======\\\\\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"  |   |___|         |___|   |\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"  |   |       ###       |   |\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"  |   |      #####      |   |\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"  |   |      #####      |   |\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"===============================\",{m: true});\n\t\t\t\t\tawait this.CRT.println(\"<span class='reversed'>\"+i18n.title+\"</span>\");\n\t\t\t\t\tawait this.CRT.println(\"===============================\\n\",{m: true});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++], {nlAfter: 1});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++], {nlAfter: 1});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++], {nlAfter: 1});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.title[i++], {nlAfter: 1});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t}"
+      },
+      "prologo": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tthis.CRT.clear();\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.prologue[i++],{reversed:true, nlBefore:2});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.prologue[i++]);\n\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.prologue[i++]);\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.prologue[i++]);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.prologue[i++],{nlBefore: 1});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t}"
+      },
+      "intro": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tawait this.CRT.clear();\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.print(\"     \");\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.intro[i++],{reversed:true, nlAfter: 1});\n\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.intro[i++]);\n\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.intro[i++]);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.intro[i++],{nlAfter:1});\n\t\t\t\t\tthis.startTimedEvent(\"aereo\");\n\t\t\t\t}"
+      },
+      "paracadute": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tif(this.inventario.paracadute == undefined){\n\t\t\t\t\t\tthis._aggiungiInInventario(this.datiAvventura.objects.paracadute);\n\t\t\t\t\t\tthis.aggiungiPunti(\"paracaduteIndossato\");\n\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.parachute[i++]);\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.parachute[i++]);\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.parachute[i++],{nlBefore:1});\n\t\t\t\t\t\treturn true;\n\t\t\t\t\t}\n\t\t\t\t\treturn this.Thesaurus.defaultMessages.GIA_ADDOSSO\n\t\t\t\t}"
+      },
+      "volo": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++]);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++]);\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:25});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:25});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i++],{printDelay:1});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.fly.string[i].replace(i18n.AvventuraNelCastelloJS.sequences.fly.reversed,`<span class='reversed'>${i18n.AvventuraNelCastelloJS.sequences.fly.reversed}</span>`),{printDelay:1,nlAfter:1});\n\t\t\t\t\t//await this.CRT.println(\"                 ===========\",{printDelay:1});\n\t\t\t\t\tawait this.s0();\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tthis.die();\n\t\t\t\t}"
+      },
+      "saltoAereo": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet i=0;\n\t\t\t\t\t\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.jumpFromPlane[i++]);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.jumpFromPlane[i++]);\n\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.jumpFromPlane[i++],{printDelay:75});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.jumpFromPlane[i++],{printDelay:75,nlAfter:1});\n\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\tawait this.entra('piazzaArmi');\n\t\t\t\t}"
+      },
+      "braccio": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet answer = await this.yesNoQuestion(i18n.AvventuraNelCastelloJS.sequences.arm.question);\n\t\t\t\t\tif(answer){\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.arm.answer[0],{nlBefore: 1});\n\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.arm.answer[1],{printDelay:75});\n\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\treturn false;\n\t\t\t\t\t}\n\t\t\t\t\tthis.gameLoop(false);\n\t\t\t\t\treturn false;\n\t\t\t\t}"
+      },
+      "segretaCastello": {
+        "__fn__": true,
+        "source": "async(mSubjects) => {\n\t\t\t\t\t\t\n\t\t\t\t\tlet cosa = mSubjects[0];\n\t\t\t\t\tlet target = mSubjects[1] === undefined ? this.stanzaCorrente.interactors.foro : mSubjects[1];\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\tif(cosa == this.stanzaCorrente.interactors.braccio && target == this.stanzaCorrente.interactors.foro) \n\t\t\t\t\t\treturn await this.runSequence(\"braccio\"); \n\t\t\t\t\t\t\t\t\n\t\t\t\t\tif(cosa == this.inventario.osso && target == this.stanzaCorrente.interactors.foro){\n\n\t\t\t\t\t\tif(this.inventario.osso.status == 0){\n\n\t\t\t\t\t\t\tthis.inventario.osso.status = 1;\n\t\t\t\t\t\t\tthis.aggiungiPunti(\"apertaFessura\");\n\t\t\t\t\t\t\tlet i=0;\n\t\t\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.sequences.castleDungeon.success[i++],{cr: false});\n\t\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.castleDungeon.success[i++]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.sequences.castleDungeon.success[i++],{printDelay:200});\n\t\t\t\t\t\t\tdelete this.stanzaCorrente.interactors.fessura.visibile;\n\t\t\t\t\t\t\tthis.abilitaDirezione(\"o\");\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\tawait this.CRT.printTyping (this.Thesaurus.defaultMessages.ANCORA);\n\t\t\t\t\t\t}\n\t\t\t\t\t\t\n\t\t\t\t\t\treturn true;\t\n\n\t\t\t\t\t}\n\n\t\t\t\t\tif(this.inventario[cosa.key] === undefined)\n\t\t\t\t\t\treturn null;\n\t\t\t\t\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.castleDungeon.fail);\n\t\t\t\t}"
+      },
+      "ritratti": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.sequences.portrait[0]+\"\\n\"+i18n.AvventuraNelCastelloJS.sequences.portrait[1],{nlBefore:1, printDelay:150});\n\t\t\t\t\tawait this.CRT.printTyping (i18n.AvventuraNelCastelloJS.sequences.portrait[2]);\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tthis.entra('salaSpecchi');\n\t\t\t\t}"
+      },
+      "mangia": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eat[i++],{cr:false});\n\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\tawait this.CRT.printTyping(\"@*!+#*\",{printDelay:160});\n\t\t\t\t\tawait this.CRT.sleep(1500);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eat[i++],{nlAfter: 1});\n\t\t\t\t\tawait this.CRT.printTyping(\"    ~_~_~_~_~_~     \\\\/\\\\/\\\\/\\\\/\\\\/     {*} {*} {*}     =|=|=|=|=     >><<>><<     \",{printDelay:160, reversed:true, nlAfter:1});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eat[i++],{printDelay:160});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eat[i++]);\n\t\t\t\t}"
+      },
+      "aquila": {
+        "__fn__": true,
+        "source": "async() => {\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.sleep(2400);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.sleep(1800);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++],{printDelay:120});\n\t\t\t\t\tawait this.fakeInput();\n\t\t\t\t\tawait this.s3();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++],{nlBefore:2});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++]);\n\t\t\t\t\tawait this.CRT.sleep(2400);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++],{printDelay:30, cr:false, nlBefore:1});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.eagle[i++]);\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tthis.runSequence(this.inventario.paracadute ? \"scoglio\" : \"ancora\");\n\t\t\t\t}"
+      },
+      "scoglio": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.rock[0],{printDelay:75});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.rock[1],{printDelay:75, nlAfter:1});\n\t\t\t\t\tawait this.CRT.sleep(1000);\n\t\t\t\t\tawait this.entra('scoglio');\n\t\t\t\t}"
+      },
+      "ancora": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet i=0;\n\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:75});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:25});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:25});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:50});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:100});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++],{printDelay:1});\n\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.sequences.again.string[i++].replace(i18n.AvventuraNelCastelloJS.sequences.again.reversed,`<span class='reversed'>${i18n.AvventuraNelCastelloJS.sequences.again.reversed}</span>`,{printDelay:1}));\n\t\t\t\t\tawait this.s0();\n\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.again.string[i], {nlBefore:1});\n\t\t\t\t\tthis.die();\n\t\t\t\t}"
+      },
+      "finale": {
+        "__fn__": true,
+        "source": "async () => {\n\t\t\t\t\tlet i=0;\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.sleep(2400);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.sleep(1800);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:120});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30,nlBefore:1});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30,nlBefore:1});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30});\n\t\t\t\t\tawait this.CRT.sleep(1800);\n\t\t\t\t\tfor(let j=1; j<=12; j++){\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30, nlBefore: j == 2 || j == 12 ? 1: 0});\n\t\t\t\t\t}\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++], {printDelay:30});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30, cr:false});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30, cr:false, reversed: true});\n\t\t\t\t\tawait this.s0();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30});\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30, cr:false});\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30, cr:false, reversed: true});\n\t\t\t\t\t\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:30});\n\t\t\t\t\tawait this.CRT.sleep(1800);\n\t\t\t\t\tawait this.CRT.printTyping(\"    \",{cr:false, nlBefore:1});\n\t\t\t\t\tlet ldd = i18n.AvventuraNelCastelloJS.sequences.final[i++];\n\n\t\t\t\t\tfor(let i in ldd){\n\t\t\t\t\t\tawait this.CRT.printTyping(ldd[i], {blinkingText:true, cr:false});\n\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t}\n\n\t\t\t\t\tawait this.CRT.sleep(1800);\n\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.sequences.final[i++],{printDelay:120,nlBefore:2});\n\t\t\t\t\tawait this.s0(2);\n\t\t\t\t\tawait this.CRT.wait();\n\t\t\t\t\tawait this.CRT.clear();\n\t\t\t\t\tthis.reload(this.datiIniziali);\n\t\t\t\t\tawait this.run();\n\t\t\t\t}"
+      }
+    },
+    "timedEvents": {
+      "aereo": {
+        "start": 7,
+        "onLimit": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\tawait this.CRT.sleep(500);\n\t\t\t\t\t\tawait this.CRT.println(i18n.AvventuraNelCastelloJS.timedEvents.plane[3],{blinking:true, nlBefore: 1});\n\t\t\t\t\t\tawait this.s0(2);\n\t\t\t\t\t\tthis.die();\n\t\t\t\t\t}"
+        },
+        "steps": {
+          "1": {
+            "__fn__": true,
+            "source": "async () => this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.plane[2],{nlBefore:1})"
+          },
+          "2": {
+            "__fn__": true,
+            "source": "async () => this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.plane[1],{nlBefore:1})"
+          },
+          "3": {
+            "__fn__": true,
+            "source": "async () => this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.plane[0],{nlBefore:1})"
+          }
+        }
+      },
+      "whisky": {
+        "start": 1,
+        "steps": {
+          "1": {
+            "__fn__": true,
+            "source": "async () => {\n\t\t\t\t\t\t\tthis.datiAvventura.timedEvents.whisky.currentStep = 2\n\t\t\t\t\t\t\tlet n = this.getRandomIntInclusive(1,3);\n\t\t\t\t\t\t\tif(n == 1){\n\t\t\t\t\t\t\t\tthis.CRT.println(i18n.AvventuraNelCastelloJS.timedEvents.whiskey,{reversed:true, nlBefore: 1});\n\t\t\t\t\t\t\t\tawait this.s0();\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+          }
+        }
+      },
+      "latteMiele": {
+        "start": 2,
+        "onLimit": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\tthis.altriDati.golaSecca = true;\n\t\t\t\t\t\treturn true;\n\t\t\t\t\t}"
+        }
+      },
+      "nessie": {
+        "start": 3,
+        "onLimit": {
+          "__fn__": true,
+          "source": "async () => {\n\t\t\t\t\t\tawait this.CRT.print(i18n.AvventuraNelCastelloJS.timedEvents.nessie[2],{reversed:true, nlBefore: 1});\n\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.nessie[3]);\n\t\t\t\t\t\tthis.die();\n\t\t\t\t\t\treturn false;\n\t\t\t\t\t}"
+        },
+        "steps": {
+          "1": {
+            "__fn__": true,
+            "source": "async () => this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.nessie[1],{nlBefore:1})"
+          },
+          "2": {
+            "__fn__": true,
+            "source": "async () => this.CRT.printTyping(i18n.AvventuraNelCastelloJS.timedEvents.nessie[0],{nlBefore:1})"
+          }
+        }
+      }
+    }
+  },
+  "altriDati": {
+    "mosse": 0,
+    "punti": 0,
+    "bigmeow": {
+      "attivo": false
+    },
+    "iotaid": {
+      "iota": false,
+      "id": false,
+      "pronunciato": false
+    },
+    "pensa": 0,
+    "golaSecca": true
+  },
+  "datiPunti": {
+    "puntiMax": 1000,
+    "puntiLevel": {
+      "34": "Avventuriero dei miei stivali",
+      "58": "Scemo del villaggio",
+      "149": "Servo della gleba",
+      "299": "Vile Meccanico",
+      "449": "Vice Palafreniere aggiunto",
+      "649": "Lanzichenecco",
+      "898": "Arcivescovo  di Canterbury",
+      "948": "Barone Rampante",
+      "998": "Visconte dimezzato",
+      "999": "Conte della malora"
+    },
+    "puntiAzione": {
+      "paracaduteIndossato": {
+        "i": 15
+      },
+      "saltoAereo": {
+        "i": 20
+      },
+      "apertoPortone": {
+        "i": 6
+      },
+      "entrato": {
+        "i": 18
+      },
+      "cadutoInSegreta": {
+        "i": 17
+      },
+      "apertaFessura": {
+        "i": 35
+      },
+      "uscitoDaSegreta": {
+        "i": 15
+      },
+      "apertoVolume": {
+        "i": 35
+      },
+      "lettoBigMeow": {
+        "i": 28
+      },
+      "scesoInSotterranei": {
+        "i": 33
+      },
+      "eliminatoOrco": {
+        "i": 50
+      },
+      "vistoSortilegio": {
+        "i": 40
+      },
+      "eliminatoFantasma": {
+        "i": 50
+      },
+      "apertoForziere": {
+        "i": 15
+      },
+      "trovatoCorno": {
+        "i": 12
+      },
+      "salutatoNano": {
+        "i": 50
+      },
+      "presoDiamante": {
+        "i": 5
+      },
+      "lettoId": {
+        "i": 23
+      },
+      "apertoLibro": {
+        "i": 10
+      },
+      "lettoIota": {
+        "i": 18
+      },
+      "pronunciatoIotaid": {
+        "i": 25
+      },
+      "entratoSalaTrono": {
+        "i": 25
+      },
+      "trovatoAstuccio": {
+        "i": 15
+      },
+      "trovataPergamena": {
+        "i": 20
+      },
+      "scopertoDizionario": {
+        "i": 25
+      },
+      "tradottaPergamena": {
+        "i": 53
+      },
+      "entratoLabirinto": {
+        "i": 31
+      },
+      "risoltoLabirinto": {
+        "i": 75
+      },
+      "trovataChiave": {
+        "i": 50
+      },
+      "caricatoOrologio": {
+        "i": 30
+      },
+      "suonaMezzanotte": {
+        "i": 50
+      },
+      "salitoTorre": {
+        "i": 5
+      },
+      "presoDaAquila": {
+        "i": 50
+      }
+    }
+  }
+}

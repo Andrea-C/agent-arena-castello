@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castello API - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a2e;
+            color: #eee;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #00d4aa;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        h2 {
+            color: #00d4aa;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #00d4aa;
+            padding-bottom: 5px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: #16213e;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card.full-width {
+            grid-column: span 2;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #2d3a5a;
+        }
+        
+        th {
+            background: #0f3460;
+            color: #00d4aa;
+        }
+        
+        tr:hover {
+            background: #1f2f50;
+        }
+        
+        .status-playing {
+            color: #00ff88;
+            font-weight: bold;
+        }
+        
+        .status-not-playing {
+            color: #ff8800;
+        }
+        
+        .action-input {
+            color: #ffcc00;
+            font-family: monospace;
+        }
+        
+        .action-output {
+            color: #aaa;
+            font-size: 0.9em;
+            max-width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .refresh-btn {
+            background: #00d4aa;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        
+        .refresh-btn:hover {
+            background: #00b894;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-box {
+            background: #0f3460;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            color: #00d4aa;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .timestamp {
+            color: #666;
+            font-size: 0.85em;
+        }
+        
+        .no-data {
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Avventura nel Castello - Dashboard</h1>
+        
+        <button class="refresh-btn" onclick="refreshAll()">Aggiorna Dati</button>
+        
+        <div class="stats" id="stats">
+            <div class="stat-box">
+                <div class="stat-number" id="total-players">0</div>
+                <div class="stat-label">Giocatori Totali</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="active-sessions">0</div>
+                <div class="stat-label">Sessioni Attive</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" id="total-actions">0</div>
+                <div class="stat-label">Azioni Recenti</div>
+            </div>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <h2>Sessioni Attive</h2>
+                <div id="sessions-content">
+                    <p class="no-data">Caricamento...</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Giocatori Registrati</h2>
+                <div id="players-content">
+                    <p class="no-data">Caricamento...</p>
+                </div>
+            </div>
+            
+            <div class="card full-width">
+                <h2>Azioni Recenti</h2>
+                <div id="actions-content">
+                    <p class="no-data">Caricamento...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function fetchSessions() {
+            try {
+                const response = await fetch('/dashboard/api/sessions');
+                const data = await response.json();
+                
+                document.getElementById('active-sessions').textContent = data.sessions.length;
+                
+                if (data.sessions.length === 0) {
+                    document.getElementById('sessions-content').innerHTML = '<p class="no-data">Nessuna sessione attiva</p>';
+                    return;
+                }
+                
+                let html = '<table><tr><th>Giocatore</th><th>Stanza</th><th>Punti</th><th>Mosse</th></tr>';
+                data.sessions.forEach(session => {
+                    html += `<tr>
+                        <td>${session.player_name}</td>
+                        <td>${session.current_room || '-'}</td>
+                        <td>${session.points}</td>
+                        <td>${session.moves}</td>
+                    </tr>`;
+                });
+                html += '</table>';
+                document.getElementById('sessions-content').innerHTML = html;
+            } catch (err) {
+                console.error('Error fetching sessions:', err);
+            }
+        }
+        
+        async function fetchPlayers() {
+            try {
+                const response = await fetch('/dashboard/api/players');
+                const data = await response.json();
+                
+                document.getElementById('total-players').textContent = data.players.length;
+                
+                if (data.players.length === 0) {
+                    document.getElementById('players-content').innerHTML = '<p class="no-data">Nessun giocatore registrato</p>';
+                    return;
+                }
+                
+                let html = '<table><tr><th>Nome</th><th>Stato</th><th>Punti</th><th>Registrato</th></tr>';
+                data.players.forEach(player => {
+                    const statusClass = player.status === 'PLAYING' ? 'status-playing' : 'status-not-playing';
+                    html += `<tr>
+                        <td>${player.player_name}</td>
+                        <td class="${statusClass}">${player.status}</td>
+                        <td>${player.points}</td>
+                        <td class="timestamp">${formatDate(player.created_at)}</td>
+                    </tr>`;
+                });
+                html += '</table>';
+                document.getElementById('players-content').innerHTML = html;
+            } catch (err) {
+                console.error('Error fetching players:', err);
+            }
+        }
+        
+        async function fetchActions() {
+            try {
+                const response = await fetch('/dashboard/api/actions?limit=30');
+                const data = await response.json();
+                
+                document.getElementById('total-actions').textContent = data.actions.length;
+                
+                if (data.actions.length === 0) {
+                    document.getElementById('actions-content').innerHTML = '<p class="no-data">Nessuna azione registrata</p>';
+                    return;
+                }
+                
+                let html = '<table><tr><th>Ora</th><th>Giocatore</th><th>Input</th><th>Stanza</th><th>Punti</th><th>Output</th></tr>';
+                data.actions.forEach(action => {
+                    const output = action.action_output ? action.action_output.substring(0, 80) + (action.action_output.length > 80 ? '...' : '') : '-';
+                    html += `<tr>
+                        <td class="timestamp">${formatDate(action.created_at)}</td>
+                        <td>${action.player_name}</td>
+                        <td class="action-input">${action.action_input || '-'}</td>
+                        <td>${action.room || '-'}</td>
+                        <td>${action.points}</td>
+                        <td class="action-output" title="${escapeHtml(action.action_output || '')}">${escapeHtml(output)}</td>
+                    </tr>`;
+                });
+                html += '</table>';
+                document.getElementById('actions-content').innerHTML = html;
+            } catch (err) {
+                console.error('Error fetching actions:', err);
+            }
+        }
+        
+        function formatDate(dateStr) {
+            if (!dateStr) return '-';
+            const date = new Date(dateStr);
+            return date.toLocaleString('it-IT', { 
+                hour: '2-digit', 
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        function refreshAll() {
+            fetchSessions();
+            fetchPlayers();
+            fetchActions();
+        }
+        
+        // Initial load
+        refreshAll();
+        
+        // Auto-refresh every 5 seconds
+        setInterval(refreshAll, 5000);
+    </script>
+</body>
+</html>

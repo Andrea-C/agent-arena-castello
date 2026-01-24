@@ -1,0 +1,24 @@
+{
+  "name": "castello-api-app",
+  "version": "1.0.0",
+  "description": "Avventura nel Castello - API Server version",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "text-adventure",
+    "game",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sql.js": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "uuid": "^9.0.1"
+  }
+}

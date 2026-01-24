@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="IFEngine/css/style.css">
+	<link href="favicon.ico" rel="icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<title>Avventura nel Castello in Javascript</title>
+</head>
+<body>
+<div id="crt">
+	<div id="screen" style="position:relative">
+		<pre><span class="m" id="char" style="position:fixed; top:0; left:0; visibility:hidden">@</span><span id="fixed"></span><span id="txt"></span><span id="cursor"></span></pre>
+		<input type="text" id="mobileInput">
+	</div>
+</div>
+<script src="it-it.i18n.js"></script>
+<script src="IFEngine/js/Tone.js"></script>
+<script src="IFEngine/js/Sound.js"></script>
+<script src="IFEngine/js/CRT.js"></script>
+<script src="IFEngine/js/Thesaurus.js"></script>
+<script src="IFEngine/js/Parser.js"></script>
+<script src="IFEngine/js/IFEngine.js"></script>
+<script src="AvventuraNelCastelloJSEngine.js"></script>
+<script src="AvventuraNelCastelloJS.js"></script>
+<script>
+new Avventura().start();
+</script>
+</body>
+</html>

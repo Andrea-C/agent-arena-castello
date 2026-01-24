@@ -1,0 +1,288 @@
+:root{
+  --yellowF: #fa0;
+  --yellowB: #110700;
+  --yellowS: #fa0;
+  --yellowRevF: #420;
+  --yellowRevBs: #fa0;
+  --yellowRevS: #a00;
+
+  --greenF: #6f6;
+  --greenB: #000c00;
+  --greenS: #6f6;
+  --greenRevF: #030;
+  --greenRevBs: #0c0;
+  --greenRevS: #0c0;
+
+  --cyanF: #6ff;
+  --cyanB: #000c17;
+  --cyanS: #6ff;
+  --cyanRevF: #033;
+  --cyanRevBs: #0cc;
+  --cyanRevS: #0cc;
+
+  --whiteF: #fff;
+  --whiteB: #0c0c0c;
+  --whiteS: #fff;
+  --whiteRevF: #333;
+  --whiteRevBs: #ccc;
+  --whiteRevS: #ccc;
+}
+
+html,body{
+  margin:0px;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--yellowB);
+  color: var(--yellowF);;
+}
+
+
+#crt{
+  margin:20px;
+}
+
+#crt:before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("bg.png");
+    z-index: 2;
+    pointer-events: none;
+}
+
+#cursor{
+  border-right:none;
+  box-shadow: 0 0 0.3em var(--yellowF);;
+}
+
+#cursor.blinking{
+  border-right:12px solid var(--yellowF);;
+  animation: blink-caret 0.40s step-end infinite;
+}
+
+#mobileInput,
+#mobileInput:focus
+{
+  background-color: var(--yellowB);
+  color: var(--yellowF);;
+  border: 1px solid var(--yellowF);;
+  width: 100%;
+  margin-top: 1em;
+  display: none;
+  caret-color:black;
+  outline: none;
+}
+
+.blinkingText{
+  font-style:normal;
+  animation: blink-text 0.40s step-end infinite;
+}
+
+.reversed.blinkingText{
+  font-style:normal;
+  animation: blink-text-reversed 0.40s step-end infinite;
+}
+
+.reversed{
+  font-weight: bold;
+  background-color:var(--yellowF);;
+  color: var(--yellowRevF);
+  box-shadow: 0px 0px 0.4em var(--yellowRevBs);
+  text-shadow: 0px 0px 0.05em var(--yellowRevS) !important;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; box-shadow: none;}
+  50% { border-color: var(--yellowF); box-shadow: 0 0 0.6em var(--yellowF);}
+}
+
+
+
+@keyframes blink-text {
+  from, to { color: transparent;text-shadow: none; }
+  50% { color: var(--yellowF); text-shadow: 0 0 6px var(--yellowF);}
+}
+
+@keyframes blink-text-reversed {
+  from, to { visibility:visible; }
+  50% { visibility:hidden;}
+}
+
+#screen{
+  margin:0 auto;
+  padding:0;
+}
+
+pre{
+  margin:0;
+  padding:0;
+  white-space:pre-wrap;
+  word-wrap: break-word;
+  font-family: "Consolas","DejaVu Sans Mono", "Liberation Mono",monospace;
+  font-size:24px;
+  text-shadow: 0px 0px 6px var(--yellowS);
+}
+
+.m {
+  font-family: "Consolas","DejaVu Sans Mono", "Liberation Mono",monospace;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 400px){
+  pre{
+    font-size:20px;
+  }
+}
+
+@media screen and (max-width: 479px){
+  pre{
+    font-size:16px;
+  }
+}
+
+/* GREEN */
+
+body.green {
+  background-color: var(--greenB);;
+  color: var(--greenF);;
+}
+
+.green pre{
+  text-shadow: 0px 0px 6px var(--greenS);
+}
+
+.green #mobileInput{
+  color: var(--greenF);;
+  border: 1px solid var(--greenF);;
+}
+
+.green #cursor{
+  box-shadow: 0 0 0.3em var(--greenS);;
+}
+
+.green #cursor.blinking{
+  border-right:12px solid var(--greenF);;
+  animation: blink-caret-green 0.40s step-end infinite;
+}
+
+.green i, .green .blinkingText{
+  font-style:normal;
+  animation: blink-text-green 0.40s step-end infinite;
+}
+
+.green .reversed{
+  background-color:var(--greenF);;
+  color: var(--greenRevF);
+  box-shadow: 0px 0px 0.4em var(--greenRevBs);
+  text-shadow: 0px 0px 0.4em var(--greenRevS) !important;
+}
+
+@keyframes blink-caret-green {
+  from, to { border-color: transparent; box-shadow: none;}
+  50% { border-color: var(--greenF);; box-shadow: 0 0 0.6em var(--greenF);;}
+}
+
+@keyframes blink-text-green {
+  from, to { color: transparent ;text-shadow: none; }
+  50% { color: var(--greenF); text-shadow: 0 0 6px var(--greenF);}
+}
+
+/* CYAN */
+
+body.cyan {
+  background-color: var(--cyanB);;
+  color: var(--cyanF);;
+}
+
+.cyan pre{
+  text-shadow: 0px 0px 6px var(--cyanS);
+}
+
+.cyan #mobileInput{
+  color: var(--cyanF);;
+  border: 1px solid var(--cyanF);;
+}
+
+.cyan #cursor{
+  box-shadow: 0 0 0.3em var(--cyanS);;
+}
+
+.cyan #cursor.blinking{
+  border-right:12px solid var(--cyanF);;
+  animation: blink-caret-cyan 0.40s step-end infinite;
+}
+
+.cyan i, .cyan .blinkingText{
+  font-style:normal;
+  animation: blink-text-cyan 0.40s step-end infinite;
+}
+
+.cyan .reversed{
+  background-color:var(--cyanF);;
+  color: var(--cyanRevF);
+  box-shadow: 0px 0px 0.4em var(--cyanRevBs);
+  text-shadow: 0px 0px 0.4em var(--cyanRevS) !important;
+}
+
+@keyframes blink-caret-cyan {
+  from, to { border-color: transparent; box-shadow: none;}
+  50% { border-color: var(--cyanF);; box-shadow: 0 0 0.6em var(--cyanF);;}
+}
+
+@keyframes blink-text-cyan {
+  from, to { color: transparent;text-shadow: none; }
+  50% { color: var(--cyanF); text-shadow: 0 0 6px var(--cyanF);}
+}
+
+/* WHITE */
+
+body.white {
+  background-color: var(--whiteB);;
+  color: var(--whiteF);;
+}
+
+.white pre{
+  text-shadow: 0px 0px 6px var(--whiteS);
+}
+
+.white #mobileInput{
+  color: var(--whiteF);;
+  border: 1px solid var(--whiteF);;
+}
+
+.white #cursor{
+  box-shadow: 0 0 0.3em var(--whiteS);;
+}
+
+.white #cursor.blinking{
+  border-right:12px solid var(--whiteF);;
+  animation: blink-caret-white 0.40s step-end infinite;
+}
+
+.white i, .white .blinkingText{
+  font-style:normal;
+  animation: blink-text-white 0.40s step-end infinite;
+}
+
+.white .reversed{
+  background-color:var(--whiteF);;
+  color: var(--whiteRevF);
+  box-shadow: 0px 0px 0.4em var(--whiteRevBs);
+  text-shadow: 0px 0px 0.4em var(--whiteRevS) !important;
+}
+
+@keyframes blink-caret-white {
+  from, to { border-color: transparent; box-shadow: none;}
+  50% { border-color: var(--whiteF);; box-shadow: 0 0 0.6em var(--whiteF);;}
+}
+
+@keyframes blink-text-white {
+  from, to { color: transparent;text-shadow: none; }
+  50% { color: var(--whiteF); text-shadow: 0 0 6px var(--whiteF);} 
+}

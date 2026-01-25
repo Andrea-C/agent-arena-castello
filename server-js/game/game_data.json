@@ -2055,11 +2055,11 @@
         "directions": {
           "n": {
             "__fn__": true,
-            "source": "async () => this.stanzaCorrente.bonk()"
+            "source": "async () => this.stanzaCorrente.bonk.call(this)"
           },
           "o": {
             "__fn__": true,
-            "source": "async () => this.stanzaCorrente.bonk()"
+            "source": "async () => this.stanzaCorrente.bonk.call(this)"
           }
         },
         "bonk": {

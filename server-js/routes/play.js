@@ -72,6 +72,9 @@ function getGameEngine(playerId, session) {
             engine.Parser.setOverride(engine.stanzaCorrente.override);
             engine.refreshOggettiInStanza();
         }
+        
+        // Restore pending question state
+        engine.pendingQuestion = session.pending_question || null;
     }
     
     return engine;
@@ -124,7 +127,8 @@ function saveEngineState(playerId, engine, status = 'PLAYING') {
         inventory: engine.inventario,
         game_state: engine.altriDati,
         timed_events: engine.timedEvents,
-        dati_avventura: mutableDatiAvventura
+        dati_avventura: mutableDatiAvventura,
+        pending_question: engine.pendingQuestion || null
     });
 }
 
@@ -409,8 +413,72 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
         });
     }
     
-    // Process the input
-    const result = await engine.processInput(trimmedInput);
+    // Check if there's a pending yes/no question
+    if (engine.hasPendingQuestion()) {
+        const answer = engine.parseYesNoInput(trimmedInput);
+        
+        if (answer === null) {
+            // Invalid answer - re-prompt
+            engine.clearOutput();
+            const i18n = require('../game/i18n');
+            engine.print("(" + i18n.IFEngine.yesOrNo.yes + "/" + i18n.IFEngine.yesOrNo.no + ") ");
+            
+            // Save state and return
+            saveEngineState(player.id, engine, 'PLAYING');
+            
+            return res.json({
+                success: true,
+                output: engine.getOutput(),
+                state: {
+                    status: 'PLAYING',
+                    room: engine.stanzaCorrente?.key,
+                    roomLabel: engine.stanzaCorrente?.label,
+                    points: engine.altriDati.punti,
+                    moves: engine.altriDati.mosse
+                },
+                awaiting_answer: true
+            });
+        }
+        
+        // Valid answer - set it and re-execute the original input
+        engine.setQuestionAnswer(answer);
+        const originalInput = engine.getPendingOriginalInput();
+        
+        // Re-execute the original command (the yesNoQuestion will now return the answer)
+        // Move will be counted normally this time since it's a fresh processInput call
+        input = originalInput;
+    }
+    
+    // Process the input with try/catch for PENDING_QUESTION
+    let result;
+    try {
+        result = await engine.processInput(input);
+    } catch (error) {
+        if (error.isPendingQuestion) {
+            // A yes/no question was triggered - undo the move increment since action didn't complete
+            if (engine.altriDati.mosse !== undefined && engine.altriDati.mosse > 0) {
+                engine.altriDati.mosse--;
+            }
+            
+            // Save state and return
+            saveEngineState(player.id, engine, 'PLAYING');
+            
+            return res.json({
+                success: true,
+                output: engine.getOutput(),
+                state: {
+                    status: 'PLAYING',
+                    room: engine.stanzaCorrente?.key,
+                    roomLabel: engine.stanzaCorrente?.label,
+                    points: engine.altriDati.punti,
+                    moves: engine.altriDati.mosse
+                },
+                awaiting_answer: true
+            });
+        }
+        // Re-throw other errors
+        throw error;
+    }
     
     // Handle special results
     if (result.needsSave) {
@@ -475,6 +543,9 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
         });
     }
     
+    // Use the actual input that was processed (might be originalInput when resuming from question)
+    const processedInput = (input || '').trim();
+    
     // Check if game is over
     if (result.gameOver) {
         // Reset session to NOT_PLAYING
@@ -482,7 +553,7 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
         gameEngines.delete(player.id);
         
         // Log action
-        db.logAction(player.id, trimmedInput, result.output, engine.stanzaCorrente?.key, engine.altriDati.punti);
+        db.logAction(player.id, processedInput, result.output, engine.stanzaCorrente?.key, engine.altriDati.punti);
         
         return res.json({
             success: true,
@@ -502,7 +573,7 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
     saveEngineState(player.id, engine, 'PLAYING');
     
     // Log action
-    db.logAction(player.id, trimmedInput, result.output, engine.stanzaCorrente?.key, engine.altriDati.punti);
+    db.logAction(player.id, processedInput, result.output, engine.stanzaCorrente?.key, engine.altriDati.punti);
     
     return res.json({
         success: true,

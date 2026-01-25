@@ -653,11 +653,11 @@ class GameEngine extends IFEngineServer {
     async descriviStanzaCorrente(descrizioneLunga) {
         if (!this.stanzaCorrente) return;
         
-        if (this.stanzaCorrente.interactors === undefined)
+        if (this.stanzaCorrente.interactors == null)
             this.stanzaCorrente.interactors = {};
 
         // Add common walls interactor if not present
-        if (this.stanzaCorrente.interactors.pareti === undefined && this.commonInteractors.pareti) {
+        if (this.stanzaCorrente.interactors.pareti == null && this.commonInteractors?.pareti) {
             this.stanzaCorrente.interactors.pareti = { ...this.commonInteractors.pareti };
         }
 
@@ -682,6 +682,9 @@ class GameEngine extends IFEngineServer {
     async processInput(input) {
         this.clearOutput();
         this.nonhocapito = 0;
+        
+        // Store current input for yesNoQuestion context
+        this._currentInput = input;
         
         if (!input || input.trim().length === 0) {
             this.print(i18n.AvventuraNelCastelloJSEngine.messages.somethingSensible);

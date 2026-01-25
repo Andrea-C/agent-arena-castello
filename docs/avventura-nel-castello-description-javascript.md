@@ -204,8 +204,6 @@ Ignore the following files and folders because are part of a different porting t
 - server
 </files_and_folders_to_ignore>
 
-T
-
 
 Make me all the question you need to understand the task
 Write the plan in the file avventura-nel-castello-development-plan-javascript-version.md

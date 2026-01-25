@@ -38,6 +38,11 @@ class IFEngineServer {
         
         // Player died flag
         this.playerDied = false;
+        
+        // Pending yes/no question state for API-based interaction
+        // When a yesNoQuestion is triggered, we store the context and return to the client
+        // The next input will be treated as the yes/no answer
+        this.pendingQuestion = null;
 
         // Thesaurus for commands/verbs
         this.Thesaurus = new Thesaurus();
@@ -230,7 +235,8 @@ class IFEngineServer {
 
     async _breakRoomAction(action) {
         if (this.stanzaCorrente && this.stanzaCorrente[action]) {
-            let ret = await this.stanzaCorrente[action]();
+            // Bind 'this' to the engine so callbacks can access engine methods like stopTimedEvent
+            let ret = await this.stanzaCorrente[action].call(this);
             return ret === false;
         }
         return false;
@@ -277,6 +283,9 @@ class IFEngineServer {
         
         if (Object.keys(lista).length > 0) {
             for (let i in lista) {
+                // Skip null entries
+                if (lista[i] == null) continue;
+                
                 if (lista[i].visibile) {
                     let cosaVedo = Array.isArray(lista[i].label) ? 
                         lista[i].label[lista[i].status || 0] : 
@@ -288,6 +297,15 @@ class IFEngineServer {
     }
 
     // ============== Game Loop ==============
+    
+    /**
+     * Stub for gameLoop - in client version this triggers the interactive loop
+     * In API version, we don't need it - just a no-op
+     */
+    gameLoop(arg) {
+        // No-op in API version - each API call is one action
+        return;
+    }
 
     /**
      * Process a single input command
@@ -722,6 +740,86 @@ class IFEngineServer {
                 timedEvent.currentStep--;
             }
         }
+    }
+
+    // ============== Yes/No Questions ==============
+    
+    /**
+     * Handle yes/no questions in API context
+     * Since we can't block for user input, we have two modes:
+     * 1. First call: store the question and throw PENDING_QUESTION error
+     * 2. Second call (with answer): return the stored answer immediately
+     */
+    async yesNoQuestion(question, cr) {
+        // Check if we already have an answer from a previous API call
+        if (this.pendingQuestion && this.pendingQuestion.answer !== undefined) {
+            const answer = this.pendingQuestion.answer;
+            this.pendingQuestion = null; // Clear after using
+            return answer;
+        }
+        
+        // Print the question
+        this.print(question + " (" + i18n.IFEngine.yesOrNo.yes + "/" + i18n.IFEngine.yesOrNo.no + ") ");
+        
+        // Store that we're waiting for a yes/no answer, along with the original input
+        this.pendingQuestion = {
+            type: 'yesno',
+            question: question,
+            originalInput: this._currentInput // Will be set by processInput
+        };
+        
+        // Throw a special error to halt execution and return to client
+        // This will be caught by the API layer
+        const error = new Error('PENDING_QUESTION');
+        error.isPendingQuestion = true;
+        throw error;
+    }
+    
+    /**
+     * Parse a yes/no input and return true/false/null
+     */
+    parseYesNoInput(input) {
+        const normalizedInput = input.toLowerCase().trim();
+        
+        if (normalizedInput === 's' || normalizedInput === 'si' || normalizedInput === 'sì' || 
+            normalizedInput === i18n.IFEngine.yesOrNo.yes.toLowerCase()) {
+            return true;
+        } else if (normalizedInput === 'n' || normalizedInput === 'no' ||
+            normalizedInput === i18n.IFEngine.yesOrNo.no.toLowerCase()) {
+            return false;
+        }
+        
+        return null; // Invalid input
+    }
+    
+    /**
+     * Set the answer for a pending question (called by API when answer received)
+     */
+    setQuestionAnswer(answer) {
+        if (this.pendingQuestion) {
+            this.pendingQuestion.answer = answer;
+        }
+    }
+    
+    /**
+     * Check if there's a pending question waiting for an answer
+     */
+    hasPendingQuestion() {
+        return this.pendingQuestion && this.pendingQuestion.answer === undefined;
+    }
+    
+    /**
+     * Get the original input that triggered the pending question
+     */
+    getPendingOriginalInput() {
+        return this.pendingQuestion?.originalInput;
+    }
+    
+    /**
+     * Clear pending question without answering
+     */
+    clearPendingQuestion() {
+        this.pendingQuestion = null;
     }
 
     // ============== Save/Load ==============

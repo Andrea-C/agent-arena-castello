@@ -63,10 +63,18 @@ function createTables() {
             game_state TEXT,
             timed_events TEXT,
             dati_avventura TEXT,
+            pending_question TEXT,
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             UNIQUE(player_id)
         )
     `);
+    
+    // Add pending_question column if it doesn't exist (for existing databases)
+    try {
+        db.run(`ALTER TABLE sessions ADD COLUMN pending_question TEXT`);
+    } catch (e) {
+        // Column already exists, ignore
+    }
     
     // Saved games table
     db.run(`
@@ -193,7 +201,7 @@ function getPlayerByName(playerName) {
  */
 function getSession(playerId) {
     const result = db.exec(
-        'SELECT id, player_id, status, current_room, inventory, game_state, timed_events, dati_avventura, updated_at FROM sessions WHERE player_id = ?',
+        'SELECT id, player_id, status, current_room, inventory, game_state, timed_events, dati_avventura, pending_question, updated_at FROM sessions WHERE player_id = ?',
         [playerId]
     );
     if (result.length > 0 && result[0].values.length > 0) {
@@ -207,7 +215,8 @@ function getSession(playerId) {
             game_state: row[5] ? JSON.parse(row[5]) : {},
             timed_events: row[6] ? JSON.parse(row[6]) : [],
             dati_avventura: row[7] ? JSON.parse(row[7]) : null,
-            updated_at: row[8]
+            pending_question: row[8] ? JSON.parse(row[8]) : null,
+            updated_at: row[9]
         };
     }
     return null;
@@ -217,7 +226,7 @@ function getSession(playerId) {
  * Update session
  */
 function updateSession(playerId, sessionData) {
-    const { status, current_room, inventory, game_state, timed_events, dati_avventura } = sessionData;
+    const { status, current_room, inventory, game_state, timed_events, dati_avventura, pending_question } = sessionData;
     
     db.run(`
         UPDATE sessions SET 
@@ -227,6 +236,7 @@ function updateSession(playerId, sessionData) {
             game_state = ?,
             timed_events = ?,
             dati_avventura = ?,
+            pending_question = ?,
             updated_at = CURRENT_TIMESTAMP
         WHERE player_id = ?
     `, [
@@ -236,6 +246,7 @@ function updateSession(playerId, sessionData) {
         JSON.stringify(game_state || {}),
         JSON.stringify(timed_events || []),
         dati_avventura ? JSON.stringify(dati_avventura) : null,
+        pending_question ? JSON.stringify(pending_question) : null,
         playerId
     ]);
     

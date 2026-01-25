@@ -96,7 +96,7 @@ Use the log of the two test flow to understand the issue
 
 ---
 
-# SALVA
+# SALTA
 
 I can confirm that the previous issues where fixed.
 Now I tried the step sequence to SALTA (jump) as soon as the game started
@@ -147,39 +147,86 @@ Sicuro di non aver dimenticato\nqualcosaaaaa\n             aaa\n                
 
 ---
 
-# x
+# Path
 
-x
+Let's do another general comparison check between old and new code.
+In the old app, the path between all room follow a coded map.
+Usually, if you go NORD (N north) from room1 to enter room2, it follow that if you SUD (S south) from room2 you will enter room1.
+But not all path are bidirectional: there are passages that are one way and you cannot go back in the same direction.
+There are also passages that act like a teleport and take you in totally other part of the castle.
+There also a special room, Sala Specchi, that:
+- you can enter it from two different rooms: S from Camera Re (cameraRe) and E from Biblioteca, but you can exit only versus CameraRe going in random direction calculated at runtime (otherwise you get BONK)
+
+Please chech the new code, comaparing it with the old original code, if all routes between room are correct (the old code is correct)
+
+
+---
+
+# dependencies logic
+
+In the source_app there are a lot of dependencies between objects, events and actions. Some examples:
+- you cannot go from piazzaArmi to Atrio if you haven't open the PORTONE
+- you cannot spell a magic word like IOTAID if you haven't discovered the two parts IOTA and ID during the prevoius steps of the game.
+Please chech the new code, comaparing it with the old original code, if all dependencies are correct (the old code is correct)
+
+---
+
+# Prompt to start playing a game
+
+You have to test a game that is played through API
+The game is a text adventure, you send a string containing actions, the server replay with another string
+The game must be played in Italian
+The server base URL is http://localhost:3000
+You need first to call the **/register** API to register your **player_name** and receive the **player_key**
+You will then use the  **/play** API to send actions and read the result of the action
+You can use the **status** API to read if you are playing a game or you are not playing a game and you should start a new one
+when in **playing** status, you can send the INFORMAZIONI input to get a brief description about how to play
+The API documentation is in the file castello-api.md
+We are running on Windows 11 Pro, so you can use the examples for Powershell for the /register /status and /play API calls
+Register yourself with player_name = codex-gpt-5.1-mini-medium-test
+After 5 API call stop and give back the control to me
+---
+
+# Prompt to start playing a game without registration
+
+You have to test a game that is played through API
+The game is a text adventure, you send a string containing actions, the server replay with another string
+The game must be played in Italian
+The server base URL is http://localhost:3000
+You are already registered with:
+    - **player_name** = 'codex-gpt-5.1-mini-medium-test' 
+    - **player_key** = 'fe3dae7a6a8b43d59d81021664468f083aa3697d'
+You will then use the  **/play** API to send actions and read the result of the action
+You can use the **status** API to read if you are playing a game or you are not playing a game and you should start a new one
+when in **playing** status, you can send the INFORMAZIONI input to get a brief description about how to play
+The API documentation is in the file castello-api.md
+We are running on Windows 11 Pro, so you can use the examples for Powershell for the /status and /play API calls
+After 50 API call stop and give back the control to me
+
+---
+
+# continue to play for GPT-5.2-medium
+
+  - Try to guess a valid action to input in /play
+  - Before taking risk action, use the SAVE command, so, if you die as a player in the game, you can use the LOAD
+  command to restart from there and not redo everything from the beginning.
+  - Remember what works and what not
+  - Combine action with objects
+  - Solve the puzzle to escape
 
 ---
 
 # x
 
-x
+› Please write a diary-log.md file where you write
+  In the log write now what do you remember about your journey up to now
+  And from now on, please write
+  - your thoughts
+  - your input
+  - server output
 
----
-
-# x
-
-x
-
----
-
-# x
-
-x
-
----
-
-# x
-
-x
-
----
-
-# x
-
-x
+  Then continue for another 50 API calls.
+  After 50 calls let me check what as been done and we decide
 
 ---
 

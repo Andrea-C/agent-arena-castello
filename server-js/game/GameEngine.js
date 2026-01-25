@@ -4,7 +4,9 @@
  */
 
 const IFEngineServer = require('./IFEngineServer');
-const i18n = require('./i18n');
+// i18n is loaded dynamically based on player's language preference
+// Access via global.i18n which is set by loadI18nForLanguage before each request
+const getI18n = () => global.i18n;
 const { loadAllGameData } = require('./GameDataLoader');
 const fs = require('fs');
 const path = require('path');
@@ -38,22 +40,22 @@ class GameEngine extends IFEngineServer {
         this.nonhocapito = 0;
         
         // Default prompt text
-        this.defaultInputOverride = i18n.AvventuraNelCastelloJSEngine.defaultInput;
+        this.defaultInputOverride = getI18n().AvventuraNelCastelloJSEngine.defaultInput;
 
         // Points configuration
         this.datiPunti = {
             puntiMax: 1000,
             puntiLevel: {
-                34: i18n.AvventuraNelCastelloJSEngine.pointsLabel[0],
-                58: i18n.AvventuraNelCastelloJSEngine.pointsLabel[1],
-                149: i18n.AvventuraNelCastelloJSEngine.pointsLabel[2],
-                299: i18n.AvventuraNelCastelloJSEngine.pointsLabel[3],
-                449: i18n.AvventuraNelCastelloJSEngine.pointsLabel[4],
-                649: i18n.AvventuraNelCastelloJSEngine.pointsLabel[5],
-                898: i18n.AvventuraNelCastelloJSEngine.pointsLabel[6],
-                948: i18n.AvventuraNelCastelloJSEngine.pointsLabel[8],
-                998: i18n.AvventuraNelCastelloJSEngine.pointsLabel[9],
-                999: i18n.AvventuraNelCastelloJSEngine.pointsLabel[10]
+                34: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[0],
+                58: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[1],
+                149: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[2],
+                299: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[3],
+                449: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[4],
+                649: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[5],
+                898: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[6],
+                948: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[8],
+                998: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[9],
+                999: getI18n().AvventuraNelCastelloJSEngine.pointsLabel[10]
             },
             puntiAzione: { 
                 paracaduteIndossato: { i: 15 },
@@ -94,24 +96,24 @@ class GameEngine extends IFEngineServer {
 
         // Common patterns
         this.commonPatterns = {
-            pronuncia: i18n.AvventuraNelCastelloJSEngine.commonPatterns.say,
-            muro: i18n.AvventuraNelCastelloJSEngine.commonPatterns.wall
+            pronuncia: getI18n().AvventuraNelCastelloJSEngine.commonPatterns.say,
+            muro: getI18n().AvventuraNelCastelloJSEngine.commonPatterns.wall
         };
 
         // Add default messages
         this.Thesaurus.defaultMessages = {
             ...this.Thesaurus.defaultMessages,
             ...{
-                SII_SERIO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.beSerious,
-                NON_SERVE_A_NIENTE: i18n.AvventuraNelCastelloJSEngine.defaultMessages.notUseful,
-                CE_LHAI_GIA: i18n.AvventuraNelCastelloJSEngine.defaultMessages.alreadyHaveIt,
-                NON_HO_CAPITO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.didNotUnderstand,
-                ANCORA: i18n.AvventuraNelCastelloJSEngine.defaultMessages.again,
-                NON_CONOSCI: i18n.AvventuraNelCastelloJSEngine.defaultMessages.youDontKnow,
-                GIA_APERTO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.isOpened,
-                GIA_ADDOSSO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.wearing,
-                E_CHIUSO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.isClosed,
-                NON_TROVATO: i18n.AvventuraNelCastelloJSEngine.defaultMessages.notFound,
+                SII_SERIO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.beSerious,
+                NON_SERVE_A_NIENTE: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.notUseful,
+                CE_LHAI_GIA: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.alreadyHaveIt,
+                NON_HO_CAPITO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.didNotUnderstand,
+                ANCORA: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.again,
+                NON_CONOSCI: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.youDontKnow,
+                GIA_APERTO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.isOpened,
+                GIA_ADDOSSO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.wearing,
+                E_CHIUSO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.isClosed,
+                NON_TROVATO: getI18n().AvventuraNelCastelloJSEngine.defaultMessages.notFound,
             }
         };
 
@@ -119,9 +121,9 @@ class GameEngine extends IFEngineServer {
         this.Thesaurus.loadVerbs();
 
         // Override some verb patterns
-        this.Thesaurus.verbs.guarda.pattern = i18n.AvventuraNelCastelloJSEngine.verbs.look.pattern;
-        this.Thesaurus.verbs.lascia.pattern = i18n.AvventuraNelCastelloJSEngine.verbs.drop.pattern;
-        this.Thesaurus.verbs.premi.pattern = i18n.AvventuraNelCastelloJSEngine.verbs.press.pattern;
+        this.Thesaurus.verbs.guarda.pattern = getI18n().AvventuraNelCastelloJSEngine.verbs.look.pattern;
+        this.Thesaurus.verbs.lascia.pattern = getI18n().AvventuraNelCastelloJSEngine.verbs.drop.pattern;
+        this.Thesaurus.verbs.premi.pattern = getI18n().AvventuraNelCastelloJSEngine.verbs.press.pattern;
 
         // Remove "dai a" verb
         delete this.Thesaurus.verbs.dai;
@@ -141,14 +143,14 @@ class GameEngine extends IFEngineServer {
             ...this.Thesaurus.verbs,
             ...{
                 spingi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.push.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.push.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_SERVE_A_NIENTE,
                     callback: async function(targets) {
                         let target = targets[0];
                         if (self.Parser._getSource("spingi", target.on))
                             return null;
                         if (self.inventario[target.key])
-                            return i18n.AvventuraNelCastelloJSEngine.defaultMessages.inYourHand;
+                            return getI18n().AvventuraNelCastelloJSEngine.defaultMessages.inYourHand;
                         if (target.peso !== undefined) {
                             switch (target.peso) {
                                 case -1:
@@ -161,42 +163,42 @@ class GameEngine extends IFEngineServer {
                     }
                 },
                 offri: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.offer.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.offer.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 aggiusta: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.repair.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.repair.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_HO_CAPITO
                 },
                 traduci: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.translate.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.translate.pattern,
                     inventario: true,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_HO_CAPITO
                 },
                 suona: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.play.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.play.pattern,
                     inventario: true,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 entra: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.enter.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.enter.pattern,
                     singolo: true,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.enter.defaultMessage
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.enter.defaultMessage
                 },
                 indossa: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.wear.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.wear.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 alza: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.liftUp.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.liftUp.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.liftUp.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.liftUp.defaultMessage
                 },
                 abbassa: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.lower.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.lower.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.lower.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.lower.defaultMessage
                 },
                 prendi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.take.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.take.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO,
                     callback: async function(targets) {
                         let target = targets[0];
@@ -204,8 +206,8 @@ class GameEngine extends IFEngineServer {
                             return null;
                         if (self.inventario[target.key])
                             return target.key == "paracadute" ? 
-                                i18n.AvventuraNelCastelloJSEngine.defaultMessages.wearing : 
-                                i18n.AvventuraNelCastelloJSEngine.defaultMessages.inYourHand;
+                                getI18n().AvventuraNelCastelloJSEngine.defaultMessages.wearing : 
+                                getI18n().AvventuraNelCastelloJSEngine.defaultMessages.inYourHand;
                         if (target.peso !== undefined) {
                             switch (target.peso) {
                                 case -1:
@@ -218,136 +220,136 @@ class GameEngine extends IFEngineServer {
                     }
                 },
                 leggi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.read.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.read.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_HO_CAPITO
                 },
                 infilaIn: {
                     inventario: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.insertInto.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.insertInto.pattern,
                     complex: true,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 infila: {
                     inventario: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.insert.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.insert.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 prega: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.pray.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.pray.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.pray.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.pray.defaultMessage
                 },
                 atterra: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.land.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.land.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.land.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.land.defaultMessage
                 },
                 salta: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.jump.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.jump.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.jump.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.jump.defaultMessage
                 },
                 siedi: {
                     singolo: true,
                     complex: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.sitDown.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.sitDown.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.sitDown.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.sitDown.defaultMessage
                 },
                 saluta: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.greet.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.greet.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.greet.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.greet.defaultMessage
                 },
                 scava: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.dig.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.dig.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.dig.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.dig.defaultMessage
                 },
                 mangia: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.eat.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.eat.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.eat.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.eat.defaultMessage
                 },
                 bussa: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.knock.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.knock.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.knock.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.knock.defaultMessage
                 },
                 grazie: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.thank.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.thank.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.thank.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.thank.defaultMessage
                 },
                 aspetta: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.wait.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.wait.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.wait.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.wait.defaultMessage
                 },
                 parla: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.talk.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.talk.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.talk.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.talk.defaultMessage
                 },
                 ascolta: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.listen.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.listen.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.listen.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.listen.defaultMessage
                 },
                 compra: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.buy.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.buy.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.buy.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.buy.defaultMessage
                 },
                 rompi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.break.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.break.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 bevi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.drink.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.drink.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 carica: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.wind.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.wind.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 uccidi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.kill.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.kill.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 nutri: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.feed.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.feed.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 accarezza: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.pet.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.pet.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 monta: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.mount.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.mount.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 chiediA: {
                     complex: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.askTo.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.askTo.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.askTo.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.askTo.defaultMessage
                 },
                 chiedi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.ask.pattern,
-                    defaultMessage: i18n.AvventuraNelCastelloJSEngine.verbs.ask.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.ask.pattern,
+                    defaultMessage: getI18n().AvventuraNelCastelloJSEngine.verbs.ask.defaultMessage
                 },
                 svita: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.skrewOff.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.skrewOff.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.SII_SERIO
                 },
                 ciao: {
                     singolo: true,
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.hello.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.hello.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_HO_CAPITO
                 },
                 buongiorno: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.verbs.greeting.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.verbs.greeting.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_HO_CAPITO
                 },
                 // Special verb for "cerca" (search)
                 cerca: {
-                    pattern: i18n.Thesaurus.verbs.lookFor.pattern,
+                    pattern: getI18n().Thesaurus.verbs.lookFor.pattern,
                     defaultMessage: this.Thesaurus.defaultMessages.NON_TROVATO
                 }
             }
@@ -361,98 +363,98 @@ class GameEngine extends IFEngineServer {
             ...this.Thesaurus.commands,
             ...{
                 dove: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.where.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.where.pattern,
                     callback: async function() {
                         await self.descriviStanzaCorrente(true);
                         return true;
                     }
                 },
                 punti: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.points.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.points.pattern,
                     callback: async function() {
                         await self._punti();
                         return true;
                     }
                 },
                 istruzioni: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.instructions.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.instructions.pattern,
                     callback: async function() {
                         await self.istruzioni();
                         return true;
                     }
                 },
                 basta: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.stop.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.stop.pattern,
                     callback: async function() {
-                        self.print(i18n.AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
+                        self.print(getI18n().AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
                         await self._punti();
                         self.gameOver = true;
                         return { gameOver: true };
                     }
                 },
                 inventario: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.inventory.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.inventory.pattern,
                     callback: async function() {
                         await self._inventario();
                         return true;
                     }
                 },
                 salva: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.save.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.save.pattern,
                     callback: async function() {
                         return { needsSave: true };
                     }
                 },
                 carica: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.load.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.load.pattern,
                     callback: async function() {
                         return { needsLoad: true };
                     }
                 },
                 aiuto: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.help.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.help.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.help.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.help.defaultMessage
                 },
                 turni: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.moves.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.moves.pattern,
                     callback: async function() {
-                        return i18n.AvventuraNelCastelloJSEngine.commands.moves.defaultMessage(self.altriDati.mosse);
+                        return getI18n().AvventuraNelCastelloJSEngine.commands.moves.defaultMessage(self.altriDati.mosse);
                     }
                 },
                 muori: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.die.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.die.pattern,
                     callback: async function() {
-                        self.print(i18n.AvventuraNelCastelloJSEngine.commands.die.defaultMessage);
+                        self.print(getI18n().AvventuraNelCastelloJSEngine.commands.die.defaultMessage);
                         await self.die();
                         return false;
                     }
                 },
                 pensa: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.think.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.think.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.think.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.think.defaultMessage
                 },
                 esci: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.getOut.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.getOut.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.getOut.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.getOut.defaultMessage
                 },
                 dormi: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.sleep.pattern,
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.sleep.pattern,
                     callback: async function() {
-                        self.print(i18n.AvventuraNelCastelloJSEngine.commands.sleep.defaultMessage);
+                        self.print(getI18n().AvventuraNelCastelloJSEngine.commands.sleep.defaultMessage);
                         return true;
                     }
                 },
                 abracadabra: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.abracadabra.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.abracadabra.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.abracadabra.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.abracadabra.defaultMessage
                 },
                 si: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.yes.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.yes.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.yes.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.yes.defaultMessage
                 },
                 no: {
-                    pattern: i18n.AvventuraNelCastelloJSEngine.commands.no.pattern,
-                    callback: i18n.AvventuraNelCastelloJSEngine.commands.no.defaultMessage
+                    pattern: getI18n().AvventuraNelCastelloJSEngine.commands.no.pattern,
+                    callback: getI18n().AvventuraNelCastelloJSEngine.commands.no.defaultMessage
                 }
             }
         };
@@ -467,7 +469,7 @@ class GameEngine extends IFEngineServer {
             this.i18nJS = i18nData.AvventuraNelCastelloJS || i18nData;
             
             // Make i18n available as a global for function evaluation
-            // The functions in game_data.json reference i18n.AvventuraNelCastelloJS.xxx
+            // The functions in game_data.json reference getI18n().AvventuraNelCastelloJS.xxx
             global.i18n = i18nData;
             
             // Check if gameData has the datiAvventura structure
@@ -665,15 +667,56 @@ class GameEngine extends IFEngineServer {
         // First time entering room or explicitly asked for long description -> extended
         if (this.stanzaCorrente.primaEntrata === undefined || descrizioneLunga) {
             this.stanzaCorrente.primaEntrata = true;
-            description = this._descrizione(this.stanzaCorrente.description);
+            // Use descriptionKey for i18n lookup if description is null
+            description = this._getDescription(this.stanzaCorrente.description, this.stanzaCorrente.descriptionKey);
         } else {
             // Already visited -> short description
-            description = this._descrizione(this.stanzaCorrente.shortDescription || this.stanzaCorrente.description);
+            // Use shortDescriptionKey for i18n lookup if shortDescription is not available
+            description = this._getDescription(
+                this.stanzaCorrente.shortDescription || this.stanzaCorrente.description,
+                this.stanzaCorrente.shortDescriptionKey || this.stanzaCorrente.descriptionKey
+            );
         }
 
         this.print(description);
         await this.elenca(this.stanzaCorrente.interactors);
         await this.elenca(this.stanzaCorrente.objects);
+    }
+
+    /**
+     * Get description from direct value or i18n key lookup
+     * @param {string|array|null} directValue - Direct description value
+     * @param {string} i18nKey - Optional i18n key path (e.g., "commonRooms.ramparts.description")
+     * @returns {string} The resolved description
+     */
+    _getDescription(directValue, i18nKey) {
+        // If we have a direct value, use it
+        if (directValue != null) {
+            return this._descrizione(directValue);
+        }
+        
+        // If we have an i18n key, look it up
+        if (i18nKey) {
+            const i18n = getI18n();
+            // Navigate the i18n object using the key path
+            // Key format: "commonRooms.ramparts.description" -> i18n.AvventuraNelCastelloJS.commonRooms.ramparts.description
+            const parts = i18nKey.split('.');
+            let value = i18n.AvventuraNelCastelloJS;
+            for (const part of parts) {
+                if (value && value[part] !== undefined) {
+                    value = value[part];
+                } else {
+                    value = null;
+                    break;
+                }
+            }
+            if (value != null) {
+                return this._descrizione(value);
+            }
+        }
+        
+        // Fallback to empty string
+        return '';
     }
 
     /**
@@ -687,7 +730,7 @@ class GameEngine extends IFEngineServer {
         this._currentInput = input;
         
         if (!input || input.trim().length === 0) {
-            this.print(i18n.AvventuraNelCastelloJSEngine.messages.somethingSensible);
+            this.print(getI18n().AvventuraNelCastelloJSEngine.messages.somethingSensible);
             this._addPrompt();
             return this._buildResult();
         }
@@ -722,7 +765,7 @@ class GameEngine extends IFEngineServer {
     _addPrompt() {
         if (this.nonhocapito) {
             this.print('');
-            this.print(i18n.AvventuraNelCastelloJSEngine.messages.huh);
+            this.print(getI18n().AvventuraNelCastelloJSEngine.messages.huh);
         } else {
             this.print('');
             this.print(this.defaultInputOverride);
@@ -757,18 +800,18 @@ class GameEngine extends IFEngineServer {
             } else if (APO.actionObject.inventario === undefined) {
                 msg = (s == interattore && s.peso === undefined) || s.label === undefined ? 
                     this.Thesaurus.defaultMessages.QUI_NON_NE_VEDO : 
-                    i18n.AvventuraNelCastelloJSEngine.prefixLabels.cantSeeHere + " " + label + ".";
+                    getI18n().AvventuraNelCastelloJSEngine.prefixLabels.cantSeeHere + " " + label + ".";
             } else {
                 msg = (s == interattore && s.peso === undefined) || s.label === undefined ? 
                     this.Thesaurus.defaultMessages.NON_NE_POSSIEDI : 
-                    i18n.AvventuraNelCastelloJSEngine.prefixLabels.youDontOwn + " " + label + ".";
+                    getI18n().AvventuraNelCastelloJSEngine.prefixLabels.youDontOwn + " " + label + ".";
             }
             
             this.print(msg);
         } else {
             if (wtf.indexOf(" ") >= 0)
                 wtf = wtf.substring(0, wtf.indexOf(" "));
-            this.print("   " + wtf.toUpperCase() + " " + i18n.IFEngine.questionMark + i18n.IFEngine.questionMark + i18n.IFEngine.questionMark);
+            this.print("   " + wtf.toUpperCase() + " " + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark);
         }
         return true;
     }
@@ -855,7 +898,7 @@ class GameEngine extends IFEngineServer {
                 return true;
             }
 
-            this.print(i18n.AvventuraNelCastelloJSEngine.messages.overloaded);
+            this.print(getI18n().AvventuraNelCastelloJSEngine.messages.overloaded);
             await this._inventario();
             return false;
         }
@@ -875,14 +918,14 @@ class GameEngine extends IFEngineServer {
             livello = this.datiPunti.puntiLevel[999];
         }
         
-        this.print(i18n.AvventuraNelCastelloJSEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax));
+        this.print(getI18n().AvventuraNelCastelloJSEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax));
         this.print('');
-        this.print(i18n.AvventuraNelCastelloJSEngine.prefixLabels.title);
+        this.print(getI18n().AvventuraNelCastelloJSEngine.prefixLabels.title);
         this.print('');
         this.print("   " + livello.toUpperCase() + "   ");
 
-        if (livello == i18n.AvventuraNelCastelloJSEngine.pointsLabel[6]) {
-            this.print(i18n.AvventuraNelCastelloJSEngine.pointsLabel[7]);
+        if (livello == getI18n().AvventuraNelCastelloJSEngine.pointsLabel[6]) {
+            this.print(getI18n().AvventuraNelCastelloJSEngine.pointsLabel[7]);
         }
 
         return true;
@@ -901,7 +944,7 @@ class GameEngine extends IFEngineServer {
         this.print("     /  ~~~~  /  ");
         this.print("    /  ~~~~  /   ");
         this.print("   /  ~~~~  /   ");
-        this.print(i18n.AvventuraNelCastelloJSEngine.dieText);
+        this.print(getI18n().AvventuraNelCastelloJSEngine.dieText);
         await this._punti();
         
         this.playerDied = true;
@@ -915,7 +958,7 @@ class GameEngine extends IFEngineServer {
         // Remove accents
         input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-        for (let step of i18n.AvventuraNelCastelloJSEngine.prepareInputSteps) {
+        for (let step of getI18n().AvventuraNelCastelloJSEngine.prepareInputSteps) {
             let pattern = RegExp(step.pattern, "g");
             input = input.replace(pattern, step.replaceWith);
         }
@@ -925,7 +968,7 @@ class GameEngine extends IFEngineServer {
 
     // Instructions
     async istruzioni() {
-        for (let instruction of i18n.AvventuraNelCastelloJSEngine.instructions) {
+        for (let instruction of getI18n().AvventuraNelCastelloJSEngine.instructions) {
             this.print(instruction);
         }
     }
@@ -933,12 +976,12 @@ class GameEngine extends IFEngineServer {
     // Get menu text for NOT_PLAYING status
     getMenuText() {
         return [
-            i18n.IFEngine.menu.choose,
-            "(1) " + i18n.IFEngine.menu.new,
-            "(2) " + i18n.IFEngine.menu.load,
-            "(3) " + i18n.IFEngine.menu.delete,
-            "(4) " + i18n.IFEngine.menu.readInstructions,
-            "(5) " + i18n.AvventuraNelCastelloJSEngine.menuOption4LabelOverride
+            getI18n().IFEngine.menu.choose,
+            "(1) " + getI18n().IFEngine.menu.new,
+            "(2) " + getI18n().IFEngine.menu.load,
+            "(3) " + getI18n().IFEngine.menu.delete,
+            "(4) " + getI18n().IFEngine.menu.readInstructions,
+            "(5) " + getI18n().AvventuraNelCastelloJSEngine.menuOption4LabelOverride
         ].join('\n');
     }
 }

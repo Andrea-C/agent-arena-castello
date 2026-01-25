@@ -230,9 +230,20 @@ After 50 API call stop and give back the control to me
 
 ---
 
-# x
+# Add language management 
 
-x
+Let's plan the language management with the following features
+- I already added the folders game/locales/ for it - italian, en english and es - spanish
+- I copied the files i18n_data.json and i18n.js from games to game/locales/it
+- I copied the same two files, containing the italian language to the foldes en and es. We will make a proper translation later
+- Do we still need the i18n files in the game folder?
+- add the player language to the player profile in the player table
+- add the player language parameter to the /register endpoint. If language is missing, default to english
+- add an API to set the player language to enable the player to change it after the registration
+- we will not add the language parameter to the /play endpoint, but the server will reply to each player with the language set in the user profile.
+
+Are these requirements clear? 
+What would you change?
 
 ---
 

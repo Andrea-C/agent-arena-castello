@@ -27,6 +27,11 @@ const router = express.Router();
  *                 type: string
  *                 description: Unique player name
  *                 example: Marco
+ *               language:
+ *                 type: string
+ *                 description: Preferred language (en, it, es). Defaults to 'en'
+ *                 example: it
+ *                 enum: [en, it, es]
  *     responses:
  *       200:
  *         description: Registration successful
@@ -40,19 +45,22 @@ const router = express.Router();
  *                 player_key:
  *                   type: string
  *                   description: 40-character authentication token
+ *                 language:
+ *                   type: string
+ *                   description: Player's language setting
  *                 message:
  *                   type: string
  *       400:
  *         description: Invalid request or player name already taken
  */
 router.post('/', (req, res) => {
-    const { player_name } = req.body;
+    const { player_name, language } = req.body;
     
     if (!player_name || player_name.trim().length === 0) {
         return res.status(400).json({
             success: false,
             error: 'player_name_required',
-            message: 'Il nome del giocatore è obbligatorio'
+            message: 'Player name is required'
         });
     }
     
@@ -64,27 +72,32 @@ router.post('/', (req, res) => {
         return res.status(400).json({
             success: false,
             error: 'player_name_taken',
-            message: 'Nome giocatore non disponibile'
+            message: 'Player name not available'
         });
     }
+    
+    // Validate and normalize language (defaults to 'en' if not provided or invalid)
+    const supportedLanguages = db.getSupportedLanguages();
+    const playerLanguage = language && supportedLanguages.includes(language) ? language : 'en';
     
     // Generate a 40-character token
     const playerKey = uuidv4().replace(/-/g, '') + uuidv4().replace(/-/g, '').substring(0, 8);
     
-    // Register the player
-    const result = db.registerPlayer(trimmedName, playerKey);
+    // Register the player with language preference
+    const result = db.registerPlayer(trimmedName, playerKey, playerLanguage);
     
     if (result.success) {
         res.json({
             success: true,
             player_key: playerKey,
-            message: 'Registrazione completata'
+            language: playerLanguage,
+            message: 'Registration completed'
         });
     } else {
         res.status(400).json({
             success: false,
             error: result.error,
-            message: 'Errore durante la registrazione'
+            message: 'Registration error'
         });
     }
 });

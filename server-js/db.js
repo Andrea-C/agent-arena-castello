@@ -48,9 +48,17 @@ function createTables() {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             player_name TEXT UNIQUE NOT NULL,
             player_key TEXT UNIQUE NOT NULL,
+            language TEXT DEFAULT 'en',
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `);
+    
+    // Add language column if it doesn't exist (for existing databases)
+    try {
+        db.run(`ALTER TABLE players ADD COLUMN language TEXT DEFAULT 'en'`);
+    } catch (e) {
+        // Column already exists, ignore
+    }
     
     // Sessions table (current game state)
     db.run(`
@@ -126,13 +134,27 @@ function getDb() {
 // ============== Player Operations ==============
 
 /**
- * Register a new player
+ * Supported languages
  */
-function registerPlayer(playerName, playerKey) {
+const SUPPORTED_LANGUAGES = ['en', 'it', 'es'];
+const DEFAULT_LANGUAGE = 'en';
+
+/**
+ * Register a new player
+ * @param {string} playerName - Player's name
+ * @param {string} playerKey - Player's authentication key
+ * @param {string} language - Player's preferred language (default: 'en')
+ */
+function registerPlayer(playerName, playerKey, language = DEFAULT_LANGUAGE) {
+    // Validate language
+    if (!SUPPORTED_LANGUAGES.includes(language)) {
+        language = DEFAULT_LANGUAGE;
+    }
+    
     try {
         db.run(
-            'INSERT INTO players (player_name, player_key) VALUES (?, ?)',
-            [playerName, playerKey]
+            'INSERT INTO players (player_name, player_key, language) VALUES (?, ?, ?)',
+            [playerName, playerKey, language]
         );
         
         // Create initial session for player
@@ -159,7 +181,7 @@ function registerPlayer(playerName, playerKey) {
  */
 function getPlayerByKey(playerKey) {
     const result = db.exec(
-        'SELECT id, player_name, player_key, created_at FROM players WHERE player_key = ?',
+        'SELECT id, player_name, player_key, language, created_at FROM players WHERE player_key = ?',
         [playerKey]
     );
     if (result.length > 0 && result[0].values.length > 0) {
@@ -168,7 +190,8 @@ function getPlayerByKey(playerKey) {
             id: row[0],
             player_name: row[1],
             player_key: row[2],
-            created_at: row[3]
+            language: row[3] || DEFAULT_LANGUAGE,
+            created_at: row[4]
         };
     }
     return null;
@@ -179,7 +202,7 @@ function getPlayerByKey(playerKey) {
  */
 function getPlayerByName(playerName) {
     const result = db.exec(
-        'SELECT id, player_name, player_key, created_at FROM players WHERE player_name = ?',
+        'SELECT id, player_name, player_key, language, created_at FROM players WHERE player_name = ?',
         [playerName]
     );
     if (result.length > 0 && result[0].values.length > 0) {
@@ -188,10 +211,42 @@ function getPlayerByName(playerName) {
             id: row[0],
             player_name: row[1],
             player_key: row[2],
-            created_at: row[3]
+            language: row[3] || DEFAULT_LANGUAGE,
+            created_at: row[4]
         };
     }
     return null;
+}
+
+/**
+ * Update player language
+ * @param {number} playerId - Player's ID
+ * @param {string} language - New language code
+ * @returns {object} Result with success flag
+ */
+function updatePlayerLanguage(playerId, language) {
+    // Validate language
+    if (!SUPPORTED_LANGUAGES.includes(language)) {
+        return { success: false, error: 'invalid_language', supported: SUPPORTED_LANGUAGES };
+    }
+    
+    try {
+        db.run(
+            'UPDATE players SET language = ? WHERE id = ?',
+            [language, playerId]
+        );
+        saveDatabase();
+        return { success: true };
+    } catch (err) {
+        return { success: false, error: err.message };
+    }
+}
+
+/**
+ * Get supported languages
+ */
+function getSupportedLanguages() {
+    return SUPPORTED_LANGUAGES;
 }
 
 // ============== Session Operations ==============
@@ -472,6 +527,8 @@ module.exports = {
     registerPlayer,
     getPlayerByKey,
     getPlayerByName,
+    updatePlayerLanguage,
+    getSupportedLanguages,
     // Session operations
     getSession,
     updateSession,

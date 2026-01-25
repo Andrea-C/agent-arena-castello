@@ -1,13 +1,37 @@
 /**
  * Thesaurus - Vocabulary definitions for commands and verbs
  * Adapted from source_app/IFEngine/js/Thesaurus.js for server-side use
+ * 
+ * i18n is loaded dynamically based on player's language preference.
+ * Access via global.i18n which is set by loadI18nForLanguage before each request.
  */
 
-const i18n = require('./i18n');
+// Getter for i18n to ensure we always get the current language data
+const getI18n = () => global.i18n;
 
 class Thesaurus {
     constructor() {
-        this.defaultMessages = {
+        // Default messages, commands, and verbs are accessed dynamically via getters
+        // Custom values can be set and will be merged with i18n values
+        this._defaultMessages = null;
+        this._commands = null;
+        this._verbs = null;
+    }
+
+    // Stub methods for compatibility - actual loading happens via getters
+    loadCommands() {
+        // No-op: commands are loaded dynamically via getter
+    }
+
+    loadVerbs() {
+        // No-op: verbs are loaded dynamically via getter
+    }
+
+    // Dynamic getter for default messages - always uses current i18n
+    // If custom messages were set, merge them with the i18n defaults
+    get defaultMessages() {
+        const i18n = getI18n();
+        const i18nDefaults = {
             FATTO: i18n.Thesaurus.defaultMessages.done,
             PREFERISCO_DI_NO: i18n.Thesaurus.defaultMessages.preferNot,
             NON_TROVATO: i18n.Thesaurus.defaultMessages.notFound,
@@ -19,13 +43,29 @@ class Thesaurus {
             SII_PIU_SPECIFICO: i18n.Thesaurus.defaultMessages.beMoreSpecific,
             NON_E_POSSIBILE: i18n.Thesaurus.defaultMessages.notPossible
         };
-
-        this.loadCommands();
-        this.loadVerbs();
+        
+        // Merge with any custom messages that were set
+        if (this._defaultMessages) {
+            return { ...i18nDefaults, ...this._defaultMessages };
+        }
+        return i18nDefaults;
     }
 
-    loadCommands() {
-        this.commands = {
+    // Setter for defaultMessages (used when GameEngine extends default messages)
+    set defaultMessages(value) {
+        this._defaultMessages = value;
+    }
+
+    // Dynamic getter for commands - returns custom commands if set, otherwise i18n defaults
+    get commands() {
+        // If custom commands were set, return them (they already include merged values)
+        if (this._commands) {
+            return this._commands;
+        }
+        
+        // Otherwise return the i18n defaults
+        const i18n = getI18n();
+        return {
             nord: {
                 movimento: true,
                 pattern: i18n.Thesaurus.commands.north.pattern,
@@ -65,8 +105,22 @@ class Thesaurus {
         };
     }
 
-    loadVerbs() {
-        this.verbs = {
+    // Setter for commands (used when adding custom commands)
+    set commands(value) {
+        this._commands = value;
+    }
+
+    // Dynamic getter for verbs - returns custom verbs if set, otherwise i18n defaults
+    get verbs() {
+        // If custom verbs were set, return them (they already include merged values)
+        if (this._verbs) {
+            return this._verbs;
+        }
+        
+        // Otherwise return the i18n defaults
+        const i18n = getI18n();
+        const defaultMsgs = this.defaultMessages;
+        return {
             apri: {
                 pattern: i18n.Thesaurus.verbs.open.pattern,
                 defaultMessage: i18n.Thesaurus.verbs.open.defaultMessage
@@ -77,11 +131,11 @@ class Thesaurus {
             },
             tira: {
                 pattern: i18n.Thesaurus.verbs.pull.pattern,
-                defaultMessage: this.defaultMessages.PREFERISCO_DI_NO
+                defaultMessage: defaultMsgs.PREFERISCO_DI_NO
             },
             premi: {
                 pattern: i18n.Thesaurus.verbs.press.pattern,
-                defaultMessage: this.defaultMessages.PREFERISCO_DI_NO
+                defaultMessage: defaultMsgs.PREFERISCO_DI_NO
             },
             spingi: {
                 pattern: i18n.Thesaurus.verbs.push.pattern,
@@ -89,26 +143,26 @@ class Thesaurus {
             },
             prendi: {
                 pattern: i18n.Thesaurus.verbs.take.pattern,
-                defaultMessage: this.defaultMessages.PREFERISCO_DI_NO
+                defaultMessage: defaultMsgs.PREFERISCO_DI_NO
             },
             lascia: {
                 inventario: true,
                 pattern: i18n.Thesaurus.verbs.drop.pattern,
-                defaultMessage: this.defaultMessages.PREFERISCO_DI_NO
+                defaultMessage: defaultMsgs.PREFERISCO_DI_NO
             },
             dai: {
                 inventario: true,
                 pattern: i18n.Thesaurus.verbs.give.pattern,
                 complex: true,
-                defaultMessage: this.defaultMessages.PREFERISCO_DI_NO
+                defaultMessage: defaultMsgs.PREFERISCO_DI_NO
             },
             cerca: {
                 pattern: i18n.Thesaurus.verbs.lookFor.pattern,
-                defaultMessage: this.defaultMessages.NON_TROVATO
+                defaultMessage: defaultMsgs.NON_TROVATO
             },
             guarda: {
                 pattern: i18n.Thesaurus.verbs.look.pattern,
-                defaultMessage: this.defaultMessages.NULLA_DI_PARTICOLARE
+                defaultMessage: defaultMsgs.NULLA_DI_PARTICOLARE
             },
             usaCon: {
                 pattern: i18n.Thesaurus.verbs.useWith.pattern,
@@ -117,17 +171,22 @@ class Thesaurus {
             },
             usa: {
                 pattern: i18n.Thesaurus.verbs.use.pattern,
-                defaultMessage: this.defaultMessages.SII_PIU_SPECIFICO
+                defaultMessage: defaultMsgs.SII_PIU_SPECIFICO
             },
             sali: {
                 pattern: i18n.Thesaurus.verbs.goUp.pattern,
-                defaultMessage: this.defaultMessages.NON_HO_CAPITO
+                defaultMessage: defaultMsgs.NON_HO_CAPITO
             },
             scendi: {
                 pattern: i18n.Thesaurus.verbs.goDown.pattern,
-                defaultMessage: this.defaultMessages.NON_HO_CAPITO
+                defaultMessage: defaultMsgs.NON_HO_CAPITO
             }
         };
+    }
+
+    // Setter for verbs (used when adding custom verbs)
+    set verbs(value) {
+        this._verbs = value;
     }
 }
 

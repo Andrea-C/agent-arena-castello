@@ -5,6 +5,7 @@
 const express = require('express');
 const db = require('../db');
 const GameEngine = require('../game/GameEngine');
+const { loadI18nForLanguage } = require('../game/GameDataLoader');
 
 const router = express.Router();
 
@@ -206,6 +207,10 @@ router.post('/', async (req, res) => {
             message: 'Chiave giocatore non valida'
         });
     }
+    
+    // Load language-specific i18n for this player
+    // This sets global.i18n which is used by the game engine
+    loadI18nForLanguage(player.language);
     
     // Get session
     let session = db.getSession(player.id);
@@ -420,8 +425,8 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
         if (answer === null) {
             // Invalid answer - re-prompt
             engine.clearOutput();
-            const i18n = require('../game/i18n');
-            engine.print("(" + i18n.IFEngine.yesOrNo.yes + "/" + i18n.IFEngine.yesOrNo.no + ") ");
+            // Use global.i18n which was set by loadI18nForLanguage
+            engine.print("(" + global.i18n.IFEngine.yesOrNo.yes + "/" + global.i18n.IFEngine.yesOrNo.no + ") ");
             
             // Save state and return
             saveEngineState(player.id, engine, 'PLAYING');

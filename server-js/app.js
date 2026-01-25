@@ -16,6 +16,7 @@ const swaggerSpecs = require('./swagger');
 const registerRoute = require('./routes/register');
 const statusRoute = require('./routes/status');
 const playRoute = require('./routes/play');
+const playerRoute = require('./routes/player');
 const dashboardRoute = require('./routes/dashboard');
 
 // Create Express app
@@ -51,6 +52,7 @@ app.use((req, res, next) => {
 app.use('/register', registerRoute);
 app.use('/status', statusRoute);
 app.use('/play', playRoute);
+app.use('/player', playerRoute);
 app.use('/dashboard', dashboardRoute);
 
 // Swagger API documentation at cryptic URL
@@ -109,10 +111,12 @@ async function startServer() {
             console.log(`║   Server running on http://localhost:${PORT}                  ║`);
             console.log('║                                                            ║');
             console.log('║   Endpoints:                                               ║');
-            console.log('║   - POST /register    - Register new player                ║');
-            console.log('║   - GET  /status      - Get player status                  ║');
-            console.log('║   - POST /play        - Send game action                   ║');
-            console.log('║   - GET  /dashboard   - Monitoring dashboard               ║');
+            console.log('║   - POST /register       - Register new player             ║');
+            console.log('║   - GET  /status         - Get player status               ║');
+            console.log('║   - POST /play           - Send game action                ║');
+            console.log('║   - PUT  /player/language - Set player language            ║');
+            console.log('║   - GET  /player/languages - List supported languages      ║');
+            console.log('║   - GET  /dashboard      - Monitoring dashboard            ║');
             console.log('║   - GET  /arcane-scrolls - API documentation               ║');
             console.log('║                                                            ║');
             console.log('╚════════════════════════════════════════════════════════════╝');

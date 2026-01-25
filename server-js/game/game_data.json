@@ -824,9 +824,39 @@
       },
       "spaltiMuraNordOvest": {
         "description": null,
+        "descriptionKey": "commonRooms.ramparts.description",
+        "shortDescriptionKey": "commonRooms.ramparts.shortDescription",
         "shortDescription": "Sei sugli spalti delle mura.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null,
+          "spalti": {
+            "label": "gli spalti",
+            "pattern": "(mura|spalti)",
+            "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+          },
+          "nebbia": {
+            "label": "la nebbia",
+            "pattern": "nebbia",
+            "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+          },
+          "corvi": {
+            "label": "i corvi",
+            "pattern": "corv(?:o|i)",
+            "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+            "on": {
+              "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+            }
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[1]);\n\t\t\t\t\t\t\tawait this.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+            }
+          }
+        },
         "directions": {
           "s": "spaltiMuraSudOvest",
           "e": "spaltiMuraNordEst",
@@ -835,9 +865,39 @@
       },
       "spaltiMuraNordEst": {
         "description": null,
+        "descriptionKey": "commonRooms.ramparts.description",
+        "shortDescriptionKey": "commonRooms.ramparts.shortDescription",
         "shortDescription": "Sei sugli spalti delle mura.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null,
+          "spalti": {
+            "label": "gli spalti",
+            "pattern": "(mura|spalti)",
+            "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+          },
+          "nebbia": {
+            "label": "la nebbia",
+            "pattern": "nebbia",
+            "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+          },
+          "corvi": {
+            "label": "i corvi",
+            "pattern": "corv(?:o|i)",
+            "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+            "on": {
+              "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+            }
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[1]);\n\t\t\t\t\t\t\tawait this.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+            }
+          }
+        },
         "directions": {
           "s": "spaltiMuraSudEst",
           "o": "spaltiMuraNordOvest",
@@ -846,9 +906,39 @@
       },
       "spaltiMuraSudEst": {
         "description": null,
+        "descriptionKey": "commonRooms.ramparts.description",
+        "shortDescriptionKey": "commonRooms.ramparts.shortDescription",
         "shortDescription": "Sei sugli spalti delle mura.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null,
+          "spalti": {
+            "label": "gli spalti",
+            "pattern": "(mura|spalti)",
+            "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+          },
+          "nebbia": {
+            "label": "la nebbia",
+            "pattern": "nebbia",
+            "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+          },
+          "corvi": {
+            "label": "i corvi",
+            "pattern": "corv(?:o|i)",
+            "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
+            "on": {
+              "ascolta": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+            }
+          }
+        },
+        "override": {
+          "verbs": {
+            "salta": {
+              "__fn__": true,
+              "source": "async () => {\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[0]);\n\t\t\t\t\t\t\tawait this.CRT.sleep(2000);\n\t\t\t\t\t\t\tawait this.CRT.printTyping(i18n.AvventuraNelCastelloJS.commonRooms.ramparts.onJump[1]);\n\t\t\t\t\t\t\tawait this.die();\n\t\t\t\t\t\t\treturn false;\n\t\t\t\t\t\t}"
+            }
+          }
+        },
         "directions": {
           "n": "spaltiMuraNordEst",
           "o": "spaltiMuraSudOvest",

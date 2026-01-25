@@ -9,7 +9,9 @@
  * - Synchronous processing (no user input waiting)
  */
 
-const i18n = require('./i18n');
+// i18n is loaded dynamically based on player's language preference
+// Access via global.i18n which is set by loadI18nForLanguage before each request
+const getI18n = () => global.i18n;
 const Parser = require('./Parser');
 const Thesaurus = require('./Thesaurus');
 
@@ -91,7 +93,7 @@ class IFEngineServer {
                 },
                 basta: {
                     callback: async () => {
-                        this.print(i18n.AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
+                        this.print(getI18n().AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
                         this.gameOver = true;
                         return { gameOver: true };
                     }
@@ -152,7 +154,7 @@ class IFEngineServer {
         this.Parser = new Parser(this.Thesaurus.verbs, this.Thesaurus.commands);
 
         if (this.datiAvventura === undefined) {
-            throw new Error(i18n.IFEngine.warnings.notLoaded);
+            throw new Error(getI18n().IFEngine.warnings.notLoaded);
         }
 
         // Set key value for each object
@@ -290,7 +292,7 @@ class IFEngineServer {
                     let cosaVedo = Array.isArray(lista[i].label) ? 
                         lista[i].label[lista[i].status || 0] : 
                         lista[i].label;
-                    this.print(i18n.AvventuraNelCastelloJSEngine.prefixLabels.ISee + " " + cosaVedo.trim() + ".");
+                    this.print(getI18n().AvventuraNelCastelloJSEngine.prefixLabels.ISee + " " + cosaVedo.trim() + ".");
                 }
             }
         }
@@ -315,7 +317,7 @@ class IFEngineServer {
         this.clearOutput();
         
         if (!input || input.trim().length === 0) {
-            this.print(i18n.AvventuraNelCastelloJSEngine.messages.somethingSensible);
+            this.print(getI18n().AvventuraNelCastelloJSEngine.messages.somethingSensible);
             return this._buildResult();
         }
 
@@ -366,7 +368,7 @@ class IFEngineServer {
         input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         
         // Apply transformation steps
-        for (let step of i18n.AvventuraNelCastelloJSEngine.prepareInputSteps) {
+        for (let step of getI18n().AvventuraNelCastelloJSEngine.prepareInputSteps) {
             let pattern = RegExp(step.pattern, "g");
             input = input.replace(pattern, step.replaceWith);
         }
@@ -386,7 +388,7 @@ class IFEngineServer {
         
         if (typeof APO == 'string') {
             // command = verb, missing the rest
-            this.print(APO.charAt(0).toUpperCase() + APO.slice(1) + " " + i18n.IFEngine.questions.what + " " + this.Thesaurus.defaultMessages.SII_PIU_SPECIFICO);
+            this.print(APO.charAt(0).toUpperCase() + APO.slice(1) + " " + getI18n().IFEngine.questions.what + " " + this.Thesaurus.defaultMessages.SII_PIU_SPECIFICO);
             return true;
         }
         
@@ -566,7 +568,7 @@ class IFEngineServer {
     async wtf(APO, wtf) {
         if (wtf.indexOf(" ") >= 0)
             wtf = wtf.substring(0, wtf.indexOf(" "));
-        this.print("   " + wtf.toUpperCase() + " " + i18n.IFEngine.questionMark + i18n.IFEngine.questionMark + i18n.IFEngine.questionMark);
+        this.print("   " + wtf.toUpperCase() + " " + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark);
         return true;
     }
 
@@ -598,9 +600,9 @@ class IFEngineServer {
     async _inventario() {
         let output;
         if (Object.keys(this.inventario).length == 0) {
-            output = i18n.IFEngine.messages.noObjects;
+            output = getI18n().IFEngine.messages.noObjects;
         } else {
-            output = "* " + i18n.IFEngine.messages.carriedObjectsLabel + " *";
+            output = "* " + getI18n().IFEngine.messages.carriedObjectsLabel + " *";
             for (let i in this.inventario) {
                 let label = Array.isArray(this.inventario[i].label) ?
                     this.inventario[i].label[this.inventario[i].status || 0] :
@@ -633,7 +635,7 @@ class IFEngineServer {
             this._aggiungiInInventario(oggetto);
             this.print(this.Thesaurus.defaultMessages.FATTO);
         } else if (this.inventario[oggetto.key] !== undefined) {
-            this.print(i18n.IFEngine.messages.alreadyHaveIt);
+            this.print(getI18n().IFEngine.messages.alreadyHaveIt);
         } else {
             this.print(this.Thesaurus.verbs.prendi.defaultMessage);
         }
@@ -670,9 +672,9 @@ class IFEngineServer {
 
     async _punti() {
         if (this.datiPunti === undefined || this.datiPunti.puntiAzione === undefined) {
-            this.print(i18n.IFEngine.messages.noPoints);
+            this.print(getI18n().IFEngine.messages.noPoints);
         } else {
-            this.print(i18n.IFEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax) + ".");
+            this.print(getI18n().IFEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax) + ".");
         }
         return true;
     }
@@ -692,7 +694,7 @@ class IFEngineServer {
     // ============== Death ==============
 
     async die() {
-        this.print(i18n.IFEngine.messages.death);
+        this.print(getI18n().IFEngine.messages.death);
         this.playerDied = true;
         this.gameOver = true;
         return false;
@@ -759,7 +761,7 @@ class IFEngineServer {
         }
         
         // Print the question
-        this.print(question + " (" + i18n.IFEngine.yesOrNo.yes + "/" + i18n.IFEngine.yesOrNo.no + ") ");
+        this.print(question + " (" + getI18n().IFEngine.yesOrNo.yes + "/" + getI18n().IFEngine.yesOrNo.no + ") ");
         
         // Store that we're waiting for a yes/no answer, along with the original input
         this.pendingQuestion = {
@@ -782,10 +784,10 @@ class IFEngineServer {
         const normalizedInput = input.toLowerCase().trim();
         
         if (normalizedInput === 's' || normalizedInput === 'si' || normalizedInput === 'sì' || 
-            normalizedInput === i18n.IFEngine.yesOrNo.yes.toLowerCase()) {
+            normalizedInput === getI18n().IFEngine.yesOrNo.yes.toLowerCase()) {
             return true;
         } else if (normalizedInput === 'n' || normalizedInput === 'no' ||
-            normalizedInput === i18n.IFEngine.yesOrNo.no.toLowerCase()) {
+            normalizedInput === getI18n().IFEngine.yesOrNo.no.toLowerCase()) {
             return false;
         }
         
@@ -971,7 +973,7 @@ class IFEngineServer {
     // ============== Instructions ==============
 
     async istruzioni() {
-        for (let instruction of i18n.AvventuraNelCastelloJSEngine.instructions) {
+        for (let instruction of getI18n().AvventuraNelCastelloJSEngine.instructions) {
             this.print(instruction);
         }
     }

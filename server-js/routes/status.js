@@ -72,6 +72,7 @@ router.get('/', (req, res) => {
         return res.json({
             success: true,
             player_name: player.player_name,
+            language: player.language,
             status: 'NOT_PLAYING',
             current_room: null,
             points: 0,
@@ -82,6 +83,7 @@ router.get('/', (req, res) => {
     res.json({
         success: true,
         player_name: player.player_name,
+        language: player.language,
         status: session.status,
         current_room: session.current_room,
         points: session.game_state?.punti || 0,

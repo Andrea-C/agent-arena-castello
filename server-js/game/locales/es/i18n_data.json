@@ -1,116 +1,116 @@
 {
-  "htmlTitle": "Avventura nel Castello in Javascript",
-  "title": "   AVVENTURA NEL CASTELLO JS   ",
+  "htmlTitle": "Aventura en el Castillo en Javascript",
+  "title": "   AVENTURA EN EL CASTILLO JS   ",
   "CRT": {
-    "waitText": "Premere invio per continuare..."
+    "waitText": "Pulsa Enter para continuar..."
   },
   "IFEngine": {
     "warnings": {
-      "mustBeExtended": "IFEngine deve essere esteso",
-      "notLoaded": "Nessuna avventura caricata",
-      "localstorageInactive": "Per poter effettuare salvataggi è necessario attivare il localstorage nel browser.",
-      "localstorageMustBeActivated": "Attivare il localstorage nel browser.",
-      "labelNotValid": "Etichetta non valida. Riprovare.",
-      "noData": "Nessun dato salvato...",
+      "mustBeExtended": "IFEngine debe ser extendido",
+      "notLoaded": "No se ha cargado ninguna aventura",
+      "localstorageInactive": "Para poder guardar es necesario activar el localstorage en el navegador.",
+      "localstorageMustBeActivated": "Activa el localstorage en el navegador.",
+      "labelNotValid": "Etiqueta no válida. Inténtalo de nuevo.",
+      "noData": "No hay datos guardados...",
       "notFound": {
         "__fn__": true,
         "args": [
           "filename"
         ],
-        "template": "Salvataggio \"${filename}\" non trovato."
+        "template": "No se encontró el guardado \"${filename}\"."
       }
     },
     "menu": {
-      "choose": "Vuoi:",
-      "new": "Iniziare una nuova avventura",
-      "load": "Riprendere una situazione salvata",
-      "delete": "Cancellare tutti i salvataggi",
-      "readInstructions": "Ripassare le istruzioni",
-      "quit": "Uscire dal gioco",
-      "restart": "Rincominciare dall'inizio",
-      "stop": "Smettere di giocare"
+      "choose": "¿Quieres:",
+      "new": "Iniciar una nueva aventura",
+      "load": "Reanudar una partida guardada",
+      "delete": "Borrar todos los guardados",
+      "readInstructions": "Repasar las instrucciones",
+      "quit": "Salir del juego",
+      "restart": "Empezar de nuevo desde el principio",
+      "stop": "Dejar de jugar"
     },
     "questions": {
-      "stopQuestion": "Vuoi smettere di giocare ",
-      "areYouSureQuestion": "Sei sicuro ",
-      "saveLabel": "Etichetta salvataggio (X annulla):",
-      "restoreLabel": "Etichetta (X annulla, E per elenco):",
+      "stopQuestion": "¿Quieres dejar de jugar ",
+      "areYouSureQuestion": "¿Estás seguro ",
+      "saveLabel": "Etiqueta del guardado (X cancela):",
+      "restoreLabel": "Etiqueta (X cancela, E para lista):",
       "cancelLetter": "X",
       "listLetter": "E",
-      "what": "che cosa?"
+      "what": "¿qué?"
     },
     "yesOrNo": {
-      "yes": "si",
+      "yes": "sí",
       "no": "no"
     },
     "messages": {
-      "tanksForPlaying": "Grazie per aver giocato. Ciao! :)",
-      "saved": "Dati salvati!",
-      "loaded": "Dati caricati...",
-      "noInstructions": "Nessuna istruzione qui...",
-      "death": "SEI MORTO!!!",
-      "noPoints": "Quest'avventura non prevede un punteggio",
+      "tanksForPlaying": "Gracias por jugar. ¡Hasta luego! :)",
+      "saved": "¡Guardado!",
+      "loaded": "Cargado...",
+      "noInstructions": "Aquí no hay instrucciones...",
+      "death": "¡¡¡HAS MUERTO!!!",
+      "noPoints": "Esta aventura no tiene puntuación",
       "points": {
         "__fn__": true,
         "args": [
           "points",
           "maxPoints"
         ],
-        "template": "Hai conquistato ${points} punti su ${maxPoints}"
+        "template": "Has conseguido ${points} puntos de ${maxPoints}"
       },
-      "noObjects": "Non hai con te nessun oggetto.",
-      "carriedObjectsLabel": "Attualmente possiedi:",
-      "alreadyHaveIt": "Ce l'hai già"
+      "noObjects": "No llevas ningún objeto.",
+      "carriedObjectsLabel": "Ahora mismo llevas:",
+      "alreadyHaveIt": "Ya lo tienes"
     },
     "questionMark": "?"
   },
   "Thesaurus": {
     "defaultMessages": {
-      "done": "Fatto!",
-      "preferNot": "Preferisco di no.",
-      "notFound": "Ricerca infruttuosa.",
-      "didNotUnderstand": "Non ho capito...",
-      "dontNoticeAnythingInParticular": "Non noto nulla di particolare.",
-      "notSeenHere": "Qui non ne vedo.",
-      "dontHaveAny": "Non ne possiedi.",
-      "nothingHappens": "Non succede niente.",
-      "beMoreSpecific": "Sii più specifico.",
-      "notPossible": "Non è possibile."
+      "done": "¡Hecho!",
+      "preferNot": "Preferiría que no.",
+      "notFound": "Búsqueda infructuosa.",
+      "didNotUnderstand": "No he entendido...",
+      "dontNoticeAnythingInParticular": "No noto nada en particular.",
+      "notSeenHere": "Aquí no veo ninguno.",
+      "dontHaveAny": "No tienes ninguno.",
+      "nothingHappens": "No pasa nada.",
+      "beMoreSpecific": "Sé más específico.",
+      "notPossible": "No es posible."
     },
     "commands": {
       "north": {
         "pattern": "(vai verso |vai a |vai )?(n(ord)?)",
-        "defaultMessage": "A nord non puoi andare."
+        "defaultMessage": "No puedes ir al norte."
       },
       "south": {
         "pattern": "(vai verso |vai a |vai )?(s(ud|outh)?)",
-        "defaultMessage": "A sud non puoi andare."
+        "defaultMessage": "No puedes ir al sur."
       },
       "east": {
         "pattern": "(vai verso |vai a |vai )?(e(st)?|east)",
-        "defaultMessage": "A est non puoi andare."
+        "defaultMessage": "No puedes ir al este."
       },
       "west": {
         "pattern": "(vai verso |vai a |vai )?(o(vest)?|w(est)?)",
-        "defaultMessage": "Ad ovest non puoi andare."
+        "defaultMessage": "No puedes ir al oeste."
       },
       "up": {
         "pattern": "(sali|(vai verso |vai in |vai )?a(lto)?|u(p)?|su)",
-        "defaultMessage": "In alto non puoi andare."
+        "defaultMessage": "No puedes subir."
       },
       "down": {
         "pattern": "(scendi|(vai verso |vai in |vai )?b(asso)?|d(own)?|giu)",
-        "defaultMessage": "In basso non puoi andare."
+        "defaultMessage": "No puedes bajar."
       }
     },
     "verbs": {
       "open": {
         "pattern": "apri",
-        "defaultMessage": "Non si apre"
+        "defaultMessage": "No se abre"
       },
       "close": {
         "pattern": "chiudi",
-        "defaultMessage": "Non si chiude"
+        "defaultMessage": "No se cierra"
       },
       "pull": {
         "pattern": "tira"
@@ -120,7 +120,7 @@
       },
       "push": {
         "pattern": "spingi",
-        "defaultMessage": "Non si muove."
+        "defaultMessage": "No se mueve."
       },
       "take": {
         "pattern": "prendi"
@@ -136,7 +136,7 @@
       },
       "useWith": {
         "pattern": "(usa) (.+) (?:con) (.+)",
-        "defaultMessage": "Non posso usarli insieme."
+        "defaultMessage": "No puedo usarlos juntos."
       },
       "use": {
         "pattern": "usa"
@@ -154,60 +154,60 @@
   },
   "AvventuraNelCastelloJSEngine": {
     "warnings": {
-      "mustBeExtended": "AvventuraNelCastelloEngine deve essere esteso"
+      "mustBeExtended": "AvventuraNelCastelloEngine debe ser extendido"
     },
-    "defaultInput": "Cosa devo fare ?",
+    "defaultInput": "¿Qué debo hacer?",
     "prefixLabels": {
-      "ISee": "Vedo",
-      "cantSeeHere": "Qui non vedo",
-      "youDontOwn": "Non possiedi",
-      "title": "Hai il diritto di fregiarti del titolo di:"
+      "ISee": "Veo",
+      "cantSeeHere": "Aquí no veo",
+      "youDontOwn": "No tienes",
+      "title": "Tienes derecho a ostentar el título de:"
     },
     "pointsLabel": [
-      "Avventuriero dei miei stivali",
-      "Scemo del villaggio",
-      "Servo della gleba",
-      "Vile Meccanico",
-      "Vice Palafreniere aggiunto",
+      "Aventurero de pacotilla",
+      "Tonto del pueblo",
+      "Siervo de la gleba",
+      "Vil mecánico",
+      "Sub-sub-ayudante de palafrenero",
       "Lanzichenecco",
-      "Arcivescovo  di Canterbury",
-      "(disarcivescoviscanterburyzzato)",
-      "Barone Rampante",
-      "Visconte dimezzato",
-      "Conte della malora"
+      "Arzobispo de Canterbury",
+      "(desarzobispocanterburizado)",
+      "Barón rampante",
+      "Vizconde a medias",
+      "Conde de la desgracia"
     ],
-    "menuOption4LabelOverride": "Smettere prima ancora di cominciare",
+    "menuOption4LabelOverride": "Rendirse antes incluso de empezar",
     "commonPatterns": {
       "say": "(pronuncia|di)",
       "wall": "(muro|mura|pareti|parete)"
     },
     "defaultMessages": {
-      "beSerious": "Sii Serio!",
-      "notUseful": "Non serve a niente.",
-      "alreadyHaveIt": "Ce l'hai già.",
-      "inYourHand": "Ce l'hai in mano.",
-      "wearing": "L'hai già addosso",
-      "didNotUnderstand": "- Non capisco.",
-      "again": "Cos'altro speri di ottenere ?",
-      "youDontKnow": "Tu non conosci questa parola.",
-      "isOpened": "E' già aperto.",
-      "isClosed": "E' chiuso.",
-      "notFound": "Chi cerca trova."
+      "beSerious": "¡Sé serio!",
+      "notUseful": "No sirve de nada.",
+      "alreadyHaveIt": "Ya lo tienes.",
+      "inYourHand": "Ya lo tienes en la mano.",
+      "wearing": "Ya lo llevas puesto",
+      "didNotUnderstand": "- No entiendo.",
+      "again": "¿Qué más esperas conseguir?",
+      "youDontKnow": "No conoces esa palabra.",
+      "isOpened": "Ya está abierto.",
+      "isClosed": "Está cerrado.",
+      "notFound": "Quien busca, encuentra."
     },
     "messages": {
-      "huh": "Eh?",
-      "somethingSensible": "Dimmi qualcosa di sensato.",
-      "dontBeFormal": "Dammi del tu, per favore.",
-      "overloaded": "Sei già troppo carico; devi lasciare qualcosa.",
+      "huh": "¿Eh?",
+      "somethingSensible": "Dime algo con sentido.",
+      "dontBeFormal": "Tuteame, por favor.",
+      "overloaded": "Ya vas demasiado cargado; tienes que soltar algo.",
       "points": {
         "__fn__": true,
         "args": [
           "points",
           "maxPoints"
         ],
-        "template": "Hai duramente conquistato ${points} punti, su un possibile massimo di ${maxPoints}."
+        "template": "Has conseguido a pulso ${points} puntos, de un máximo posible de ${maxPoints}."
       },
-      "tough": "Peggio per te!"
+      "tough": "¡Peor para ti!"
     },
     "verbs": {
       "look": {
@@ -236,18 +236,18 @@
       },
       "enter": {
         "pattern": "entra(?: in)?",
-        "defaultMessage": "Da che parte ? (N/S/E/O/A/B)"
+        "defaultMessage": "¿Por dónde? (N/S/E/O/A/B)"
       },
       "wear": {
         "pattern": "(mettiti|indossa|metti|infilati)"
       },
       "liftUp": {
         "pattern": "(alza|solleva)",
-        "defaultMessage": "Non c'è sotto niente."
+        "defaultMessage": "No hay nada debajo."
       },
       "lower": {
         "pattern": "abbassa",
-        "defaultMessage": "Non si abbassa."
+        "defaultMessage": "No baja."
       },
       "take": {
         "pattern": "(prendi|ruba|afferra)"
@@ -263,55 +263,55 @@
       },
       "pray": {
         "pattern": "prega",
-        "defaultMessage": "  Aiutati che Dio ti aiuterà."
+        "defaultMessage": "  Ayúdate, que Dios te ayudará."
       },
       "land": {
         "pattern": "(atterra|cabra|plana|picchia|vira|manovra)",
-        "defaultMessage": "Più a terra di così!"
+        "defaultMessage": "¡Más en tierra que esto!"
       },
       "jump": {
         "pattern": "(lanciati|gettati|buttati|salta)(?: .+)?",
-        "defaultMessage": "Faccio già ginnastica tutte le mattine."
+        "defaultMessage": "Ya hago gimnasia todas las mañanas."
       },
       "sitDown": {
         "pattern": "(siedi(?:ti)?|sdraiati)(?: su )?(.+)?",
-        "defaultMessage": "Un po' di riposo fa sempre bene."
+        "defaultMessage": "Un poco de descanso siempre viene bien."
       },
       "greet": {
         "pattern": "saluta",
-        "defaultMessage": "Nessuna risposta."
+        "defaultMessage": "Ninguna respuesta."
       },
       "dig": {
         "pattern": "scava",
-        "defaultMessage": "Non sono tagliato per i lavori di bassa manovalanza."
+        "defaultMessage": "No estoy hecho para los trabajos de peón."
       },
       "eat": {
         "pattern": "(mangia|divora)",
-        "defaultMessage": "Non mi sembra molto digeribile."
+        "defaultMessage": "No me parece muy digerible."
       },
       "knock": {
         "pattern": "bussa",
-        "defaultMessage": "Nessuna risposta."
+        "defaultMessage": "Ninguna respuesta."
       },
       "thank": {
         "pattern": "(grazie|ringrazia)",
-        "defaultMessage": "Prego."
+        "defaultMessage": "De nada."
       },
       "wait": {
         "pattern": "aspetta",
-        "defaultMessage": "D'accordo"
+        "defaultMessage": "De acuerdo."
       },
       "talk": {
         "pattern": "(parla(?: con)?|interroga)",
-        "defaultMessage": "Se una volta tanto pensassi invece di parlare, non sarebbe meglio?"
+        "defaultMessage": "Por una vez, ¿no sería mejor pensar en lugar de hablar?"
       },
       "listen": {
         "pattern": "ascolta",
-        "defaultMessage": "Restando immobile con l'orecchio teso, ti par di udire lontano un rumore come di catene strascicate. Ma forse è solo uno scherzo giocato alla tua fantasia dal remoto sibilare del vento."
+        "defaultMessage": "Quedándote inmóvil con el oído atento, te parece oír a lo lejos un ruido como de cadenas arrastradas. Pero quizá sea solo una broma que tu imaginación se juega con el lejano silbido del viento."
       },
       "buy": {
         "pattern": "(compra|compera|acquista)",
-        "defaultMessage": "Non hai una lira."
+        "defaultMessage": "No tienes ni una peseta."
       },
       "break": {
         "pattern": "(rompi|spacca|spezza|frantuma|distruggi|sfonda|strappa)"
@@ -336,11 +336,11 @@
       },
       "ask": {
         "pattern": "(chiedi|domanda)",
-        "defaultMessage": "Nessuno è disposto ad offrirti l'oggetto del tuo desiderio."
+        "defaultMessage": "Nadie está dispuesto a ofrecerte el objeto de tu deseo."
       },
       "askTo": {
         "pattern": "(chiedi|domanda) (.+) (?:a) (.+)",
-        "defaultMessage": "Nessuno è disposto ad offrirti l'oggetto del tuo desiderio."
+        "defaultMessage": "Nadie está dispuesto a ofrecerte el objeto de tu deseo."
       },
       "skrewOff": {
         "pattern": "svita"
@@ -361,7 +361,7 @@
       },
       "stop": {
         "pattern": "(basta|stop|fine|abbandono)",
-        "defaultMessage": "Mi spiace che tu voglia abbandonare la tua esplorazione, proprio quando..."
+        "defaultMessage": "Lamento que quieras abandonar tu exploración, justo cuando..."
       },
       "instructions": {
         "pattern": "istruzioni"
@@ -380,15 +380,15 @@
       },
       "help": {
         "pattern": "(aiuto|sos|help|soccors(?:o|i))",
-        "defaultMessage": "Arrangiati!"
+        "defaultMessage": "¡Apáñatelas!"
       },
       "call": {
         "pattern": "(chiama|grida|urla)(?: (.+))?",
-        "defaultMessage": "Senti in risposta un lontano suono cavernoso, e ti ci vuole qualche secondo per capire che è solo l'eco della tua voce roca."
+        "defaultMessage": "En respuesta oyes un lejano sonido cavernoso, y tardas unos segundos en entender que es solo el eco de tu voz ronca."
       },
       "cry": {
         "pattern": "piangi",
-        "defaultMessage": "Ora che ti sei sfogato, alzati e combatti da uomo!"
+        "defaultMessage": "Ahora que te has desahogado, ¡levántate y lucha como un hombre!"
       },
       "moves": {
         "pattern": "(turni|mosse)",
@@ -397,7 +397,7 @@
           "args": [
             "moves"
           ],
-          "template": "Sei giunto or ora a ${moves} mosse."
+          "template": "Has llegado ahora a ${moves} movimientos."
         }
       },
       "idiot": {
@@ -406,7 +406,7 @@
       },
       "abracadabra": {
         "pattern": "abracadabra",
-        "defaultMessage": "Temo che questa vecchia parola magica sia ormai consunta dal troppo uso."
+        "defaultMessage": "Me temo que esta vieja palabra mágica ya está gastada de tanto uso."
       },
       "die": {
         "pattern": "(muori|impiccati|crepa|sparati)",
@@ -414,11 +414,11 @@
       },
       "think": {
         "pattern": "(pensa|ragiona|cogita|medita|deduci|ingegnati)",
-        "defaultMessage": "Non mi sembra il posto adatto"
+        "defaultMessage": "No me parece el lugar adecuado."
       },
       "getOut": {
         "pattern": "(esci(?: da)?|corri|scappa|fuggi|cammina|torna|ritorna|vai)( (?:a )?(?:n(ord)?|s(ud)?|e(st)?|o(vest)?|a(lto)?|b(asso)?))?",
-        "defaultMessage": "Sono indeciso: da che parte ? (N/S/E/O/A/B)"
+        "defaultMessage": "Estoy indeciso: ¿por dónde? (N/S/E/O/A/B)"
       },
       "sleep": {
         "pattern": "(dormi|riposa(?:ti)?)",
@@ -426,23 +426,23 @@
       },
       "maybe": {
         "pattern": "(boh|mah|forse|probabilmente)",
-        "defaultMessage": "Non essere così indeciso!"
+        "defaultMessage": "¡No seas tan indeciso!"
       },
       "good": {
         "pattern": "bravo",
-        "defaultMessage": "Grazie!"
+        "defaultMessage": "¡Gracias!"
       },
       "youAreWelcome": {
         "pattern": "prego",
-        "defaultMessage": "Non c'è di che."
+        "defaultMessage": "No hay de qué."
       },
       "openSesame": {
         "pattern": "apriti sesamo",
-        "defaultMessage": "Guarda che questa è AVVENTURA NEL CASTELLO, non LE MILLE E UNA NOTTE."
+        "defaultMessage": "Que sepas que esto es AVENTURA EN EL CASTILLO, no LAS MIL Y UNA NOCHES."
       },
       "waitForMidnight": {
         "pattern": "aspetta mezzanotte",
-        "defaultMessage": "E' strano: quando aspetti qualcosa, sembra davvero che il tempo non passi mai."
+        "defaultMessage": "Es curioso: cuando esperas algo, de verdad parece que el tiempo no pasa nunca."
       },
       "sayHello": {
         "pattern": "saluta"
@@ -461,15 +461,15 @@
           ],
           "template": "(?:${sayPattern} )?senno"
         },
-        "defaultMessage": "Non è una parola magica, stupido!"
+        "defaultMessage": "¡No es una palabra mágica, idiota!"
       },
       "useSenno": {
         "pattern": "usa senno",
-        "defaultMessage": "Non mi sembra il posto adatto!"
+        "defaultMessage": "¡No me parece el lugar adecuado!"
       },
       "lookForDictionary": {
         "pattern": "cerca dizionario",
-        "defaultMessage": "Non pretenderai che lo cerchi per tutto il castello!"
+        "defaultMessage": "¡No pretenderás que lo busque por todo el castillo!"
       },
       "saySpell": {
         "pattern": {
@@ -482,15 +482,15 @@
       },
       "introduceYourself": {
         "pattern": "presentati",
-        "defaultMessage": "Elenchi doviziosamente i tuoi numerosi titoli onorifici, ma pare che non vi sia nessuno disposto a prestarti ascolto."
+        "defaultMessage": "Enumeras diligentemente tus numerosos títulos honoríficos, pero parece que no hay nadie dispuesto a escucharte."
       },
       "yes": {
         "pattern": "(si|certo|certamente|sicuro)",
-        "defaultMessage": "O forse no."
+        "defaultMessage": "O quizá no."
       },
       "no": {
         "pattern": "(no|mai)",
-        "defaultMessage": "O forse si"
+        "defaultMessage": "O quizá sí."
       },
       "bigmeow": {
         "pattern": {
@@ -502,14 +502,14 @@
         },
         "defaultMessage": {
           "prelude": [
-            "Il gatto cresce fino a diventare enorme............",
-            "ti osserva con attenzione............"
+            "El gato crece hasta volverse enorme............",
+            "te observa con atención............"
           ],
           "success": [
-            "osserva con attenzione l'orco..........",
-            "Il gatto divora l'orco e muore di indigestione."
+            "observa atentamente al ogro..........",
+            "El gato devora al ogro y muere de indigestión."
           ],
-          "fail": "e ti divora."
+          "fail": "y te devora."
         }
       },
       "iotid": {
@@ -528,33 +528,33 @@
         "pattern": "nuota"
       }
     },
-    "dieText": "Sono molto addolorato per la tua prematura scomparsa... D'altronde sono sempre i migliori che se ne vanno (non è vero?). Consolati comunque pensando che:",
+    "dieText": "Estoy muy apenado por tu prematura desaparición... Al fin y al cabo, siempre se van los mejores (¿verdad?). Consuélate pensando que:",
     "instructions": [
-      "Il tuo obbiettivo principale è uscire vivo dal castello.",
-      "Per farcela dovrai affrontare molti pericoli e risolvere problemi che metteranno a dura prova la tua astuzia.",
-      "In questa avventura, io sarò il tuo alter ego, i tuoi occhi e le tue orecchie, ma tu dovrai prendere le decisioni (e subirne le conseguenze).",
-      "Per muoverti usa:",
-      "- NORD, SUD, EST, OVEST, ALTO, BASSO oppure soltanto:",
+      "Tu objetivo principal es salir vivo del castillo.",
+      "Para lograrlo tendrás que afrontar muchos peligros y resolver problemas que pondrán a prueba tu astucia.",
+      "En esta aventura, yo seré tu alter ego, tus ojos y tus oídos, pero tú tomarás las decisiones (y sufrirás las consecuencias).",
+      "Para moverte usa:",
+      "- NORD, SUD, EST, OVEST, ALTO, BASSO o simplemente:",
       "- N, S, E, O, A, B",
-      "Io ti darò la descrizione completa di ogni luogo la prima volta che vi entri, poi darò solo una descrizione breve. Se vuoi la descrizione completa dimmi:",
+      "Te daré la descripción completa de cada lugar la primera vez que entres, y luego solo una breve. Si quieres la descripción completa, dime:",
       "- GUARDA o",
       "- GUARDA LA STANZA",
-      "Azioni fondamentali sono:",
-      "- PRENDI qualcosa",
-      "- LASCIA qualcosa",
-      "- GUARDA qualcosa, ad esempio GUARDA LO SCALONE.",
-      "Io non sono molto furbo, per cui usa frasi come APRI LA PORTA o SALTA e non frasi elaborate come GUARDA DIETRO IL DIVANO o avverbi (GUARDA ATTENTAMENTE), che sono al di là della mia comprensione.",
-      "Per agire su un oggetto, di solito è necessario possederlo. Inoltre, ricorda che un'azione che non ha effetto in un posto (es. CERCA) può averne da qualche altra parte.",
-      "Altri comandi importanti:",
-      "- DOVE ti ricorda dove ti trovi,",
-      "- COSA elenca gli oggetti che possiedi,",
-      "- MOSSE ti dice da quanto giochi,",
-      "- PUNTI quanto sei riuscito a scoprire,",
-      "- SAVE serve a registrare la situazione su disco,",
-      "- LOAD ripristina la situazione su disco,",
-      "- BASTA termina il gioco,",
-      "- ISTRUZIONI ti ripete questa descrizione.",
-      "Buona Fortuna! (ne avrai bisogno)"
+      "Acciones fundamentales:",
+      "- PRENDI algo",
+      "- LASCIA algo",
+      "- GUARDA algo, por ejemplo GUARDA LO SCALONE.",
+      "No soy muy listo, así que usa frases como APRI LA PORTA o SALTA y no frases elaboradas como GUARDA DIETRO IL DIVANO o adverbios (GUARDA ATTENTAMENTE), que están más allá de mi comprensión.",
+      "Para actuar sobre un objeto, normalmente hay que poseerlo. Además, recuerda que una acción que no tiene efecto en un lugar (por ejemplo CERCA) puede tenerlo en otro.",
+      "Otros comandos importantes:",
+      "- DOVE te recuerda dónde estás,",
+      "- COSA enumera los objetos que llevas,",
+      "- MOSSE te dice cuánto llevas jugando,",
+      "- PUNTI cuánto has conseguido descubrir,",
+      "- SAVE guarda la situación en disco,",
+      "- LOAD recupera la situación desde disco,",
+      "- BASTA termina el juego,",
+      "- ISTRUZIONI repite esta explicación.",
+      "¡Buena suerte! (la necesitarás)"
     ],
     "insult": {
       "toMe": {
@@ -562,10 +562,10 @@
         "args": [
           "insult"
         ],
-        "template": " ${insult} A ME???? "
+        "template": " ¿¿¿${insult} A MÍ???? "
       },
-      "nowYourTurn": "ADESSO TI FACCIO VEDERE IO!!!!",
-      "fuck": " Tié! "
+      "nowYourTurn": "¡¡¡¡AHORA TE VOY A ENSEÑAR YO!!!!",
+      "fuck": " ¡Toma! "
     },
     "prepareInputSteps": [
       {
@@ -617,108 +617,108 @@
   "AvventuraNelCastelloJS": {
     "commonInteractors": {
       "steps": {
-        "label": "i gradini",
+        "label": "los peldaños",
         "pattern": "gradin(?:i|o)"
       },
       "stairs": {
-        "label": "la scala",
+        "label": "la escalera",
         "pattern": "scal(?:a|e|one)",
-        "description": "E' a gradini"
+        "description": "Es de peldaños."
       },
       "walls": {
-        "label": "le pareti",
-        "onBreak": "Il muro è duro"
+        "label": "las paredes",
+        "onBreak": "El muro es duro."
       },
       "armor": {
-        "label": "l'armatura",
+        "label": "la armadura",
         "pattern": "armatur(?:a|e)",
-        "description": "Ciascuna armatura sembra guardarti dall'alto in basso con aria altezzosa.",
-        "onTakeOrWear": "Scherzi? Pesa il doppio di te. A quei tempi non erano certo dei rammolliti, come al giorno d'oggi."
+        "description": "Cada armadura parece mirarte de arriba abajo con aire altivo.",
+        "onTakeOrWear": "¿Estás de broma? Pesa el doble que tú. En aquellos tiempos no eran precisamente blanditos, como hoy en día."
       },
       "hallway": {
-        "label": "il corridoio",
+        "label": "el pasillo",
         "pattern": "corridoio"
       },
       "skeletons": {
-        "label": "gli scheletri",
+        "label": "los esqueletos",
         "pattern": "(scheletr(?:o|i)|ossa)",
-        "description": "E' la nostra comune sorte. Ma non puoi pensare a qualcosa di più allegro?"
+        "description": "Es nuestro destino común. ¿No puedes pensar en algo más alegre?"
       },
       "labyrinth": {
-        "label": "il labirinto",
+        "label": "el laberinto",
         "pattern": "(labirinto|passaggi(?:o)?)",
-        "description": "Sembra facile! In questo incrociarsi sfumato di piani inclinati lungo curve impossibili, non si distingue il pavimento dal soffitto, e tutte le direzioni sembrano uguali."
+        "description": "¡Parece fácil! En este cruce difuso de planos inclinados a lo largo de curvas imposibles, no se distingue el suelo del techo, y todas las direcciones parecen iguales."
       },
       "door": {
-        "label": "la porta",
+        "label": "la puerta",
         "pattern": "porta"
       },
       "table": {
-        "label": "il tavolo",
+        "label": "la mesa",
         "pattern": "tavol(?:o|a|ino)"
       },
       "bows": {
-        "label": "gli archi",
+        "label": "los arcos",
         "pattern": "arc(?:o|hi)"
       },
       "shields": {
-        "label": "gli scudi",
+        "label": "los escudos",
         "pattern": "scud(?:o|i)"
       },
       "fireplace": {
-        "label": "il camino",
+        "label": "la chimenea",
         "pattern": "camino|focolare"
       },
       "armchairs": {
-        "label": "le poltrone",
+        "label": "los sillones",
         "pattern": "poltron(?:a|e)"
       },
       "chairs": {
-        "label": "le sedie",
+        "label": "las sillas",
         "pattern": "sedi(?:a|e)"
       },
       "monster": {
-        "label": "il mostro",
+        "label": "el monstruo",
         "pattern": "(mostr(?:o|i)|nessie)"
       },
       "shelves": {
-        "label": "gli scaffali",
+        "label": "las estanterías",
         "pattern": "scaffal(?:e|i)"
       },
       "bed": {
-        "label": "il letto",
+        "label": "la cama",
         "pattern": "baldacchino|letto"
       },
       "weapons": {
-        "label": "le armi",
+        "label": "las armas",
         "pattern": "arm(?:a|i)"
       },
       "fog": {
-        "label": "la nebbia",
+        "label": "la niebla",
         "pattern": "nebbia",
-        "description": "E' difficile mettere a fuoco la vista: non capisci se l'uniforme granulosità grigia che stai fissando è a dieci metri o a dieci centimetri dal tuo naso. Gli ululati che giungono fin qui hanno un timbro ovattato, ma non per questo più rassicurante."
+        "description": "Es difícil enfocar la vista: no entiendes si la uniformidad granulosa y gris que estás mirando está a diez metros o a diez centímetros de tu nariz. Los aullidos que llegan hasta aquí suenan amortiguados, pero no por eso resultan más tranquilizadores."
       },
       "crows": {
-        "label": "i corvi",
+        "label": "los cuervos",
         "pattern": "corv(?:o|i)",
-        "description": "Sono del tutto invisibili, persi da qualche parte nell'uniforme luminosità lattiginosa. Puoi solo sentirne il verso stridente proveniende da un punto indefinito sopra la tua testa.",
-        "onListen": "Gracchiano la loro derisione nei confronti dei tuoi inutili e ridicoli sforzi, o almeno questa è la tua impressione."
+        "description": "Son totalmente invisibles, perdidos en algún lugar dentro de esa luminosidad lechosa y uniforme. Solo puedes oír su graznido estridente proveniente de un punto indefinido por encima de tu cabeza.",
+        "onListen": "Graznan su burla ante tus inútiles y ridículos esfuerzos, o al menos esa es tu impresión."
       },
       "ramparts": {
-        "label": "gli spalti",
+        "label": "las almenas",
         "pattern": "(mura|spalti)",
-        "description": "Guardando giù dagli spalti, la nebbia ti causa come una specie di vertigine. Non vedi nulla di solido che ti possa dare un riferimento per capire a che altezza ti trovi. Ma non puoi essere molto in alto, a giudicare dalla scala a chiocciola che hai salito per arrivare quassù."
+        "description": "Al mirar hacia abajo desde las almenas, la niebla te provoca una especie de vértigo. No ves nada sólido que te sirva de referencia para saber a qué altura estás. Pero no puedes estar muy alto, a juzgar por la escalera de caracol que has subido para llegar aquí."
       },
       "pass": {
-        "label": "il passaggio",
+        "label": "el pasaje",
         "pattern": "passaggi(?:o)?"
       },
       "tunnel": {
-        "label": "il cunicolo",
+        "label": "el túnel",
         "pattern": "cunicolo"
       },
       "rock": {
-        "label": "la roccia",
+        "label": "la roca",
         "pattern": "roccia"
       },
       "tower": {
@@ -728,545 +728,545 @@
     },
     "commonRooms": {
       "spiralStaircase": {
-        "description": "Sei in una stanza con una scala a chiocciola."
+        "description": "Estás en una habitación con una escalera de caracol."
       },
       "ramparts": {
         "description": [
-          "Sei sugli spalti delle mura. La visibilità è molto ridotta dalla nebbia che sale dalla brughiera in larghe, lente spirali. Senti, senza vederli, il gracchiare dei corvi che volteggiano sopra di te.",
-          "Una scala a chiocciola porta in basso."
+          "Estás en las almenas del castillo. La visibilidad se reduce mucho por la niebla que sube desde el páramo en grandes y lentas espirales. Oyes, sin verlos, el graznido de los cuervos que revolotean sobre ti.",
+          "Una escalera de caracol baja hacia abajo."
         ],
-        "shortDescription": "Sei sugli spalti delle mura.",
+        "shortDescription": "Estás en las almenas del castillo.",
         "onJump": [
-          "Grazie alla tua agilità, atterri senza danni.",
-          "I lupi sono felici di avere un po' di carne fresca."
+          "Gracias a tu agilidad, aterrizas sin daño.",
+          "Los lobos están encantados de tener algo de carne fresca."
         ]
       },
       "labyrinth": {
-        "description": "Sei nel labirinto.",
-        "onDrop": "Si allontana lungo i percorsi sinuosi di una gravità contorta.",
-        "onGetOut": "Illuso! Credi di poter riuscire dove tanti hanno fallito?",
+        "description": "Estás en el laberinto.",
+        "onDrop": "Se aleja por los senderos sinuosos de una gravedad retorcida.",
+        "onGetOut": "¡Iluso! ¿Crees que podrás lograrlo donde tantos han fracasado?",
         "onThink": [
-          "Dunque, vediamo...",
+          "A ver, veamos...",
           "Mumble...",
           "mumble...",
-          "Non ho concluso niente."
+          "No he concluido nada."
         ],
-        "onThinkQuestion": "Devo pensare ancora "
+        "onThinkQuestion": "¿Debo pensar otra vez "
       }
     },
     "rooms": {
       "plane": {
-        "description": "Stai precipitando!",
+        "description": "¡Estás cayendo!",
         "directions": {
-          "down": "Stai già scendendo, e velocemente:"
+          "down": "Ya estás bajando, y rápido:"
         },
         "commands": {
           "help": [
-            "Selezioni sulla radio di bordo la frequenza di soccorso e lanci un S.O.S.",
-            "Per qualche secondo tutto tace...",
-            "Poi ricevi chiara una voce registrata:",
-            "- Comunichiamo a tutti gli utenti del soccorso aereo che il servizio è momentaneamente sospeso a causa di un improvviso sciopero del personale.",
-            "In sostituzione, vogliate recitare con me: ",
+            "Sintonizas la radio de a bordo en la frecuencia de socorro y lanzas un S.O.S.",
+            "Durante unos segundos todo queda en silencio...",
+            "Luego recibes claramente una voz grabada:",
+            "- Comunicamos a todos los usuarios del rescate aéreo que el servicio está suspendido temporalmente debido a una huelga imprevista del personal.",
+            "Como sustitución, tengan a bien recitar conmigo:",
             "- Pater noster qui es in coelis... "
           ]
         },
         "verbs": {
-          "jump": "Non hai addosso nessun paracadute.",
-          "look": "C'è troppo fumo!",
-          "land": "Non posso: i comandi non rispondono."
+          "jump": "No llevas puesto ningún paracaídas.",
+          "look": "¡Hay demasiado humo!",
+          "land": "No puedo: los mandos no responden."
         },
         "interactors": {
           "cloche": {
-            "label": "la cloche",
+            "label": "la palanca",
             "pattern": "cloche",
             "onPullOrPush": [
-              "I comandi rispondono un poco!",
-              "...quanto basta per peggiorare la situazione."
+              "¡Los mandos responden un poco!",
+              "...lo justo para empeorar la situación."
             ]
           },
           "engine": {
-            "label": "il motore",
+            "label": "el motor",
             "pattern": "motore",
-            "onRepair": "Non me ne intendo."
+            "onRepair": "No entiendo de eso."
           },
           "plane": {
-            "label": "l'aereo",
+            "label": "el avión",
             "pattern": "aereo"
           }
         }
       },
       "paradeGround": {
         "description": [
-          "Sei nella piazza d'armi: un vasto spiazzo quadrato in terra battuta cinto da alte mura di pietra grigia.",
-          "Al centro della spianata, un lastrone massiccio copre l'imboccatura di quello che era il pozzo del castello.",
-          "Sento, in lontananza, ululati di lupi."
+          "Estás en el patio de armas: una vasta explanada cuadrada de tierra apisonada, rodeada por altas murallas de piedra gris.",
+          "En el centro de la explanada, una losa maciza cubre la boca de lo que fue el pozo del castillo.",
+          "Oyes, a lo lejos, aullidos de lobos."
         ],
         "shortDescription": [
-          "Sei nella piazza d'armi.",
-          "Sento lupi ululare."
+          "Estás en el patio de armas.",
+          "Oyes lobos aullar."
         ],
         "directions": {
           "north": {
-            "success": "Il portone si richiude pesantemente, senza lasciare la minima fessura.",
-            "fail": "Il portone è chiuso."
+            "success": "El portón se cierra de golpe con pesadez, sin dejar la más mínima rendija.",
+            "fail": "El portón está cerrado."
           },
-          "south": "Non puoi, il ponte è alzato.",
-          "up": "Nel caso non te l'avessero insegnato, sappi che il paracadute è un dispositivo che funziona solo in discesa."
+          "south": "No puedes: el puente levadizo está alzado.",
+          "up": "Por si nadie te lo enseñó: el paracaídas es un dispositivo que solo funciona en descenso."
         },
         "interactors": {
           "drawbridge": {
-            "label": "un ponte levatoio alzato",
+            "label": "un puente levadizo alzado",
             "pattern": "ponte",
-            "description": "E' alzato, ma lo si può abbassare senza difficoltà.",
-            "onLower": "I lupi entrano e ti sbranano."
+            "description": "Está alzado, pero se puede bajar sin dificultad.",
+            "onLower": "Los lobos entran y te despedazan."
           },
           "doorway": {
-            "dlabel": "un portone",
+            "dlabel": "un portón",
             "label": [
-              "un portone chiuso",
-              "un portone aperto"
+              "un portón cerrado",
+              "un portón abierto"
             ],
             "pattern": "portone",
-            "description": "E' molto massiccio.",
-            "onClose": "E' già chiuso."
+            "description": "Es muy macizo.",
+            "onClose": "Ya está cerrado."
           },
           "stoneSlab": {
-            "label": "il lastrone di pietra",
+            "label": "la losa de piedra",
             "pattern": "lastrone|pozzo",
             "onLook": [
-              "Il lastrone di pietra, corroso dai secoli, cede sotto il tuo peso. Precipiti nel pozzo infestato da esseri viscidi e repellenti",
-              "(e carnivori)."
+              "La losa de piedra, corroída por los siglos, cede bajo tu peso. Te precipitas al pozo, infestado de seres viscosos y repugnantes",
+              "(y carnívoros)."
             ]
           },
           "walls": {
-            "description": "Sono massicce, squadrate e solidamente costruite per resistere ad ogni assalto."
+            "description": "Son macizas, cuadradas y sólidamente construidas para resistir cualquier asalto."
           },
           "esplanade": {
-            "label": "la spianata",
+            "label": "la explanada",
             "pattern": "spianata"
           },
           "castle": {
-            "label": "il castello",
+            "label": "el castillo",
             "pattern": "castello"
           }
         }
       },
       "atrium": {
         "description": [
-          "Sei in un grande atrio immerso nella penombra. Una lugubre fosforescenza che emana dalle pareti ti permette di distinguere i contorni della stanza.",
-          "Uno scalone di marmo sale perdendosi nell'oscurità attenuata soltanto dal diffuso chiarore verdastro."
+          "Estás en un gran atrio sumido en la penumbra. Una lúgubre fosforescencia que emana de las paredes te permite distinguir los contornos de la estancia.",
+          "Una escalinata de mármol sube perdiéndose en la oscuridad, atenuada solo por un difuso resplandor verdoso."
         ],
-        "shortDescription": "Sei nell'atrio.",
+        "shortDescription": "Estás en el atrio.",
         "directions": {
-          "south": "Niente da fare. Temo che dovrai trovare un'altra via d'uscita."
+          "south": "Nada que hacer. Me temo que tendrás que encontrar otra salida."
         },
         "interactors": {
           "blazon": {
-            "label": "un blasone dipinto sul soffitto",
+            "label": "un blasón pintado en el techo",
             "pattern": "blasone",
             "onLook": [
-              "C'è scritto il motto della dinastia",
-              "\"Cadrà lo straniero\"",
-              "Improvvisamente una botola si apre sotto i tuoi piedi."
+              "Está escrito el lema de la dinastía:",
+              "\"Caerá el extranjero\"",
+              "De repente se abre una trampilla bajo tus pies."
             ]
           },
           "doorway": {
-            "label": "un portone",
+            "label": "un portón",
             "pattern": "portone"
           }
         }
       },
       "lounge": {
         "description": [
-          "Sei nel grande salone, arredato con numerosi divani e comode poltrone. Al centro di una parete è posto un monumentale camino costruito con blocchi di pietra lavorata.",
-          "Benché‚ il fuoco sia spento da secoli, la stanza sembra illuminata da una ondeggiante luce rossastra."
+          "Estás en el gran salón, amueblado con numerosos sofás y cómodos sillones. En el centro de una pared hay una chimenea monumental construida con bloques de piedra labrada.",
+          "Aunque el fuego lleva siglos apagado, la estancia parece iluminada por una luz rojiza y ondulante."
         ],
-        "shortDescription": "Sei nel salone.",
+        "shortDescription": "Estás en el salón.",
         "interactors": {
           "sofa": {
-            "label": "il divano",
+            "label": "el sofá",
             "pattern": "divan(?:o|i)"
           },
           "fireplace": {
-            "description": "E' tanto grande che ci potresti agevolmente passare, se ci fosse un passaggio. Peccato che non se ne veda traccia. Forse a cercare..."
+            "description": "Es tan grande que podrías pasar por él sin dificultad... si hubiese un pasaje. Lástima que no se vea rastro alguno. Quizá buscando..."
           },
           "light": {
-            "label": "la luce",
+            "label": "la luz",
             "pattern": "luce",
-            "description": "Strano, quando volgi lo sguardo dove pensavi di intravvedere la luce, questa pare spostarsi da un'altra parte. Forse è solo un riflesso, o la secolare memoria del sangue versato tra queste mura."
+            "description": "Qué extraño: cuando miras hacia donde creías entrever la luz, parece desplazarse a otro lugar. Quizá sea solo un reflejo... o la memoria secular de la sangre derramada entre estos muros."
           },
           "pass": {
             "pattern": "passaggio(?: segreto)?",
-            "onLookFor": "Nel camino non c'è proprio traccia di passaggi segreti. Tu leggi troppi libri di avventure."
+            "onLookFor": "En la chimenea no hay ni rastro de pasajes secretos. Lees demasiados libros de aventuras."
           }
         }
       },
       "hallway": {
         "description": [
-          "Sei in un largo corridoio, il cui pavimento porta i segni del passaggio di innumerevoli generazioni. Lungo la parete è allineata una fila di armature, reggenti ciascuna una lunga picca.",
-          "Verso il centro del corridoio sembra esservi stata una porta, ora murata."
+          "Estás en un amplio pasillo cuyo suelo muestra las huellas del paso de innumerables generaciones. A lo largo de la pared se alinea una fila de armaduras, cada una sosteniendo una larga pica.",
+          "Hacia el centro del pasillo parece haber habido una puerta, ahora tapiada."
         ],
-        "shortDescription": "Sei nel corridoio.",
+        "shortDescription": "Estás en el pasillo.",
         "interactors": {
           "spades": {
-            "label": "le picche",
+            "label": "las picas",
             "pattern": "picc(?:a|he)",
-            "description": "Lunga e munita di un'acuta punta in ferro, si direbbe un'arma micidiale. Chissà come veniva usata?",
+            "description": "Larga y rematada con una aguda punta de hierro: parece un arma mortífera. ¿Cómo demonios se usaría?",
             "onTake": {
-              "question": "Prendi la picca e la tiri verso di te, ma l'armatura non sembra voler mollare la presa. Devo insistere ",
+              "question": "Agarras la pica y tiras de ella hacia ti, pero la armadura no parece querer soltarla. ¿Debo insistir ",
               "answer": [
-                "Con uno strattone deciso, riesci finalmente ad appropriarti della picca.",
-                "L'armatura, sbilanciata, traballa leggermente...",
+                "Con un tirón decidido, por fin consigues apropiarte de la pica.",
+                "La armadura, desequilibrada, se tambalea ligeramente...",
                 "...",
-                "e mentre indietreggi con la punta della picca stretta tra le mani, l'armatura cade con tutto il suo peso sull'altra estremità dell'arma, trafiggendoti da parte a parte.",
-                "Ecco come veniva usata in battaglia!"
+                "y mientras retrocedes con la punta de la pica apretada entre las manos, la armadura cae con todo su peso sobre el otro extremo del arma, atravesándote de lado a lado.",
+                "¡Así es como se usaba en batalla!"
               ]
             }
           },
           "door": {
-            "description": "Ho detto che sembra esservi stata una porta, della quale non resta che la traccia di un profilo sul muro."
+            "description": "He dicho que parece haber habido una puerta, de la que no queda más que la huella del marco en la pared."
           }
         }
       },
       "diningRoom": {
         "description": [
-          "Sei nella grande sala da pranzo, occupata per tutta la sua lunghezza da un enorme tavolo in quercia, circondato da molte pesanti sedie con alti schienali.",
-          "A differenza di tutte le altre stanze, la finestra è aperta."
+          "Estás en el gran comedor, ocupado a lo largo de toda la sala por una enorme mesa de roble, rodeada de muchas sillas pesadas con altos respaldos.",
+          "A diferencia de todas las demás habitaciones, la ventana está abierta."
         ],
-        "shortDescription": "Sei nella sala da pranzo.",
+        "shortDescription": "Estás en el comedor.",
         "directions": {
           "down": {
-            "question": "Devo saltare dalla finestra "
+            "question": "¿Debo saltar por la ventana "
           }
         },
         "interactors": {
           "table": {
-            "description": "E' solido e ben costruito: serviva per i Banchetti Reali."
+            "description": "Es sólido y bien construido: servía para los banquetes reales."
           },
           "chairs": {
-            "description": "Vedendo le sedie intorno al tavolo, ti immagini il Re e la Regina graziosamente accomodati alle due estremità, con gli invitati disposti secondo il proprio grado di nobiltà, in base al rigido protocollo imposto dal cerimoniale di corte."
+            "description": "Al ver las sillas alrededor de la mesa, te imaginas al Rey y a la Reina graciosamente sentados en los extremos, con los invitados colocados según su rango, siguiendo el rígido protocolo de la corte."
           },
           "window": {
-            "label": "la finestra",
+            "label": "la ventana",
             "pattern": "(da )?finestra",
-            "description": "Dalla finestra si gode una magnifica vista sulle torbide acque del fossato, popolate di mostri scagliosi dai denti aguzzi.",
-            "onJump": "Non sono mica scemo!"
+            "description": "Desde la ventana se disfruta de una vista magnífica de las turbias aguas del foso, pobladas de monstruos escamosos de dientes afilados.",
+            "onJump": "¡No soy tonto!"
           }
         }
       },
       "library": {
-        "description": "Sei nella biblioteca del castello, le cui pareti sono completamente occupate da scaffali e scaffali, carichi di libri d'ogni genere. Al centro del pavimento, davanti ad una comoda poltrona, è fissato un leggio in ferro lavorato.",
-        "shortDescription": "Sei in biblioteca.",
-        "HUGE": "Il peso dell'antica sapienza è molto maggiore di quanto potessi sospettare.",
+        "description": "Estás en la biblioteca del castillo, cuyas paredes están completamente ocupadas por estanterías y más estanterías, cargadas de libros de toda clase. En el centro del suelo, frente a un cómodo sillón, hay un atril de hierro forjado.",
+        "shortDescription": "Estás en la biblioteca.",
+        "HUGE": "El peso de la sabiduría antigua es mucho mayor de lo que podías sospechar.",
         "override": {
           "commands": {
-            "lookForDictionary": "Ho esaminato accuratamente tutti gli scaffali, ma non ho trovato nessun dizionario.",
+            "lookForDictionary": "He examinado cuidadosamente todas las estanterías, pero no he encontrado ningún diccionario.",
             "iotid": [
-              "Il suono della parola magica riecheggia tra le antiche volte...",
-              "Un'intera parete di scaffali ruota su se stessa. Intravedo una grande sala."
+              "El sonido de la palabra mágica resuena entre las antiguas bóvedas...",
+              "Una pared entera de estanterías gira sobre sí misma. Vislumbras una gran sala."
             ]
           }
         },
         "interactors": {
           "shelves": {
-            "description": "Veramente una Biblioteca Reale! C'è tutto o quasi. Sono convinto che a ben cercare si possa trovare qualunque cosa, qui dentro."
+            "description": "¡Una auténtica Biblioteca Real! Está todo, o casi. Estoy convencido de que, buscando bien, se puede encontrar cualquier cosa aquí dentro."
           },
           "lectern": {
-            "label": "il leggio",
+            "label": "el atril",
             "pattern": "leggio",
-            "description": "Un'opera davvero pregevole."
+            "description": "Una obra realmente admirable."
           },
           "books": {
-            "label": "i libri",
+            "label": "los libros",
             "pattern": "libri",
-            "description": "Veramente una Biblioteca Reale! C'è tutto o quasi. Sono convinto che a ben cercare si possa trovare qualunque cosa, qui dentro.",
-            "onTake": "Sono un po' troppi per trasportarli.",
-            "onRead": "Ci vorrebbero secoli per sfogliarli tutti. Quelli che prendi in mano sono indubbiamente interessanti, ma non risolvono alcuno dei tuoi problemi. Dovresti almeno dirmi cosa cercare."
+            "description": "¡Una auténtica Biblioteca Real! Está todo, o casi. Estoy convencido de que, buscando bien, se puede encontrar cualquier cosa aquí dentro.",
+            "onTake": "Son demasiados para transportarlos.",
+            "onRead": "Harían falta siglos para hojearlos todos. Los que tomas en tus manos son sin duda interesantes, pero no resuelven ninguno de tus problemas. Al menos deberías decirme qué buscas."
           },
           "book": {
             "dlabel": "un libro",
             "label": [
-              "un libro chiuso sul leggio",
-              "un libro sul leggio"
+              "un libro cerrado sobre el atril",
+              "un libro sobre el atril"
             ],
             "pattern": "libro",
-            "description": "E' posato sul leggio, e sembra insieme antico e nuovissimo.",
-            "onOpen": "Dalle vecchie pagine ingiallite scivola fuori un foglio bruciacchiato.",
-            "onRead": "E' un dizionario di antico gaelico."
+            "description": "Está sobre el atril y parece a la vez antiguo y recién estrenado.",
+            "onOpen": "De las viejas páginas amarillentas se desliza una hoja chamuscada.",
+            "onRead": "Es un diccionario de gaélico antiguo."
           },
           "dictionary": {
-            "label": "un dizionario",
+            "label": "un diccionario",
             "pattern": "(dizionario|vocabolario)",
-            "description": "E' posato sul leggio, e sembra insieme antico e nuovissimo.",
+            "description": "Está sobre el atril y parece a la vez antiguo y recién estrenado.",
             "posizione": "biblioteca",
-            "onRead": "E' costituito da un elenco di parole in gaelico, ciascuna corredata dalla traduzione (con alcuni commenti) in lingua moderna. Le parole sono in ordine alfabetico, dalla A alla Z. C'è anche un elenco di proverbi, modi di dire e regole grammaticali e di pronuncia. Ma possibile che tu non abbia mai visto un dizionario?"
+            "onRead": "Consiste en una lista de palabras en gaélico, cada una con su traducción (y algunos comentarios) a la lengua moderna. Las palabras están en orden alfabético, de la A a la Z. También hay una lista de proverbios, expresiones y reglas gramaticales y de pronunciación. ¿De verdad es posible que nunca hayas visto un diccionario?"
           }
         }
       },
       "wideTunnel": {
-        "description": "Stai percorrendo un largo cunicolo, ricavato nella roccia che costituisce le fondamenta del castello.",
-        "shortDescription": "Sei in un largo cunicolo.",
+        "description": "Recorres un amplio túnel excavado en la roca que forma los cimientos del castillo.",
+        "shortDescription": "Estás en un amplio túnel.",
         "directions": {
           "north": {
-            "fail": "L'orco ti fa a pezzi."
+            "fail": "El ogro te hace pedazos."
           }
         }
       },
       "castleDungeon": {
-        "description": "Sei nella segreta del castello, un tempo chiamata 'La Tomba'. Il pavimento è coperto di scheletri.",
-        "shortDescription": "Sei nella segreta.",
+        "description": "Estás en la mazmorra del castillo, antaño llamada \"La Tumba\". El suelo está cubierto de esqueletos.",
+        "shortDescription": "Estás en la mazmorra.",
         "interactors": {
           "hole": {
-            "label": "un foro sulla parete",
+            "label": "un agujero en la pared",
             "pattern": "foro|buco",
-            "description": "E' stretto e profondo: in fondo c'è qualcosa che sembra un bottone."
+            "description": "Es estrecho y profundo: al fondo hay algo que parece un botón."
           },
           "button": {
-            "label": "bottone",
+            "label": "botón",
             "pattern": "bottone|pulsante",
-            "description": "Guardarlo non serve a niente. Forse a premerlo..."
+            "description": "Mirarlo no sirve de nada. Quizá pulsarlo..."
           },
           "slit": {
-            "label": "la fessura",
+            "label": "la rendija",
             "pattern": "fessura",
-            "description": "E' nella parete a ovest, ed è abbastanza larga per passarci.",
-            "invisibleMessage": "Non c'è nessuna fessura qui."
+            "description": "Está en la pared oeste y es lo bastante ancha como para pasar por ella.",
+            "invisibleMessage": "Aquí no hay ninguna rendija."
           },
           "arm": {
-            "label": "il braccio",
+            "label": "el brazo",
             "pattern": "braccio"
           }
         }
       },
       "toolshed": {
-        "description": "Sei in una piccola stanza quadrata, adibita un tempo a deposito degli attrezzi.",
-        "shortDescription": "Sei nel deposito degli attrezzi.",
+        "description": "Estás en una pequeña habitación cuadrada, usada antaño como depósito de herramientas.",
+        "shortDescription": "Estás en el depósito de herramientas.",
         "directions": {
-          "up": "Per salire devi sollevare una lastra di pietra, che ricade alle tue spalle."
+          "up": "Para subir debes levantar una losa de piedra, que cae detrás de ti."
         }
       },
       "narrowTunnel": {
-        "description": "Sei in uno stretto cunicolo, le cui pareti sono ricoperte da muffe verdastre e funghi putrescenti.",
-        "shortDescription": "Sei in uno stretto cunicolo.",
+        "description": "Estás en un estrecho túnel cuyas paredes están cubiertas de mohos verdosos y hongos putrescentes.",
+        "shortDescription": "Estás en un estrecho túnel.",
         "interactors": {
           "moulds": {
-            "label": "le muffe",
+            "label": "los mohos",
             "pattern": "muff(?:a|e)",
-            "description": "Sono affascinanti, nella loro venefica peluria vellutata."
+            "description": "Son fascinantes, en su venenosa pelusilla aterciopelada."
           },
           "mushrooms": {
-            "label": "i funghi",
+            "label": "los hongos",
             "pattern": "fung(?:o|hi)(?: putrescent(?:e|i))?",
-            "description": "Da quello che puoi capire in base alla tua limitata competenza in materia, sono uno pi— velenoso dell'altro."
+            "description": "Por lo que puedes entender con tu limitada competencia, son cada uno más venenoso que el anterior."
           }
         }
       },
       "longTunnel": {
-        "description": "Sei in un lungo cunicolo, ricavato in parte nella roccia e in parte nel terreno. Le pareti mostrano tracce di scavi.",
-        "shortDescription": "Sei in un lungo cunicolo.",
+        "description": "Estás en un largo túnel excavado en parte en la roca y en parte en la tierra. Las paredes muestran huellas de excavaciones.",
+        "shortDescription": "Estás en un largo túnel.",
         "interactors": {
           "ground": {
-            "label": "il terreno",
+            "label": "el terreno",
             "pattern": "terreno"
           },
           "excavations": {
-            "label": "gli scavi",
+            "label": "las excavaciones",
             "pattern": "scavi|tracce",
-            "description": "Sono solo dei tentativi, evidentemente falliti. Forse era qualche prigioniero del castello che faceva un ultimo tentativo disperato."
+            "description": "Son solo intentos, evidentemente fallidos. Tal vez fuera algún prisionero del castillo haciendo un último intento desesperado."
           }
         }
       },
       "treasureChamber": {
-        "description": "Sei nella camera del tesoro, un immenso locale sostenuto da possenti archi e posto esattamente sotto la sala del trono.",
-        "shortDescription": "Sei nella camera del tesoro.",
+        "description": "Estás en la cámara del tesoro, una sala inmensa sostenida por poderosos arcos y situada exactamente bajo la sala del trono.",
+        "shortDescription": "Estás en la cámara del tesoro.",
         "interactors": {
           "coffer": {
-            "dlabel": "un forziere",
+            "dlabel": "un cofre",
             "label": [
-              "un pesante forziere",
-              "un pesante forziere aperto"
+              "un cofre pesado",
+              "un cofre pesado abierto"
             ],
             "pattern": "(?:pesante )?forziere",
             "onLook": [
-              "Del favoloso Tesoro di Malcolm IV è rimasto soltanto un vecchio corno.",
-              "E' vuoto."
+              "Del fabuloso Tesoro de Malcolm IV solo queda un viejo cuerno.",
+              "Está vacío."
             ],
             "onOpen": [
-              "Il fantasma di Edgar mac Douglas, fedele scudiero di Sire Malcolm, sorge a difendere il tesoro del suo antico Re dal profanatore straniero.",
-              "Il fantasma ti avvolge soffocandoti nel suo abbraccio mortale."
+              "El fantasma de Edgar mac Douglas, fiel escudero de Sir Malcolm, surge para defender el tesoro de su antiguo Rey del profanador extranjero.",
+              "El fantasma te envuelve, asfixiándote en su abrazo mortal."
             ],
-            "onClose": "I cardini si sono rotti."
+            "onClose": "Las bisagras se han roto."
           },
           "ghost": {
             "label": "un fantasma",
             "pattern": "fantasma",
-            "description": "Lo vedi e non lo vedi. A tratti pare incorporeo, tanto che puoi chiaramente osservare i dettagli del muro retrostante. Ma in altri momenti sembra prendere sostanza, e farsi pi— minaccioso.",
-            "onKill": "E' già morto da settecento anni.",
+            "description": "Lo ves y no lo ves. A ratos parece incorpóreo, tanto que puedes observar claramente los detalles del muro de detrás. Pero en otros momentos parece tomar sustancia y volverse cada vez más amenazador.",
+            "onKill": "Lleva muerto setecientos años.",
             "onTalk": [
-              "Un lontano strascichio di oggetti metallici (forse catene?) pare formulare una lamentosa riposta:",
-              "- Ricordati che sei venuto dal Nulla ed al Nulla dovrai tornare..."
+              "Un lejano arrastre de objetos metálicos (¿cadenas, quizá?) parece formular una respuesta lastimera:",
+              "- Recuerda que vienes de la Nada y a la Nada deberás volver..."
             ]
           }
         }
       },
       "woodshed": {
-        "description": "Sei nel deposito della legna, dove sono accatastati in perfetto ordine rami secchi e ceppi di varie grandezze.",
-        "shortDescription": "Sei nella legnaia.",
+        "description": "Estás en el depósito de leña, donde se apilan con perfecto orden ramas secas y troncos de varios tamaños.",
+        "shortDescription": "Estás en la leñera.",
         "interactors": {
           "wood": {
-            "label": "la legna",
+            "label": "la leña",
             "pattern": "legna|ram(?:o|i)|cepp(?:o|i)",
-            "description": "Si direbbe legna da ardere.",
-            "onTake": "- Ehi! Giù le mani dalle mie scorte per l'inverno! Fa freddo, da queste parti."
+            "description": "Parece leña para quemar.",
+            "onTake": "- ¡Eh! ¡Quita las manos de mis provisiones para el invierno! Hace frío por aquí."
           }
         },
         "override": {
           "commands": {
-            "helloPrefix": "Sia pure un poco sconcertato dalla tua eccessiva confidenza...",
+            "helloPrefix": "Aunque un poco desconcertado por tu excesiva confianza...",
             "introduceYourself": [
-              "- Qfwfq, al vostro servizio. Ma la vostra faccia non mi giunge del tutto nuova. Non ci siamo già conosciuti da qualche parte?",
-              "Elenchi doviziosamente i tuoi numerosi titoli onorifici, mentre il nano ascolta con espressione sempre più dubbiosa. Tuttavia..."
+              "- Qfwfq, a vuestro servicio. Pero vuestra cara no me resulta del todo nueva. ¿No nos hemos conocido ya en alguna parte?",
+              "Enumeras con esmero tus numerosos títulos honoríficos, mientras el enano escucha con expresión cada vez más dudosa. Sin embargo..."
             ]
           },
           "verbs": {
             "askForDiamond": [
-              "Te l'ha già regalato, non ricordi?",
-              "Dubito che sia disposto a regalartelo."
+              "Ya te lo regaló, ¿no lo recuerdas?",
+              "Dudo que esté dispuesto a regalártelo."
             ]
           }
         }
       },
       "topOfStairs": {
-        "description": "Sei in cima alle scale. I gradini terminano bruscamente di fronte ad una liscia parete di pietra.",
-        "shortDescription": "Sei in cima alle scale.",
+        "description": "Estás en lo alto de las escaleras. Los peldaños terminan bruscamente ante una lisa pared de piedra.",
+        "shortDescription": "Estás en lo alto de las escaleras.",
         "interactors": {
           "walls": {
-            "description": "Non vedo appigli o fessure.",
+            "description": "No veo agarres ni rendijas.",
             "onPush": [
-              "La parete ruota su se stessa...",
-              " e si richiude di scatto dietro di te."
+              "La pared gira sobre sí misma...",
+              " y se cierra de golpe detrás de ti."
             ]
           }
         }
       },
       "labyrinthEntrance": {
         "description": [
-          "Sei all'entrata dell'immenso labirinto magico, del quale si dice che tutti i passaggi portano a quest'unica stanza, alla cui attrazione non possono sfuggire né uomini né cose.",
-          "Per terra ci sono due scheletri. Sul muro è scritto col sangue:",
+          "Estás a la entrada del inmenso laberinto mágico, del que se dice que todos los pasajes llevan a esta única habitación, a cuya atracción no pueden escapar ni hombres ni cosas.",
+          "En el suelo hay dos esqueletos. En la pared está escrito con sangre:",
           "",
-          "        'Impossibile uscire di qui'"
+          "        'Imposible salir de aquí'"
         ],
-        "shortDescription": "Sei all'entrata del labirinto.",
+        "shortDescription": "Estás en la entrada del laberinto.",
         "interactors": {
           "writing": {
-            "label": "la scritta",
+            "label": "la inscripción",
             "pattern": "scritta"
           }
         }
       },
       "secretRoom": {
-        "description": "Sei nella grande stanza segreta, sotto la torre del castello. Una corrente di aria gelida sibila entrando da invisibili fessure.",
-        "shortDescription": "Sei nella stanza segreta.",
+        "description": "Estás en la gran sala secreta, bajo la torre del castillo. Una corriente de aire helado silba al entrar por rendijas invisibles.",
+        "shortDescription": "Estás en la sala secreta.",
         "interactors": {
           "slits": {
-            "label": "le fessure",
+            "label": "las rendijas",
             "pattern": "fessure",
-            "description": "Come ho detto, sono invisibili."
+            "description": "Como he dicho, son invisibles."
           },
           "lever": {
-            "label": "una leva",
+            "label": "una palanca",
             "pattern": "leva",
-            "onPush": "Si apre una botola..."
+            "onPush": "Se abre una trampilla..."
           },
           "pendulumClock": {
-            "dlabel": "un orologio",
+            "dlabel": "un reloj",
             "label": [
-              "un vecchio orologio a pendolo fermo",
-              "un vecchio orologio a pendolo",
-              "un vecchio orologio a pendolo",
-              "un vecchio orologio a pendolo",
-              "un vecchio orologio a pendolo",
-              "un vecchio orologio a pendolo",
-              "un vecchio orologio a pendolo"
+              "un viejo reloj de péndulo parado",
+              "un viejo reloj de péndulo",
+              "un viejo reloj de péndulo",
+              "un viejo reloj de péndulo",
+              "un viejo reloj de péndulo",
+              "un viejo reloj de péndulo",
+              "un viejo reloj de péndulo"
             ],
             "pattern": "(?:vecchio )?orologio(?: a pendolo)?",
             "description": [
-              "Segna le undici e cinquantasei.",
+              "Marca las once y cincuenta y seis.",
               "",
-              "Segna le undici e cinquantasette.",
-              "Segna le undici e cinquantotto.",
-              "Segna le undici e cinquantanove.",
+              "Marca las once y cincuenta y siete.",
+              "Marca las once y cincuenta y ocho.",
+              "Marca las once y cincuenta y nueve.",
               "",
-              "Le lancette sono bloccate su mezzanotte."
+              "Las agujas están bloqueadas en medianoche."
             ],
             "onLook": [
-              "Segna mezzanotte in punto.",
-              "Un blocco di pietra si sposta, rivelando una scala a chiocciola."
+              "Marca medianoche en punto.",
+              "Un bloque de piedra se desplaza, revelando una escalera de caracol."
             ],
             "onCharge": {
-              "fail": "Non hai la chiave.",
-              "success": "L'orologio riprende a funzionare.",
-              "working": "Sta già funzionando.",
-              "blocked": "E' definitivamente bloccato."
+              "fail": "No tienes la llave.",
+              "success": "El reloj vuelve a funcionar.",
+              "working": "Ya está funcionando.",
+              "blocked": "Está definitivamente bloqueado."
             }
           }
         }
       },
       "L29": {
-        "dodgersHatch": "Questa botola è riservata ai furbi che pretendono di essere arrivati qui senza aver tradotto la pergamena..."
+        "dodgersHatch": "Esta trampilla está reservada para los listillos que pretenden haber llegado aquí sin traducir el pergamino..."
       },
       "throneRoom": {
-        "description": "Sei nell'antica sala del trono, dove il Re soleva amministrare la giustizia e ricevere gli ambasciatori. Ai lati della stanza, due file di nicchie in cui trovavano posto le guardie personali del Sovrano. L'imponente trono in legno è finemente lavorato nei minimi dettagli. Di fronte al trono, una porta murata che doveva costituire un tempo l'ingresso principale dal corridoio.",
-        "shortDescription": "Sei nella sala del trono.",
+        "description": "Estás en la antigua sala del trono, donde el Rey solía administrar justicia y recibir embajadores. A los lados de la sala, dos filas de nichos donde se colocaban los guardias personales del Soberano. El imponente trono de madera está finamente tallado hasta en el más mínimo detalle. Frente al trono, una puerta tapiada que debió de ser antaño la entrada principal desde el pasillo.",
+        "shortDescription": "Estás en la sala del trono.",
         "interactors": {
           "door": {
-            "description": "Ovviamente è murata anche da questa parte."
+            "description": "Obviamente está tapiada también por este lado."
           },
           "hollows": {
-            "label": "le nicchie",
+            "label": "los nichos",
             "pattern": "nicchi(?:a|e)",
-            "description": "Sono delle semplici rientranze nelle pareti. Il lavoro delle guardie personali del Re doveva essere alquanto noioso, se consisteva nello stare lì impalati per tutto il santo giorno."
+            "description": "Son simples huecos en las paredes. El trabajo de los guardias personales del Rey debía de ser bastante aburrido si consistía en estar allí plantados todo el santo día."
           },
           "throne": {
-            "label": "il trono",
+            "label": "el trono",
             "pattern": "trono",
-            "description": "Troneggia in mezzo alla stanza. Su di esso sedeva il Potere.",
+            "description": "Domina el centro de la sala. Sobre él se sentaba el Poder.",
             "onSitDown": {
-              "question": "Vuoi che mi sieda sul trono ??",
-              "answer": "Il cuscino non è comodo come pensavo."
+              "question": "¿Quieres que me siente en el trono??",
+              "answer": "El cojín no es tan cómodo como pensaba."
             }
           }
         }
       },
       "topOfTower": {
-        "description": "Sei in cima alla torre, dove lo sguardo può spaziare al di sopra della nebbia che copre la brughiera, fino alle lontane montagne.",
-        "shortDescription": "Sei in cima alla torre.",
+        "description": "Estás en lo alto de la torre, desde donde la vista puede abarcar por encima de la niebla que cubre el páramo, hasta las lejanas montañas.",
+        "shortDescription": "Estás en lo alto de la torre.",
         "interactors": {
           "fog": {
-            "description": "La superficie della nebbia è increspata da onde in lento perenne movimento, come se la torre fosse un'isola galleggiante in questo strano mare senza pesci."
+            "description": "La superficie de la niebla está rizada por olas en lento y perpetuo movimiento, como si la torre fuera una isla flotante en este extraño mar sin peces."
           },
           "moor": {
-            "label": "la brughiera",
+            "label": "el páramo",
             "pattern": "brughiera",
-            "description": "E' nascosta sotto la nebbia, ma a tratti, in lontananza, questa si affievolisce un poco, lasciando intravvedere il brullo e giallastro terreno sottostante."
+            "description": "Está oculto bajo la niebla, pero a veces, a lo lejos, esta se atenúa un poco, dejando entrever el terreno yermo y amarillento de debajo."
           },
           "mountains": {
-            "label": "le montagne",
+            "label": "las montañas",
             "pattern": "montagn(?:a|e)",
-            "description": "Dai picchi innevati più lontani, le montagne digradano in una successione di alture, colline, dolci declivi, fino a confondersi con la brughiera sommersa nel mare di nebbia. Hai l'impressione che qualcosa di minuscolo si muova intorno alle cime, ma probabilmente è solo un'illusione ottica."
+            "description": "Desde los picos nevados más lejanos, las montañas descienden en una sucesión de alturas, colinas y suaves lomas, hasta confundirse con el páramo sumergido en el mar de niebla. Tienes la impresión de que algo diminuto se mueve alrededor de las cumbres, pero probablemente es solo una ilusión óptica."
           },
           "flag": {
-            "label": "una bandiera a brandelli",
+            "label": "una bandera hecha jirones",
             "pattern": "bandiera",
-            "description": "Portata con gloria in cento battaglie, sventola ancora sulle terre che un tempo dominava.",
+            "description": "Llevada con gloria en cien batallas, aún ondea sobre las tierras que un día dominó.",
             "onTake": [
-              "La vecchia asta oppone resistenza...",
-              " e cede improvvisamente facendoti perdere l'equilibrio. Precipiti nella piazza d'armi."
+              "El viejo asta ofrece resistencia...",
+              " y cede de repente haciéndote perder el equilibrio. Te precipitas al patio de armas."
             ],
-            "onLiftUp": "Queste cerimonie mi commuovono sempre..."
+            "onLiftUp": "Estas ceremonias siempre me conmueven..."
           },
           "tower": {
-            "description": "Non sapresti dire di quanto s'innalza al di sopra delle mura, perché la nebbia arriva con le sue spire inconsistenti fino a rendere a tratti invisibili i tuoi stessi piedi."
+            "description": "No sabrías decir cuánto se alza por encima de las murallas, porque la niebla llega con sus espiras inconsistentes hasta volver a ratos invisibles tus propios pies."
           }
         },
         "override": {
@@ -1276,322 +1276,322 @@
         }
       },
       "undergroundSpiralStaircase": {
-        "description": "Sei in una stanza con una scala a chiocciola ed uno stretto passaggio verso nord.",
+        "description": "Estás en una habitación con una escalera de caracol y un estrecho pasaje hacia el norte.",
         "interactors": {
           "aisle": {
-            "description": "Si addentra nei sotterranei del castello. Meglio tornare indietro, non credi?"
+            "description": "Se adentra en los subterráneos del castillo. Mejor volver atrás, ¿no crees?"
           }
         }
       },
       "trap": {
-        "description": "Sei nella stanza della trappola, che sembra completamente vuota.",
-        "shortDescription": "Sei nella stanza della trappola.",
+        "description": "Estás en la sala de la trampa, que parece completamente vacía.",
+        "shortDescription": "Estás en la sala de la trampa.",
         "directions": {
           "west": [
-            "Una massiccia lastra di ferro cade all'improvviso bloccandoti ogni via di uscita.",
-            "La stanza inizia a riempirsi d'acqua... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu...",
+            "Una enorme plancha de hierro cae de golpe, bloqueándote toda salida.",
+            "La sala empieza a llenarse de agua... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu... glu...",
             " GLUB."
           ]
         },
         "interactors": {
           "trap": {
-            "label": "la trappola",
+            "label": "la trampa",
             "pattern": "trappola",
-            "onLookOrLookFor": "Non vedo proprio nessuna trappola. Non capisco perché la stanza abbia questo curioso nome."
+            "onLookOrLookFor": "No veo ninguna trampa en absoluto. No entiendo por qué la sala tiene este nombre tan curioso."
           }
         }
       },
       "winePantry": {
-        "description": "Sei nella dispensa dove venivano conservati i vini. Sugli scaffali sono rimasti solo alcuni cocci di vetro.",
-        "shortDescription": "Sei nella dispensa dei vini.",
+        "description": "Estás en la despensa donde se guardaban los vinos. En las estanterías solo quedan algunos trozos de vidrio.",
+        "shortDescription": "Estás en la despensa de vinos.",
         "directions": {
           "north": [
-            "Vedendoti, il nano esclama:",
-            "- Anche gli ubriachi, adesso!",
-            "Mai una persona civile!",
-            "Questo è troppo! -",
-            "Ciò detto, estrae dalla cintura una pesante ascia e ti colpisce con rabbia."
+            "Al verte, el enano exclama:",
+            "- ¡También borrachos, ahora!",
+            "¡Jamás una persona civilizada!",
+            "¡Esto es demasiado! -",
+            "Dicho esto, saca de su cinturón una pesada hacha y te golpea con rabia."
           ]
         },
         "interactors": {
           "fragments": {
-            "label": "i cocci",
+            "label": "los trozos",
             "pattern": "cocci(?:o)?",
-            "onTake": "Oltre a rischiare di tagliarti malamente, non vedo proprio a cosa potrebbero servirti."
+            "onTake": "Además de arriesgarte a cortarte bastante, no veo para qué podrían servirte."
           }
         }
       },
       "coldCutsPantry": {
-        "description": "Sei nella dispensa dove venivano conservati i salumi. Rimangono ormai soltanto dei ganci arrugginiti.",
-        "shortDescription": "Sei nella dispensa dei salumi.",
+        "description": "Estás en la despensa donde se guardaban los embutidos. Ya solo quedan unos ganchos oxidados.",
+        "shortDescription": "Estás en la despensa de embutidos.",
         "interactors": {
           "hooks": {
-            "label": "i ganci",
+            "label": "los ganchos",
             "pattern": "ganci(?:o)?",
-            "onTake": "Oltre a rischiare di prendere il tetano, non vedo proprio cosa potresti fartene."
+            "onTake": "Además de arriesgarte a coger el tétanos, no veo qué podrías hacer con ellos."
           }
         }
       },
       "vegetablePantry": {
-        "description": "Sei nella dispensa dove venivano tenute le provviste di verdura, unica traccia delle quali sono alcune viscide macchie verdastre sul pavimento.",
-        "shortDescription": "Sei nella dispensa della verdura.",
+        "description": "Estás en la despensa donde se guardaban las provisiones de verdura, de las cuales la única huella son unas viscosas manchas verdosas en el suelo.",
+        "shortDescription": "Estás en la despensa de verduras.",
         "interactors": {
           "stains": {
-            "label": "le macchie",
+            "label": "las manchas",
             "pattern": "macchi(?:a|e)(?: verdastr(?:a|e))?"
           }
         }
       },
       "cheesePantry": {
-        "description": "Sei nella dispensa dove venivano conservati i formaggi, dei quali non rimangono che alcune croste mangiucchiate dai topi.",
-        "shortDescription": "Sei nella dispensa dei formaggi.",
+        "description": "Estás en la despensa donde se conservaban los quesos, de los que solo quedan unas cortezas roídas por los ratones.",
+        "shortDescription": "Estás en la despensa de quesos.",
         "interactors": {
           "crusts": {
-            "label": "le croste",
+            "label": "las cortezas",
             "pattern": "crost(?:a|e)",
-            "onTakeOrEat": "Non puoi avere TANTA fame!"
+            "onTakeOrEat": "¡No puedes tener TANTA hambre!"
           }
         }
       },
       "gamePantry": {
-        "description": "Sei nella dispensa dove venivano tenute le provviste di cacciagione, delle quali non resta che la carcassa raggrinzita di un vecchio cervo.",
-        "shortDescription": "Sei nella dispensa della cacciagione.",
+        "description": "Estás en la despensa donde se guardaban las provisiones de caza, de las cuales no queda más que la carcasa arrugada de un viejo ciervo.",
+        "shortDescription": "Estás en la despensa de caza.",
         "interactors": {
           "deer": {
-            "label": "il cervo",
+            "label": "el ciervo",
             "pattern": "cervo|carcassa",
-            "onTake": "Oltre che portarti dietro un carico supplementare, non vedo proprio di che utilità potrebbe esserti."
+            "onTake": "Además de llevarte un peso extra, no veo de qué utilidad podría ser."
           }
         }
       },
       "whiskeyPantry": {
-        "description": "Sei nella dispensa dove venivano tenute consistenti scorte del celebre whisky della regione. Tutto ciò che ne resta è una botticella dall'aria straordinariamente ben conservata.",
-        "shortDescription": "Sei nella dispensa del whisky.",
+        "description": "Estás en la despensa donde se guardaban abundantes reservas del célebre whisky de la región. Todo lo que queda es una botellita de aspecto extraordinariamente bien conservado.",
+        "shortDescription": "Estás en la despensa del whisky.",
         "interactors": {
           "keg": {
-            "label": "la botticella di whisky",
+            "label": "la barrilita de whisky",
             "pattern": "botticella",
             "description": "C'è scritto sopra: '700 yrs old'",
-            "onOpenQuestion": "Devo bere il whisky "
+            "onOpenQuestion": "¿Debo beber el whisky "
           },
           "whiskey": {
-            "label": "il whisky",
+            "label": "el whisky",
             "pattern": "whisky",
-            "onTakeOrDrink": "Ottimo, veramente ottimo!"
+            "onTakeOrDrink": "¡Excelente, verdaderamente excelente!"
           }
         }
       },
       "guardRoom": {
-        "description": "La stanza dove ti trovi doveva essere la sala delle guardie che vigilavano sull'ingresso del castello. A parte una rozza tavola e delle pesanti panche, la stanza è completamente spoglia.",
-        "shortDescription": "Sei nella sala delle guardie.",
+        "description": "La habitación en la que estás debía de ser la sala de guardia que vigilaba la entrada del castillo. Aparte de una mesa tosca y unos bancos pesados, la sala está completamente desnuda.",
+        "shortDescription": "Estás en la sala de guardia.",
         "interactors": {
           "table": {
-            "description": "E' una tavolaccia di legno non certo elegante ma molto robusto."
+            "description": "Es una mesa de madera tosca, nada elegante pero muy robusta."
           },
           "benches": {
-            "label": "le panche",
+            "label": "los bancos",
             "pattern": "panc(?:a|he)",
-            "description": "Sono dello stesso legno della tavola, levigato dal lungo uso."
+            "description": "Son de la misma madera que la mesa, pulida por el largo uso."
           }
         }
       },
       "catapultRoom": {
         "description": [
-          "Sei in una stanza di forma irregolare, occupata da ingombranti strutture in legno e metallo. Sembrano pezzi di un'antica macchina da guerra, probabilmente una piccola catapulta.",
-          "Pesanti palle di pietra sono allineate lungo la parete."
+          "Estás en una habitación de forma irregular, ocupada por voluminosas estructuras de madera y metal. Parecen piezas de una antigua máquina de guerra, probablemente una pequeña catapulta.",
+          "Pesadas bolas de piedra están alineadas a lo largo de la pared."
         ],
-        "shortDescription": "Sei nella stanza della catapulta.",
+        "shortDescription": "Estás en la sala de la catapulta.",
         "commonAnswers": [
-          "Ma chi ti credi di essere? Maciste?",
-          "Non sono mai stato molto bravo col meccano."
+          "¿Pero quién te crees que eres, Hércules?",
+          "Nunca se me dio muy bien el meccano."
         ],
         "interactors": {
           "catapult": {
             "label": "la catapulta",
             "pattern": "catapulta|macchina",
-            "description": "E' stata smontata in tanti pezzi, per occupare meno spazio e conservarla in condizioni migliori."
+            "description": "Ha sido desmontada en muchas piezas para ocupar menos espacio y conservarla en mejores condiciones."
           },
           "balls": {
-            "label": "le palle",
+            "label": "las bolas",
             "pattern": "(pall(?:a|e))",
-            "onBreak": "Non essere volgare."
+            "onBreak": "No seas vulgar."
           },
           "pieces": {
-            "label": "i pezzi",
+            "label": "las piezas",
             "pattern": "(pezz(?:o|i)|struttur(?:a|e))",
-            "description": "Andrebbero montati insieme per avere la catapulta, o almeno credo."
+            "description": "Habría que montarlas juntas para obtener la catapulta, o al menos eso creo."
           }
         }
       },
       "armory": {
-        "description": "Sei nell'armeria del castello. Fissati alle pareti sono alcuni archi, pugnali, scudi, lance, asce ed altre armi, tutte corrose e rese inutilizzabili dal tempo.",
-        "shortDescription": "Sei nell'armeria.",
+        "description": "Estás en la armería del castillo. Fijados a las paredes hay arcos, puñales, escudos, lanzas, hachas y otras armas, todas corroídas e inutilizadas por el tiempo.",
+        "shortDescription": "Estás en la armería.",
         "interactors": {
           "daggers": {
-            "label": "i pugnali",
+            "label": "los puñales",
             "pattern": "pugnal(?:e|i)"
           },
           "spears": {
-            "label": "le lance",
+            "label": "las lanzas",
             "pattern": "lanc(?:ia|e)"
           },
           "axes": {
-            "label": "le asce",
+            "label": "las hachas",
             "pattern": "asc(?:ia|e)"
           },
           "weapons": {
-            "description": "Come ti ho detto, sono tutte corrose e rese inutilizzabili dal tempo."
+            "description": "Como te dije, todas están corroídas e inutilizables por el tiempo."
           }
         }
       },
       "understairs": {
-        "description": "Sei in un piccolo sottoscala, completamente vuoto.",
-        "shortDescription": "Sei nel sottoscala.",
+        "description": "Estás en un pequeño hueco bajo la escalera, completamente vacío.",
+        "shortDescription": "Estás bajo la escalera.",
         "interactors": {
           "understairs": {
-            "label": "il sottoscala",
+            "label": "el hueco bajo la escalera",
             "pattern": "sottoscala"
           }
         }
       },
       "servantsHall": {
-        "description": "In questa stanza, dove alloggiavano i servitori del Re, non c'è proprio niente di particolare.",
-        "shortDescription": "Sei nella sala dei servitori."
+        "description": "En esta sala, donde se alojaban los sirvientes del Rey, no hay absolutamente nada de particular.",
+        "shortDescription": "Estás en la sala de los sirvientes."
       },
       "columnsHall": {
-        "description": "Sei in una lunga sala, ai lati della quale si innalzano due file di alte colonne, che sostengono il soffitto arcuato. Le colonne, benché‚ corrose dal tempo, portano ancora i segni di una paziente lavorazione per mano di abili artigiani. Al centro della sala, una piccola colonna in pietra poggia su un basso piedestallo.",
-        "shortDescription": "Sei nella sala delle colonne.",
+        "description": "Estás en una larga sala, a cuyos lados se alzan dos hileras de altas columnas que sostienen el techo abovedado. Las columnas, aunque corroídas por el tiempo, aún conservan las huellas de un paciente trabajo de hábiles artesanos. En el centro de la sala, una pequeña columna de piedra descansa sobre un bajo pedestal.",
+        "shortDescription": "Estás en la sala de las columnas.",
         "interactors": {
           "column": {
-            "label": "la colonna",
+            "label": "la columna",
             "pattern": "(?:piccol(?:a|o) )?(colonna|capitello)",
-            "description": "Sul capitello è scolpita in lucenti lettere d'argento metà di una potente parola magica: 'ID'"
+            "description": "En el capitel está esculpida, con brillantes letras de plata, la mitad de una poderosa palabra mágica: 'ID'"
           },
           "columns": {
-            "label": "le colonne",
+            "label": "las columnas",
             "pattern": "colonne",
-            "description": "Le colonne ai lati della sala sono in stile alquanto austero: semplici cilindri di pietra rastremati verso l'estremità superiore."
+            "description": "Las columnas a los lados de la sala son de un estilo bastante austero: simples cilindros de piedra que se estrechan hacia la parte superior."
           },
           "pedestal": {
-            "label": "il piedistallo",
+            "label": "el pedestal",
             "pattern": "piedistallo",
-            "description": "Il piedestallo che sorregge la piccola colonna è un parallelepipedo di pietra grezza, probabilmente granito."
+            "description": "El pedestal que sostiene la pequeña columna es un bloque de piedra en bruto, probablemente granito."
           }
         }
       },
       "tapestriesRoom": {
-        "description": "Sei in una sala le cui pareti sono completamente tappezzate di arazzi di squisita fattura. La maggior parte sono raffigurazioni di scene di caccia, ma non mancano campi di battaglia e scene di vita agreste. I colori sono ben conservati, nonostante i secoli.",
-        "shortDescription": "Sei nella sala degli arazzi.",
+        "description": "Estás en una sala cuyas paredes están completamente tapizadas de tapices de exquisita factura. La mayoría representan escenas de caza, pero no faltan campos de batalla y escenas de vida campesina. Los colores están bien conservados, a pesar de los siglos.",
+        "shortDescription": "Estás en la sala de los tapices.",
         "interactors": {
           "tapestries": {
-            "label": "arazzi",
+            "label": "tapices",
             "pattern": "arazz(?:o|i)",
             "onLook": [
-              "Sono eseguiti con grande maestria, e meritano maggiore attenzione. Ti perdi nella contemplazione...",
-              "Poi, improvvisamente, ti ricordi che hai qualcosa di più importante da fare."
+              "Están realizados con gran maestría y merecen más atención. Te pierdes en la contemplación...",
+              "Luego, de repente, recuerdas que tienes algo más importante que hacer."
             ]
           }
         }
       },
       "portraitsGallery": {
         "description": [
-          "Sei in una sala di forma allungata e senza alcun mobile. Sulle pareti si allineano i ritratti dei Re e dei dignitari che nel corso dei secoli hanno governato il castello ed i suoi feudi.",
-          "I ritratti paiono fissarti con occhio malevolo. Uno in particolare, quello di Malcolm IV, sembra seguire i tuoi movimenti con uno sguardo carico di odio mortale."
+          "Estás en una sala alargada y sin muebles. En las paredes se alinean los retratos de los Reyes y dignatarios que, a lo largo de los siglos, han gobernado el castillo y sus feudos.",
+          "Los retratos parecen mirarte con ojo malévolo. Uno en particular, el de Malcolm IV, parece seguir tus movimientos con una mirada cargada de odio mortal."
         ],
-        "shortDescription": "Sei nella galleria dei ritratti.",
+        "shortDescription": "Estás en la galería de retratos.",
         "interactors": {
           "portrait": {
-            "label": "il ritratto",
+            "label": "el retrato",
             "pattern": "(ritratt(?:o|i)|quadr(?:o|i)|malcolm|tel(?:a|e))",
-            "onLookQuestion": "La mano del pittore pare quasi aver colto la vita stessa dal volto dei soggetti, specialmente nel caso di Malcolm IV. Questo ritratto ha qualcosa di strano. Devo osservarlo più da vicino "
+            "onLookQuestion": "La mano del pintor parece haber captado la vida misma en los rostros, especialmente en el caso de Malcolm IV. Este retrato tiene algo extraño. ¿Debería observarlo más de cerca "
           }
         }
       },
       "trophiesRoom": {
-        "description": "Sei in una corta sala letteralmente stipata di trofei di caccia e di guerra. Fissati alle pareti vedo animali d'ogni specie, armi, scudi, perfino un'intera armatura appartenuta probabilmente ad un Re nemico ucciso in battaglia dal Sovrano in persona.",
-        "shortDescription": "Sei nella sala dei trofei.",
+        "description": "Estás en una sala corta literalmente abarrotada de trofeos de caza y de guerra. Fijados a las paredes ves animales de toda especie, armas, escudos, incluso una armadura entera que probablemente perteneció a un Rey enemigo muerto en batalla por el propio Soberano.",
+        "shortDescription": "Estás en la sala de los trofeos.",
         "interactors": {
           "armor": {
-            "spadeText": ", appoggiata alla spada",
+            "spadeText": ", apoyada en la espada",
             "onLook": {
               "__fn__": true,
               "args": [
                 "spadeText"
               ],
-              "template": "E' l'armatura di sir Crawdolf, il valente mago guerriero che per lunghi anni tenne in scacco Re Malcolm con la sua prodezza e le sue terribili arti. L'armatura conserva ancora un portamento altero e pare perfino fissarti${spadeText}."
+              "template": "Es la armadura de Sir Crawdolf, el valiente mago guerrero que durante largos años tuvo en jaque al Rey Malcolm con su proeza y sus terribles artes. La armadura conserva aún un porte altivo y parece incluso mirarte${spadeText}."
             }
           },
           "trophies": {
-            "label": "trofei",
+            "label": "trofeos",
             "pattern": "trofe(?:o|i)|animal(?:e|i)"
           }
         }
       },
       "kitchen": {
-        "description": "La stanza in cui ti trovi doveva essere la cucina del castello. Vedo infatti un grande focolare ed i resti di vasellame, pentolame e grosse tinozze.",
-        "shortDescription": "Sei in cucina.",
+        "description": "La habitación en la que estás debía de ser la cocina del castillo. Ves un gran hogar y los restos de vajilla, cacharros y grandes tinajas.",
+        "shortDescription": "Estás en la cocina.",
         "interactors": {
           "kitchenStuff": {
-            "label": "cucina",
+            "label": "cocina",
             "pattern": "(cucina|tinozz(?:a|e)|vasellame|pentolame|resti)",
-            "description": "Sono del tutto inutilizzabili."
+            "description": "Son totalmente inutilizables."
           }
         }
       },
       "alchemistCell": {
         "description": [
-          "Sei nella cella dell'Alchimista. Tutto intorno crogiuoli, pestelli, alambicchi e bizzarri recipienti in vetro di forma quanto mai contorta. Sugli scaffali sono molti pesanti in-folio di magia, alchimia, sortilegi. Al centro, un tavolino che poggia su tre gambe sagomate a forma di zampe di qualche mostruoso animale. Sul tavolino, un unico pesante volume rilegato in cuoio nero:",
+          "Estás en la celda del Alquimista. Por todas partes hay crisoles, morteros, alambiques y extraños recipientes de vidrio de formas retorcidas. En las estanterías hay pesados in-folios de magia, alquimia y sortilegios. En el centro, una mesita apoyada en tres patas talladas como las zarpas de algún animal monstruoso. Sobre la mesa, un único volumen pesado encuadernado en cuero negro:",
           "",
-          "        \"L'Apprendista Stregone\""
+          "        \"El aprendiz de hechicero\""
         ],
-        "shortDescription": "Sei nella cella dell'Alchimista.",
+        "shortDescription": "Estás en la celda del Alquimista.",
         "interactors": {
           "infolio": {
             "label": "in-folio",
             "pattern": "pestell(?:o|i)|recipient(?:e|i)|crogiuol(?:o|i)|in-folio|alambicc(?:o|hi)",
-            "description": "E' il tipico armamentario di un alchimista dell'epoca, mago, studioso e guaritore al tempo stesso. Gli alchimisti erano tenuti in alta considerazione e molto temuti e rispettati, a meno che non cadessero in disgrazia per qualche fatale errore commesso ai danni del Re.",
-            "onTakeOrRead": "Una forza occulta pare metterti in guardia: frugare tra le proprietà personali di un alchimista può essere molto pericoloso."
+            "description": "Es el típico armamento de un alquimista de la época: mago, erudito y sanador a la vez. Los alquimistas eran muy valorados y también muy temidos y respetados, a menos que cayeran en desgracia por algún error fatal cometido en perjuicio del Rey.",
+            "onTakeOrRead": "Una fuerza oculta parece advertirte: hurgar entre las propiedades personales de un alquimista puede ser muy peligroso."
           },
           "bookmark": {
-            "label": "il segnalibro",
+            "label": "el marcador",
             "pattern": "segnalibro"
           },
           "volume": {
-            "label": "volume",
+            "label": "el tomo",
             "pattern": "volume|librone|pagina",
-            "description": "Ora che lo vedo più da vicino, mi accorgo che forse non è cuoio, ma pelle umana conciata.",
-            "onOpen": "Devi usare lo strumento adatto.",
+            "description": "Ahora que lo veo más de cerca, me doy cuenta de que quizá no sea cuero, sino piel humana curtida.",
+            "onOpen": "Debes usar la herramienta adecuada.",
             "onRead": [
-              "Riesco a leggere una sola parola:",
+              "Consigo leer una sola palabra:",
               "",
               "  'BIGMEOW'"
             ],
-            "onTake": "E' impossibile smuoverlo.",
-            "onLiftUp": "Alzare il volume ?  Ma sei sordo ??"
+            "onTake": "Es imposible moverlo.",
+            "onLiftUp": "¿Levantar el tomo? ¿Pero estás sordo??"
           }
         }
       },
       "boardRoom": {
-        "description": "Sei nella sala del consiglio, dove venivano prese le decisioni più gravi ed importanti. Tutto il mobilio consiste in una tavola rotonda circondata da otto sedie.",
-        "shortDescription": "Sei nella sala del consiglio.",
+        "description": "Estás en la sala del consejo, donde se tomaban las decisiones más graves e importantes. Todo el mobiliario consiste en una mesa redonda rodeada por ocho sillas.",
+        "shortDescription": "Estás en la sala del consejo.",
         "interactors": {
           "table": {
             "description": [
-              "Sul bordo del tavolo è incisa una saggia massima:",
-              "'Non tutte le spade feriscono di lama.'"
+              "En el borde de la mesa está grabada una sabia máxima:",
+              "\"No todas las espadas hieren con filo.\""
             ]
           },
           "chairs": {
-            "description": "Qui sedevano i nobili cavalieri del Re, per aiutare il Sovrano nelle difficili decisioni sulla condotta delle interminabili guerre."
+            "description": "Aquí se sentaban los nobles caballeros del Rey para ayudar al Soberano en las difíciles decisiones sobre la conducción de las interminables guerras."
           }
         }
       },
       "wardrobe": {
-        "description": "Sei nel guardaroba del Re. Tarme e tarli hanno ridotto gli imponenti armadi e le ricercate vesti a pochi brandelli e mucchi di segatura.",
-        "shortDescription": "Sei nel guardaroba.",
+        "description": "Estás en el guardarropa del Rey. Polillas y carcoma han reducido los imponentes armarios y las refinadas vestiduras a unos pocos jirones y montones de serrín.",
+        "shortDescription": "Estás en el guardarropa.",
         "interactors": {
           "shreds": {
-            "label": "i brandelli",
+            "label": "los jirones",
             "pattern": "brandell(?:o|i)|mucchi(?:o)?",
             "description": "Sic transit gloria mundi."
           }
@@ -1599,107 +1599,107 @@
       },
       "musicHall": {
         "description": [
-          "Sei nella sala di musica, dove si svolgevano feste, trattenimenti e rappresentazioni che rallegravano la vita del castello.",
-          "Tutto è ormai ricoperto da ragnatele."
+          "Estás en la sala de música, donde se celebraban fiestas, entretenimientos y representaciones que alegraban la vida del castillo.",
+          "Todo está ya cubierto de telarañas."
         ],
-        "shortDescription": "Sei nella sala di musica.",
+        "shortDescription": "Estás en la sala de música.",
         "interactors": {
           "cobwebs": {
-            "label": "le ragnatele",
+            "label": "las telarañas",
             "pattern": "ragnatel(?:a|e)",
-            "description": "Anche le ragnatele sono ormai deserte. Nulla rimane della vita che faceva di questa stanza il luogo più allegro del castello."
+            "description": "Incluso las telarañas están ya desiertas. Nada queda de la vida que hacía de esta sala el lugar más alegre del castillo."
           }
         }
       },
       "princessRoom": {
-        "description": "Sei nella stanza della Principessa. Il passare degli anni ha lasciato quasi intatti i delicati colori dei tendaggi ed il fragile baldacchino a cui manca soltanto il morbidissimo piumino che addolciva il lieve riposo della esile fanciulla.",
-        "shortDescription": "Sei nella stanza della Principessa.",
+        "description": "Estás en la habitación de la Princesa. El paso de los años ha dejado casi intactos los delicados colores de los cortinajes y el frágil dosel, al que solo le falta el suavísimo edredón que endulzaba el leve descanso de la frágil muchacha.",
+        "shortDescription": "Estás en la habitación de la Princesa.",
         "interactors": {
           "bed": {
-            "description": "E' decorato con tinte delicate dai toni sfumati."
+            "description": "Está decorado con tintes delicados de tonos suaves."
           },
           "curtains": {
-            "label": "le tende",
+            "label": "las cortinas",
             "pattern": "tend(?:a|e|aggi)",
-            "description": "Sulle tende è ricamato con un sottile filo d'oro:\n'Saggio è colui che distrugge la propria ricchezza per prendere le vie del cielo'"
+            "description": "En las cortinas está bordado con un fino hilo de oro:\n\"Sabio es quien destruye su riqueza para tomar los caminos del cielo\""
           }
         }
       },
       "kingRoom": {
-        "description": "Sei nella camera da letto del Re. Un sontuoso baldacchino troneggia in mezzo alla stanza, occupandone la maggior parte. Dei ricchi arredi non è rimasto altro.",
-        "shortDescription": "Sei nella camera del Re.",
+        "description": "Estás en el dormitorio del Rey. Un suntuoso dosel domina el centro de la habitación, ocupando la mayor parte. De los ricos muebles no queda nada más.",
+        "shortDescription": "Estás en la cámara del Rey.",
         "interactors": {
           "bed": {
-            "description": "E' dipinto a colori forti e sanguigni."
+            "description": "Está pintado con colores fuertes y sanguíneos."
           }
         }
       },
       "mirrorsHall": {
-        "description": "Sei in un salone dalle pareti coperte di specchi di ogni forma e dimensione. Specchi curvi, specchi giganti, specchi concavi riflettono infinite volte la tua immagine dando l'impressione che facce maligne ti scrutino da ogni angolo della stanza. Era la stanza preferita dalla vanitosa Regina.",
-        "shortDescription": "Sei nella sala degli specchi.",
+        "description": "Estás en un salón cuyas paredes están cubiertas de espejos de toda forma y tamaño. Espejos curvos, espejos gigantes, espejos cóncavos reflejan infinitas veces tu imagen, dando la impresión de que rostros malignos te escrutan desde cada rincón. Era la estancia favorita de la vanidosa Reina.",
+        "shortDescription": "Estás en la sala de los espejos.",
         "bonk": "BONK!",
-        "notADoor": "Non è la porta, è uno specchio!",
+        "notADoor": "¡No es una puerta, es un espejo!",
         "override": {
           "commands": {
-            "getOut": "Con tutti questi specchi, non distinguo più le direzioni. Vado sempre a finire dalla parte sbagliata."
+            "getOut": "Con tantos espejos, ya no distingo las direcciones. Siempre acabo yendo por el lado equivocado."
           }
         },
         "interactors": {
           "mirrors": {
-            "label": "gli specchi",
+            "label": "los espejos",
             "pattern": "specchi(?:o)?",
-            "description": "Vedo una brutta faccia.",
-            "onBreak": "Non ci tengo proprio ad andare incontro a sette anni di guai."
+            "description": "Veo una cara fea.",
+            "onBreak": "No me apetece nada enfrentarme a siete años de mala suerte."
           }
         }
       },
       "pass": {
-        "description": "Sei in uno scuro, stretto, tortuoso passaggio che sei costretto a percorrere carponi avanzando in direzione del barlume di luce che riesce a penetrare dall'altra estremità.",
-        "shortDescription": "Sei nel tortuoso passaggio.",
+        "description": "Estás en un pasaje oscuro, estrecho y tortuoso que te ves obligado a recorrer a gatas, avanzando hacia el tenue resplandor de luz que logra penetrar desde el otro extremo.",
+        "shortDescription": "Estás en el pasaje tortuoso.",
         "interactors": {
           "pass": {
-            "description": " Che buio! Non si vede un accidente."
+            "description": "¡Qué oscuridad! No se ve nada."
           }
         }
       },
       "rock": {
         "description": [
-          "Sei solo e abbandonato su un nero scoglio che emerge dalle acque gelide.",
-          "Mi correggo, non sei solo: ti fa compagnia il mostro di Loch Ness (Nessie per gli amici)."
+          "Estás solo y abandonado sobre un negro escollo que emerge de las aguas heladas.",
+          "Me corrijo: no estás solo. Te hace compañía el monstruo del Lago Ness (Nessie para los amigos)."
         ],
-        "shortDescription": "Sei sullo scoglio.",
+        "shortDescription": "Estás en el escollo.",
         "interactors": {
           "nessie": {
-            "description": "Sta guardando te.",
+            "description": "Te está mirando.",
             "onGreet": [
-              "Anche lui è",
-              "MOLTO",
-              "contento di vederti."
+              "Él también está",
+              "MUY",
+              "contento de verte."
             ],
-            "onKill": "Fai presto a dirlo!"
+            "onKill": "¡Eso es fácil decirlo!"
           },
           "rock": {
-            "label": "lo scoglio",
+            "label": "el escollo",
             "pattern": "scoglio",
             "description": [
-              "E' costituito da roccia persilicica a struttura granulare oligocristallina, per lo più a grana medio-fine.",
-              "L'aggregato cristallino fondamentale è composto in prevalenza da quarzo e feldspati, con laminette micacee in quantità subordinata.",
-              "Osservando in dettaglio i feldspati, si possono notare ortoclasio (o microclino), albite ed altri plagioclasi sodici. Le miche sono rappresentate da biotite e muscovite, frammiste ad altri componenti femici, anfiboli in particolare.",
-              "Nella struttura sono presenti anche piccoli cristalli di apatite e zircone, come pure granuli di magnetite e pirite."
+              "Está formado por una roca persilícica de estructura granular oligocristalina, en su mayor parte de grano medio-fino.",
+              "El agregado cristalino fundamental está compuesto principalmente por cuarzo y feldespatos, con laminillas micáceas en cantidad subordinada.",
+              "Observando en detalle los feldespatos se pueden apreciar ortoclasa (o microclino), albita y otros plagioclasas sódicos. Las micas están representadas por biotita y moscovita, mezcladas con otros componentes máficos, en particular anfíboles.",
+              "En la estructura también hay pequeños cristales de apatito y circón, así como granos de magnetita y pirita."
             ]
           },
           "lake": {
-            "label": "il lago",
+            "label": "el lago",
             "pattern": "lago|acqua"
           }
         },
         "override": {
           "commands": {
             "swim": [
-              "Sei un buon nuotatore.",
-              "Ma",
-              "LUI",
-              "di più."
+              "Eres un buen nadador.",
+              "Pero",
+              "ÉL",
+              "más."
             ]
           }
         }
@@ -1707,270 +1707,270 @@
     },
     "objects": {
       "parachute": {
-        "label": "un paracadute",
+        "label": "un paracaídas",
         "pattern": "paracadute",
-        "onWear": "L'hai già addosso.",
-        "onLook": "Non hai mai visto un paracadute? Ma da dove vieni?",
+        "onWear": "Ya lo llevas puesto.",
+        "onLook": "¿Nunca has visto un paracaídas? ¿Pero de dónde vienes?",
         "onOpen": {
-          "notHere": "Qui dentro? Ma non farmi ridere!",
-          "dontHaveIt": "Non hai addosso nessun paracadute."
+          "notHere": "¿Aquí dentro? ¡No me hagas reír!",
+          "dontHaveIt": "No llevas puesto ningún paracaídas."
         }
       },
       "bone": {
-        "dlabel": "un osso",
+        "dlabel": "un hueso",
         "label": [
-          "un osso",
-          "un osso tranciato"
+          "un hueso",
+          "un hueso cercenado"
         ],
         "pattern": "osso|femore|tibia",
-        "onLook": "Potrebbe essere un femore, o forse una tibia. Non so, non me ne intendo di anatomia.",
+        "onLook": "Podría ser un fémur, o quizá una tibia. No lo sé, no entiendo de anatomía.",
         "onLookFor": {
-          "dontHaveIt": "Il pavimento ne è pieno.",
-          "inYourHand": "Ne hai uno in mano."
+          "dontHaveIt": "El suelo está lleno.",
+          "inYourHand": "Tienes uno en la mano."
         }
       },
       "bludgeon": {
-        "label": "una mazza ferrata",
+        "label": "una maza con pinchos",
         "pattern": "mazza(?: ferrata)?",
-        "description": "E' un'arma da battaglia. Non può sfondare un muro, ma può senz'altro venirti utile."
+        "description": "Es un arma de batalla. No puede derribar un muro, pero sin duda puede serte útil."
       },
       "cat": {
-        "dlabel": "un gatto",
+        "dlabel": "un gato",
         "label": [
-          "un gatto accovacciato per terra",
-          "un gatto"
+          "un gato acurrucado en el suelo",
+          "un gato"
         ],
         "pattern": "(gatto|micio)",
-        "description": "E' un caro, piccolo, simpatico micino.",
+        "description": "Un gatito pequeño y simpático.",
         "onTake": {
-          "alreadyIn": "Ce l'hai già in braccio.",
-          "gotIt": "Il gatto è affamato e si lascia prendere facilmente."
+          "alreadyIn": "Ya lo llevas en brazos.",
+          "gotIt": "El gato tiene hambre y se deja coger fácilmente."
         },
         "onPet": [
-          "ronf... ronf... ronf... ronf... ",
-          "Il gatto fa le fusa."
+          "rrrr... rrrr... rrrr... rrrr... ",
+          "El gato ronronea."
         ],
-        "onTalkOrGreet": "Il gatto ti fissa con aria interessata, le oblique pupille ridotte a due strette fessure, poi decide (probabilmente) che la tua intelligenza è solo apparente, e volge altrove lo sguardo.",
+        "onTalkOrGreet": "El gato te mira con aire interesado, las pupilas oblicuas reducidas a dos estrechas rendijas; luego decide (probablemente) que tu inteligencia es solo aparente y aparta la mirada.",
         "onKill": [
-          "Con un ultimo miagolio lamentoso, il povero micino muore fissandoti con uno sguardo carico di rimprovero.",
-          "Il cadavere diventa sempre più indistinto, fino a scomparire del tutto."
+          "Con un último maullido lastimero, el pobre gatito muere mirándote con una expresión llena de reproche.",
+          "El cadáver se vuelve cada vez más indistinto, hasta desaparecer por completo."
         ],
         "onFeed": {
-          "nothingSuitable": "Non hai nulla di adatto.",
-          "lep": "lep...",
+          "nothingSuitable": "No tienes nada adecuado.",
+          "lep": "ñam...",
           "finished": [
-            "lep...miao!",
+            "ñam... ¡miau!",
             "",
-            "Il gatto ha molto gradito il lattemiele."
+            "Al gato le ha encantado el lattemiele."
           ]
         }
       },
       "sword": {
-        "dlabel": "una spada",
+        "dlabel": "una espada",
         "label": [
-          "una spada",
-          "una spada incantata"
+          "una espada",
+          "una espada encantada"
         ],
         "pattern": "spada",
         "posizione": "salaTrofei",
-        "description": "E' di pregevole fattura.",
-        "onLook": "Sulla lama è scritto un sortilegio.",
+        "description": "Es de excelente factura.",
+        "onLook": "En la hoja hay escrito un sortilegio.",
         "spell": {
-          "dontKnow": "Non conosci alcun sortilegio.",
-          "dontRemember": "Non me lo ricordo, era troppo complicato.",
-          "question": "Devo pronunciarlo ad alta voce ",
+          "dontKnow": "No conoces ningún sortilegio.",
+          "dontRemember": "No lo recuerdo, era demasiado complicado.",
+          "question": "¿Debo pronunciarlo en voz alta ",
           "fail": [
-            "Hai la gola secca dalla paura...",
-            "Non riesci a parlare...",
-            "Il fantasma ne approfitta per assalirti."
+            "Tienes la garganta seca del miedo...",
+            "No consigues hablar...",
+            "El fantasma aprovecha para atacarte."
           ],
-          "success": "Con un lungo lamento disperato, il fantasma torna nel Nulla dal quale era venuto."
+          "success": "Con un largo lamento desesperado, el fantasma vuelve a la Nada de la que había venido."
         }
       },
       "spell": {
-        "label": "il sortilegio",
+        "label": "el sortilegio",
         "pattern": "sortilegio|incantesimo",
-        "onLook": "Penso che la lettura degli strani simboli e delle strane formule potrebbe evocare forze da lungo tempo sopite."
+        "onLook": "Creo que la lectura de esos extraños símbolos y fórmulas podría evocar fuerzas dormidas desde hace mucho."
       },
       "milkAndHoneyCup": {
-        "dlabel": "una coppa",
+        "dlabel": "una copa",
         "label": [
-          "una coppa colma di lattemiele",
-          "una coppa vuota"
+          "una copa llena de lattemiele",
+          "una copa vacía"
         ],
         "pattern": "coppa",
         "description": {
-          "full": "E' piena di lattemiele.",
-          "empty": "E' completamente vuota."
+          "full": "Está llena de lattemiele.",
+          "empty": "Está completamente vacía."
         },
-        "EMPTY": "La coppa è vuota."
+        "EMPTY": "La copa está vacía."
       },
       "milkAndHoney": {
-        "label": "il lattemiele",
+        "label": "el lattemiele",
         "pattern": "lattemiele",
-        "description": "A guardarlo ed annusarlo sembra buono.",
+        "description": "A la vista y al olfato parece bueno.",
         "onDrink": {
-          "success": "Ottimo, veramente ottimo!",
-          "fail": "Prendi in mano la coppa, prima."
+          "success": "¡Excelente, verdaderamente excelente!",
+          "fail": "Primero coge la copa."
         },
         "onOffer": {
-          "toGhost": "Non gradisce.",
-          "toOgre": "Non ha fame (per fortuna!).",
-          "toWho": "A chi?"
+          "toGhost": "No le gusta.",
+          "toOgre": "No tiene hambre (¡por suerte!).",
+          "toWho": "¿A quién?"
         }
       },
       "lute": {
-        "label": "un liuto",
+        "label": "un laúd",
         "pattern": "liuto",
-        "description": "Questo strumento rallegrava le feste danzanti che si svolgevano in occasione dei raccolti, delle vittorie, delle cerimonie, e di tutti i pretesti che potessero giustificare una festa danzante.",
-        "onPlay": "Le corde sono rotte."
+        "description": "Este instrumento alegraba las fiestas de baile que se celebraban con motivo de las cosechas, las victorias, las ceremonias y cualquier pretexto que justificara una fiesta de baile.",
+        "onPlay": "Las cuerdas están rotas."
       },
       "harp": {
-        "label": "un'arpa",
+        "label": "un arpa",
         "pattern": "arpa",
-        "description": "Questo strumento accompagnava le tristi e le liete storie che il bardo del castello cantilenava nelle lunghe sere d'inverno, mentre tutti erano raccolti intorno, rapiti dall'incanto delle antiche leggende.",
-        "onPlay": "Le corde sono rotte."
+        "description": "Este instrumento acompañaba las historias tristes y alegres que el bardo del castillo canturreaba en las largas noches de invierno, mientras todos se reunían alrededor, hechizados por el encanto de las antiguas leyendas.",
+        "onPlay": "Las cuerdas están rotas."
       },
       "bagpipe": {
-        "label": "una cornamusa",
+        "label": "una gaita",
         "pattern": "cornamusa",
-        "description": "Questo strumento accompagnava le spedizioni militari condotte personalmente dal Re, scandendo con il suo alto lamento ritmato il passo pesante dei soldati in marcia.",
+        "description": "Este instrumento acompañaba las expediciones militares dirigidas personalmente por el Rey, marcando con su alto lamento rítmico el pesado paso de los soldados en marcha.",
         "onPlay": {
           "fail": [
-            "Meriteresti di far parte della Banda Reale di Edimburgo!",
+            "¡Merecerías formar parte de la Banda Real de Edimburgo!",
             "(...come tamburo)"
           ],
-          "success": "Il volume si apre alla pagina indicata da un segnalibro decorato."
+          "success": "El tomo se abre por la página indicada por un marcador decorado."
         }
       },
       "sheet": {
-        "label": "un foglio bruciacchiato",
+        "label": "una hoja chamuscada",
         "pattern": "foglio|carta",
-        "description": "Benché‚ sia parzialmente consumato dalle fiamme, si riesce ancora a leggere.",
+        "description": "Aunque está parcialmente consumida por las llamas, aún se puede leer.",
         "onRead": {
-          "dontHaveIt": "Non possiedi un foglio.",
-          "success": "C'è scritto soltanto: 'IOTA'"
+          "dontHaveIt": "No tienes una hoja.",
+          "success": "Solo pone: 'IOTA'"
         }
       },
       "cushion": {
-        "label": "un cuscino",
+        "label": "un cojín",
         "pattern": "cuscino",
-        "description": "Non pensare a dormire: pensa a come uscire di qui.",
-        "onLiftUp": "C'è sotto un astuccio in legno."
+        "description": "No pienses en dormir: piensa en cómo salir de aquí.",
+        "onLiftUp": "Debajo hay un estuche de madera."
       },
       "case": {
-        "label": "un astuccio",
+        "label": "un estuche",
         "pattern": "astuccio",
-        "description": "Il legno dell'astuccio è intarsiato con grande cura.",
-        "onTake": "E' avvitato al sedile del trono.",
-        "onSkrewOff": "Non possiedi lo strumento adatto.",
-        "onOpen": "L'astuccio contiene una vecchia pergamena."
+        "description": "La madera del estuche está cuidadosamente incrustada.",
+        "onTake": "Está atornillado al asiento del trono.",
+        "onSkrewOff": "No tienes la herramienta adecuada.",
+        "onOpen": "El estuche contiene un viejo pergamino."
       },
       "scroll": {
-        "label": "una pergamena",
+        "label": "un pergamino",
         "pattern": "pergamena",
-        "description": "E' scolorita dal tempo, ma si legge ancora bene.",
+        "description": "Está descolorido por el tiempo, pero aún se lee bien.",
         "onRead": {
-          "dontHaveIt": "Non possiedi una pergamena.",
-          "fail": "Mi spiace, è scritta in una lingua che non conosco."
+          "dontHaveIt": "No tienes un pergamino.",
+          "fail": "Lo siento, está escrito en una lengua que no conozco."
         },
         "onTranslate": {
-          "fail": "Come faccio senza dizionario ?",
+          "fail": "¿Cómo voy a hacerlo sin diccionario?",
           "success": [
             "Dice:",
-            "'Solo col senno puoi trovare l'uscita del labirinto'"
+            "\"Solo con el senno puedes encontrar la salida del laberinto\""
           ]
         }
       },
       "ogre": {
-        "label": "un feroce orco dalle zanne aguzze",
+        "label": "un feroz orco de colmillos afilados",
         "pattern": "(?:feroce )?orco",
         "onLook": [
-          "A ben guardare, non sembra poi così feroce...",
-          "...ma molto, molto di più!"
+          "Mirándolo bien, no parece tan feroz...",
+          "...¡sino mucho, mucho más!"
         ],
-        "onKill": "Fai presto a dirlo!",
-        "onFeed": "Non ha fame (per fortuna!).",
+        "onKill": "¡Eso es fácil decirlo!",
+        "onFeed": "No tiene hambre (¡por suerte!).",
         "onTalkOrGreet": "- GRUNT -"
       },
       "dwarf": {
-        "dlabel": "un nano",
+        "dlabel": "un enano",
         "label": [
-          "un piccolo nano con un grosso diamante",
-          "un piccolo nano molto simpatico"
+          "un pequeño enano con un gran diamante",
+          "un pequeño enano muy simpático"
         ],
         "pattern": "(?:piccolo )?nano",
-        "description": "E' piuttosto piccolo.",
+        "description": "Es bastante pequeño.",
         "onGreet": {
-          "withoutDiamond": "- Buonasera a Voi! - risponde il nano.",
-          "withDiamond": "Il nano è così contento di incontrare finalmente una persona cortese che ti regala il diamante."
+          "withoutDiamond": "- ¡Buenas noches! - responde el enano.",
+          "withDiamond": "El enano está tan contento de encontrar por fin a una persona cortés que te regala el diamante."
         },
-        "onFeed": "Ha appena cenato.",
+        "onFeed": "Acaba de cenar.",
         "onKill": [
-          "Il nano, velocissimo, estrae un affilato pugnale e ti colpisce con forza, esclamando:",
-          "- Possibile che di qui passino soltanto ladri ed assassini ? -"
+          "El enano, rapidísimo, saca una afilada daga y te golpea con fuerza, exclamando:",
+          "- ¿Es posible que por aquí solo pasen ladrones y asesinos? -"
         ]
       },
       "diamond": {
         "label": "un diamante",
         "pattern": "diamante",
-        "description": "Più osservi il meraviglioso gioiello, più cresce dentro di te una sfrenata bramosia di possederlo.",
-        "MINE": "Il nano dice: - E' mio! -",
+        "description": "Cuanto más observas la maravillosa joya, más crece dentro de ti una desenfrenada ansia de poseerla.",
+        "MINE": "El enano dice: - ¡Es mío! -",
         "onBreak": {
-          "needSomethingHard": "Ci vuole qualcosa di molto duro.",
-          "success": "Al primo colpo di mazza, il diamante va in mille pezzi."
+          "needSomethingHard": "Hace falta algo muy duro.",
+          "success": "Al primer golpe de maza, el diamante se hace mil pedazos."
         },
-        "onLook": "E' magnifico: la luce riflessa e rifratta da mille perfette sfaccettature costruisce infiniti giochi di colore. Ne sei affascinato e rimarresti a guardarlo per ore ed ore. Penso che abbia un valore inestimabile, e che ti convenga trattarlo con la massima cura."
+        "onLook": "Es magnífico: la luz reflejada y refractada por mil facetas perfectas construye infinitos juegos de color. Te fascina y podrías quedarte mirándolo durante horas. Creo que tiene un valor incalculable y que te conviene tratarlo con el máximo cuidado."
       },
       "key": {
-        "label": "una piccola chiave di cristallo",
+        "label": "una pequeña llave de cristal",
         "pattern": "(piccola )?chiave",
-        "description": "E' molto strana, troppo piccola per essere la chiave di una porta o di un portone. E sembra anche fragile. A cosa mai potrà servire?"
+        "description": "Es muy extraña, demasiado pequeña para ser la llave de una puerta. Y además parece frágil. ¿Para qué podrá servir?"
       },
       "horn": {
-        "label": "un corno",
+        "label": "un cuerno",
         "pattern": "corno",
-        "description": "E' decorato con scene di caccia che si avvolgono a spirale partendo dall'imboccatura. Cavalieri al galoppo inseguono la preda, mentre grandi uccelli volteggiano sopra le loro teste.",
-        "onPlay": "Il suono cavernoso riecheggia tra le mura del castello."
+        "description": "Está decorado con escenas de caza que se enroscan en espiral desde la boquilla. Caballeros al galope persiguen a la presa, mientras grandes aves planean sobre sus cabezas.",
+        "onPlay": "El sonido cavernoso resuena entre los muros del castillo."
       }
     },
     "sequences": {
       "title": [
-        "Adattamento Javascript di",
-        "\"AVVENTURA NEL CASTELLO\"",
-        "realizzato da Federico Volpini",
+        "Adaptación JavaScript de",
+        "\"AVENTURA EN EL CASTILLO\"",
+        "realizada por Federico Volpini",
         "(volpini.federico79@gmail.com)",
-        "Dalla versione originale 4.1 per MS-DOS",
-        "di Enrico Colombini e Chiara Tovena",
+        "De la versión original 4.1 para MS-DOS",
+        "de Enrico Colombini y Chiara Tovena",
         "(C) Dinosoft 1982,1984,1987,1996",
-        "Riprodotta col consenso degli autori",
-        "Licenza di distribuzione: CC BY-NC-ND 4.0",
+        "Reproducida con el consentimiento de los autores",
+        "Licencia de distribución: CC BY-NC-ND 4.0",
         "(Attribution-NonCommercial-NoDerivatives 4.0 International)",
-        "Libreria usata per il sonoro: Tone.js",
+        "Librería usada para el sonido: Tone.js",
         "(https://tonejs.github.io/)"
       ],
       "prologue": [
-        " PROLOGO: ",
-        "Si narra nelle antiche leggende scozzesi delle eroiche gesta e delle oscure stregonerie degli antichi Re.",
-        "Si narra anche dei favolosi tesori, mai ritrovati.",
-        "Il tuo ardente spirito avventuroso, mosso da sete di gloria e bramosia di ricchezze, non esita un istante:",
-        "noleggi un piccolo aereo da turismo, e parti per la tua Grande Avventura!"
+        " PRÓLOGO: ",
+        "Las antiguas leyendas escocesas cuentan las gestas heroicas y las oscuras hechicerías de los viejos Reyes.",
+        "También hablan de fabulosos tesoros jamás encontrados.",
+        "Tu ardiente espíritu aventurero, movido por sed de gloria y codicia de riquezas, no duda ni un instante:",
+        "alquilas una pequeña avioneta de turismo y partes hacia tu Gran Aventura."
       ],
       "intro": [
-        " * AVVENTURA NEL CASTELLO! * ",
-        "Stai pilotando il tuo monoposto sopra la desolata regione scozzese delle Highlands. Hai appena sorvolato il lago di Loch Ness...",
-        "Improvvisamente il motore perde colpi.",
-        "I comandi non rispondono!"
+        " * ¡AVENTURA EN EL CASTILLO! * ",
+        "Estás pilotando tu monoplaza sobre la desolada región escocesa de las Highlands. Acabas de sobrevolar el lago Ness...",
+        "De repente el motor empieza a fallar.",
+        "¡Los mandos no responden!"
       ],
       "parachute": [
-        "Toh guarda. C'è un paracadute. Non l'avevo proprio visto.",
-        "Ti prometto che d'ora in poi starò più attento e ti riferirò scrupolosamente tutti gli oggetti presenti.",
-        "Comunque, adesso l'ho indossato."
+        "Vaya, mira. Hay un paracaídas. No lo había visto en absoluto.",
+        "Te prometo que a partir de ahora estaré más atento y te informaré escrupulosamente de todos los objetos presentes.",
+        "En fin, ahora ya me lo he puesto."
       ],
       "fly": {
         "string": [
-          "Sicuro di non aver dimenticato",
-          "qualcosaaaaa",
+          "¿Seguro que no te has olvidado",
+          "de algoooooo",
           "             aaa",
           "                 aa",
           "                    a",
@@ -1987,54 +1987,54 @@
         "reversed": " SPLAT!"
       },
       "jumpFromPlane": [
-        "Appena in tempo!",
-        "l'aereo si schianta al suolo mentre il paracadute si apre.",
-        "Scendi dolcemente nella luce del giorno morente. Sotto di te una brughiera desolata. Il vento ti spinge verso un castello diroccato. Prendi terra nella grande piazza d'armi del castello.",
-        "Mentre ripieghi il paracadute ti guardi attorno:"
+        "¡Justo a tiempo!",
+        "el avión se estrella contra el suelo mientras el paracaídas se abre.",
+        "Desciendes suavemente en la luz del día agonizante. Bajo ti hay un páramo desolado. El viento te empuja hacia un castillo en ruinas. Tomas tierra en el gran patio de armas del castillo.",
+        "Mientras pliegas el paracaídas miras a tu alrededor:"
       ],
       "arm": {
-        "question": "Devo infilare il braccio nel foro ",
+        "question": "¿Debo meter el brazo en el agujero ",
         "answer": [
-          "Una lama scende di scatto tagliandoti di netto il braccio.",
-          "Intanto che muori dissanguato lascia che ti dica che ti stai comportando in maniera imprudente."
+          "Una hoja cae de golpe cortándote el brazo limpiamente.",
+          "Mientras mueres desangrado, deja que te diga que te estás comportando de manera imprudente."
         ]
       },
       "castleDungeon": {
         "success": [
-          "Una lama scende di scatto tranciando di netto l'osso.",
-          " Per fortuna non era il tuo braccio!",
-          "Una fessura si allarga lentamente....."
+          "Una hoja cae de golpe cercenando el hueso.",
+          " ¡Por suerte no era tu brazo!",
+          "Una rendija se ensancha lentamente....."
         ],
-        "fail": "Non ci passa."
+        "fail": "No pasa."
       },
       "portrait": [
-        "Non appena fissi gli occhi sul ritratto di Malcolm IV, ti senti inesorabilmente attratto dal suo sguardo magnetico. Non riesci in alcun modo ad interrompere la linea che unisce i tuoi occhi a quelli del ritratto, e ti porti tuo malgrado sempre più vicino alla tela. Una mano invisibile pare serrarti la gola in una morsa d'acciaio, mentre un sorriso beffardo si disegna sul volto del Re, raffigurato nel sontuoso abbigliamento da parata.",
-        "Quando senti ormai di essere agli estremi, la mano proveniente dagli abissi del tempo rilascia all'improvviso la presa mortale.",
-        "Crolli sul pavimento e perdi i sensi, mentre tutto ruota intorno a te. Non puoi vederla, ma sul volto di Malcolm IV è apparsa un'espressione soddisfatta."
+        "En cuanto fijas los ojos en el retrato de Malcolm IV, te sientes inexorablemente atraído por su mirada magnética. No logras interrumpir la línea que une tus ojos con los del retrato y, a tu pesar, te acercas cada vez más a la tela. Una mano invisible parece apretarte la garganta en un torno de acero, mientras una sonrisa burlona se dibuja en el rostro del Rey, retratado con un suntuoso atuendo de desfile.",
+        "Cuando sientes que estás al límite, la mano que viene de los abismos del tiempo suelta de pronto su presa mortal.",
+        "Te derrumbas en el suelo y pierdes el sentido, mientras todo gira a tu alrededor. No puedes verla, pero en el rostro de Malcolm IV ha aparecido una expresión satisfecha."
       ],
       "eat": [
-        "Hai prima un gran mal di pancia... ",
-        "poi delle bellissime allucinazioni...",
-        "credi di aver finalmente capito tutte le verità universali...",
-        "ma alla fine ti resta solo un pesante cerchio alla testa."
+        "Primero te entra un gran dolor de barriga... ",
+        "luego unas alucinaciones bellísimas...",
+        "crees que por fin has entendido todas las verdades universales...",
+        "pero al final solo te queda una pesada banda en la cabeza."
       ],
       "eagle": [
-        "Il suono dell'antico corno corre per la brughiera, riecheggiando fino alle lontane montagne.",
-        "Un punto nero si stacca dalle montagne e si ingrandisce mentre si avvicina.",
-        "Velocemente giunge alla torre: è una grande Aquila Reale che si lancia verso di te con gli artigli protesi.",
-        "Non hai nessuna possibilità:",
-        "l'Aquila ti afferra sollevandoti rapidamente a grande altezza.",
-        "L'Aquila vola a lungo mentre il paesaggio scorre sotto di te... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...il lago di Loch Ness appare lontano... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...",
-        "Improvvisamente l'Aquila ti lascia andare."
+        "El sonido del antiguo cuerno recorre el páramo, resonando hasta las lejanas montañas.",
+        "Un punto negro se desprende de las montañas y se agranda mientras se acerca.",
+        "Llega velozmente a la torre: es una gran Águila Real que se lanza hacia ti con las garras extendidas.",
+        "No tienes ninguna posibilidad:",
+        "el Águila te agarra elevándote rápidamente a gran altura.",
+        "El Águila vuela largo rato mientras el paisaje corre bajo ti... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...el lago Ness aparece lejos... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ... ...",
+        "De repente el Águila te suelta."
       ],
       "rock": [
-        "Scendi dolcemente nella luce del giorno nascente. Sotto di te le scure acque del lago di Loch Ness. Il vento ti spinge verso il centro del lago. Prendi terra fortunosamente su un piccolo scoglio roccioso.",
-        "Mentre ripieghi il paracadute ti guardi attorno:"
+        "Desciendes suavemente en la luz del día naciente. Bajo ti están las oscuras aguas del lago Ness. El viento te empuja hacia el centro del lago. Aterrizas de milagro en un pequeño escollo rocoso.",
+        "Mientras pliegas el paracaídas miras a tu alrededor:"
       ],
       "again": {
         "string": [
-          "Possibile che tu sia riuscito a dimenticartelo anche",
-          "stavoltaaaaa",
+          "¿Es posible que hayas logrado olvidarlo también",
+          "esta veeeez",
           "             aaa",
           "                 aa",
           "                    a",
@@ -2047,54 +2047,54 @@
           "                      :",
           "                  \\   :   /",
           "                 -  SPLAT! -",
-          "Sei incorreggibile!"
+          "¡Eres incorregible!"
         ],
         "reversed": " SPLAT!"
       },
       "final": [
-        "Il suono dell'antico corno corre per la brughiera, riecheggiando fino alle lontane montagne.",
-        "Un punto nero si stacca dalle montagne e si ingrandisce mentre si avvicina.",
-        "Velocemente giunge allo scoglio: è un elicottero del Reale Servizio Archeologico che ti lancia una scaletta di salvataggio. Sali la scaletta mentre le mascelle del mostro si chiudono a vuoto pochi centimetri sotto di te.",
-        "Mentre l'elicottero si dirige verso Edimburgo, racconti la tua avventura, mostrando il corno, unico oggetto che sei riuscito a conservare. Vedendolo, il prof. Mac Anthrop (direttore del museo di Edimburgo) esclama:",
-        "- Ma questo è il corno di Malcolm IV, che si credeva perduto per sempre!",
-        "- Varrà almeno un milione di sterline! - dichiara il suo assistente.",
-        "L'elicottero atterra ad Edimburgo.",
-        "Vieni immediatamente arrestato per:",
-        "- Ingombro di suolo pubblico con rottami di aereo.",
-        "- Violazione di Domicilio Reale.",
-        "- Furto di bevande (con deglutizione).",
-        "- Maltrattamenti a gatto di nobile stirpe.",
-        "- Trafugamento di reperti archeologici.",
-        "- Molestie a fantasma statale.",
-        "- Porto abusivo di arma da taglio.",
-        "- Ubriachezza molesta.",
-        "- Esercizio di stregoneria senza licenza.",
-        "- Disturbo a mostro di specie protetta.",
-        "Il corno ti viene naturalmente sequestrato per essere affidato al museo.",
-        "Il direttore, ancora emozionato per l'importante ritrovamento, interviene in tuo favore. Sei liberato e ti viene persino assegnato un premio dagli Scozzesi riconoscenti (cosa alquanto insolita):",
-        "Un biglietto ",
-        "GRATUITO",
-        " per una gita turistica sul lago di Loch Ness! -",
-        "Comunque consolati: hai finalmente raggiunto i ",
+        "El sonido del antiguo cuerno recorre el páramo, resonando hasta las lejanas montañas.",
+        "Un punto negro se desprende de las montañas y se agranda mientras se acerca.",
+        "Llega velozmente al escollo: es un helicóptero del Real Servicio Arqueológico que te lanza una escalerilla de rescate. Subes mientras las fauces del monstruo se cierran en vacío a pocos centímetros bajo ti.",
+        "Mientras el helicóptero se dirige a Edimburgo, cuentas tu aventura mostrando el cuerno, el único objeto que has logrado conservar. Al verlo, el prof. Mac Anthrop (director del museo de Edimburgo) exclama:",
+        "- ¡Pero este es el cuerno de Malcolm IV, que se creía perdido para siempre!",
+        "- ¡Valdrá al menos un millón de libras! - declara su asistente.",
+        "El helicóptero aterriza en Edimburgo.",
+        "Te arrestan inmediatamente por:",
+        "- Ocupación de vía pública con restos de avión.",
+        "- Violación de domicilio Real.",
+        "- Robo de bebidas (con deglución).",
+        "- Malos tratos a un gato de noble estirpe.",
+        "- Sustracción de piezas arqueológicas.",
+        "- Molestias a un fantasma estatal.",
+        "- Porte ilegal de arma blanca.",
+        "- Borrachera molesta.",
+        "- Ejercicio de brujería sin licencia.",
+        "- Molestia a un monstruo de especie protegida.",
+        "El cuerno, naturalmente, te es confiscado para ser entregado al museo.",
+        "El director, aún emocionado por el importante hallazgo, interviene a tu favor. Quedas libre e incluso se te concede un premio de los escoceses agradecidos (cosa bastante inusual):",
+        "Un billete ",
+        "GRATIS",
+        " para un paseo turístico por el lago Ness. -",
+        "En fin, consuélate: por fin has alcanzado los ",
         "1000",
-        " punti e il diritto di fregiarti dell'ambito titolo di:",
-        " LUOGOTENENTE DEL DIAVOLO!!!",
-        "Arrivederci alla prossima avventura!"
+        " puntos y el derecho a ostentar el ansiado título de:",
+        " ¡¡¡TENIENTE DEL DIABLO!!!",
+        "¡Hasta la próxima aventura!"
       ]
     },
     "timedEvents": {
       "plane": [
-        "La carlinga è invasa dal fumo.",
-        "Presto, fai qualcosa!",
-        "Hai i secondi contati!!!",
+        "El fuselaje está invadido por el humo.",
+        "¡Rápido, haz algo!",
+        "¡Te quedan segundos!",
         "@@@@@@@@@@@@@@@ CRASH! @@@@@@@@@@@@@@@"
       ],
       "whiskey": "- HIC! -",
       "nessie": [
-        "Vedo il mostro di Loch Ness che si avvicina.",
-        "Vedo il mostro di Loch Ness che si avvicina troppo.",
+        "Veo que el monstruo del lago Ness se acerca.",
+        "Veo que el monstruo del lago Ness se acerca demasiado.",
         ">CHOMP!<",
-        "  (gustosi questi avventurieri)"
+        "  (qué sabrosos estos aventureros)"
       ]
     }
   }

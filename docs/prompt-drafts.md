@@ -194,14 +194,14 @@ The game is a text adventure, you send a string containing actions, the server r
 The game must be played in Italian
 The server base URL is http://localhost:3000
 You are already registered with:
-    - **player_name** = 'codex-gpt-5.1-mini-medium-test' 
+    - **player_name** = 'codex-gpt-5.2-mini-medium-test' 
     - **player_key** = 'fe3dae7a6a8b43d59d81021664468f083aa3697d'
 You will then use the  **/play** API to send actions and read the result of the action
-You can use the **status** API to read if you are playing a game or you are not playing a game and you should start a new one
+Just at the beginning You can use the **status** API to read if you are playing a game or you are not playing a game and you should start a new one
 when in **playing** status, you can send the INFORMAZIONI input to get a brief description about how to play
 The API documentation is in the file castello-api.md
 We are running on Windows 11 Pro, so you can use the examples for Powershell for the /status and /play API calls
-After 50 API call stop and give back the control to me
+After 10 API call stop and give back the control to me
 
 ---
 

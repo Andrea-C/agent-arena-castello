@@ -1,100 +1,100 @@
 /**
- * Italian localization for Avventura nel Castello
+ * English localization for Avventura nel Castello
  * Adapted from source_app/it-it.i18n.js for server-side use
  */
 
 const i18n = {
-	htmlTitle: `Avventura nel Castello - API Server`,
-	title: `   AVVENTURA NEL CASTELLO JS   `,
+	htmlTitle: `Adventure in the Castle - API Server`,
+	title: `   ADVENTURE IN THE CASTLE JS   `,
 	IFEngine: {
 		warnings: {
-			mustBeExtended: `IFEngine deve essere esteso`,
-			notLoaded: `Nessuna avventura caricata`,
-			noData: `Nessun dato salvato...`,
-			notFound: (filename) => `Salvataggio "${filename}" non trovato.`
+			mustBeExtended: `IFEngine must be extended`,
+			notLoaded: `No adventure loaded`,
+			noData: `No saved data...`,
+			notFound: (filename) => `Save "${filename}" not found.`
 		},
 		menu: {
-			choose: `Vuoi:`,
-			new: `Iniziare una nuova avventura`,
-			load: `Riprendere una situazione salvata`,
-			delete: `Cancellare tutti i salvataggi`,
-			readInstructions: `Ripassare le istruzioni`,
-			quit: `Uscire dal gioco`,
-			restart: `Rincominciare dall'inizio`,
-			stop: `Smettere di giocare`
+			choose: `Do you want to:`,
+			new: `Start a new adventure`,
+			load: `Resume a saved game`,
+			delete: `Delete all saves`,
+			readInstructions: `Review the instructions`,
+			quit: `Exit the game`,
+			restart: `Restart from the beginning`,
+			stop: `Stop playing`
 		},
 		questions: {
-			stopQuestion: `Vuoi smettere di giocare`,
-			areYouSureQuestion: `Sei sicuro`,
-			saveLabel: `Etichetta salvataggio:`,
-			restoreLabel: `Etichetta:`,
-			what: `che cosa?`
+			stopQuestion: `Do you want to stop playing`,
+			areYouSureQuestion: `Are you sure`,
+			saveLabel: `Save label:`,
+			restoreLabel: `Label:`,
+			what: `what?`
 		},
 		yesOrNo:{
-			yes: `si`,
+			yes: `yes`,
 			no: `no`
 		},
 		messages: {
-			tanksForPlaying: `Grazie per aver giocato. Ciao! :)`,
-			saved: `Dati salvati!`,
-			loaded: `Dati caricati...`,
-			noInstructions: `Nessuna istruzione qui...`,
-			death: `SEI MORTO!!!`,
-			noPoints: `Quest'avventura non prevede un punteggio`,
-			points: (points, maxPoints) => `Hai conquistato ${points} punti su ${maxPoints}`,
-			noObjects: `Non hai con te nessun oggetto.`,
-			carriedObjectsLabel: `Attualmente possiedi:`,
-			alreadyHaveIt: `Ce l'hai già`
+			tanksForPlaying: `Thanks for playing. Bye! :)`,
+			saved: `Saved!`,
+			loaded: `Loaded...`,
+			noInstructions: `No instructions here...`,
+			death: `YOU ARE DEAD!!!`,
+			noPoints: `This adventure has no score`,
+			points: (points, maxPoints) => `You earned ${points} points out of ${maxPoints}`,
+			noObjects: `You're not carrying any objects.`,
+			carriedObjectsLabel: `You're currently carrying:`,
+			alreadyHaveIt: `You already have it`
 		},
 		questionMark: `?`
 	},
 	Thesaurus: {
 		defaultMessages: {
-			done: `Fatto!`,
-			preferNot: `Preferisco di no.`,
-			notFound: `Ricerca infruttuosa.`,
-			didNotUnderstand: `Non ho capito...`,
-			dontNoticeAnythingInParticular: `Non noto nulla di particolare.`,
-			notSeenHere: `Qui non ne vedo.`, 
-			dontHaveAny: `Non ne possiedi.`, 
-			nothingHappens: `Non succede niente.`,
-			beMoreSpecific: `Sii più specifico.`,
-			notPossible: `Non è possibile.`
+			done: `Done!`,
+			preferNot: `I'd rather not.`,
+			notFound: `Fruitless search.`,
+			didNotUnderstand: `I didn't understand...`,
+			dontNoticeAnythingInParticular: `I don't notice anything in particular.`,
+			notSeenHere: `I don't see any here.`, 
+			dontHaveAny: `You don't have any.`, 
+			nothingHappens: `Nothing happens.`,
+			beMoreSpecific: `Be more specific.`,
+			notPossible: `That's not possible.`
 		},
 		commands: {
 			north: {
 				pattern: `(vai verso |vai a |vai )?(n(ord)?)`,
-				defaultMessage: `A nord non puoi andare.`
+				defaultMessage: `You can't go north.`
 			},
 			south: {
 				pattern: `(vai verso |vai a |vai )?(s(ud|outh)?)`,
-				defaultMessage: `A sud non puoi andare.`
+				defaultMessage: `You can't go south.`
 			},
 			east: {
 				pattern: `(vai verso |vai a |vai )?(e(st)?|east)`,
-				defaultMessage: `A est non puoi andare.`
+				defaultMessage: `You can't go east.`
 			},
 			west: {
 				pattern: `(vai verso |vai a |vai )?(o(vest)?|w(est)?)`,
-				defaultMessage: `Ad ovest non puoi andare.`
+				defaultMessage: `You can't go west.`
 			},
 			up: {
 				pattern: `(sali|(vai verso |vai in |vai )?a(lto)?|u(p)?|su)`,
-				defaultMessage: `In alto non puoi andare.`
+				defaultMessage: `You can't go up.`
 			},
 			down: {
 				pattern: `(scendi|(vai verso |vai in |vai )?b(asso)?|d(own)?|giu)`,
-				defaultMessage: `In basso non puoi andare.`
+				defaultMessage: `You can't go down.`
 			}
 		},
 		verbs: {
 			open: {
 				pattern: `apri`,
-				defaultMessage: `Non si apre`
+				defaultMessage: `It won't open.`
 			},
 			close: {
 				pattern: `chiudi`,
-				defaultMessage: `Non si chiude`
+				defaultMessage: `It won't close.`
 			},
 			pull: {
 				pattern: `tira`,
@@ -104,7 +104,7 @@ const i18n = {
 			},
 			push: {
 				pattern: `spingi`,
-				defaultMessage: `Non si muove.`
+				defaultMessage: `It doesn't move.`
 			},
 			take: {
 				pattern: `prendi`
@@ -120,7 +120,7 @@ const i18n = {
 			},
 			useWith: {
 				pattern: `(usa) (.+) (?:con) (.+)`,
-				defaultMessage: `Non posso usarli insieme.`
+				defaultMessage: `I can't use them together.`
 			},
 			use:{
 				pattern: `usa`
@@ -138,53 +138,53 @@ const i18n = {
 	},
 	AvventuraNelCastelloJSEngine: {
 		warnings: {
-			mustBeExtended: `AvventuraNelCastelloEngine deve essere esteso`
+			mustBeExtended: `AvventuraNelCastelloEngine must be extended`
 		},
-		defaultInput: `Cosa devo fare ?`,
+		defaultInput: `What should I do?`,
 		prefixLabels: {
-			ISee: `Vedo`,
-			cantSeeHere: `Qui non vedo`,
-			youDontOwn: `Non possiedi`,
-			title: `Hai il diritto di fregiarti del titolo di:`
+			ISee: `I see`,
+			cantSeeHere: `I don't see`,
+			youDontOwn: `You don't have`,
+			title: `You have earned the right to bear the title of:`
 		},
 		pointsLabel: [
-			`Avventuriero dei miei stivali`,
-			`Scemo del villaggio`,
-			`Servo della gleba`,
-			`Vile Meccanico`,
-			`Vice Palafreniere aggiunto`,
+			`A so-called adventurer`,
+			`Village idiot`,
+			`Lowly serf`,
+			`Wretched mechanic`,
+			`Assistant deputy groom`,
 			`Lanzichenecco`,
-			`Arcivescovo  di Canterbury`,
-			`(disarcivescoviscanterburyzzato)`,
-			`Barone Rampante`,
-			`Visconte dimezzato`,
-			`Conte della malora`
+			`Archbishop of Canterbury`,
+			`(de-archbishop-of-canterbury-fied)`,
+			`Roving Baron`,
+			`Halved Viscount`,
+			`Count of Doom`
 		],
-		menuOption4LabelOverride: `Smettere prima ancora di cominciare`,
+		menuOption4LabelOverride: `Quit before even starting`,
 		commonPatterns: {
 			say: `(pronuncia|di)`,
 			wall: `(muro|mura|pareti|parete)`
 		},
 		defaultMessages: {
-			beSerious: `Sii Serio!`,
-			notUseful: `Non serve a niente.`,
-			alreadyHaveIt: `Ce l'hai già.`,
-			inYourHand: `Ce l'hai in mano.`,
-			wearing: `L'hai già addosso`, 
-			didNotUnderstand: `- Non capisco.`,
-			again: `Cos'altro speri di ottenere ?`, 
-			youDontKnow: `Tu non conosci questa parola.`,
-			isOpened: `E' già aperto.`,
-			isClosed: `E' chiuso.`, 
-			notFound: `Chi cerca trova.`,
+			beSerious: `Be serious!`,
+			notUseful: `That won't help.`,
+			alreadyHaveIt: `You already have it.`,
+			inYourHand: `You're already holding it.`,
+			wearing: `You're already wearing it.`, 
+			didNotUnderstand: `- I don't understand.`,
+			again: `What else do you hope to achieve?`, 
+			youDontKnow: `You don't know that word.`,
+			isOpened: `It's already open.`,
+			isClosed: `It's closed.`, 
+			notFound: `Seek and you shall find.`,
 		},
 		messages: {
-			huh: `Eh?`,
-			somethingSensible: `Dimmi qualcosa di sensato.`,
-			dontBeFormal: `Dammi del tu, per favore.`,
-			overloaded: `Sei già troppo carico; devi lasciare qualcosa.`,
-			points: (points, maxPoints) => `Hai duramente conquistato ${points} punti, su un possibile massimo di ${maxPoints}.`,
-			tough: `Peggio per te!`
+			huh: `Huh?`,
+			somethingSensible: `Tell me something sensible.`,
+			dontBeFormal: `No need to be formal. Just talk to me.`,
+			overloaded: `You're carrying too much; you need to drop something.`,
+			points: (points, maxPoints) => `You painfully earned ${points} points, out of a possible maximum of ${maxPoints}.`,
+			tough: `Too bad for you!`
 		},
 		verbs: {
 			look: { pattern: `(guarda|osserva|esamina)` },
@@ -195,27 +195,27 @@ const i18n = {
 			repair: { pattern: `(aggiusta|ripara)` },
 			translate: { pattern: `traduci` },
 			play: { pattern: `suona` },
-			enter: { pattern: `entra(?: in)?`, defaultMessage: `Da che parte ? (N/S/E/O/A/B)` },
+			enter: { pattern: `entra(?: in)?`, defaultMessage: `Which way? (N/S/E/O/U/D)` },
 			wear: { pattern: `(mettiti|indossa|metti|infilati)` },
-			liftUp: { pattern: `(alza|solleva)`, defaultMessage: `Non c'è sotto niente.` },
-			lower: { pattern: `abbassa`, defaultMessage: `Non si abbassa.` },
+			liftUp: { pattern: `(alza|solleva)`, defaultMessage: `There's nothing underneath.` },
+			lower: { pattern: `abbassa`, defaultMessage: `It won't go down.` },
 			take: { pattern: `(prendi|ruba|afferra)` },
 			read: { pattern: `leggi` },
 			insert: { pattern: `(infila|inserisci)` },
 			insertInto: { pattern: `(infila|inserisci) (.+) (?:in) (.+)` },
-			pray: { pattern: `prega`, defaultMessage: `  Aiutati che Dio ti aiuterà.` },
-			land: { pattern: `(atterra|cabra|plana|picchia|vira|manovra)`, defaultMessage: `Più a terra di così!` },
-			jump: { pattern: `(lanciati|gettati|buttati|salta)(?: .+)?`, defaultMessage: `Faccio già ginnastica tutte le mattine.` },
-			sitDown: { pattern: `(siedi(?:ti)?|sdraiati)(?: su )?(.+)?`, defaultMessage: `Un po' di riposo fa sempre bene.` },
-			greet: { pattern: `saluta`, defaultMessage: `Nessuna risposta.` },
-			dig: { pattern: `scava`, defaultMessage: `Non sono tagliato per i lavori di bassa manovalanza.` },
-			eat: { pattern: `(mangia|divora)`, defaultMessage: `Non mi sembra molto digeribile.` },
-			knock: { pattern: `bussa`, defaultMessage: `Nessuna risposta.` },
-			thank: { pattern: `(grazie|ringrazia)`, defaultMessage: `Prego.` },
-			wait: { pattern: `aspetta`, defaultMessage: `D'accordo` },
-			talk: { pattern: `(parla(?: con)?|interroga)`, defaultMessage: `Se una volta tanto pensassi invece di parlare, non sarebbe meglio?` },
-			listen: { pattern: `ascolta`, defaultMessage: `Restando immobile con l'orecchio teso, ti par di udire lontano un rumore come di catene strascicate. Ma forse è solo uno scherzo giocato alla tua fantasia dal remoto sibilare del vento.` },
-			buy: { pattern: `(compra|compera|acquista)`, defaultMessage: `Non hai una lira.` },
+			pray: { pattern: `prega`, defaultMessage: `  Heaven helps those who help themselves.` },
+			land: { pattern: `(atterra|cabra|plana|picchia|vira|manovra)`, defaultMessage: `Lower than this?!` },
+			jump: { pattern: `(lanciati|gettati|buttati|salta)(?: .+)?`, defaultMessage: `I do my morning workout already.` },
+			sitDown: { pattern: `(siedi(?:ti)?|sdraiati)(?: su )?(.+)?`, defaultMessage: `A bit of rest never hurt anyone.` },
+			greet: { pattern: `saluta`, defaultMessage: `No answer.` },
+			dig: { pattern: `scava`, defaultMessage: `I'm not cut out for menial labor.` },
+			eat: { pattern: `(mangia|divora)`, defaultMessage: `Doesn't look very digestible.` },
+			knock: { pattern: `bussa`, defaultMessage: `No answer.` },
+			thank: { pattern: `(grazie|ringrazia)`, defaultMessage: `You're welcome.` },
+			wait: { pattern: `aspetta`, defaultMessage: `All right.` },
+			talk: { pattern: `(parla(?: con)?|interroga)`, defaultMessage: `If you thought for once instead of talking, wouldn't that be better?` },
+			listen: { pattern: `ascolta`, defaultMessage: `Standing perfectly still with your ear cocked, you think you hear, far away, something like chains being dragged. But perhaps it's just your imagination playing tricks, stirred by the distant hiss of the wind.` },
+			buy: { pattern: `(compra|compera|acquista)`, defaultMessage: `You don't have a penny.` },
 			break: { pattern: `(rompi|spacca|spezza|frantuma|distruggi|sfonda|strappa)` },
 			drink: { pattern: `bevi` },
 			wind: { pattern: `(carica|ricarica)` },
@@ -223,8 +223,8 @@ const i18n = {
 			feed: { pattern: `(nutri|sfama|ciba)` },
 			pet: { pattern: `(carezza|accarezza|coccola)` },
 			mount: { pattern: `(monta|rimonta|costruisci|ricostruisci)` },
-			ask: { pattern: `(chiedi|domanda)`, defaultMessage: `Nessuno è disposto ad offrirti l'oggetto del tuo desiderio.` },
-			askTo: { pattern: `(chiedi|domanda) (.+) (?:a) (.+)`, defaultMessage: `Nessuno è disposto ad offrirti l'oggetto del tuo desiderio.` },
+			ask: { pattern: `(chiedi|domanda)`, defaultMessage: `No one seems willing to offer you the object of your desire.` },
+			askTo: { pattern: `(chiedi|domanda) (.+) (?:a) (.+)`, defaultMessage: `No one seems willing to offer you the object of your desire.` },
 			skrewOff: { pattern: `svita` },
 			hello: { pattern: `ciao` },
 			greeting: { pattern: `(buongiorno|buonasera|buonanotte)` }
@@ -232,87 +232,87 @@ const i18n = {
 		commands: {
 			where: { pattern: `(dove|guarda|esamina|osserva)( (stanza|camera|sala|pavimento|soffitto|locale))?` },
 			points: { pattern: `(punti|quanto)` },
-			stop: { pattern: `(basta|stop|fine|abbandono)`, defaultMessage: `Mi spiace che tu voglia abbandonare la tua esplorazione, proprio quando...` },
+			stop: { pattern: `(basta|stop|fine|abbandono)`, defaultMessage: `I'm sorry you want to abandon your exploration, just when...` },
 			instructions: { pattern: `istruzioni` },
 			inventory: { pattern: `(cosa|inv(?:en(?:tario)?)?|\\?)` },
 			save: { pattern: `(salva|save|registra)` },
 			load: { pattern: `(carica|load|riprendi)` },
 			insult: { pattern: `(idiota|scemo|cretino|merda|inculati|pirla|vaffanculo|deficiente|stupido|stronzo|imbecille)` },
-			help: { pattern: `(aiuto|sos|help|soccors(?:o|i))`, defaultMessage: `Arrangiati!` },
-			call: { pattern: `(chiama|grida|urla)(?: (.+))?`, defaultMessage: `Senti in risposta un lontano suono cavernoso, e ti ci vuole qualche secondo per capire che è solo l'eco della tua voce roca.` },
-			cry: { pattern: `piangi`, defaultMessage: `Ora che ti sei sfogato, alzati e combatti da uomo!` },
-			moves: { pattern: `(turni|mosse)`, defaultMessage: (moves) => `Sei giunto or ora a ${moves} mosse.` },
+			help: { pattern: `(aiuto|sos|help|soccors(?:o|i))`, defaultMessage: `Figure it out!` },
+			call: { pattern: `(chiama|grida|urla)(?: (.+))?`, defaultMessage: `In reply you hear a distant cavernous sound, and it takes you a few seconds to realize it's only the echo of your hoarse voice.` },
+			cry: { pattern: `piangi`, defaultMessage: `Now that you've had your cry, get up and fight like a proper hero!` },
+			moves: { pattern: `(turni|mosse)`, defaultMessage: (moves) => `You have now reached ${moves} moves.` },
 			idiot: { pattern: `(id|iota)`, defaultMessage: `T cpsc sltnt a mt'` },
-			abracadabra: { pattern: `abracadabra`, defaultMessage: `Temo che questa vecchia parola magica sia ormai consunta dal troppo uso.` },
-			die: { pattern: `(muori|impiccati|crepa|sparati)`, defaultMessage: `D'accordo.` },
-			think: { pattern: `(pensa|ragiona|cogita|medita|deduci|ingegnati)`, defaultMessage: `Non mi sembra il posto adatto` },
-			getOut: { pattern: `(esci(?: da)?|corri|scappa|fuggi|cammina|torna|ritorna|vai)( (?:a )?(?:n(ord)?|s(ud)?|e(st)?|o(vest)?|a(lto)?|b(asso)?))?`, defaultMessage: `Sono indeciso: da che parte ? (N/S/E/O/A/B)` },
+			abracadabra: { pattern: `abracadabra`, defaultMessage: `I'm afraid that old magic word is worn out from overuse.` },
+			die: { pattern: `(muori|impiccati|crepa|sparati)`, defaultMessage: `All right.` },
+			think: { pattern: `(pensa|ragiona|cogita|medita|deduci|ingegnati)`, defaultMessage: `Doesn't seem like the right place.` },
+			getOut: { pattern: `(esci(?: da)?|corri|scappa|fuggi|cammina|torna|ritorna|vai)( (?:a )?(?:n(ord)?|s(ud)?|e(st)?|o(vest)?|a(lto)?|b(asso)?))?`, defaultMessage: `I'm torn: which way? (N/S/E/W/U/D)` },
 			sleep: { pattern: `(dormi|riposa(?:ti)?)`, defaultMessage: `Z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z` },
-			maybe: { pattern: `(boh|mah|forse|probabilmente)`, defaultMessage: `Non essere così indeciso!` },
-			good: { pattern: `bravo`, defaultMessage: `Grazie!` },
-			youAreWelcome: { pattern: `prego`, defaultMessage: `Non c'è di che.` },
-			openSesame: { pattern: `apriti sesamo`, defaultMessage: `Guarda che questa è AVVENTURA NEL CASTELLO, non LE MILLE E UNA NOTTE.` },
-			waitForMidnight: { pattern: `aspetta mezzanotte`, defaultMessage: `E' strano: quando aspetti qualcosa, sembra davvero che il tempo non passi mai.` },
+			maybe: { pattern: `(boh|mah|forse|probabilmente)`, defaultMessage: `Don't be so indecisive!` },
+			good: { pattern: `bravo`, defaultMessage: `Thanks!` },
+			youAreWelcome: { pattern: `prego`, defaultMessage: `Don't mention it.` },
+			openSesame: { pattern: `apriti sesamo`, defaultMessage: `This is ADVENTURE IN THE CASTLE, not ONE THOUSAND AND ONE NIGHTS.` },
+			waitForMidnight: { pattern: `aspetta mezzanotte`, defaultMessage: `Funny: when you're waiting for something, time truly seems to stand still.` },
 			sayHello: { pattern: `saluta` },
-			greeting: { defaultMessage: `Ciao. Bella giornata, vero?` },
-			hello: { defaultMessage: `Ciao. Bella giornata, vero?` },
-			senno: { pattern: (sayPattern) => `(?:${sayPattern} )?senno`, defaultMessage: `Non è una parola magica, stupido!` },
-			useSenno: { pattern: `usa senno`, defaultMessage: `Non mi sembra il posto adatto!` },
-			lookForDictionary: { pattern: `cerca dizionario`, defaultMessage: `Non pretenderai che lo cerchi per tutto il castello!` },
+			greeting: { defaultMessage: `Hi. Lovely day, isn't it?` },
+			hello: { defaultMessage: `Hi. Lovely day, isn't it?` },
+			senno: { pattern: (sayPattern) => `(?:${sayPattern} )?senno`, defaultMessage: `That's not a magic word, you fool!` },
+			useSenno: { pattern: `usa senno`, defaultMessage: `Doesn't seem like the right place!` },
+			lookForDictionary: { pattern: `cerca dizionario`, defaultMessage: `You don't expect me to search the whole castle for it, do you?` },
 			saySpell: { pattern: (sayPattern) => `(${sayPattern} )?(sortilegio|incantesimo)` },
-			introduceYourself: { pattern: `presentati`, defaultMessage: `Elenchi doviziosamente i tuoi numerosi titoli onorifici, ma pare che non vi sia nessuno disposto a prestarti ascolto.` },
-			yes: { pattern: `(si|certo|certamente|sicuro)`, defaultMessage: `O forse no.` },
-			no: { pattern: `(no|mai)`, defaultMessage: `O forse si` },
+			introduceYourself: { pattern: `presentati`, defaultMessage: `You dutifully list your many honorary titles, but it seems no one is willing to listen.` },
+			yes: { pattern: `(si|certo|certamente|sicuro)`, defaultMessage: `Or maybe not.` },
+			no: { pattern: `(no|mai)`, defaultMessage: `Or maybe yes.` },
 			bigmeow: {
 				pattern: (sayPattern) => `(${sayPattern} )?bigmeow`,
 				defaultMessage: {
 					prelude: [
-						`Il gatto cresce fino a diventare enorme............`,
-						`ti osserva con attenzione............`
+						`The cat grows until it becomes enormous............`,
+						`it watches you closely............`
 					],
 					success: [
-						`osserva con attenzione l'orco..........`,
-						`Il gatto divora l'orco e muore di indigestione.`,
+						`it watches the ogre carefully..........`,
+						`The cat devours the ogre and dies of indigestion.`,
 					],
-					fail: `e ti divora.`
+					fail: `and devours you.`
 				}
 			},
 			iotid: { pattern: (sayPattern) => `(${sayPattern} )?iotaid` },
 			readSpell: { pattern: `leggi (incantesimo|sortilegio)` },
 			swim: { pattern: `nuota` }
 		},
-		dieText: `Sono molto addolorato per la tua prematura scomparsa... D'altronde sono sempre i migliori che se ne vanno (non è vero?). Consolati comunque pensando che:`,
+		dieText: `I am deeply saddened by your untimely demise... Then again, it's always the best who go first (isn't it?). Take comfort, however, in the thought that:`,
 		instructions: [
-			`Il tuo obbiettivo principale è uscire vivo dal castello.`,
-			`Per farcela dovrai affrontare molti pericoli e risolvere problemi che metteranno a dura prova la tua astuzia.`,
-			`In questa avventura, io sarò il tuo alter ego, i tuoi occhi e le tue orecchie, ma tu dovrai prendere le decisioni (e subirne le conseguenze).`,
-			`Per muoverti usa:`,
-			`- NORD, SUD, EST, OVEST, ALTO, BASSO oppure soltanto:`,
+			`Your main objective is to leave the castle alive.`,
+			`To do so you will face many dangers and solve problems that will put your wits to the test.`,
+			`In this adventure, I will be your alter ego—your eyes and ears—but you will make the decisions (and suffer the consequences).`,
+			`To move, use:`,
+			`- NORD, SUD, EST, OVEST, ALTO, BASSO or simply:`,
 			`- N, S, E, O, A, B`,
-			`Io ti darò la descrizione completa di ogni luogo la prima volta che vi entri, poi darò solo una descrizione breve. Se vuoi la descrizione completa dimmi:`,
-			`- GUARDA o`,
+			`I will give you the full description of each location the first time you enter it, then only a short one. If you want the full description, tell me:`,
+			`- GUARDA or`,
 			`- GUARDA LA STANZA`,
-			`Azioni fondamentali sono:`,
-			`- PRENDI qualcosa`,
-			`- LASCIA qualcosa`,
-			`- GUARDA qualcosa, ad esempio GUARDA LO SCALONE.`,
-			`Io non sono molto furbo, per cui usa frasi come APRI LA PORTA o SALTA e non frasi elaborate come GUARDA DIETRO IL DIVANO o avverbi (GUARDA ATTENTAMENTE), che sono al di là della mia comprensione.`,
-			`Per agire su un oggetto, di solito è necessario possederlo. Inoltre, ricorda che un'azione che non ha effetto in un posto (es. CERCA) può averne da qualche altra parte.`,
-			`Altri comandi importanti:`,
-			`- DOVE ti ricorda dove ti trovi,`,
-			`- COSA elenca gli oggetti che possiedi,`,
-			`- MOSSE ti dice da quanto giochi,`,
-			`- PUNTI quanto sei riuscito a scoprire,`,
-			`- SAVE serve a registrare la situazione,`,
-			`- LOAD ripristina una situazione salvata,`,
-			`- BASTA termina il gioco,`,
-			`- ISTRUZIONI ti ripete questa descrizione.`,
-			`Buona Fortuna! (ne avrai bisogno)`
+			`Basic actions are:`,
+			`- PRENDI something`,
+			`- LASCIA something`,
+			`- GUARDA something, e.g. GUARDA LO SCALONE.`,
+			`I'm not very clever, so use phrases like APRI LA PORTA or SALTA and not elaborate ones like GUARDA DIETRO IL DIVANO or adverbs (GUARDA ATTENTAMENTE), which are beyond my understanding.`,
+			`To act on an object, you usually need to possess it. Also remember that an action that has no effect in one place (e.g. CERCA) may have an effect elsewhere.`,
+			`Other important commands:`,
+			`- DOVE reminds you where you are,`,
+			`- COSA lists the objects you carry,`,
+			`- MOSSE tells you how long you've played,`,
+			`- PUNTI tells you how much you've discovered,`,
+			`- SAVE saves your current situation,`,
+			`- LOAD restores a saved situation,`,
+			`- BASTA ends the game,`,
+			`- ISTRUZIONI repeats this description.`,
+			`Good luck! (you'll need it)`
 		],
 		insult: {
-			toMe: (insult) => ` ${insult} A ME???? `,
-			nowYourTurn: `ADESSO TI FACCIO VEDERE IO!!!!`,
-			fuck: ` Tié! `
+			toMe: (insult) => ` ${insult} TO ME???? `,
+			nowYourTurn: `NOW I'LL SHOW YOU!!!!`,
+			fuck: ` There! `
 		},
 		prepareInputSteps: [
 			{ pattern: `[\\.,:;!"£\\$%&\\/\\(\\)=°\\+\\*]*`, replaceWith: `` },

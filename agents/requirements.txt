@@ -1,0 +1,4 @@
+google-adk
+requests
+openai
+litellm>=1.75.5

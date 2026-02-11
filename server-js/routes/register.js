@@ -78,7 +78,7 @@ router.post('/', (req, res) => {
     
     // Validate and normalize language (defaults to 'en' if not provided or invalid)
     const supportedLanguages = db.getSupportedLanguages();
-    const playerLanguage = language && supportedLanguages.includes(language) ? language : 'en';
+    const playerLanguage = language && supportedLanguages.includes(language) ? language : 'it';
     
     // Generate a 40-character token
     const playerKey = uuidv4().replace(/-/g, '') + uuidv4().replace(/-/g, '').substring(0, 8);

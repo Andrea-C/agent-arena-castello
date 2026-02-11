@@ -36,6 +36,10 @@ env/
 venv/
 .venv/
 
-# Python app
-sever/
-requirements.txt
+# Python app (old server — abandoned)
+/server/
+/requirements.txt
+
+# Agent gameplay artifacts
+game_notes.md
+player_credentials.json

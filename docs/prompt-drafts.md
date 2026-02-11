@@ -216,7 +216,7 @@ After 10 API call stop and give back the control to me
 
 ---
 
-# x
+# Diary
 
 › Please write a diary-log.md file where you write
   In the log write now what do you remember about your journey up to now
@@ -247,21 +247,138 @@ What would you change?
 
 ---
 
-# x
+# Create AGENTS.md
 
-x
+The Castello project is a textual adventure game originally build as a webapp
+With the current project, we ported the game in a client server app
+Initially we tried to port it as a Python backend (server folder) but we abandoned that path 
+The current working server backend has been developed with Node.js (server.js folder)
+
+This client server version is ment to be played calling the server API by a client
+In the next phase we will build the client as an AI Agent, made with the Google ADK framework, with tools to call the server API and play autonomously.
+
+Before proceeding, understand the project, reading the documents in the following folders:
+- docs/: contain the documentation and the description of the project
+- server.js/: contains the current working server application
+- source_app: contains the original webapp. used only as reference to check the orginal game mechanics
+
+The folder .claude/skills/google-adk-skill-v3.0 contain the Google ADK skill that we will use to build the agent client
+
+Create a global AGENTS.md file based on the above content
+WARNING: ignore the content in the following folders
+- server/: firt trial to build the backend in Python
+- docs/docs-archive-do-not-use
 
 ---
 
-# x
+# Create client AI agent
 
-x
+This project is an educational project to teach to students how AI Agents work
+We took an existing project, Avventura nel Castello (source_app folder), and we transformed it in a client server app (server.js folder)
+
+The orginal game, played in a web browser, requires from the player to discover the environment, the game mechanics, solve puzzles and escape from the castle, and we ask to the students to build an AI Agent that can play autonomously.
+
+To facilitate the students learning process, we will give them some ready made AI Agent that can play autonomously.
+The students will have to customize and improve the AI Agents to make them better at playing the game.
+
+As you can see from the server.js backend, the server keep memory of the player actions and the game state, so the game can also be played by calling the server API from a terminal command using 'curl' or 'Invoke-RestMethod' commands or with application like Postman.
+
+If a human player, play the game from terminal or Postman, it needs to keep track in some ways of the server response, to be able to understand what worked or not.
+Same for the AI Agent, it will need to use a sort of memory.
+In the weaker version of the AI agent, the memory can be the session context, but these information will be lost when the session ends. 
+And as the game progresses, the AI agent will need a better way to store the important information, like store it in a markdown file or in a database.
+
+The agent will need to know all the API endpoints and the parameters they accept, to be able to play autonomously.
+I think about some possible strategies to implement it:
+a. The agent can receive the API documentation in the System Prompt and use the Agent Engine Code Execution tool for ADK
+b. We can create some Castello tools (castello_register, castello_play, castello_status) to call the API endpoints from the agent
+c. we can create a Castello MCP Server and give the agent the MCP client to call the API endpoints from the agent
+
+
+Now, let's discuss about how to create the ready made AI Agents. I think about agents and not agent because, to help the students to understand the AI Agent concept, we can start with a very simple agent and then move to more complex an capable agents.
+
+All these agent should be stored in different subfolders or at least in different files inside the agents folder, and when we launch the 'adk web' app to run the agent, we will select the agent to use from the dropdown list.
+
+What do you think about this? Sound a good idea? 
+What would you change?
+How would you build the ready made AI Agents?
+Which agents would you create to show the progression of capabilities?
+
+Let's discuss about this.
+
+---
+Before building the plan, let's consider few other details.
+- save the previous answer, with all the options, included MCP and 'Strategic Team' in docs/castello-agents-notes.md . In a next development round maybe we will add these advanced features, so I want to keep memory of these ideas
+- In developing the agents, we should consider that the students should be able to run them for free. By default Google ADK use Google Gemini models that offer only a limited amount of tokens for free, so include in the agents also the possibility to use the openrouter.ai models.
+Maybe we can keep both options inside the code, one option as working code (Google Gemini 2.5 Flash) and one option commented (openrouter.ai models).
+- the ready made version of the agents should have a basic system prompt, just enough to start playing. The students will be asked to improve the system prompt to improve the capabilities of the agents.
+- in a separated markdown file, agents/castello-agents-sample-instructions.md write more advanced instructions that can be copied and pasted inside the agents system prompts 
 
 ---
 
-# x
+Last, add in the .env also a key to set the server address/url, because in the classroom, we will play in the local network, but I will try to publish the server in internet to enable the students to play from their home
 
-x
+---
+
+# Complete server tools, Player name and Player Key, fix errors
+
+## Complete server tools
+
+Since the agent tools to interact with the server are shared in a common file, let's add also the missing API available, so, in case of need, we can use them. Up to now, in castello_tools.py, I can see:
+| Tool |Endpoint | Metodo | Descrizione |
+|------|---------|--------|-------------|
+| castello_register | `/register` | POST | Registra un nuovo giocatore |
+| castello_status | `/status` | GET | Ottiene lo stato del giocatore |
+| castello_play | `/play` | POST | Invia un comando di gioco |
+
+
+So, let's add also the tools for:
+| Tool | Endpoint | Metodo | Descrizione |
+|------|----------|--------|-------------|
+| castello_set_language | `/player/language` | PUT | Cambia la lingua del giocatore |
+| castello_get_language | `/player/languages` | GET | Lista delle lingue supportate |
+| castello_dashboard | `/dashboard` | GET | Dashboard di monitoraggio |
+| castello_api_doc | `/arcane-scrolls` | GET | Documentazione API (Swagger) |
+
+castello_dashboard is a webpage, so not really useful for the agent, so we can also left it out. Tell me if can bring value or not
+
+## Player name and access token
+How can we set and store the Player Name and the Player Key?
+Do I ask to the users to call the register API from the terminal, read the registration response and manually  set the player key in the .env file?
+Do I register the player and communicate the key?
+How can the agent stop the session and restart with the same player key to continue a previous game?
+
+## Fix errors
+
+I lauched the agents with 'adk web'
+At the first prompt I made I got this error, but I have to say that I forgot to set the API keys before running the agent, so it would crash anyway
+<error>
+INFO:     127.0.0.1:59312 - "POST /run_sse HTTP/1.1" 200 OK
+2026-02-11 20:50:32,678 - INFO - envs.py:83 - Loaded .env file for 01_simple_player at C:\Software\Evridigit_apps\Volta - Progetti\agent-arena\castello\agents\.env
+2026-02-11 20:50:32,680 - INFO - envs.py:83 - Loaded .env file for 01_simple_player at C:\Software\Evridigit_apps\Volta - Progetti\agent-arena\castello\agents\.env
+2026-02-11 20:50:32,837 - ERROR - adk_web_server.py:1566 - Error in event_generator: 1 validation error for App
+  Value error, Invalid app name '01_simple_player': must be a valid identifier consisting of letters, digits, and underscores. [type=value_error, input_value={'name': '01_simple_playe...ck=None), 'plugins': []}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/value_error
+Traceback (most recent call last):
+  File "C:\Software\Evridigit_apps\Volta - Progetti\agent-arena\castello\.venv\Lib\site-packages\google\adk\cli\adk_web_server.py", line 1528, in event_generator
+    runner = await self.get_runner_async(req.app_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Software\Evridigit_apps\Volta - Progetti\agent-arena\castello\.venv\Lib\site-packages\google\adk\cli\adk_web_server.py", line 533, in get_runner_async
+    agentic_app = App(
+        name=app_name,
+        root_agent=agent_or_app,
+        plugins=extra_plugins_instances,
+    )
+  File "C:\Software\Evridigit_apps\Volta - Progetti\agent-arena\castello\.venv\Lib\site-packages\pydantic\main.py", line 250, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for App
+  Value error, Invalid app name '01_simple_player': must be a valid identifier consisting of letters, digits, and underscores. [type=value_error, input_value={'name': '01_simple_playe...ck=None), 'plugins': []}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/value_error
+INFO:     127.0.0.1:59312 - "GET /debug/trace/session/9e482145-4880-4c93-bbb2-aafe66bb6b7f HTTP/1.1" 200 OK
+
+</error>
+
+
 
 ---
 

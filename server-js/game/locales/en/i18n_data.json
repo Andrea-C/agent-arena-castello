@@ -79,76 +79,76 @@
     },
     "commands": {
       "north": {
-        "pattern": "(vai verso |vai a |vai )?(n(ord)?)",
+        "pattern": "(go (?:to )?)?n(orth)?",
         "defaultMessage": "You can't go north."
       },
       "south": {
-        "pattern": "(vai verso |vai a |vai )?(s(ud|outh)?)",
+        "pattern": "(go (?:to )?)?s(outh)?",
         "defaultMessage": "You can't go south."
       },
       "east": {
-        "pattern": "(vai verso |vai a |vai )?(e(st)?|east)",
+        "pattern": "(go (?:to )?)?e(ast)?",
         "defaultMessage": "You can't go east."
       },
       "west": {
-        "pattern": "(vai verso |vai a |vai )?(o(vest)?|w(est)?)",
+        "pattern": "(go (?:to )?)?w(est)?",
         "defaultMessage": "You can't go west."
       },
       "up": {
-        "pattern": "(sali|(vai verso |vai in |vai )?a(lto)?|u(p)?|su)",
+        "pattern": "(climb|(go )?u(p)?)",
         "defaultMessage": "You can't go up."
       },
       "down": {
-        "pattern": "(scendi|(vai verso |vai in |vai )?b(asso)?|d(own)?|giu)",
+        "pattern": "(descend|(go )?d(own)?)",
         "defaultMessage": "You can't go down."
       }
     },
     "verbs": {
       "open": {
-        "pattern": "apri",
+        "pattern": "open",
         "defaultMessage": "It won't open."
       },
       "close": {
-        "pattern": "chiudi",
+        "pattern": "(close|shut)",
         "defaultMessage": "It won't close."
       },
       "pull": {
-        "pattern": "tira"
+        "pattern": "(pull|drag)"
       },
       "press": {
-        "pattern": "premi"
+        "pattern": "press"
       },
       "push": {
-        "pattern": "spingi",
+        "pattern": "(push|shove)",
         "defaultMessage": "It doesn't move."
       },
       "take": {
-        "pattern": "prendi"
+        "pattern": "(take|get|grab)"
       },
       "drop": {
-        "pattern": "lascia"
+        "pattern": "(drop|leave)"
       },
       "give": {
-        "pattern": "(dai) (.+) (?:a) (.+)"
+        "pattern": "(give) (.+) (?:to) (.+)"
       },
       "look": {
-        "pattern": "(guarda|esamina)"
+        "pattern": "(look(?: at)?|examine)"
       },
       "useWith": {
-        "pattern": "(usa) (.+) (?:con) (.+)",
+        "pattern": "(use) (.+) (?:with|on) (.+)",
         "defaultMessage": "I can't use them together."
       },
       "use": {
-        "pattern": "usa"
+        "pattern": "use"
       },
       "lookFor": {
-        "pattern": "(cerca|trova)"
+        "pattern": "(search|find|look for)"
       },
       "goUp": {
-        "pattern": "sali"
+        "pattern": "(climb|go up|ascend)"
       },
       "goDown": {
-        "pattern": "scendi"
+        "pattern": "(descend|go down)"
       }
     }
   },
@@ -178,8 +178,8 @@
     ],
     "menuOption4LabelOverride": "Quit before even starting",
     "commonPatterns": {
-      "say": "(pronuncia|di)",
-      "wall": "(muro|mura|pareti|parete)"
+      "say": "(say|speak|recite|cast)",
+      "wall": "(wall|walls)"
     },
     "defaultMessages": {
       "beSerious": "Be serious!",
@@ -211,187 +211,187 @@
     },
     "verbs": {
       "look": {
-        "pattern": "(guarda|osserva|esamina)"
+        "pattern": "(look(?: at)?|observe|examine)"
       },
       "drop": {
-        "pattern": "(lascia|posa|molla|getta)"
+        "pattern": "(drop|put down|release|toss)"
       },
       "press": {
-        "pattern": "(premi|schiaccia)"
+        "pattern": "(press|squeeze)"
       },
       "push": {
-        "pattern": "(spingi|sposta|muovi)"
+        "pattern": "(push|move|shove)"
       },
       "offer": {
-        "pattern": "(offri|dai)"
+        "pattern": "(offer|give)"
       },
       "repair": {
-        "pattern": "(aggiusta|ripara)"
+        "pattern": "(fix|repair|mend)"
       },
       "translate": {
-        "pattern": "traduci"
+        "pattern": "translate"
       },
       "play": {
-        "pattern": "suona"
+        "pattern": "play"
       },
       "enter": {
-        "pattern": "entra(?: in)?",
+        "pattern": "enter(?: into)?",
         "defaultMessage": "Which way? (N/S/E/W/U/D)"
       },
       "wear": {
-        "pattern": "(mettiti|indossa|metti|infilati)"
+        "pattern": "(wear|put on)"
       },
       "liftUp": {
-        "pattern": "(alza|solleva)",
+        "pattern": "(lift|raise)",
         "defaultMessage": "There's nothing underneath."
       },
       "lower": {
-        "pattern": "abbassa",
+        "pattern": "lower",
         "defaultMessage": "It won't go down."
       },
       "take": {
-        "pattern": "(prendi|ruba|afferra)"
+        "pattern": "(take|grab|steal|pick up)"
       },
       "read": {
-        "pattern": "leggi"
+        "pattern": "read"
       },
       "insert": {
-        "pattern": "(infila|inserisci)"
+        "pattern": "(insert|put in|stick in)"
       },
       "insertInto": {
-        "pattern": "(infila|inserisci) (.+) (?:in) (.+)"
+        "pattern": "(insert|put|stick) (.+) (?:in|into) (.+)"
       },
       "pray": {
-        "pattern": "prega",
+        "pattern": "pray",
         "defaultMessage": "  Heaven helps those who help themselves."
       },
       "land": {
-        "pattern": "(atterra|cabra|plana|picchia|vira|manovra)",
+        "pattern": "(land|pull up|glide|steer|dive|maneuver)",
         "defaultMessage": "More on the ground than this?!"
       },
       "jump": {
-        "pattern": "(lanciati|gettati|buttati|salta)(?: .+)?",
+        "pattern": "(jump|leap|throw yourself|dive)(?: .+)?",
         "defaultMessage": "I already do my exercises every morning."
       },
       "sitDown": {
-        "pattern": "(siedi(?:ti)?|sdraiati)(?: su )?(.+)?",
+        "pattern": "(sit(?: down)?|lie down)(?: on )?(.+)?",
         "defaultMessage": "A little rest is always good."
       },
       "greet": {
-        "pattern": "saluta",
+        "pattern": "(greet|salute)",
         "defaultMessage": "No answer."
       },
       "dig": {
-        "pattern": "scava",
+        "pattern": "dig",
         "defaultMessage": "I'm not cut out for menial labor."
       },
       "eat": {
-        "pattern": "(mangia|divora)",
+        "pattern": "(eat|devour)",
         "defaultMessage": "It doesn't look very digestible."
       },
       "knock": {
-        "pattern": "bussa",
+        "pattern": "knock",
         "defaultMessage": "No answer."
       },
       "thank": {
-        "pattern": "(grazie|ringrazia)",
+        "pattern": "(thank|thanks)",
         "defaultMessage": "You're welcome."
       },
       "wait": {
-        "pattern": "aspetta",
+        "pattern": "wait",
         "defaultMessage": "Alright."
       },
       "talk": {
-        "pattern": "(parla(?: con)?|interroga)",
+        "pattern": "(talk(?: to)?|speak(?: to)?|interrogate)",
         "defaultMessage": "For once, wouldn't it be better to think instead of talking?"
       },
       "listen": {
-        "pattern": "ascolta",
+        "pattern": "listen",
         "defaultMessage": "Standing still with your ear strained, you seem to hear far away a sound like dragging chains. But perhaps it's only your imagination, teased by the distant whistling of the wind."
       },
       "buy": {
-        "pattern": "(compra|compera|acquista)",
+        "pattern": "(buy|purchase)",
         "defaultMessage": "You don't have a penny."
       },
       "break": {
-        "pattern": "(rompi|spacca|spezza|frantuma|distruggi|sfonda|strappa)"
+        "pattern": "(break|smash|shatter|destroy|tear)"
       },
       "drink": {
-        "pattern": "bevi"
+        "pattern": "drink"
       },
       "wind": {
-        "pattern": "(carica|ricarica)"
+        "pattern": "(wind|wind up|charge)"
       },
       "kill": {
-        "pattern": "(uccidi|attacca|colpisci|ferisci|ammazza|picchia)"
+        "pattern": "(kill|attack|hit|hurt|strike|slay)"
       },
       "feed": {
-        "pattern": "(nutri|sfama|ciba)"
+        "pattern": "(feed|nourish)"
       },
       "pet": {
-        "pattern": "(carezza|accarezza|coccola)"
+        "pattern": "(pet|caress|stroke|cuddle)"
       },
       "mount": {
-        "pattern": "(monta|rimonta|costruisci|ricostruisci)"
+        "pattern": "(assemble|build|rebuild|construct)"
       },
       "ask": {
-        "pattern": "(chiedi|domanda)",
+        "pattern": "(ask|request)",
         "defaultMessage": "No one is willing to offer you the object of your desire."
       },
       "askTo": {
-        "pattern": "(chiedi|domanda) (.+) (?:a) (.+)",
+        "pattern": "(ask|request) (.+) (?:from|of) (.+)",
         "defaultMessage": "No one is willing to offer you the object of your desire."
       },
       "skrewOff": {
-        "pattern": "svita"
+        "pattern": "(unscrew|screw off)"
       },
       "hello": {
-        "pattern": "ciao"
+        "pattern": "(hello|hi)"
       },
       "greeting": {
-        "pattern": "(buongiorno|buonasera|buonanotte)"
+        "pattern": "(good morning|good evening|good night)"
       }
     },
     "commands": {
       "where": {
-        "pattern": "(dove|guarda|esamina|osserva)( (stanza|camera|sala|pavimento|soffitto|locale))?"
+        "pattern": "(where|look|examine|observe)(?: (?:at )?(room|chamber|hall|floor|ceiling|place))?"
       },
       "points": {
-        "pattern": "(punti|quanto)"
+        "pattern": "(points|score)"
       },
       "stop": {
-        "pattern": "(basta|stop|fine|abbandono)",
+        "pattern": "(stop|quit|end|give up)",
         "defaultMessage": "I'm sorry you want to abandon your exploration, just when..."
       },
       "instructions": {
-        "pattern": "istruzioni"
+        "pattern": "instructions"
       },
       "inventory": {
-        "pattern": "(cosa|inv(?:en(?:tario)?)?|\\?)"
+        "pattern": "(what|inv(?:en(?:tory)?)?|\\?)"
       },
       "save": {
-        "pattern": "(salva|save|registra)"
+        "pattern": "save"
       },
       "load": {
-        "pattern": "(carica|load|riprendi)"
+        "pattern": "(load|restore|resume)"
       },
       "insult": {
-        "pattern": "(idiota|scemo|cretino|merda|inculati|pirla|vaffanculo|deficiente|stupido|stronzo|imbecille)"
+        "pattern": "(idiot|fool|moron|shit|asshole|jerk|damn|stupid|dumb|imbecile)"
       },
       "help": {
-        "pattern": "(aiuto|sos|help|soccors(?:o|i))",
+        "pattern": "(help|sos|rescue)",
         "defaultMessage": "Figure it out yourself!"
       },
       "call": {
-        "pattern": "(chiama|grida|urla)(?: (.+))?",
+        "pattern": "(call|shout|yell|scream)(?: (.+))?",
         "defaultMessage": "In response you hear a distant cavernous sound, and it takes you a few seconds to realize it's only the echo of your hoarse voice."
       },
       "cry": {
-        "pattern": "piangi",
+        "pattern": "(cry|weep)",
         "defaultMessage": "Now that you've had your cry, get up and fight like a man!"
       },
       "moves": {
-        "pattern": "(turni|mosse)",
+        "pattern": "(turns|moves)",
         "defaultMessage": {
           "__fn__": true,
           "args": [
@@ -401,57 +401,57 @@
         }
       },
       "idiot": {
-        "pattern": "(id|iota)",
-        "defaultMessage": "T cpsc sltnt a mt'"
+        "pattern": "(id|iot)",
+        "defaultMessage": " nly hlf ndrstnd y"
       },
       "abracadabra": {
         "pattern": "abracadabra",
         "defaultMessage": "I'm afraid this old magic word has been worn out by overuse."
       },
       "die": {
-        "pattern": "(muori|impiccati|crepa|sparati)",
-        "defaultMessage": "D'accordo."
+        "pattern": "(die|hang yourself|croak|shoot yourself)",
+        "defaultMessage": "Alright."
       },
       "think": {
-        "pattern": "(pensa|ragiona|cogita|medita|deduci|ingegnati)",
+        "pattern": "(think|reason|ponder|meditate|deduce)",
         "defaultMessage": "This doesn't seem like the right place."
       },
       "getOut": {
-        "pattern": "(esci(?: da)?|corri|scappa|fuggi|cammina|torna|ritorna|vai)( (?:a )?(?:n(ord)?|s(ud)?|e(st)?|o(vest)?|a(lto)?|b(asso)?))?",
+        "pattern": "(exit(?: from)?|go|run|escape|flee|walk|return|leave)( (?:to )?(?:n(orth)?|s(outh)?|e(ast)?|w(est)?|u(p)?|d(own)?))?",
         "defaultMessage": "I'm undecided: which way? (N/S/E/W/U/D)"
       },
       "sleep": {
-        "pattern": "(dormi|riposa(?:ti)?)",
+        "pattern": "(sleep|rest)",
         "defaultMessage": "Z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z"
       },
       "maybe": {
-        "pattern": "(boh|mah|forse|probabilmente)",
+        "pattern": "(dunno|maybe|perhaps|probably)",
         "defaultMessage": "Don't be so indecisive!"
       },
       "good": {
-        "pattern": "bravo",
+        "pattern": "(bravo|well done|good job)",
         "defaultMessage": "Thanks!"
       },
       "youAreWelcome": {
-        "pattern": "prego",
+        "pattern": "(you're welcome|no problem)",
         "defaultMessage": "No problem."
       },
       "openSesame": {
-        "pattern": "apriti sesamo",
+        "pattern": "open sesame",
         "defaultMessage": "Just so you know, this is ADVENTURE IN THE CASTLE, not ONE THOUSAND AND ONE NIGHTS."
       },
       "waitForMidnight": {
-        "pattern": "aspetta mezzanotte",
+        "pattern": "wait(?: for)? midnight",
         "defaultMessage": "It's strange: when you're waiting for something, it really feels like time never passes."
       },
       "sayHello": {
-        "pattern": "saluta"
+        "pattern": "(greet|say hello)"
       },
       "greeting": {
-        "defaultMessage": "Ciao. Bella giornata, vero?"
+        "defaultMessage": "Hey there. Lovely day, isn't it?"
       },
       "hello": {
-        "defaultMessage": "Ciao. Bella giornata, vero?"
+        "defaultMessage": "Hey there. Lovely day, isn't it?"
       },
       "senno": {
         "pattern": {
@@ -464,11 +464,11 @@
         "defaultMessage": "That's not a magic word, idiot!"
       },
       "useSenno": {
-        "pattern": "usa senno",
+        "pattern": "use senno",
         "defaultMessage": "This doesn't seem like the right place!"
       },
       "lookForDictionary": {
-        "pattern": "cerca dizionario",
+        "pattern": "(search|find|look for) dictionary",
         "defaultMessage": "You don't expect me to search the whole castle for it!"
       },
       "saySpell": {
@@ -477,19 +477,19 @@
           "args": [
             "sayPattern"
           ],
-          "template": "(${sayPattern} )?(sortilegio|incantesimo)"
+          "template": "(${sayPattern} )?(spell|enchantment|incantation)"
         }
       },
       "introduceYourself": {
-        "pattern": "presentati",
+        "pattern": "introduce yourself",
         "defaultMessage": "You dutifully list your many honorary titles, but it seems there's no one willing to listen to you."
       },
       "yes": {
-        "pattern": "(si|certo|certamente|sicuro)",
+        "pattern": "(yes|sure|certainly|of course)",
         "defaultMessage": "Or maybe not."
       },
       "no": {
-        "pattern": "(no|mai)",
+        "pattern": "(no|never|nope)",
         "defaultMessage": "Or maybe yes."
       },
       "bigmeow": {
@@ -522,10 +522,10 @@
         }
       },
       "readSpell": {
-        "pattern": "leggi (incantesimo|sortilegio)"
+        "pattern": "read (spell|enchantment|incantation)"
       },
       "swim": {
-        "pattern": "nuota"
+        "pattern": "swim"
       }
     },
     "dieText": "I am deeply saddened by your untimely demise... Then again, it's always the best who go first (isn't it?). Take comfort, however, in the thought that:",
@@ -534,26 +534,26 @@
       "To do so you will face many dangers and solve problems that will put your wits to the test.",
       "In this adventure, I will be your alter ego—your eyes and ears—but you will make the decisions (and suffer the consequences).",
       "To move, use:",
-      "- NORD, SUD, EST, OVEST, ALTO, BASSO or simply:",
-      "- N, S, E, O, A, B",
+      "- NORTH, SOUTH, EAST, WEST, UP, DOWN or simply:",
+      "- N, S, E, W, U, D",
       "I will give you the full description of each location the first time you enter it, then only a short one. If you want the full description, tell me:",
-      "- GUARDA or",
-      "- GUARDA LA STANZA",
+      "- LOOK or",
+      "- LOOK ROOM",
       "Basic actions are:",
-      "- PRENDI something",
-      "- LASCIA something",
-      "- GUARDA something, e.g. GUARDA LO SCALONE.",
-      "I'm not very clever, so use phrases like APRI LA PORTA or SALTA and not elaborate ones like GUARDA DIETRO IL DIVANO or adverbs (GUARDA ATTENTAMENTE), which are beyond my understanding.",
-      "To act on an object, you usually need to possess it. Also remember that an action that has no effect in one place (e.g. CERCA) may have an effect elsewhere.",
+      "- TAKE something",
+      "- DROP something",
+      "- LOOK something, e.g. LOOK AT THE STAIRCASE.",
+      "I'm not very clever, so use phrases like OPEN THE DOOR or JUMP and not elaborate ones like LOOK BEHIND THE SOFA or adverbs (LOOK CAREFULLY), which are beyond my understanding.",
+      "To act on an object, you usually need to possess it. Also remember that an action that has no effect in one place (e.g. SEARCH) may have an effect elsewhere.",
       "Other important commands:",
-      "- DOVE reminds you where you are,",
-      "- COSA lists the objects you carry,",
-      "- MOSSE tells you how long you've played,",
-      "- PUNTI tells you how much you've discovered,",
+      "- WHERE reminds you where you are,",
+      "- WHAT lists the objects you carry,",
+      "- MOVES tells you how long you've played,",
+      "- POINTS tells you how much you've discovered,",
       "- SAVE saves your situation to disk,",
       "- LOAD restores your situation from disk,",
-      "- BASTA ends the game,",
-      "- ISTRUZIONI repeats this description.",
+      "- QUIT ends the game,",
+      "- INSTRUCTIONS repeats this description.",
       "Good luck! (you'll need it)"
     ],
     "insult": {
@@ -577,52 +577,150 @@
         "replaceWith": " "
       },
       {
-        "pattern": " (il|la|lo|le|li|l|gli|un|uno|una) ",
+        "pattern": " (the|a|an) ",
         "replaceWith": " "
       },
       {
         "pattern": " +",
         "replaceWith": " "
-      },
-      {
-        "pattern": " (del|dell|dello|degli|dei|della|delle) ",
-        "replaceWith": " di "
-      },
-      {
-        "pattern": " (al|all|allo|agli|alla|alle) ",
-        "replaceWith": " a "
-      },
-      {
-        "pattern": " (dal|dall|dallo|dagli|dalla|dalle) ",
-        "replaceWith": " da "
-      },
-      {
-        "pattern": " (nel|nell|nello|negli|nella|nelle|dentro) ",
-        "replaceWith": " in "
-      },
-      {
-        "pattern": " (col|coi) ",
-        "replaceWith": " con "
-      },
-      {
-        "pattern": " (sul|sull|sullo|sugli|sulla|sulle|sopra) ",
-        "replaceWith": " su "
-      },
-      {
-        "pattern": " (tra|fra) ",
-        "replaceWith": " tra "
       }
     ]
   },
   "AvventuraNelCastelloJS": {
+    "i18nPatterns": {
+      "__comment": "Object patterns",
+      "paracadute": "(parachute|chute)",
+      "osso": "(bone|femur|tibia)",
+      "mazza": "(mace|spiked mace)",
+      "gatto": "(cat|kitty|kitten)",
+      "spada": "sword",
+      "sortilegio": "(spell|enchantment|incantation)",
+      "coppaLattemiele": "(cup|goblet|chalice)",
+      "latteMiele": "(milk and honey|honeymilk|milk)",
+      "liuto": "lute",
+      "arpa": "harp",
+      "cornamusa": "(bagpipe|bagpipes)",
+      "foglio": "(sheet|paper|note)",
+      "cuscino": "(cushion|pillow)",
+      "astuccio": "(case|box)",
+      "pergamena": "(scroll|parchment)",
+      "orco": "(?:fierce |ferocious )?ogre",
+      "nano": "(?:small |little )?dwarf",
+      "diamante": "diamond",
+      "chiave": "(?:small |tiny |little |crystal )?key",
+      "corno": "horn",
+
+      "__comment2": "Common interactor patterns",
+      "gradini": "(step|steps)",
+      "scala": "(stair|stairs|staircase)",
+      "pareti": "(wall|walls)",
+      "armatura": "(armor|armour|armors)",
+      "corridoio": "(corridor|hallway)",
+      "scheletri": "(skeleton|skeletons|bones)",
+      "labirinto": "(labyrinth|maze|passage|passages)",
+      "porta": "door",
+      "tavolo": "(table|desk)",
+      "archi": "(arch|arches)",
+      "scudi": "(shield|shields)",
+      "camino": "(fireplace|hearth)",
+      "poltrone": "(armchair|armchairs)",
+      "sedie": "(chair|chairs)",
+      "mostro": "(monster|monsters|nessie)",
+      "scaffali": "(shelf|shelves)",
+      "letto": "(canopy|bed)",
+      "armi": "(weapon|weapons)",
+      "nebbia": "(mist|fog)",
+      "corvi": "(crow|crows|raven|ravens)",
+      "spalti": "(battlements|ramparts)",
+      "passaggio": "(passage|passages)",
+      "cunicolo": "(tunnel|passageway)",
+      "roccia": "(rock|stone)",
+      "torre": "tower",
+
+      "__comment3": "Room-specific interactor patterns",
+      "cloche": "(yoke|control yoke|controls)",
+      "motore": "engine",
+      "aereo": "(plane|airplane)",
+      "ponteLevatoio": "(drawbridge|bridge)",
+      "portone": "(gate|main gate)",
+      "lastrone": "(slab|stone slab|well cover)",
+      "mura": "(walls|ramparts)",
+      "spianata": "(parade ground|esplanade|grounds)",
+      "castello": "castle",
+      "blasone": "(coat of arms|blazon|crest)",
+      "divano": "(sofa|couch)",
+      "luce": "light",
+      "armature": "(armor|armour|armors)",
+      "picche": "(pike|pikes)",
+      "finestra": "window",
+      "leggio": "(lectern|reading stand)",
+      "libri": "books",
+      "libro": "book",
+      "dizionario": "(dictionary|vocabulary)",
+      "foro": "(hole|gap|opening)",
+      "bottone": "(button|switch)",
+      "fessura": "(crack|crevice|slit)",
+      "braccio": "arm",
+      "muffe": "(mold|mould)",
+      "funghi": "(fungus|fungi|mushroom|mushrooms)",
+      "terreno": "(ground|earth|soil)",
+      "scavi": "(excavation|excavations|traces|dig)",
+      "forziere": "(chest|treasure chest)",
+      "fantasma": "(ghost|phantom|specter)",
+      "legna": "(wood|log|logs|firewood)",
+      "scritta": "(inscription|writing|sign)",
+      "fessure": "(cracks|crevices|slits)",
+      "leva": "lever",
+      "orologio": "(clock|old clock|pendulum clock)",
+      "nicchie": "(niche|niches|alcove|alcoves)",
+      "trono": "throne",
+      "brughiera": "(moor|heath|moors)",
+      "montagne": "(mountain|mountains)",
+      "bandiera": "(flag|banner)",
+      "trappola": "trap",
+      "cocci": "(shard|shards|pottery)",
+      "ganci": "(hook|hooks)",
+      "macchie": "(stain|stains)",
+      "croste": "(crust|crusts)",
+      "cervo": "(deer|carcass|stag)",
+      "botticella": "(keg|barrel|whiskey keg)",
+      "whisky": "(whiskey|whisky)",
+      "panche": "(bench|benches)",
+      "catapulta": "(catapult|machine)",
+      "palle": "(ball|balls|cannonball|cannonballs)",
+      "pezzi": "(piece|pieces|structure|structures)",
+      "pugnali": "(dagger|daggers)",
+      "lance": "(spear|spears|lance|lances)",
+      "asce": "(axe|axes)",
+      "understais": "(understairs|cupboard)",
+      "colonna": "(?:small )?column|capital",
+      "colonne": "columns",
+      "piedistallo": "pedestal",
+      "arazzi": "(tapestry|tapestries)",
+      "ritratti": "(portrait|portraits|painting|paintings|malcolm|canvas)",
+      "trofei": "(trophy|trophies|animal|animals)",
+      "focolare": "(fireplace|hearth)",
+      "cucina": "(kitchen|tub|tubs|pots|remains)",
+      "tavolino": "(table|small table)",
+      "infolio": "(pestle|pestles|receptacle|retort|crucible|alembic|in-folio)",
+      "segnalibro": "bookmark",
+      "volume": "(volume|tome|page)",
+      "tavola": "(table|tables)",
+      "brandelli": "(shred|shreds|heap|pile|rags)",
+      "ragnatele": "(cobweb|cobwebs|spiderweb)",
+      "tende": "(curtain|curtains|drapes)",
+      "specchi": "(mirror|mirrors)",
+      "scoglio": "(rock|reef)",
+      "lago": "(lake|water)"
+    },
     "commonInteractors": {
       "steps": {
         "label": "the steps",
-        "pattern": "gradin(?:i|o)"
+        "pattern": "(steps?|stair)"
       },
       "stairs": {
         "label": "the staircase",
-        "pattern": "scal(?:a|e|one)",
+        "pattern": "(stair(?:s|case)?|steps)",
         "description": "It's made of steps."
       },
       "walls": {
@@ -631,99 +729,99 @@
       },
       "armor": {
         "label": "the armor",
-        "pattern": "armatur(?:a|e)",
+        "pattern": "(armou?r|suit(?:s)?(?: of armou?r)?)",
         "description": "Each suit of armor seems to look down on you with a haughty air.",
         "onTakeOrWear": "Are you kidding? It weighs twice as much as you. In those days they weren't exactly softies, unlike today."
       },
       "hallway": {
         "label": "the corridor",
-        "pattern": "corridoio"
+        "pattern": "(corridor|hallway|hall)"
       },
       "skeletons": {
         "label": "the skeletons",
-        "pattern": "(scheletr(?:o|i)|ossa)",
+        "pattern": "(skeleton(?:s)?|bones?)",
         "description": "It's our common fate. Can't you think of something a bit more cheerful?"
       },
       "labyrinth": {
         "label": "the labyrinth",
-        "pattern": "(labirinto|passaggi(?:o)?)",
+        "pattern": "(labyrinth|maze|passage(?:s)?)",
         "description": "Looks easy! In this blurred tangle of sloping planes along impossible curves, you can't tell floor from ceiling, and every direction looks the same."
       },
       "door": {
         "label": "the door",
-        "pattern": "porta"
+        "pattern": "(door|gate)"
       },
       "table": {
         "label": "the table",
-        "pattern": "tavol(?:o|a|ino)"
+        "pattern": "(table|desk)"
       },
       "bows": {
         "label": "the arches",
-        "pattern": "arc(?:o|hi)"
+        "pattern": "(arch(?:es)?|bow(?:s)?)"
       },
       "shields": {
         "label": "the shields",
-        "pattern": "scud(?:o|i)"
+        "pattern": "(shield(?:s)?)"
       },
       "fireplace": {
         "label": "the fireplace",
-        "pattern": "camino|focolare"
+        "pattern": "(fireplace|hearth)"
       },
       "armchairs": {
         "label": "the armchairs",
-        "pattern": "poltron(?:a|e)"
+        "pattern": "(armchair(?:s)?|easy chair(?:s)?)"
       },
       "chairs": {
         "label": "the chairs",
-        "pattern": "sedi(?:a|e)"
+        "pattern": "(chair(?:s)?|seat(?:s)?)"
       },
       "monster": {
         "label": "the monster",
-        "pattern": "(mostr(?:o|i)|nessie)"
+        "pattern": "(monster(?:s)?|creature(?:s)?|nessie)"
       },
       "shelves": {
         "label": "the shelves",
-        "pattern": "scaffal(?:e|i)"
+        "pattern": "(shel(?:f|ves))"
       },
       "bed": {
         "label": "the bed",
-        "pattern": "baldacchino|letto"
+        "pattern": "(bed|canopy bed|four[- ]poster)"
       },
       "weapons": {
         "label": "the weapons",
-        "pattern": "arm(?:a|i)"
+        "pattern": "(weapon(?:s)?|arms?)"
       },
       "fog": {
         "label": "the fog",
-        "pattern": "nebbia",
+        "pattern": "(fog|mist)",
         "description": "It's hard to focus: you can't tell whether the uniform gray graininess you're staring at is ten meters away or ten centimeters from your nose. The howls that reach you are muffled, but no more reassuring for it."
       },
       "crows": {
         "label": "the crows",
-        "pattern": "corv(?:o|i)",
+        "pattern": "(crow(?:s)?|raven(?:s)?)",
         "description": "They're completely invisible, lost somewhere in the uniform milky glow. You can only hear their harsh cawing coming from an indistinct point above your head.",
         "onListen": "They caw their mockery at your useless, ridiculous efforts—or at least, that's the impression you get."
       },
       "ramparts": {
         "label": "the ramparts",
-        "pattern": "(mura|spalti)",
+        "pattern": "(rampart(?:s)?|battlement(?:s)?|wall(?:s)?)",
         "description": "Looking down from the ramparts, the fog gives you a sort of vertigo. You can't see anything solid to gauge how high you are. But you can't be very high, judging by the spiral staircase you climbed to get up here."
       },
       "pass": {
         "label": "the passage",
-        "pattern": "passaggi(?:o)?"
+        "pattern": "(passage(?:way)?|pass)"
       },
       "tunnel": {
         "label": "the tunnel",
-        "pattern": "cunicolo"
+        "pattern": "(tunnel|passage)"
       },
       "rock": {
         "label": "the rock",
-        "pattern": "roccia"
+        "pattern": "(rock(?:s)?|stone(?:s)?)"
       },
       "tower": {
         "label": "the tower",
-        "pattern": "torre"
+        "pattern": "(tower)"
       }
     },
     "commonRooms": {
@@ -778,7 +876,7 @@
         "interactors": {
           "cloche": {
             "label": "the yoke",
-            "pattern": "cloche",
+            "pattern": "(yoke|stick|controls?|cloche)",
             "onPullOrPush": [
               "The controls respond a little!",
               "...just enough to make things worse."
@@ -786,12 +884,12 @@
           },
           "engine": {
             "label": "the engine",
-            "pattern": "motore",
+            "pattern": "(engine|motor)",
             "onRepair": "I'm no expert."
           },
           "plane": {
             "label": "the plane",
-            "pattern": "aereo"
+            "pattern": "(plane|aircraft|airplane)"
           }
         }
       },
@@ -816,7 +914,7 @@
         "interactors": {
           "drawbridge": {
             "label": "a raised drawbridge",
-            "pattern": "ponte",
+            "pattern": "(bridge|drawbridge)",
             "description": "It's raised, but it can be lowered without much trouble.",
             "onLower": "The wolves come in and tear you to pieces."
           },
@@ -826,13 +924,13 @@
               "a closed gate",
               "an open gate"
             ],
-            "pattern": "portone",
+            "pattern": "(gate|main gate|great door)",
             "description": "It's extremely massive.",
             "onClose": "It's already closed."
           },
           "stoneSlab": {
             "label": "the stone slab",
-            "pattern": "lastrone|pozzo",
+            "pattern": "(slab|well|stone slab)",
             "onLook": [
               "The stone slab, corroded by centuries, gives way under your weight. You plunge into the well, infested with slimy, repulsive",
               "(and carnivorous) creatures."
@@ -843,11 +941,11 @@
           },
           "esplanade": {
             "label": "the esplanade",
-            "pattern": "spianata"
+            "pattern": "(esplanade|clearing|open ground)"
           },
           "castle": {
             "label": "the castle",
-            "pattern": "castello"
+            "pattern": "(castle|fortress)"
           }
         }
       },
@@ -863,7 +961,7 @@
         "interactors": {
           "blazon": {
             "label": "a coat of arms painted on the ceiling",
-            "pattern": "blasone",
+            "pattern": "(coat of arms|blazon|crest|emblem)",
             "onLook": [
               "You read the dynasty's motto:",
               "\"The outsider shall fall\"",
@@ -872,7 +970,7 @@
           },
           "doorway": {
             "label": "a gate",
-            "pattern": "portone"
+            "pattern": "(gate|main gate|great door)"
           }
         }
       },
@@ -885,18 +983,18 @@
         "interactors": {
           "sofa": {
             "label": "the sofa",
-            "pattern": "divan(?:o|i)"
+            "pattern": "(sofa(?:s)?|couch(?:es)?|divan(?:s)?)"
           },
           "fireplace": {
             "description": "It's so large you could easily crawl through it—if there were a passage. Pity there's no sign of one. Perhaps if you searched..."
           },
           "light": {
             "label": "the light",
-            "pattern": "luce",
+            "pattern": "(light|glow)",
             "description": "Strange: when you look where you thought you saw the light, it seems to shift elsewhere. Perhaps it's only a reflection... or the centuries-old memory of blood spilled within these walls."
           },
           "pass": {
-            "pattern": "passaggio(?: segreto)?",
+            "pattern": "((?:secret )?passage)",
             "onLookFor": "There's absolutely no sign of secret passages in the fireplace. You read too many adventure books."
           }
         }
@@ -910,7 +1008,7 @@
         "interactors": {
           "spades": {
             "label": "the pikes",
-            "pattern": "picc(?:a|he)",
+            "pattern": "(pike(?:s)?|spear(?:s)?)",
             "description": "Long, with a sharp iron tip—it looks deadly. How on earth was it used?",
             "onTake": {
               "question": "You grab the pike and pull it toward you, but the armor doesn't seem willing to let go. Should I insist ",
@@ -948,7 +1046,7 @@
           },
           "window": {
             "label": "the window",
-            "pattern": "(da )?finestra",
+            "pattern": "((?:from )?window)",
             "description": "From the window you enjoy a magnificent view of the moat's murky waters, teeming with scaly monsters and razor teeth.",
             "onJump": "What do I look like, an idiot?"
           }
@@ -973,12 +1071,12 @@
           },
           "lectern": {
             "label": "the lectern",
-            "pattern": "leggio",
+            "pattern": "(lectern|stand|reading desk)",
             "description": "Truly fine workmanship."
           },
           "books": {
             "label": "the books",
-            "pattern": "libri",
+            "pattern": "(books)",
             "description": "A true Royal Library! It has everything—or almost. I'm convinced that with a proper search you could find anything in here.",
             "onTake": "There are a few too many to carry around.",
             "onRead": "It would take centuries to leaf through them all. The ones you pick up are undoubtedly interesting, but they solve none of your problems. At least tell me what you're looking for."
@@ -989,14 +1087,14 @@
               "a closed book on the lectern",
               "a book on the lectern"
             ],
-            "pattern": "libro",
+            "pattern": "(book)",
             "description": "It rests on the lectern and looks both ancient and brand-new.",
             "onOpen": "A scorched sheet slips out from the old yellowed pages.",
             "onRead": "It's a dictionary of ancient Gaelic."
           },
           "dictionary": {
             "label": "a dictionary",
-            "pattern": "(dizionario|vocabolario)",
+            "pattern": "(dictionary|vocabulary)",
             "description": "It rests on the lectern and looks both ancient and brand-new.",
             "posizione": "biblioteca",
             "onRead": "It's a list of Gaelic words, each with its translation (and a few notes) in modern language. The words are in alphabetical order, from A to Z. There's also a list of proverbs, idioms, and rules of grammar and pronunciation. Honestly—have you never seen a dictionary before?"
@@ -1018,23 +1116,23 @@
         "interactors": {
           "hole": {
             "label": "a hole in the wall",
-            "pattern": "foro|buco",
+            "pattern": "(hole|opening)",
             "description": "It's narrow and deep: at the bottom there's something that looks like a button."
           },
           "button": {
             "label": "button",
-            "pattern": "bottone|pulsante",
+            "pattern": "(button|switch)",
             "description": "Staring at it won't help. Perhaps pressing it will..."
           },
           "slit": {
             "label": "the slit",
-            "pattern": "fessura",
+            "pattern": "(slit|slot|crack)",
             "description": "It's in the west wall, and it's wide enough to squeeze through.",
             "invisibleMessage": "There's no slit here."
           },
           "arm": {
             "label": "the arm",
-            "pattern": "braccio"
+            "pattern": "(arm)"
           }
         }
       },
@@ -1051,12 +1149,12 @@
         "interactors": {
           "moulds": {
             "label": "the mould",
-            "pattern": "muff(?:a|e)",
+            "pattern": "(mou?ld(?:s)?|mildew)",
             "description": "They're fascinating, in their poisonous velvet fuzz."
           },
           "mushrooms": {
             "label": "the mushrooms",
-            "pattern": "fung(?:o|hi)(?: putrescent(?:e|i))?",
+            "pattern": "((?:rotten |putrid )?mushroom(?:s)?|fung(?:us|i))",
             "description": "From what your limited expertise can tell, each one is more poisonous than the last."
           }
         }
@@ -1067,11 +1165,11 @@
         "interactors": {
           "ground": {
             "label": "the ground",
-            "pattern": "terreno"
+            "pattern": "(ground|floor|terrain)"
           },
           "excavations": {
             "label": "the dig marks",
-            "pattern": "scavi|tracce",
+            "pattern": "(dig(?:s)?|trace(?:s)?|mark(?:s)?|excavation(?:s)?)",
             "description": "Just attempts—clearly failed ones. Perhaps some castle prisoner making one last desperate try."
           }
         }
@@ -1086,7 +1184,7 @@
               "a heavy chest",
               "an open heavy chest"
             ],
-            "pattern": "(?:pesante )?forziere",
+            "pattern": "((?:heavy )?chest|(?:heavy )?coffer)",
             "onLook": [
               "Of Malcolm IV's fabulous Treasure, only an old horn remains.",
               "It's empty."
@@ -1099,7 +1197,7 @@
           },
           "ghost": {
             "label": "a ghost",
-            "pattern": "fantasma",
+            "pattern": "(ghost|phantom|specter|spectre)",
             "description": "You see it and you don't. At times it seems incorporeal—you can clearly make out the details of the wall behind it. But in other moments it seems to take on substance, growing ever more menacing.",
             "onKill": "It's been dead for seven hundred years.",
             "onTalk": [
@@ -1115,7 +1213,7 @@
         "interactors": {
           "wood": {
             "label": "the wood",
-            "pattern": "legna|ram(?:o|i)|cepp(?:o|i)",
+            "pattern": "(firewood|wood|log(?:s)?|branch(?:es)?)",
             "description": "Looks like firewood.",
             "onTake": "- Hey! Hands off my winter supplies! It's cold around here."
           }
@@ -1160,7 +1258,7 @@
         "interactors": {
           "writing": {
             "label": "the writing",
-            "pattern": "scritta"
+            "pattern": "(writing|inscription)"
           }
         }
       },
@@ -1170,12 +1268,12 @@
         "interactors": {
           "slits": {
             "label": "the cracks",
-            "pattern": "fessure",
+            "pattern": "(crack(?:s)?|slit(?:s)?)",
             "description": "As I said, they're invisible."
           },
           "lever": {
             "label": "a lever",
-            "pattern": "leva",
+            "pattern": "(lever)",
             "onPush": "A trapdoor opens..."
           },
           "pendulumClock": {
@@ -1189,7 +1287,7 @@
               "an old pendulum clock",
               "an old pendulum clock"
             ],
-            "pattern": "(?:vecchio )?orologio(?: a pendolo)?",
+            "pattern": "((?:old )?(?:pendulum )?clock|grandfather clock)",
             "description": [
               "It shows eleven fifty-six.",
               "",
@@ -1224,12 +1322,12 @@
           },
           "hollows": {
             "label": "the niches",
-            "pattern": "nicchi(?:a|e)",
+            "pattern": "(niche(?:s)?|alcove(?:s)?|recess(?:es)?)",
             "description": "They're simple recesses in the wall. The King's personal guards must have had a rather boring job, if it consisted of standing there rigid all day long."
           },
           "throne": {
             "label": "the throne",
-            "pattern": "trono",
+            "pattern": "(throne)",
             "description": "It dominates the room. Power sat upon it.",
             "onSitDown": {
               "question": "Do you want me to sit on the throne??",
@@ -1247,17 +1345,17 @@
           },
           "moor": {
             "label": "the moor",
-            "pattern": "brughiera",
+            "pattern": "(moor|heath|moorland)",
             "description": "It's hidden beneath the fog, but at times, far away, it thins a little, letting you glimpse the barren yellowish land below."
           },
           "mountains": {
             "label": "the mountains",
-            "pattern": "montagn(?:a|e)",
+            "pattern": "(mountain(?:s)?)",
             "description": "From the farthest snow-capped peaks, the mountains slope down through ridges, hills, gentle inclines, until they blend into the moor drowned in the sea of fog. You have the impression that something tiny moves around the summits, but it's probably just an optical illusion."
           },
           "flag": {
             "label": "a tattered flag",
-            "pattern": "bandiera",
+            "pattern": "(flag|banner)",
             "description": "Carried with glory in a hundred battles, it still flutters over lands it once ruled.",
             "onTake": [
               "The old pole resists...",
@@ -1296,7 +1394,7 @@
         "interactors": {
           "trap": {
             "label": "the trap",
-            "pattern": "trappola",
+            "pattern": "(trap)",
             "onLookOrLookFor": "I don't see any trap at all. I don't understand why the room has such a curious name."
           }
         }
@@ -1316,7 +1414,7 @@
         "interactors": {
           "fragments": {
             "label": "the shards",
-            "pattern": "cocci(?:o)?",
+            "pattern": "(shard(?:s)?|fragment(?:s)?)",
             "onTake": "Besides the risk of cutting yourself badly, I can't see what use they'd be."
           }
         }
@@ -1327,7 +1425,7 @@
         "interactors": {
           "hooks": {
             "label": "the hooks",
-            "pattern": "ganci(?:o)?",
+            "pattern": "(hook(?:s)?)",
             "onTake": "Besides the risk of catching tetanus, I can't imagine what you'd do with them."
           }
         }
@@ -1338,7 +1436,7 @@
         "interactors": {
           "stains": {
             "label": "the stains",
-            "pattern": "macchi(?:a|e)(?: verdastr(?:a|e))?"
+            "pattern": "((?:greenish )?stain(?:s)?|(?:greenish )?spot(?:s)?)"
           }
         }
       },
@@ -1348,7 +1446,7 @@
         "interactors": {
           "crusts": {
             "label": "the rinds",
-            "pattern": "crost(?:a|e)",
+            "pattern": "(rind(?:s)?|crust(?:s)?)",
             "onTakeOrEat": "You can't be THAT hungry!"
           }
         }
@@ -1359,7 +1457,7 @@
         "interactors": {
           "deer": {
             "label": "the deer",
-            "pattern": "cervo|carcassa",
+            "pattern": "(deer|stag|carcass)",
             "onTake": "Besides saddling yourself with extra weight, I can't see how it could be of any use."
           }
         }
@@ -1370,13 +1468,13 @@
         "interactors": {
           "keg": {
             "label": "the whisky keg",
-            "pattern": "botticella",
-            "description": "C'è scritto sopra: '700 yrs old'",
+            "pattern": "(keg|cask|small barrel)",
+            "description": "It has a label: '700 yrs old'",
             "onOpenQuestion": "Should I drink the whisky "
           },
           "whiskey": {
             "label": "the whisky",
-            "pattern": "whisky",
+            "pattern": "(whisky|whiskey)",
             "onTakeOrDrink": "Excellent—truly excellent!"
           }
         }
@@ -1390,7 +1488,7 @@
           },
           "benches": {
             "label": "the benches",
-            "pattern": "panc(?:a|he)",
+            "pattern": "(bench(?:es)?)",
             "description": "Made from the same wood as the table, smoothed by long use."
           }
         }
@@ -1408,17 +1506,17 @@
         "interactors": {
           "catapult": {
             "label": "the catapult",
-            "pattern": "catapulta|macchina",
+            "pattern": "(catapult|machine)",
             "description": "It's been dismantled into many pieces to take up less space and keep it in better condition."
           },
           "balls": {
             "label": "the balls",
-            "pattern": "(pall(?:a|e))",
+            "pattern": "(ball(?:s)?)",
             "onBreak": "Don't be vulgar."
           },
           "pieces": {
             "label": "the pieces",
-            "pattern": "(pezz(?:o|i)|struttur(?:a|e))",
+            "pattern": "(piece(?:s)?|structure(?:s)?|part(?:s)?)",
             "description": "They should be assembled to make the catapult—at least, I think so."
           }
         }
@@ -1429,15 +1527,15 @@
         "interactors": {
           "daggers": {
             "label": "the daggers",
-            "pattern": "pugnal(?:e|i)"
+            "pattern": "(dagger(?:s)?)"
           },
           "spears": {
             "label": "the spears",
-            "pattern": "lanc(?:ia|e)"
+            "pattern": "(lance(?:s)?|spear(?:s)?)"
           },
           "axes": {
             "label": "the axes",
-            "pattern": "asc(?:ia|e)"
+            "pattern": "(ax(?:e)?(?:s)?|hatchet(?:s)?)"
           },
           "weapons": {
             "description": "As I said, they're all corroded and made useless by time."
@@ -1450,7 +1548,7 @@
         "interactors": {
           "understairs": {
             "label": "the space under the stairs",
-            "pattern": "sottoscala"
+            "pattern": "(understairs|cupboard|space under stairs)"
           }
         }
       },
@@ -1464,17 +1562,17 @@
         "interactors": {
           "column": {
             "label": "the column",
-            "pattern": "(?:piccol(?:a|o) )?(colonna|capitello)",
+            "pattern": "((?:small )?(column|capital|pillar))",
             "description": "On the capital, in shining silver letters, half of a powerful magic word is carved: 'ID'"
           },
           "columns": {
             "label": "the columns",
-            "pattern": "colonne",
+            "pattern": "(column(?:s)?|pillar(?:s)?)",
             "description": "The columns along the hall are rather austere in style: simple stone cylinders tapering toward the top."
           },
           "pedestal": {
             "label": "the pedestal",
-            "pattern": "piedistallo",
+            "pattern": "(pedestal)",
             "description": "The pedestal supporting the small column is a block of rough stone, probably granite."
           }
         }
@@ -1485,7 +1583,7 @@
         "interactors": {
           "tapestries": {
             "label": "tapestries",
-            "pattern": "arazz(?:o|i)",
+            "pattern": "(tapest(?:ry|ries))",
             "onLook": [
               "They're made with great mastery and deserve closer attention. You lose yourself in contemplation...",
               "Then, suddenly, you remember you have something more important to do."
@@ -1502,7 +1600,7 @@
         "interactors": {
           "portrait": {
             "label": "the portrait",
-            "pattern": "(ritratt(?:o|i)|quadr(?:o|i)|malcolm|tel(?:a|e))",
+            "pattern": "(portrait(?:s)?|painting(?:s)?|malcolm|canvas(?:es)?)",
             "onLookQuestion": "The painter's hand seems to have captured life itself from the subjects' faces—especially in Malcolm IV's case. There's something strange about this portrait. Should I look at it more closely "
           }
         }
@@ -1523,7 +1621,7 @@
           },
           "trophies": {
             "label": "trophies",
-            "pattern": "trofe(?:o|i)|animal(?:e|i)"
+            "pattern": "(troph(?:y|ies)|animal(?:s)?)"
           }
         }
       },
@@ -1533,7 +1631,7 @@
         "interactors": {
           "kitchenStuff": {
             "label": "kitchen",
-            "pattern": "(cucina|tinozz(?:a|e)|vasellame|pentolame|resti)",
+            "pattern": "(kitchen|tub(?:s)?|crockery|cookware|remains)",
             "description": "They're completely unusable."
           }
         }
@@ -1548,17 +1646,17 @@
         "interactors": {
           "infolio": {
             "label": "in-folio",
-            "pattern": "pestell(?:o|i)|recipient(?:e|i)|crogiuol(?:o|i)|in-folio|alambicc(?:o|hi)",
+            "pattern": "(pestle(?:s)?|vessel(?:s)?|crucible(?:s)?|in-folio|alembic(?:s)?)",
             "description": "The typical gear of an alchemist of the age: mage, scholar, and healer all at once. Alchemists were held in high regard—and greatly feared and respected—unless they fell from grace after some fatal mistake to the King's detriment.",
             "onTakeOrRead": "An occult force seems to warn you: rummaging through an alchemist's personal belongings can be very dangerous."
           },
           "bookmark": {
             "label": "the bookmark",
-            "pattern": "segnalibro"
+            "pattern": "(bookmark)"
           },
           "volume": {
             "label": "the tome",
-            "pattern": "volume|librone|pagina",
+            "pattern": "(volume|tome|book|page)",
             "description": "Now that you see it up close, you realize it might not be leather at all... but tanned human skin.",
             "onOpen": "You must use the right tool.",
             "onRead": [
@@ -1592,7 +1690,7 @@
         "interactors": {
           "shreds": {
             "label": "the shreds",
-            "pattern": "brandell(?:o|i)|mucchi(?:o)?",
+            "pattern": "(shred(?:s)?|scrap(?:s)?|heap(?:s)?|pile(?:s)?)",
             "description": "Sic transit gloria mundi."
           }
         }
@@ -1606,7 +1704,7 @@
         "interactors": {
           "cobwebs": {
             "label": "the cobwebs",
-            "pattern": "ragnatel(?:a|e)",
+            "pattern": "(cobweb(?:s)?|spider ?web(?:s)?)",
             "description": "Even the cobwebs are deserted now. Nothing remains of the life that once made this room the merriest place in the castle."
           }
         }
@@ -1620,7 +1718,7 @@
           },
           "curtains": {
             "label": "the curtains",
-            "pattern": "tend(?:a|e|aggi)",
+            "pattern": "(curtain(?:s)?|drape(?:s|ry)?)",
             "description": "Embroidered on the curtains in a thin gold thread:\n\"Wise is the one who destroys their wealth to take the paths of heaven\""
           }
         }
@@ -1647,7 +1745,7 @@
         "interactors": {
           "mirrors": {
             "label": "the mirrors",
-            "pattern": "specchi(?:o)?",
+            "pattern": "(mirror(?:s)?)",
             "description": "I see an ugly face.",
             "onBreak": "I really don't feel like risking seven years of bad luck."
           }
@@ -1680,7 +1778,7 @@
           },
           "rock": {
             "label": "the rock",
-            "pattern": "scoglio",
+            "pattern": "(rock|crag|outcrop)",
             "description": [
               "It consists of a persilicic rock with an oligocrystalline granular structure, mostly medium-fine grained.",
               "The fundamental crystalline aggregate is composed mainly of quartz and feldspars, with subordinate micaceous flakes.",
@@ -1690,7 +1788,7 @@
           },
           "lake": {
             "label": "the lake",
-            "pattern": "lago|acqua"
+            "pattern": "(lake|water)"
           }
         },
         "override": {
@@ -1708,7 +1806,7 @@
     "objects": {
       "parachute": {
         "label": "a parachute",
-        "pattern": "paracadute",
+        "pattern": "(parachute|chute)",
         "onWear": "You're already wearing it.",
         "onLook": "Never seen a parachute? Where are you from?",
         "onOpen": {
@@ -1722,7 +1820,7 @@
           "a bone",
           "a severed bone"
         ],
-        "pattern": "osso|femore|tibia",
+        "pattern": "(bone|femur|tibia)",
         "onLook": "It might be a femur, or maybe a tibia. I don't know—I'm no anatomist.",
         "onLookFor": {
           "dontHaveIt": "The floor is full of them.",
@@ -1731,7 +1829,7 @@
       },
       "bludgeon": {
         "label": "a spiked mace",
-        "pattern": "mazza(?: ferrata)?",
+        "pattern": "((?:spiked )?mace|club)",
         "description": "A weapon of war. It can't smash a wall, but it can certainly come in handy."
       },
       "cat": {
@@ -1740,7 +1838,7 @@
           "a cat crouched on the floor",
           "a cat"
         ],
-        "pattern": "(gatto|micio)",
+        "pattern": "(cat|kitty|kitten)",
         "description": "A dear, small, friendly kitty.",
         "onTake": {
           "alreadyIn": "You're already holding it.",
@@ -1771,7 +1869,7 @@
           "a sword",
           "an enchanted sword"
         ],
-        "pattern": "spada",
+        "pattern": "(sword|blade)",
         "posizione": "salaTrofei",
         "description": "Fine craftsmanship.",
         "onLook": "A spell is written on the blade.",
@@ -1789,7 +1887,7 @@
       },
       "spell": {
         "label": "the spell",
-        "pattern": "sortilegio|incantesimo",
+        "pattern": "(spell|enchantment|incantation)",
         "onLook": "I think reading these strange symbols and formulas could awaken forces long asleep."
       },
       "milkAndHoneyCup": {
@@ -1798,7 +1896,7 @@
           "a cup full of milk-and-honey",
           "an empty cup"
         ],
-        "pattern": "coppa",
+        "pattern": "(cup|goblet|chalice)",
         "description": {
           "full": "It's full of milk-and-honey.",
           "empty": "It's completely empty."
@@ -1807,7 +1905,7 @@
       },
       "milkAndHoney": {
         "label": "the milk-and-honey",
-        "pattern": "lattemiele",
+        "pattern": "(milk[- ]and[- ]honey|milk ?honey)",
         "description": "It looks and smells good.",
         "onDrink": {
           "success": "Excellent—truly excellent!",
@@ -1821,31 +1919,31 @@
       },
       "lute": {
         "label": "a lute",
-        "pattern": "liuto",
+        "pattern": "(lute)",
         "description": "This instrument brightened dance feasts held for harvests, victories, ceremonies, and any excuse that could justify a dance feast.",
         "onPlay": "The strings are broken."
       },
       "harp": {
         "label": "a harp",
-        "pattern": "arpa",
+        "pattern": "(harp)",
         "description": "This instrument accompanied the sad and joyful tales the castle bard would chant on long winter nights, while everyone gathered around, entranced by ancient legends.",
         "onPlay": "The strings are broken."
       },
       "bagpipe": {
         "label": "a bagpipe",
-        "pattern": "cornamusa",
+        "pattern": "(bagpipe(?:s)?)",
         "description": "This instrument accompanied military expeditions led personally by the King, marking the soldiers' heavy marching step with its high, rhythmic wail.",
         "onPlay": {
           "fail": [
             "You deserve to be part of Edinburgh's Royal Band!",
-            "(...come tamburo)"
+            "(...as a drum)"
           ],
           "success": "The tome opens to the page marked by a decorated bookmark."
         }
       },
       "sheet": {
         "label": "a scorched sheet",
-        "pattern": "foglio|carta",
+        "pattern": "(sheet|paper)",
         "description": "Though partially consumed by flames, it's still readable.",
         "onRead": {
           "dontHaveIt": "You don't have a sheet.",
@@ -1854,13 +1952,13 @@
       },
       "cushion": {
         "label": "a cushion",
-        "pattern": "cuscino",
+        "pattern": "(cushion|pillow)",
         "description": "Don't think about sleeping—think about getting out of here.",
         "onLiftUp": "There's a wooden case underneath."
       },
       "case": {
         "label": "a case",
-        "pattern": "astuccio",
+        "pattern": "(case|box)",
         "description": "The case's wood is inlaid with great care.",
         "onTake": "It's screwed to the throne seat.",
         "onSkrewOff": "You don't have the right tool.",
@@ -1868,7 +1966,7 @@
       },
       "scroll": {
         "label": "a parchment",
-        "pattern": "pergamena",
+        "pattern": "(parchment|scroll)",
         "description": "Time has faded it, but it's still easy to read.",
         "onRead": {
           "dontHaveIt": "You don't have a parchment.",
@@ -1884,7 +1982,7 @@
       },
       "ogre": {
         "label": "a fierce ogre with sharp tusks",
-        "pattern": "(?:feroce )?orco",
+        "pattern": "((?:fierce )?ogre)",
         "onLook": [
           "On closer inspection, it doesn't seem all that fierce...",
           "...but much, much worse!"
@@ -1899,7 +1997,7 @@
           "a small dwarf with a big diamond",
           "a very friendly little dwarf"
         ],
-        "pattern": "(?:piccolo )?nano",
+        "pattern": "((?:small |little )?dwarf)",
         "description": "He's rather small.",
         "onGreet": {
           "withoutDiamond": "- Good evening to you! - replies the dwarf.",
@@ -1913,7 +2011,7 @@
       },
       "diamond": {
         "label": "a diamond",
-        "pattern": "diamante",
+        "pattern": "(diamond|gem)",
         "description": "The more you gaze at the marvelous gem, the more an unbridled craving to possess it grows within you.",
         "MINE": "The dwarf says: - It's mine! -",
         "onBreak": {
@@ -1924,12 +2022,12 @@
       },
       "key": {
         "label": "a small crystal key",
-        "pattern": "(piccola )?chiave",
+        "pattern": "((?:small |little |crystal )?key)",
         "description": "It's very strange: too small to be a door key, and it seems fragile too. What could it possibly be for?"
       },
       "horn": {
         "label": "a horn",
-        "pattern": "corno",
+        "pattern": "(horn)",
         "description": "It's decorated with hunting scenes that spiral outward from the mouthpiece. Knights at a gallop chase their prey while great birds circle above their heads.",
         "onPlay": "A cavernous sound echoes through the castle walls."
       }

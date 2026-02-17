@@ -20,17 +20,17 @@ from shared.castello_tools import castello_register, castello_play, castello_sta
 
 # --- Configurazione Modello ------------------------------------------------
 # Opzione 1: Google Gemini (default, livello gratuito disponibile)
-# MODEL = "gemini-2.5-flash"
+MODEL = "gemini-2.5-flash"
 
 # Opzione 2: OpenRouter.ai (decommentare il blocco sotto e commentare l'Opzione 1)
 # Richiede OPENROUTER_API_KEY nel file .env e litellm installato (pip install litellm)
 # Vedi https://openrouter.ai/models per i modelli gratuiti disponibili
-from google.adk.models.lite_llm import LiteLlm
-MODEL = LiteLlm(
-    model="openrouter/openai/gpt-oss-120b:free",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
-    api_base="https://openrouter.ai/api/v1",
-)
+# from google.adk.models.lite_llm import LiteLlm
+# MODEL = LiteLlm(
+#     model="openrouter/openai/gpt-oss-120b:free",
+#     api_key=os.getenv("OPENROUTER_API_KEY"),
+#    api_base="https://openrouter.ai/api/v1",
+# )
 # ---------------------------------------------------------------------------
 
 # --- Istruzione dell'Agente (volutamente basilare — gli studenti la migliorano!) ---

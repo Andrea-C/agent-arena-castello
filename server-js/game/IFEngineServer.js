@@ -1001,14 +1001,15 @@ class IFEngineServer {
                 continue;
             }
             
-            let res = this._match(needle, jsonObj);
+            let res = this._match(needle, jsonObj, k);
 
             if (!res) {
                 if (jsonObj.linkedObjects) {
                     for (let j in jsonObj.linkedObjects) {
-                        let linked = this.Parser._getSource(jsonObj.linkedObjects[j], this.datiAvventura.objects);
+                        let linkedKey = jsonObj.linkedObjects[j];
+                        let linked = this.Parser._getSource(linkedKey, this.datiAvventura.objects);
                         if (linked) {
-                            if (this._match(needle, linked))
+                            if (this._match(needle, linked, linkedKey))
                                 return linked;
                         }
                     }
@@ -1022,7 +1023,7 @@ class IFEngineServer {
         return false;
     }
 
-    _match(needle, obj) {
+    _match(needle, obj, key) {
         // Handle null or undefined objects
         if (obj === null || obj === undefined) {
             return false;
@@ -1030,12 +1031,22 @@ class IFEngineServer {
         
         let pattern;
 
-        if (obj.pattern === undefined) {
-            if (obj.label === undefined)
-                return false;
-            pattern = this._simplePattern(obj.label);
-        } else {
-            pattern = obj.pattern;
+        // Check for i18n pattern override (enables multilingual object/interactor matching)
+        if (key) {
+            const i18nPatterns = getI18n()?.AvventuraNelCastelloJS?.i18nPatterns;
+            if (i18nPatterns && i18nPatterns[key]) {
+                pattern = i18nPatterns[key];
+            }
+        }
+
+        if (!pattern) {
+            if (obj.pattern === undefined) {
+                if (obj.label === undefined)
+                    return false;
+                pattern = this._simplePattern(obj.label);
+            } else {
+                pattern = obj.pattern;
+            }
         }
 
         let regExp = new RegExp("^(?:" + pattern + ")$", "i");

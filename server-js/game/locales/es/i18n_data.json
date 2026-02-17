@@ -79,60 +79,60 @@
     },
     "commands": {
       "north": {
-        "pattern": "(vai verso |vai a |vai )?(n(ord)?)",
+        "pattern": "(ir(?: a| hacia)? )?n(orte)?",
         "defaultMessage": "No puedes ir al norte."
       },
       "south": {
-        "pattern": "(vai verso |vai a |vai )?(s(ud|outh)?)",
+        "pattern": "(ir(?: a| hacia)? )?s(ur)?",
         "defaultMessage": "No puedes ir al sur."
       },
       "east": {
-        "pattern": "(vai verso |vai a |vai )?(e(st)?|east)",
+        "pattern": "(ir(?: a| hacia)? )?e(ste)?",
         "defaultMessage": "No puedes ir al este."
       },
       "west": {
-        "pattern": "(vai verso |vai a |vai )?(o(vest)?|w(est)?)",
+        "pattern": "(ir(?: a| hacia)? )?o(este)?",
         "defaultMessage": "No puedes ir al oeste."
       },
       "up": {
-        "pattern": "(sali|(vai verso |vai in |vai )?a(lto)?|u(p)?|su)",
+        "pattern": "(subir|(ir(?: a| hacia)? )?arr(iba)?)",
         "defaultMessage": "No puedes subir."
       },
       "down": {
-        "pattern": "(scendi|(vai verso |vai in |vai )?b(asso)?|d(own)?|giu)",
+        "pattern": "(bajar|(ir(?: a| hacia)? )?ab(ajo)?)",
         "defaultMessage": "No puedes bajar."
       }
     },
     "verbs": {
       "open": {
-        "pattern": "apri",
+        "pattern": "(abre|abrir)",
         "defaultMessage": "No se abre"
       },
       "close": {
-        "pattern": "chiudi",
+        "pattern": "(cierra|cerrar)",
         "defaultMessage": "No se cierra"
       },
       "pull": {
-        "pattern": "tira"
+        "pattern": "(tira|tirar|jala)"
       },
       "press": {
-        "pattern": "premi"
+        "pattern": "(pulsa|presiona|aprieta)"
       },
       "push": {
-        "pattern": "spingi",
+        "pattern": "(empuja|empujar)",
         "defaultMessage": "No se mueve."
       },
       "take": {
-        "pattern": "prendi"
+        "pattern": "(toma|coge|agarra)"
       },
       "drop": {
-        "pattern": "lascia"
+        "pattern": "(deja|suelta)"
       },
       "give": {
-        "pattern": "(dai) (.+) (?:a) (.+)"
+        "pattern": "(da|dale) (.+) (?:a) (.+)"
       },
       "look": {
-        "pattern": "(guarda|esamina)"
+        "pattern": "(mira|examina)"
       },
       "useWith": {
         "pattern": "(usa) (.+) (?:con) (.+)",
@@ -142,13 +142,13 @@
         "pattern": "usa"
       },
       "lookFor": {
-        "pattern": "(cerca|trova)"
+        "pattern": "(busca|encuentra)"
       },
       "goUp": {
-        "pattern": "sali"
+        "pattern": "sube"
       },
       "goDown": {
-        "pattern": "scendi"
+        "pattern": "baja"
       }
     }
   },
@@ -211,187 +211,187 @@
     },
     "verbs": {
       "look": {
-        "pattern": "(guarda|osserva|esamina)"
+        "pattern": "(mira|observa|examina)"
       },
       "drop": {
-        "pattern": "(lascia|posa|molla|getta)"
+        "pattern": "(deja|suelta|tira|lanza)"
       },
       "press": {
-        "pattern": "(premi|schiaccia)"
+        "pattern": "(pulsa|presiona|aprieta)"
       },
       "push": {
-        "pattern": "(spingi|sposta|muovi)"
+        "pattern": "(empuja|mueve|desplaza)"
       },
       "offer": {
-        "pattern": "(offri|dai)"
+        "pattern": "(ofrece|da)"
       },
       "repair": {
-        "pattern": "(aggiusta|ripara)"
+        "pattern": "(arregla|repara)"
       },
       "translate": {
-        "pattern": "traduci"
+        "pattern": "traduce"
       },
       "play": {
-        "pattern": "suona"
+        "pattern": "toca"
       },
       "enter": {
-        "pattern": "entra(?: in)?",
-        "defaultMessage": "¿Por dónde? (N/S/E/O/A/B)"
+        "pattern": "entra(?: en)?",
+        "defaultMessage": "¿Por dónde? (N/S/E/O/Arr/Ab)"
       },
       "wear": {
-        "pattern": "(mettiti|indossa|metti|infilati)"
+        "pattern": "(ponte|lleva|viste)"
       },
       "liftUp": {
-        "pattern": "(alza|solleva)",
+        "pattern": "(levanta|alza)",
         "defaultMessage": "No hay nada debajo."
       },
       "lower": {
-        "pattern": "abbassa",
+        "pattern": "baja",
         "defaultMessage": "No baja."
       },
       "take": {
-        "pattern": "(prendi|ruba|afferra)"
+        "pattern": "(toma|coge|roba|agarra)"
       },
       "read": {
-        "pattern": "leggi"
+        "pattern": "lee"
       },
       "insert": {
-        "pattern": "(infila|inserisci)"
+        "pattern": "(inserta|mete)"
       },
       "insertInto": {
-        "pattern": "(infila|inserisci) (.+) (?:in) (.+)"
+        "pattern": "(inserta|mete) (.+) (?:en) (.+)"
       },
       "pray": {
-        "pattern": "prega",
+        "pattern": "reza",
         "defaultMessage": "  Ayúdate, que Dios te ayudará."
       },
       "land": {
-        "pattern": "(atterra|cabra|plana|picchia|vira|manovra)",
+        "pattern": "(aterriza|planea|vira|maniobra)",
         "defaultMessage": "¡Más en tierra que esto!"
       },
       "jump": {
-        "pattern": "(lanciati|gettati|buttati|salta)(?: .+)?",
+        "pattern": "(salta|lánzate|tírate)(?: .+)?",
         "defaultMessage": "Ya hago gimnasia todas las mañanas."
       },
       "sitDown": {
-        "pattern": "(siedi(?:ti)?|sdraiati)(?: su )?(.+)?",
+        "pattern": "(siéntate|acuéstate)(?: (?:en|sobre) )?(.+)?",
         "defaultMessage": "Un poco de descanso siempre viene bien."
       },
       "greet": {
-        "pattern": "saluta",
+        "pattern": "saluda",
         "defaultMessage": "Ninguna respuesta."
       },
       "dig": {
-        "pattern": "scava",
+        "pattern": "(cava|excava)",
         "defaultMessage": "No estoy hecho para los trabajos de peón."
       },
       "eat": {
-        "pattern": "(mangia|divora)",
+        "pattern": "(come|devora)",
         "defaultMessage": "No me parece muy digerible."
       },
       "knock": {
-        "pattern": "bussa",
+        "pattern": "llama",
         "defaultMessage": "Ninguna respuesta."
       },
       "thank": {
-        "pattern": "(grazie|ringrazia)",
+        "pattern": "(gracias|agradece)",
         "defaultMessage": "De nada."
       },
       "wait": {
-        "pattern": "aspetta",
+        "pattern": "espera",
         "defaultMessage": "De acuerdo."
       },
       "talk": {
-        "pattern": "(parla(?: con)?|interroga)",
+        "pattern": "(habla(?: con)?|interroga)",
         "defaultMessage": "Por una vez, ¿no sería mejor pensar en lugar de hablar?"
       },
       "listen": {
-        "pattern": "ascolta",
+        "pattern": "escucha",
         "defaultMessage": "Quedándote inmóvil con el oído atento, te parece oír a lo lejos un ruido como de cadenas arrastradas. Pero quizá sea solo una broma que tu imaginación se juega con el lejano silbido del viento."
       },
       "buy": {
-        "pattern": "(compra|compera|acquista)",
+        "pattern": "(compra|adquiere)",
         "defaultMessage": "No tienes ni una peseta."
       },
       "break": {
-        "pattern": "(rompi|spacca|spezza|frantuma|distruggi|sfonda|strappa)"
+        "pattern": "(rompe|parte|destroza|destruye|derriba|rasga)"
       },
       "drink": {
-        "pattern": "bevi"
+        "pattern": "bebe"
       },
       "wind": {
-        "pattern": "(carica|ricarica)"
+        "pattern": "(carga|recarga)"
       },
       "kill": {
-        "pattern": "(uccidi|attacca|colpisci|ferisci|ammazza|picchia)"
+        "pattern": "(mata|ataca|golpea|hiere|asesina)"
       },
       "feed": {
-        "pattern": "(nutri|sfama|ciba)"
+        "pattern": "(alimenta|nutre)"
       },
       "pet": {
-        "pattern": "(carezza|accarezza|coccola)"
+        "pattern": "(acaricia|mima)"
       },
       "mount": {
-        "pattern": "(monta|rimonta|costruisci|ricostruisci)"
+        "pattern": "(monta|remonta|construye|reconstruye)"
       },
       "ask": {
-        "pattern": "(chiedi|domanda)",
+        "pattern": "(pide|pregunta)",
         "defaultMessage": "Nadie está dispuesto a ofrecerte el objeto de tu deseo."
       },
       "askTo": {
-        "pattern": "(chiedi|domanda) (.+) (?:a) (.+)",
+        "pattern": "(pide|pregunta) (.+) (?:a) (.+)",
         "defaultMessage": "Nadie está dispuesto a ofrecerte el objeto de tu deseo."
       },
       "skrewOff": {
-        "pattern": "svita"
+        "pattern": "destornilla"
       },
       "hello": {
-        "pattern": "ciao"
+        "pattern": "hola"
       },
       "greeting": {
-        "pattern": "(buongiorno|buonasera|buonanotte)"
+        "pattern": "(buenos días|buenas tardes|buenas noches)"
       }
     },
     "commands": {
       "where": {
-        "pattern": "(dove|guarda|esamina|osserva)( (stanza|camera|sala|pavimento|soffitto|locale))?"
+        "pattern": "(dónde|mira|examina|observa)(?: (?:la |el )?(habitación|cámara|sala|suelo|techo|lugar))?"
       },
       "points": {
-        "pattern": "(punti|quanto)"
+        "pattern": "(puntos|puntuación)"
       },
       "stop": {
-        "pattern": "(basta|stop|fine|abbandono)",
+        "pattern": "(basta|para|fin|abandono)",
         "defaultMessage": "Lamento que quieras abandonar tu exploración, justo cuando..."
       },
       "instructions": {
-        "pattern": "istruzioni"
+        "pattern": "instrucciones"
       },
       "inventory": {
-        "pattern": "(cosa|inv(?:en(?:tario)?)?|\\?)"
+        "pattern": "(qué|inv(?:en(?:tario)?)?|\\?)"
       },
       "save": {
-        "pattern": "(salva|save|registra)"
+        "pattern": "(guarda|save|graba)"
       },
       "load": {
-        "pattern": "(carica|load|riprendi)"
+        "pattern": "(carga|load|recupera)"
       },
       "insult": {
-        "pattern": "(idiota|scemo|cretino|merda|inculati|pirla|vaffanculo|deficiente|stupido|stronzo|imbecille)"
+        "pattern": "(idiota|tonto|cretino|mierda|gilipollas|imbécil|estúpido|capullo)"
       },
       "help": {
-        "pattern": "(aiuto|sos|help|soccors(?:o|i))",
+        "pattern": "(ayuda|sos|socorro)",
         "defaultMessage": "¡Apáñatelas!"
       },
       "call": {
-        "pattern": "(chiama|grida|urla)(?: (.+))?",
+        "pattern": "(llama|grita|chilla)(?: (.+))?",
         "defaultMessage": "En respuesta oyes un lejano sonido cavernoso, y tardas unos segundos en entender que es solo el eco de tu voz ronca."
       },
       "cry": {
-        "pattern": "piangi",
+        "pattern": "llora",
         "defaultMessage": "Ahora que te has desahogado, ¡levántate y lucha como un hombre!"
       },
       "moves": {
-        "pattern": "(turni|mosse)",
+        "pattern": "(turnos|movimientos)",
         "defaultMessage": {
           "__fn__": true,
           "args": [
@@ -401,57 +401,57 @@
         }
       },
       "idiot": {
-        "pattern": "(id|iota)",
-        "defaultMessage": "T cpsc sltnt a mt'"
+        "pattern": "(id|iot)",
+        "defaultMessage": "Sl t ntnd  mdias"
       },
       "abracadabra": {
         "pattern": "abracadabra",
         "defaultMessage": "Me temo que esta vieja palabra mágica ya está gastada de tanto uso."
       },
       "die": {
-        "pattern": "(muori|impiccati|crepa|sparati)",
-        "defaultMessage": "D'accordo."
+        "pattern": "(muere|ahórcate|revienta|pégate un tiro)",
+        "defaultMessage": "De acuerdo."
       },
       "think": {
-        "pattern": "(pensa|ragiona|cogita|medita|deduci|ingegnati)",
+        "pattern": "(piensa|razona|medita|deduce|ingéniate)",
         "defaultMessage": "No me parece el lugar adecuado."
       },
       "getOut": {
-        "pattern": "(esci(?: da)?|corri|scappa|fuggi|cammina|torna|ritorna|vai)( (?:a )?(?:n(ord)?|s(ud)?|e(st)?|o(vest)?|a(lto)?|b(asso)?))?",
-        "defaultMessage": "Estoy indeciso: ¿por dónde? (N/S/E/O/A/B)"
+        "pattern": "(sal(?:ir)?(?: de)?|corre|escapa|huye|camina|vuelve|ve)( (?:al? )?(?:n(orte)?|s(ur)?|e(ste)?|o(este)?|arr(iba)?|ab(ajo)?))?",
+        "defaultMessage": "Estoy indeciso: ¿por dónde? (N/S/E/O/Arr/Ab)"
       },
       "sleep": {
-        "pattern": "(dormi|riposa(?:ti)?)",
+        "pattern": "(duerme|descansa)",
         "defaultMessage": "Z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z z"
       },
       "maybe": {
-        "pattern": "(boh|mah|forse|probabilmente)",
+        "pattern": "(bah|quizás|tal vez|probablemente)",
         "defaultMessage": "¡No seas tan indeciso!"
       },
       "good": {
-        "pattern": "bravo",
+        "pattern": "(bravo|bien hecho)",
         "defaultMessage": "¡Gracias!"
       },
       "youAreWelcome": {
-        "pattern": "prego",
+        "pattern": "de nada",
         "defaultMessage": "No hay de qué."
       },
       "openSesame": {
-        "pattern": "apriti sesamo",
+        "pattern": "ábrete sésamo",
         "defaultMessage": "Que sepas que esto es AVENTURA EN EL CASTILLO, no LAS MIL Y UNA NOCHES."
       },
       "waitForMidnight": {
-        "pattern": "aspetta mezzanotte",
+        "pattern": "espera(?: la)? medianoche",
         "defaultMessage": "Es curioso: cuando esperas algo, de verdad parece que el tiempo no pasa nunca."
       },
       "sayHello": {
-        "pattern": "saluta"
+        "pattern": "saluda"
       },
       "greeting": {
-        "defaultMessage": "Ciao. Bella giornata, vero?"
+        "defaultMessage": "Hola. Bonito día, ¿verdad?"
       },
       "hello": {
-        "defaultMessage": "Ciao. Bella giornata, vero?"
+        "defaultMessage": "Hola. Bonito día, ¿verdad?"
       },
       "senno": {
         "pattern": {
@@ -464,11 +464,11 @@
         "defaultMessage": "¡No es una palabra mágica, idiota!"
       },
       "useSenno": {
-        "pattern": "usa senno",
+        "pattern": "usa sentido",
         "defaultMessage": "¡No me parece el lugar adecuado!"
       },
       "lookForDictionary": {
-        "pattern": "cerca dizionario",
+        "pattern": "busca diccionario",
         "defaultMessage": "¡No pretenderás que lo busque por todo el castillo!"
       },
       "saySpell": {
@@ -477,19 +477,19 @@
           "args": [
             "sayPattern"
           ],
-          "template": "(${sayPattern} )?(sortilegio|incantesimo)"
+          "template": "(${sayPattern} )?(hechizo|sortilegio|encantamiento)"
         }
       },
       "introduceYourself": {
-        "pattern": "presentati",
+        "pattern": "preséntate",
         "defaultMessage": "Enumeras diligentemente tus numerosos títulos honoríficos, pero parece que no hay nadie dispuesto a escucharte."
       },
       "yes": {
-        "pattern": "(si|certo|certamente|sicuro)",
+        "pattern": "(sí|claro|ciertamente|seguro|por supuesto)",
         "defaultMessage": "O quizá no."
       },
       "no": {
-        "pattern": "(no|mai)",
+        "pattern": "(no|nunca|jamás)",
         "defaultMessage": "O quizá sí."
       },
       "bigmeow": {
@@ -522,10 +522,10 @@
         }
       },
       "readSpell": {
-        "pattern": "leggi (incantesimo|sortilegio)"
+        "pattern": "lee (hechizo|sortilegio|encantamiento)"
       },
       "swim": {
-        "pattern": "nuota"
+        "pattern": "nada"
       }
     },
     "dieText": "Estoy muy apenado por tu prematura desaparición... Al fin y al cabo, siempre se van los mejores (¿verdad?). Consuélate pensando que:",
@@ -534,26 +534,26 @@
       "Para lograrlo tendrás que afrontar muchos peligros y resolver problemas que pondrán a prueba tu astucia.",
       "En esta aventura, yo seré tu alter ego, tus ojos y tus oídos, pero tú tomarás las decisiones (y sufrirás las consecuencias).",
       "Para moverte usa:",
-      "- NORD, SUD, EST, OVEST, ALTO, BASSO o simplemente:",
-      "- N, S, E, O, A, B",
+      "- NORTE, SUR, ESTE, OESTE, ARRIBA, ABAJO o simplemente:",
+      "- N, S, E, O, ARR, AB",
       "Te daré la descripción completa de cada lugar la primera vez que entres, y luego solo una breve. Si quieres la descripción completa, dime:",
-      "- GUARDA o",
-      "- GUARDA LA STANZA",
+      "- MIRA o",
+      "- MIRA LA HABITACIÓN",
       "Acciones fundamentales:",
-      "- PRENDI algo",
-      "- LASCIA algo",
-      "- GUARDA algo, por ejemplo GUARDA LO SCALONE.",
-      "No soy muy listo, así que usa frases como APRI LA PORTA o SALTA y no frases elaboradas como GUARDA DIETRO IL DIVANO o adverbios (GUARDA ATTENTAMENTE), que están más allá de mi comprensión.",
-      "Para actuar sobre un objeto, normalmente hay que poseerlo. Además, recuerda que una acción que no tiene efecto en un lugar (por ejemplo CERCA) puede tenerlo en otro.",
+      "- TOMA algo",
+      "- DEJA algo",
+      "- MIRA algo, por ejemplo MIRA LA ESCALERA.",
+      "No soy muy listo, así que usa frases como ABRE LA PUERTA o SALTA y no frases elaboradas como MIRA DETRÁS DEL SOFÁ o adverbios (MIRA ATENTAMENTE), que están más allá de mi comprensión.",
+      "Para actuar sobre un objeto, normalmente hay que poseerlo. Además, recuerda que una acción que no tiene efecto en un lugar (por ejemplo BUSCA) puede tenerlo en otro.",
       "Otros comandos importantes:",
-      "- DOVE te recuerda dónde estás,",
-      "- COSA enumera los objetos que llevas,",
-      "- MOSSE te dice cuánto llevas jugando,",
-      "- PUNTI cuánto has conseguido descubrir,",
-      "- SAVE guarda la situación en disco,",
-      "- LOAD recupera la situación desde disco,",
+      "- DÓNDE te recuerda dónde estás,",
+      "- QUÉ enumera los objetos que llevas,",
+      "- MOVIMIENTOS te dice cuánto llevas jugando,",
+      "- PUNTOS cuánto has conseguido descubrir,",
+      "- GUARDA salva la situación en disco,",
+      "- CARGA recupera la situación desde disco,",
       "- BASTA termina el juego,",
-      "- ISTRUZIONI repite esta explicación.",
+      "- INSTRUCCIONES repite esta explicación.",
       "¡Buena suerte! (la necesitarás)"
     ],
     "insult": {
@@ -577,7 +577,7 @@
         "replaceWith": " "
       },
       {
-        "pattern": " (il|la|lo|le|li|l|gli|un|uno|una) ",
+        "pattern": " (el|la|lo|los|las|un|uno|una|unos|unas) ",
         "replaceWith": " "
       },
       {
@@ -585,44 +585,162 @@
         "replaceWith": " "
       },
       {
-        "pattern": " (del|dell|dello|degli|dei|della|delle) ",
-        "replaceWith": " di "
+        "pattern": " (del) ",
+        "replaceWith": " de "
       },
       {
-        "pattern": " (al|all|allo|agli|alla|alle) ",
+        "pattern": " (al) ",
         "replaceWith": " a "
       },
       {
-        "pattern": " (dal|dall|dallo|dagli|dalla|dalle) ",
-        "replaceWith": " da "
+        "pattern": " (dentro de|adentro de) ",
+        "replaceWith": " en "
       },
       {
-        "pattern": " (nel|nell|nello|negli|nella|nelle|dentro) ",
-        "replaceWith": " in "
+        "pattern": " (sobre|encima de) ",
+        "replaceWith": " en "
       },
       {
-        "pattern": " (col|coi) ",
-        "replaceWith": " con "
-      },
-      {
-        "pattern": " (sul|sull|sullo|sugli|sulla|sulle|sopra) ",
-        "replaceWith": " su "
-      },
-      {
-        "pattern": " (tra|fra) ",
-        "replaceWith": " tra "
+        "pattern": " (entre) ",
+        "replaceWith": " entre "
       }
     ]
   },
   "AvventuraNelCastelloJS": {
+    "i18nPatterns": {
+      "__comment": "Object patterns",
+      "paracadute": "(paracaídas)",
+      "osso": "(hueso|fémur|tibia)",
+      "mazza": "(maza|porra)",
+      "gatto": "(gato|gatito|minino)",
+      "spada": "(espada|hoja)",
+      "sortilegio": "(hechizo|sortilegio|encantamiento)",
+      "coppaLattemiele": "(copa|cáliz)",
+      "latteMiele": "(leche con miel|lechemiel)",
+      "liuto": "(laúd)",
+      "arpa": "(arpa)",
+      "cornamusa": "(gaita|gaitas)",
+      "foglio": "(hoja|papel)",
+      "cuscino": "(cojín|almohada)",
+      "astuccio": "(estuche|caja)",
+      "pergamena": "(pergamino)",
+      "orco": "(?:feroz )?ogro",
+      "nano": "(?:pequeño )?enano",
+      "diamante": "(diamante|gema)",
+      "chiave": "(?:pequeña |cristal )?llave",
+      "corno": "(cuerno)",
+
+      "__comment2": "Common interactor patterns",
+      "gradini": "(peldaño|peldaños|escalón|escalones)",
+      "scala": "(escalera|escaleras)",
+      "pareti": "(pared|paredes|muro|muros)",
+      "armatura": "(armadura|armaduras)",
+      "corridoio": "(pasillo|corredor)",
+      "scheletri": "(esqueleto|esqueletos|huesos)",
+      "labirinto": "(laberinto|pasaje|pasajes)",
+      "porta": "(puerta)",
+      "tavolo": "(mesa|mesita)",
+      "archi": "(arco|arcos)",
+      "scudi": "(escudo|escudos)",
+      "camino": "(chimenea|hogar)",
+      "poltrone": "(sillón|sillones|butaca|butacas)",
+      "sedie": "(silla|sillas|asiento|asientos)",
+      "mostro": "(monstruo|monstruos|criatura|nessie)",
+      "scaffali": "(estante|estantes|estantería|estanterías)",
+      "letto": "(cama|dosel)",
+      "armi": "(arma|armas)",
+      "nebbia": "(niebla|bruma)",
+      "corvi": "(cuervo|cuervos)",
+      "spalti": "(almena|almenas|muralla|murallas|parapeto)",
+      "passaggio": "(pasaje|paso)",
+      "cunicolo": "(túnel|galería)",
+      "roccia": "(roca|piedra)",
+      "torre": "(torre)",
+
+      "__comment3": "Room-specific interactor patterns",
+      "cloche": "(palanca|mando|controles)",
+      "motore": "(motor)",
+      "aereo": "(avión|avioneta|aeronave)",
+      "ponteLevatoio": "(puente levadizo|puente)",
+      "portone": "(portón|puerta grande)",
+      "lastrone": "(losa|pozo|piedra)",
+      "mura": "(murallas|almenas)",
+      "spianata": "(explanada|llano)",
+      "castello": "(castillo|fortaleza)",
+      "blasone": "(escudo de armas|blasón|emblema)",
+      "divano": "(sofá|diván)",
+      "luce": "(luz|resplandor)",
+      "armature": "(armadura|armaduras)",
+      "picche": "(pica|picas)",
+      "finestra": "(ventana)",
+      "leggio": "(atril|facistol)",
+      "libri": "(libros)",
+      "libro": "(libro)",
+      "dizionario": "(diccionario|vocabulario)",
+      "foro": "(agujero|hueco)",
+      "bottone": "(botón|pulsador)",
+      "fessura": "(ranura|grieta|hendidura)",
+      "braccio": "(brazo)",
+      "muffe": "(moho)",
+      "funghi": "(hongo|hongos|seta|setas)",
+      "terreno": "(terreno|suelo)",
+      "scavi": "(excavación|excavaciones|huellas|marcas)",
+      "forziere": "(cofre|arcón)",
+      "fantasma": "(fantasma|espectro)",
+      "legna": "(leña|madera|rama|ramas|tronco|troncos)",
+      "scritta": "(escrito|inscripción)",
+      "fessure": "(grieta|grietas|rendija|rendijas)",
+      "leva": "(palanca)",
+      "orologio": "(reloj|reloj de péndulo|reloj de pared)",
+      "nicchie": "(nicho|nichos|hornacina|hornacinas)",
+      "trono": "(trono)",
+      "brughiera": "(páramo|brezal)",
+      "montagne": "(montaña|montañas)",
+      "bandiera": "(bandera|estandarte)",
+      "trappola": "(trampa)",
+      "cocci": "(casco|cascos|fragmento|fragmentos)",
+      "ganci": "(gancho|ganchos)",
+      "macchie": "(mancha|manchas)",
+      "croste": "(corteza|cortezas|costra|costras)",
+      "cervo": "(ciervo|carcasa)",
+      "botticella": "(barrilito|barrica|tonel)",
+      "whisky": "(whisky|güisqui)",
+      "panche": "(banco|bancos)",
+      "catapulta": "(catapulta|máquina)",
+      "palle": "(bola|bolas|pelota|pelotas)",
+      "pezzi": "(pieza|piezas|estructura|estructuras)",
+      "pugnali": "(puñal|puñales|daga|dagas)",
+      "lance": "(lanza|lanzas)",
+      "asce": "(hacha|hachas)",
+      "understais": "(hueco bajo escalera|trastero)",
+      "colonna": "(?:pequeñ[ao] )?columna|capitel",
+      "colonne": "(columnas|pilares)",
+      "piedistallo": "(pedestal)",
+      "arazzi": "(tapiz|tapices)",
+      "ritratti": "(retrato|retratos|cuadro|cuadros|malcolm|lienzo|lienzos)",
+      "trofei": "(trofeo|trofeos|animal|animales)",
+      "focolare": "(chimenea|hogar)",
+      "cucina": "(cocina|tina|tinas|cacharros|restos)",
+      "tavolino": "(mesa|mesita)",
+      "infolio": "(mortero|morteros|recipiente|crisol|alambique|in-folio)",
+      "segnalibro": "(marcapáginas|marcador)",
+      "volume": "(volumen|tomazo|página)",
+      "tavola": "(mesa|mesas)",
+      "brandelli": "(harapo|harapos|jirón|jirones|montón)",
+      "ragnatele": "(telaraña|telarañas)",
+      "tende": "(cortina|cortinas|colgadura|colgaduras)",
+      "specchi": "(espejo|espejos)",
+      "scoglio": "(roca|peñasco|escollo)",
+      "lago": "(lago|agua)"
+    },
     "commonInteractors": {
       "steps": {
         "label": "los peldaños",
-        "pattern": "gradin(?:i|o)"
+        "pattern": "(peldaño(?:s)?|escalón(?:es)?)"
       },
       "stairs": {
         "label": "la escalera",
-        "pattern": "scal(?:a|e|one)",
+        "pattern": "(escalera(?:s)?|peldaños)",
         "description": "Es de peldaños."
       },
       "walls": {
@@ -631,99 +749,99 @@
       },
       "armor": {
         "label": "la armadura",
-        "pattern": "armatur(?:a|e)",
+        "pattern": "(armadura(?:s)?)",
         "description": "Cada armadura parece mirarte de arriba abajo con aire altivo.",
         "onTakeOrWear": "¿Estás de broma? Pesa el doble que tú. En aquellos tiempos no eran precisamente blanditos, como hoy en día."
       },
       "hallway": {
         "label": "el pasillo",
-        "pattern": "corridoio"
+        "pattern": "(pasillo|corredor)"
       },
       "skeletons": {
         "label": "los esqueletos",
-        "pattern": "(scheletr(?:o|i)|ossa)",
+        "pattern": "(esqueleto(?:s)?|huesos?)",
         "description": "Es nuestro destino común. ¿No puedes pensar en algo más alegre?"
       },
       "labyrinth": {
         "label": "el laberinto",
-        "pattern": "(labirinto|passaggi(?:o)?)",
+        "pattern": "(laberinto|pasaje(?:s)?)",
         "description": "¡Parece fácil! En este cruce difuso de planos inclinados a lo largo de curvas imposibles, no se distingue el suelo del techo, y todas las direcciones parecen iguales."
       },
       "door": {
         "label": "la puerta",
-        "pattern": "porta"
+        "pattern": "(puerta)"
       },
       "table": {
         "label": "la mesa",
-        "pattern": "tavol(?:o|a|ino)"
+        "pattern": "(mesa|mesita)"
       },
       "bows": {
         "label": "los arcos",
-        "pattern": "arc(?:o|hi)"
+        "pattern": "(arco(?:s)?)"
       },
       "shields": {
         "label": "los escudos",
-        "pattern": "scud(?:o|i)"
+        "pattern": "(escudo(?:s)?)"
       },
       "fireplace": {
         "label": "la chimenea",
-        "pattern": "camino|focolare"
+        "pattern": "(chimenea|hogar)"
       },
       "armchairs": {
         "label": "los sillones",
-        "pattern": "poltron(?:a|e)"
+        "pattern": "(sillón(?:es)?|butaca(?:s)?)"
       },
       "chairs": {
         "label": "las sillas",
-        "pattern": "sedi(?:a|e)"
+        "pattern": "(silla(?:s)?|asiento(?:s)?)"
       },
       "monster": {
         "label": "el monstruo",
-        "pattern": "(mostr(?:o|i)|nessie)"
+        "pattern": "(monstruo(?:s)?|criatura(?:s)?|nessie)"
       },
       "shelves": {
         "label": "las estanterías",
-        "pattern": "scaffal(?:e|i)"
+        "pattern": "(estante(?:s)?|estantería(?:s)?)"
       },
       "bed": {
         "label": "la cama",
-        "pattern": "baldacchino|letto"
+        "pattern": "(cama|dosel)"
       },
       "weapons": {
         "label": "las armas",
-        "pattern": "arm(?:a|i)"
+        "pattern": "(arma(?:s)?)"
       },
       "fog": {
         "label": "la niebla",
-        "pattern": "nebbia",
+        "pattern": "(niebla|bruma)",
         "description": "Es difícil enfocar la vista: no entiendes si la uniformidad granulosa y gris que estás mirando está a diez metros o a diez centímetros de tu nariz. Los aullidos que llegan hasta aquí suenan amortiguados, pero no por eso resultan más tranquilizadores."
       },
       "crows": {
         "label": "los cuervos",
-        "pattern": "corv(?:o|i)",
+        "pattern": "(cuervo(?:s)?)",
         "description": "Son totalmente invisibles, perdidos en algún lugar dentro de esa luminosidad lechosa y uniforme. Solo puedes oír su graznido estridente proveniente de un punto indefinido por encima de tu cabeza.",
         "onListen": "Graznan su burla ante tus inútiles y ridículos esfuerzos, o al menos esa es tu impresión."
       },
       "ramparts": {
         "label": "las almenas",
-        "pattern": "(mura|spalti)",
+        "pattern": "(muralla(?:s)?|almena(?:s)?|parapeto(?:s)?)",
         "description": "Al mirar hacia abajo desde las almenas, la niebla te provoca una especie de vértigo. No ves nada sólido que te sirva de referencia para saber a qué altura estás. Pero no puedes estar muy alto, a juzgar por la escalera de caracol que has subido para llegar aquí."
       },
       "pass": {
         "label": "el pasaje",
-        "pattern": "passaggi(?:o)?"
+        "pattern": "(pasaje|paso)"
       },
       "tunnel": {
         "label": "el túnel",
-        "pattern": "cunicolo"
+        "pattern": "(túnel|galería)"
       },
       "rock": {
         "label": "la roca",
-        "pattern": "roccia"
+        "pattern": "(roca(?:s)?|piedra(?:s)?)"
       },
       "tower": {
         "label": "la torre",
-        "pattern": "torre"
+        "pattern": "(torre)"
       }
     },
     "commonRooms": {
@@ -778,7 +896,7 @@
         "interactors": {
           "cloche": {
             "label": "la palanca",
-            "pattern": "cloche",
+            "pattern": "(palanca|mando|controles?|cloche)",
             "onPullOrPush": [
               "¡Los mandos responden un poco!",
               "...lo justo para empeorar la situación."
@@ -786,12 +904,12 @@
           },
           "engine": {
             "label": "el motor",
-            "pattern": "motore",
+            "pattern": "(motor)",
             "onRepair": "No entiendo de eso."
           },
           "plane": {
             "label": "el avión",
-            "pattern": "aereo"
+            "pattern": "(avión|avioneta|aeronave)"
           }
         }
       },
@@ -816,7 +934,7 @@
         "interactors": {
           "drawbridge": {
             "label": "un puente levadizo alzado",
-            "pattern": "ponte",
+            "pattern": "(puente|puente levadizo)",
             "description": "Está alzado, pero se puede bajar sin dificultad.",
             "onLower": "Los lobos entran y te despedazan."
           },
@@ -826,13 +944,13 @@
               "un portón cerrado",
               "un portón abierto"
             ],
-            "pattern": "portone",
+            "pattern": "(portón|puerta grande)",
             "description": "Es muy macizo.",
             "onClose": "Ya está cerrado."
           },
           "stoneSlab": {
             "label": "la losa de piedra",
-            "pattern": "lastrone|pozzo",
+            "pattern": "(losa|pozo|piedra)",
             "onLook": [
               "La losa de piedra, corroída por los siglos, cede bajo tu peso. Te precipitas al pozo, infestado de seres viscosos y repugnantes",
               "(y carnívoros)."
@@ -843,11 +961,11 @@
           },
           "esplanade": {
             "label": "la explanada",
-            "pattern": "spianata"
+            "pattern": "(explanada|llano)"
           },
           "castle": {
             "label": "el castillo",
-            "pattern": "castello"
+            "pattern": "(castillo|fortaleza)"
           }
         }
       },
@@ -863,7 +981,7 @@
         "interactors": {
           "blazon": {
             "label": "un blasón pintado en el techo",
-            "pattern": "blasone",
+            "pattern": "(escudo de armas|blasón|emblema)",
             "onLook": [
               "Está escrito el lema de la dinastía:",
               "\"Caerá el extranjero\"",
@@ -872,7 +990,7 @@
           },
           "doorway": {
             "label": "un portón",
-            "pattern": "portone"
+            "pattern": "(portón|puerta grande)"
           }
         }
       },
@@ -885,18 +1003,18 @@
         "interactors": {
           "sofa": {
             "label": "el sofá",
-            "pattern": "divan(?:o|i)"
+            "pattern": "(sofá(?:s)?|diván(?:es)?)"
           },
           "fireplace": {
             "description": "Es tan grande que podrías pasar por él sin dificultad... si hubiese un pasaje. Lástima que no se vea rastro alguno. Quizá buscando..."
           },
           "light": {
             "label": "la luz",
-            "pattern": "luce",
+            "pattern": "(luz|resplandor)",
             "description": "Qué extraño: cuando miras hacia donde creías entrever la luz, parece desplazarse a otro lugar. Quizá sea solo un reflejo... o la memoria secular de la sangre derramada entre estos muros."
           },
           "pass": {
-            "pattern": "passaggio(?: segreto)?",
+            "pattern": "((?:pasaje|pasadizo)(?: secreto)?)",
             "onLookFor": "En la chimenea no hay ni rastro de pasajes secretos. Lees demasiados libros de aventuras."
           }
         }
@@ -910,7 +1028,7 @@
         "interactors": {
           "spades": {
             "label": "las picas",
-            "pattern": "picc(?:a|he)",
+            "pattern": "(pica(?:s)?|lanza(?:s)?)",
             "description": "Larga y rematada con una aguda punta de hierro: parece un arma mortífera. ¿Cómo demonios se usaría?",
             "onTake": {
               "question": "Agarras la pica y tiras de ella hacia ti, pero la armadura no parece querer soltarla. ¿Debo insistir ",
@@ -948,7 +1066,7 @@
           },
           "window": {
             "label": "la ventana",
-            "pattern": "(da )?finestra",
+            "pattern": "((?:desde )?ventana)",
             "description": "Desde la ventana se disfruta de una vista magnífica de las turbias aguas del foso, pobladas de monstruos escamosos de dientes afilados.",
             "onJump": "¡No soy tonto!"
           }
@@ -973,12 +1091,12 @@
           },
           "lectern": {
             "label": "el atril",
-            "pattern": "leggio",
+            "pattern": "(atril|facistol)",
             "description": "Una obra realmente admirable."
           },
           "books": {
             "label": "los libros",
-            "pattern": "libri",
+            "pattern": "(libros)",
             "description": "¡Una auténtica Biblioteca Real! Está todo, o casi. Estoy convencido de que, buscando bien, se puede encontrar cualquier cosa aquí dentro.",
             "onTake": "Son demasiados para transportarlos.",
             "onRead": "Harían falta siglos para hojearlos todos. Los que tomas en tus manos son sin duda interesantes, pero no resuelven ninguno de tus problemas. Al menos deberías decirme qué buscas."
@@ -989,14 +1107,14 @@
               "un libro cerrado sobre el atril",
               "un libro sobre el atril"
             ],
-            "pattern": "libro",
+            "pattern": "(libro)",
             "description": "Está sobre el atril y parece a la vez antiguo y recién estrenado.",
             "onOpen": "De las viejas páginas amarillentas se desliza una hoja chamuscada.",
             "onRead": "Es un diccionario de gaélico antiguo."
           },
           "dictionary": {
             "label": "un diccionario",
-            "pattern": "(dizionario|vocabolario)",
+            "pattern": "(diccionario|vocabulario)",
             "description": "Está sobre el atril y parece a la vez antiguo y recién estrenado.",
             "posizione": "biblioteca",
             "onRead": "Consiste en una lista de palabras en gaélico, cada una con su traducción (y algunos comentarios) a la lengua moderna. Las palabras están en orden alfabético, de la A a la Z. También hay una lista de proverbios, expresiones y reglas gramaticales y de pronunciación. ¿De verdad es posible que nunca hayas visto un diccionario?"
@@ -1018,23 +1136,23 @@
         "interactors": {
           "hole": {
             "label": "un agujero en la pared",
-            "pattern": "foro|buco",
+            "pattern": "(agujero|hueco)",
             "description": "Es estrecho y profundo: al fondo hay algo que parece un botón."
           },
           "button": {
             "label": "botón",
-            "pattern": "bottone|pulsante",
+            "pattern": "(botón|pulsador)",
             "description": "Mirarlo no sirve de nada. Quizá pulsarlo..."
           },
           "slit": {
             "label": "la rendija",
-            "pattern": "fessura",
+            "pattern": "(ranura|grieta|hendidura)",
             "description": "Está en la pared oeste y es lo bastante ancha como para pasar por ella.",
             "invisibleMessage": "Aquí no hay ninguna rendija."
           },
           "arm": {
             "label": "el brazo",
-            "pattern": "braccio"
+            "pattern": "(brazo)"
           }
         }
       },
@@ -1051,12 +1169,12 @@
         "interactors": {
           "moulds": {
             "label": "los mohos",
-            "pattern": "muff(?:a|e)",
+            "pattern": "(moho(?:s)?)",
             "description": "Son fascinantes, en su venenosa pelusilla aterciopelada."
           },
           "mushrooms": {
             "label": "los hongos",
-            "pattern": "fung(?:o|hi)(?: putrescent(?:e|i))?",
+            "pattern": "((?:pútrido(?:s)? )?hongo(?:s)?|seta(?:s)?)",
             "description": "Por lo que puedes entender con tu limitada competencia, son cada uno más venenoso que el anterior."
           }
         }
@@ -1067,11 +1185,11 @@
         "interactors": {
           "ground": {
             "label": "el terreno",
-            "pattern": "terreno"
+            "pattern": "(terreno|suelo)"
           },
           "excavations": {
             "label": "las excavaciones",
-            "pattern": "scavi|tracce",
+            "pattern": "(excavación(?:es)?|huellas?|marcas?)",
             "description": "Son solo intentos, evidentemente fallidos. Tal vez fuera algún prisionero del castillo haciendo un último intento desesperado."
           }
         }
@@ -1086,7 +1204,7 @@
               "un cofre pesado",
               "un cofre pesado abierto"
             ],
-            "pattern": "(?:pesante )?forziere",
+            "pattern": "((?:pesado )?cofre|(?:pesado )?arcón)",
             "onLook": [
               "Del fabuloso Tesoro de Malcolm IV solo queda un viejo cuerno.",
               "Está vacío."
@@ -1099,7 +1217,7 @@
           },
           "ghost": {
             "label": "un fantasma",
-            "pattern": "fantasma",
+            "pattern": "(fantasma|espectro)",
             "description": "Lo ves y no lo ves. A ratos parece incorpóreo, tanto que puedes observar claramente los detalles del muro de detrás. Pero en otros momentos parece tomar sustancia y volverse cada vez más amenazador.",
             "onKill": "Lleva muerto setecientos años.",
             "onTalk": [
@@ -1115,7 +1233,7 @@
         "interactors": {
           "wood": {
             "label": "la leña",
-            "pattern": "legna|ram(?:o|i)|cepp(?:o|i)",
+            "pattern": "(leña|madera|rama(?:s)?|tronco(?:s)?)",
             "description": "Parece leña para quemar.",
             "onTake": "- ¡Eh! ¡Quita las manos de mis provisiones para el invierno! Hace frío por aquí."
           }
@@ -1160,7 +1278,7 @@
         "interactors": {
           "writing": {
             "label": "la inscripción",
-            "pattern": "scritta"
+            "pattern": "(escrito|inscripción)"
           }
         }
       },
@@ -1170,12 +1288,12 @@
         "interactors": {
           "slits": {
             "label": "las rendijas",
-            "pattern": "fessure",
+            "pattern": "(grieta(?:s)?|rendija(?:s)?)",
             "description": "Como he dicho, son invisibles."
           },
           "lever": {
             "label": "una palanca",
-            "pattern": "leva",
+            "pattern": "(palanca)",
             "onPush": "Se abre una trampilla..."
           },
           "pendulumClock": {
@@ -1189,7 +1307,7 @@
               "un viejo reloj de péndulo",
               "un viejo reloj de péndulo"
             ],
-            "pattern": "(?:vecchio )?orologio(?: a pendolo)?",
+            "pattern": "((?:viejo )?reloj(?: de péndulo)?|reloj de pared)",
             "description": [
               "Marca las once y cincuenta y seis.",
               "",
@@ -1224,12 +1342,12 @@
           },
           "hollows": {
             "label": "los nichos",
-            "pattern": "nicchi(?:a|e)",
+            "pattern": "(nicho(?:s)?|hornacina(?:s)?)",
             "description": "Son simples huecos en las paredes. El trabajo de los guardias personales del Rey debía de ser bastante aburrido si consistía en estar allí plantados todo el santo día."
           },
           "throne": {
             "label": "el trono",
-            "pattern": "trono",
+            "pattern": "(trono)",
             "description": "Domina el centro de la sala. Sobre él se sentaba el Poder.",
             "onSitDown": {
               "question": "¿Quieres que me siente en el trono??",
@@ -1247,17 +1365,17 @@
           },
           "moor": {
             "label": "el páramo",
-            "pattern": "brughiera",
+            "pattern": "(páramo|brezal)",
             "description": "Está oculto bajo la niebla, pero a veces, a lo lejos, esta se atenúa un poco, dejando entrever el terreno yermo y amarillento de debajo."
           },
           "mountains": {
             "label": "las montañas",
-            "pattern": "montagn(?:a|e)",
+            "pattern": "(montaña(?:s)?)",
             "description": "Desde los picos nevados más lejanos, las montañas descienden en una sucesión de alturas, colinas y suaves lomas, hasta confundirse con el páramo sumergido en el mar de niebla. Tienes la impresión de que algo diminuto se mueve alrededor de las cumbres, pero probablemente es solo una ilusión óptica."
           },
           "flag": {
             "label": "una bandera hecha jirones",
-            "pattern": "bandiera",
+            "pattern": "(bandera|estandarte)",
             "description": "Llevada con gloria en cien batallas, aún ondea sobre las tierras que un día dominó.",
             "onTake": [
               "El viejo asta ofrece resistencia...",
@@ -1296,7 +1414,7 @@
         "interactors": {
           "trap": {
             "label": "la trampa",
-            "pattern": "trappola",
+            "pattern": "(trampa)",
             "onLookOrLookFor": "No veo ninguna trampa en absoluto. No entiendo por qué la sala tiene este nombre tan curioso."
           }
         }
@@ -1316,7 +1434,7 @@
         "interactors": {
           "fragments": {
             "label": "los trozos",
-            "pattern": "cocci(?:o)?",
+            "pattern": "(casco(?:s)?|fragmento(?:s)?)",
             "onTake": "Además de arriesgarte a cortarte bastante, no veo para qué podrían servirte."
           }
         }
@@ -1327,7 +1445,7 @@
         "interactors": {
           "hooks": {
             "label": "los ganchos",
-            "pattern": "ganci(?:o)?",
+            "pattern": "(gancho(?:s)?)",
             "onTake": "Además de arriesgarte a coger el tétanos, no veo qué podrías hacer con ellos."
           }
         }
@@ -1338,7 +1456,7 @@
         "interactors": {
           "stains": {
             "label": "las manchas",
-            "pattern": "macchi(?:a|e)(?: verdastr(?:a|e))?"
+            "pattern": "((?:verdosa(?:s)? )?mancha(?:s)?)"
           }
         }
       },
@@ -1348,7 +1466,7 @@
         "interactors": {
           "crusts": {
             "label": "las cortezas",
-            "pattern": "crost(?:a|e)",
+            "pattern": "(corteza(?:s)?|costra(?:s)?)",
             "onTakeOrEat": "¡No puedes tener TANTA hambre!"
           }
         }
@@ -1359,7 +1477,7 @@
         "interactors": {
           "deer": {
             "label": "el ciervo",
-            "pattern": "cervo|carcassa",
+            "pattern": "(ciervo|carcasa)",
             "onTake": "Además de llevarte un peso extra, no veo de qué utilidad podría ser."
           }
         }
@@ -1370,13 +1488,13 @@
         "interactors": {
           "keg": {
             "label": "la barrilita de whisky",
-            "pattern": "botticella",
-            "description": "C'è scritto sopra: '700 yrs old'",
+            "pattern": "(barrilito|barrica|tonel)",
+            "description": "Lleva una etiqueta: '700 yrs old'",
             "onOpenQuestion": "¿Debo beber el whisky "
           },
           "whiskey": {
             "label": "el whisky",
-            "pattern": "whisky",
+            "pattern": "(whisky|güisqui)",
             "onTakeOrDrink": "¡Excelente, verdaderamente excelente!"
           }
         }
@@ -1390,7 +1508,7 @@
           },
           "benches": {
             "label": "los bancos",
-            "pattern": "panc(?:a|he)",
+            "pattern": "(banco(?:s)?)",
             "description": "Son de la misma madera que la mesa, pulida por el largo uso."
           }
         }
@@ -1408,17 +1526,17 @@
         "interactors": {
           "catapult": {
             "label": "la catapulta",
-            "pattern": "catapulta|macchina",
+            "pattern": "(catapulta|máquina)",
             "description": "Ha sido desmontada en muchas piezas para ocupar menos espacio y conservarla en mejores condiciones."
           },
           "balls": {
             "label": "las bolas",
-            "pattern": "(pall(?:a|e))",
+            "pattern": "(bola(?:s)?|pelota(?:s)?)",
             "onBreak": "No seas vulgar."
           },
           "pieces": {
             "label": "las piezas",
-            "pattern": "(pezz(?:o|i)|struttur(?:a|e))",
+            "pattern": "(pieza(?:s)?|estructura(?:s)?|parte(?:s)?)",
             "description": "Habría que montarlas juntas para obtener la catapulta, o al menos eso creo."
           }
         }
@@ -1429,15 +1547,15 @@
         "interactors": {
           "daggers": {
             "label": "los puñales",
-            "pattern": "pugnal(?:e|i)"
+            "pattern": "(puñal(?:es)?|daga(?:s)?)"
           },
           "spears": {
             "label": "las lanzas",
-            "pattern": "lanc(?:ia|e)"
+            "pattern": "(lanza(?:s)?)"
           },
           "axes": {
             "label": "las hachas",
-            "pattern": "asc(?:ia|e)"
+            "pattern": "(hacha(?:s)?)"
           },
           "weapons": {
             "description": "Como te dije, todas están corroídas e inutilizables por el tiempo."
@@ -1450,7 +1568,7 @@
         "interactors": {
           "understairs": {
             "label": "el hueco bajo la escalera",
-            "pattern": "sottoscala"
+            "pattern": "(hueco bajo escalera|trastero)"
           }
         }
       },
@@ -1464,17 +1582,17 @@
         "interactors": {
           "column": {
             "label": "la columna",
-            "pattern": "(?:piccol(?:a|o) )?(colonna|capitello)",
+            "pattern": "((?:pequeñ[ao] )?(columna|capitel))",
             "description": "En el capitel está esculpida, con brillantes letras de plata, la mitad de una poderosa palabra mágica: 'ID'"
           },
           "columns": {
             "label": "las columnas",
-            "pattern": "colonne",
+            "pattern": "(columna(?:s)?|pilar(?:es)?)",
             "description": "Las columnas a los lados de la sala son de un estilo bastante austero: simples cilindros de piedra que se estrechan hacia la parte superior."
           },
           "pedestal": {
             "label": "el pedestal",
-            "pattern": "piedistallo",
+            "pattern": "(pedestal)",
             "description": "El pedestal que sostiene la pequeña columna es un bloque de piedra en bruto, probablemente granito."
           }
         }
@@ -1485,7 +1603,7 @@
         "interactors": {
           "tapestries": {
             "label": "tapices",
-            "pattern": "arazz(?:o|i)",
+            "pattern": "(tapiz|tapices)",
             "onLook": [
               "Están realizados con gran maestría y merecen más atención. Te pierdes en la contemplación...",
               "Luego, de repente, recuerdas que tienes algo más importante que hacer."
@@ -1502,7 +1620,7 @@
         "interactors": {
           "portrait": {
             "label": "el retrato",
-            "pattern": "(ritratt(?:o|i)|quadr(?:o|i)|malcolm|tel(?:a|e))",
+            "pattern": "(retrato(?:s)?|cuadro(?:s)?|malcolm|lienzo(?:s)?)",
             "onLookQuestion": "La mano del pintor parece haber captado la vida misma en los rostros, especialmente en el caso de Malcolm IV. Este retrato tiene algo extraño. ¿Debería observarlo más de cerca "
           }
         }
@@ -1523,7 +1641,7 @@
           },
           "trophies": {
             "label": "trofeos",
-            "pattern": "trofe(?:o|i)|animal(?:e|i)"
+            "pattern": "(trofeo(?:s)?|animal(?:es)?)"
           }
         }
       },
@@ -1533,7 +1651,7 @@
         "interactors": {
           "kitchenStuff": {
             "label": "cocina",
-            "pattern": "(cucina|tinozz(?:a|e)|vasellame|pentolame|resti)",
+            "pattern": "(cocina|tina(?:s)?|vajilla|cacharros|restos)",
             "description": "Son totalmente inutilizables."
           }
         }
@@ -1548,17 +1666,17 @@
         "interactors": {
           "infolio": {
             "label": "in-folio",
-            "pattern": "pestell(?:o|i)|recipient(?:e|i)|crogiuol(?:o|i)|in-folio|alambicc(?:o|hi)",
+            "pattern": "(mortero(?:s)?|recipiente(?:s)?|crisol(?:es)?|in-folio|alambique(?:s)?)",
             "description": "Es el típico armamento de un alquimista de la época: mago, erudito y sanador a la vez. Los alquimistas eran muy valorados y también muy temidos y respetados, a menos que cayeran en desgracia por algún error fatal cometido en perjuicio del Rey.",
             "onTakeOrRead": "Una fuerza oculta parece advertirte: hurgar entre las propiedades personales de un alquimista puede ser muy peligroso."
           },
           "bookmark": {
             "label": "el marcador",
-            "pattern": "segnalibro"
+            "pattern": "(marcapáginas|marcador)"
           },
           "volume": {
             "label": "el tomo",
-            "pattern": "volume|librone|pagina",
+            "pattern": "(volumen|tomazo|libro|página)",
             "description": "Ahora que lo veo más de cerca, me doy cuenta de que quizá no sea cuero, sino piel humana curtida.",
             "onOpen": "Debes usar la herramienta adecuada.",
             "onRead": [
@@ -1592,7 +1710,7 @@
         "interactors": {
           "shreds": {
             "label": "los jirones",
-            "pattern": "brandell(?:o|i)|mucchi(?:o)?",
+            "pattern": "(harapo(?:s)?|jirón(?:es)?|montón(?:es)?)",
             "description": "Sic transit gloria mundi."
           }
         }
@@ -1606,7 +1724,7 @@
         "interactors": {
           "cobwebs": {
             "label": "las telarañas",
-            "pattern": "ragnatel(?:a|e)",
+            "pattern": "(telaraña(?:s)?)",
             "description": "Incluso las telarañas están ya desiertas. Nada queda de la vida que hacía de esta sala el lugar más alegre del castillo."
           }
         }
@@ -1620,7 +1738,7 @@
           },
           "curtains": {
             "label": "las cortinas",
-            "pattern": "tend(?:a|e|aggi)",
+            "pattern": "(cortina(?:s)?|colgadura(?:s)?)",
             "description": "En las cortinas está bordado con un fino hilo de oro:\n\"Sabio es quien destruye su riqueza para tomar los caminos del cielo\""
           }
         }
@@ -1647,7 +1765,7 @@
         "interactors": {
           "mirrors": {
             "label": "los espejos",
-            "pattern": "specchi(?:o)?",
+            "pattern": "(espejo(?:s)?)",
             "description": "Veo una cara fea.",
             "onBreak": "No me apetece nada enfrentarme a siete años de mala suerte."
           }
@@ -1680,7 +1798,7 @@
           },
           "rock": {
             "label": "el escollo",
-            "pattern": "scoglio",
+            "pattern": "(roca|peñasco|escollo)",
             "description": [
               "Está formado por una roca persilícica de estructura granular oligocristalina, en su mayor parte de grano medio-fino.",
               "El agregado cristalino fundamental está compuesto principalmente por cuarzo y feldespatos, con laminillas micáceas en cantidad subordinada.",
@@ -1690,7 +1808,7 @@
           },
           "lake": {
             "label": "el lago",
-            "pattern": "lago|acqua"
+            "pattern": "(lago|agua)"
           }
         },
         "override": {
@@ -1708,7 +1826,7 @@
     "objects": {
       "parachute": {
         "label": "un paracaídas",
-        "pattern": "paracadute",
+        "pattern": "(paracaídas)",
         "onWear": "Ya lo llevas puesto.",
         "onLook": "¿Nunca has visto un paracaídas? ¿Pero de dónde vienes?",
         "onOpen": {
@@ -1722,7 +1840,7 @@
           "un hueso",
           "un hueso cercenado"
         ],
-        "pattern": "osso|femore|tibia",
+        "pattern": "(hueso|fémur|tibia)",
         "onLook": "Podría ser un fémur, o quizá una tibia. No lo sé, no entiendo de anatomía.",
         "onLookFor": {
           "dontHaveIt": "El suelo está lleno.",
@@ -1731,7 +1849,7 @@
       },
       "bludgeon": {
         "label": "una maza con pinchos",
-        "pattern": "mazza(?: ferrata)?",
+        "pattern": "((?:con pinchos )?maza|porra)",
         "description": "Es un arma de batalla. No puede derribar un muro, pero sin duda puede serte útil."
       },
       "cat": {
@@ -1740,7 +1858,7 @@
           "un gato acurrucado en el suelo",
           "un gato"
         ],
-        "pattern": "(gatto|micio)",
+        "pattern": "(gato|gatito|minino)",
         "description": "Un gatito pequeño y simpático.",
         "onTake": {
           "alreadyIn": "Ya lo llevas en brazos.",
@@ -1771,7 +1889,7 @@
           "una espada",
           "una espada encantada"
         ],
-        "pattern": "spada",
+        "pattern": "(espada|hoja)",
         "posizione": "salaTrofei",
         "description": "Es de excelente factura.",
         "onLook": "En la hoja hay escrito un sortilegio.",
@@ -1789,7 +1907,7 @@
       },
       "spell": {
         "label": "el sortilegio",
-        "pattern": "sortilegio|incantesimo",
+        "pattern": "(hechizo|sortilegio|encantamiento)",
         "onLook": "Creo que la lectura de esos extraños símbolos y fórmulas podría evocar fuerzas dormidas desde hace mucho."
       },
       "milkAndHoneyCup": {
@@ -1798,7 +1916,7 @@
           "una copa llena de lattemiele",
           "una copa vacía"
         ],
-        "pattern": "coppa",
+        "pattern": "(copa|cáliz)",
         "description": {
           "full": "Está llena de lattemiele.",
           "empty": "Está completamente vacía."
@@ -1807,7 +1925,7 @@
       },
       "milkAndHoney": {
         "label": "el lattemiele",
-        "pattern": "lattemiele",
+        "pattern": "(leche con miel|lechemiel)",
         "description": "A la vista y al olfato parece bueno.",
         "onDrink": {
           "success": "¡Excelente, verdaderamente excelente!",
@@ -1821,31 +1939,31 @@
       },
       "lute": {
         "label": "un laúd",
-        "pattern": "liuto",
+        "pattern": "(laúd)",
         "description": "Este instrumento alegraba las fiestas de baile que se celebraban con motivo de las cosechas, las victorias, las ceremonias y cualquier pretexto que justificara una fiesta de baile.",
         "onPlay": "Las cuerdas están rotas."
       },
       "harp": {
         "label": "un arpa",
-        "pattern": "arpa",
+        "pattern": "(arpa)",
         "description": "Este instrumento acompañaba las historias tristes y alegres que el bardo del castillo canturreaba en las largas noches de invierno, mientras todos se reunían alrededor, hechizados por el encanto de las antiguas leyendas.",
         "onPlay": "Las cuerdas están rotas."
       },
       "bagpipe": {
         "label": "una gaita",
-        "pattern": "cornamusa",
+        "pattern": "(gaita(?:s)?)",
         "description": "Este instrumento acompañaba las expediciones militares dirigidas personalmente por el Rey, marcando con su alto lamento rítmico el pesado paso de los soldados en marcha.",
         "onPlay": {
           "fail": [
             "¡Merecerías formar parte de la Banda Real de Edimburgo!",
-            "(...come tamburo)"
+            "(...como tambor)"
           ],
           "success": "El tomo se abre por la página indicada por un marcador decorado."
         }
       },
       "sheet": {
         "label": "una hoja chamuscada",
-        "pattern": "foglio|carta",
+        "pattern": "(hoja|papel)",
         "description": "Aunque está parcialmente consumida por las llamas, aún se puede leer.",
         "onRead": {
           "dontHaveIt": "No tienes una hoja.",
@@ -1854,13 +1972,13 @@
       },
       "cushion": {
         "label": "un cojín",
-        "pattern": "cuscino",
+        "pattern": "(cojín|almohada)",
         "description": "No pienses en dormir: piensa en cómo salir de aquí.",
         "onLiftUp": "Debajo hay un estuche de madera."
       },
       "case": {
         "label": "un estuche",
-        "pattern": "astuccio",
+        "pattern": "(estuche|caja)",
         "description": "La madera del estuche está cuidadosamente incrustada.",
         "onTake": "Está atornillado al asiento del trono.",
         "onSkrewOff": "No tienes la herramienta adecuada.",
@@ -1868,7 +1986,7 @@
       },
       "scroll": {
         "label": "un pergamino",
-        "pattern": "pergamena",
+        "pattern": "(pergamino)",
         "description": "Está descolorido por el tiempo, pero aún se lee bien.",
         "onRead": {
           "dontHaveIt": "No tienes un pergamino.",
@@ -1884,7 +2002,7 @@
       },
       "ogre": {
         "label": "un feroz orco de colmillos afilados",
-        "pattern": "(?:feroce )?orco",
+        "pattern": "((?:feroz )?ogro)",
         "onLook": [
           "Mirándolo bien, no parece tan feroz...",
           "...¡sino mucho, mucho más!"
@@ -1899,7 +2017,7 @@
           "un pequeño enano con un gran diamante",
           "un pequeño enano muy simpático"
         ],
-        "pattern": "(?:piccolo )?nano",
+        "pattern": "((?:pequeño )?enano)",
         "description": "Es bastante pequeño.",
         "onGreet": {
           "withoutDiamond": "- ¡Buenas noches! - responde el enano.",
@@ -1913,7 +2031,7 @@
       },
       "diamond": {
         "label": "un diamante",
-        "pattern": "diamante",
+        "pattern": "(diamante|gema)",
         "description": "Cuanto más observas la maravillosa joya, más crece dentro de ti una desenfrenada ansia de poseerla.",
         "MINE": "El enano dice: - ¡Es mío! -",
         "onBreak": {
@@ -1924,12 +2042,12 @@
       },
       "key": {
         "label": "una pequeña llave de cristal",
-        "pattern": "(piccola )?chiave",
+        "pattern": "((?:pequeña |cristal )?llave)",
         "description": "Es muy extraña, demasiado pequeña para ser la llave de una puerta. Y además parece frágil. ¿Para qué podrá servir?"
       },
       "horn": {
         "label": "un cuerno",
-        "pattern": "corno",
+        "pattern": "(cuerno)",
         "description": "Está decorado con escenas de caza que se enroscan en espiral desde la boquilla. Caballeros al galope persiguen a la presa, mientras grandes aves planean sobre sus cabezas.",
         "onPlay": "El sonido cavernoso resuena entre los muros del castillo."
       }

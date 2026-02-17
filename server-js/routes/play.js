@@ -209,14 +209,16 @@ router.post('/', async (req, res) => {
     }
     
     // Load language-specific i18n for this player
-    // This sets global.i18n which is used by the game engine
-    loadI18nForLanguage(player.language);
+    const i18nData = loadI18nForLanguage(player.language);
     
     // Get session
     let session = db.getSession(player.id);
     
     // Get or create game engine
     const engine = getGameEngine(player.id, session);
+    
+    // Set i18n on the engine instance (race-safe: each request uses its own i18n)
+    engine.setI18n(i18nData);
     
     // Handle based on current status
     if (!session || session.status === 'NOT_PLAYING') {
@@ -425,8 +427,8 @@ async function handlePlaying(req, res, player, engine, session, input, save_name
         if (answer === null) {
             // Invalid answer - re-prompt
             engine.clearOutput();
-            // Use global.i18n which was set by loadI18nForLanguage
-            engine.print("(" + global.i18n.IFEngine.yesOrNo.yes + "/" + global.i18n.IFEngine.yesOrNo.no + ") ");
+            const i18n = engine.i18n || global.i18n;
+            engine.print("(" + i18n.IFEngine.yesOrNo.yes + "/" + i18n.IFEngine.yesOrNo.no + ") ");
             
             // Save state and return
             saveEngineState(player.id, engine, 'PLAYING');

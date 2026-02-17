@@ -68,14 +68,12 @@ function processData(obj) {
                     // The function source references 'i18n' which will be looked up at runtime
                     const fnSource = obj.source;
                     
-                    // Create the function directly - i18n will be resolved from global scope at runtime
-                    // We use a factory function that creates the actual function when called
+                    // Create the function directly - i18n will be resolved at runtime
+                    // Prefers engine-instance i18n (this.i18n) over global.i18n
+                    // to avoid race conditions with concurrent multi-language requests
                     const fn = (function(src) {
-                        // This creates a function that, when called, will:
-                        // 1. Get i18n from global
-                        // 2. Eval and run the original function source
                         return function(...args) {
-                            const i18n = global.i18n;
+                            const i18n = this.i18n || global.i18n;
                             const actualFn = eval('(' + src + ')');
                             return actualFn.apply(this, args);
                         };

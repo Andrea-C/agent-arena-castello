@@ -655,7 +655,10 @@
       "scalaChiocciolaNordOvest": {
         "description": "Sei in una stanza con una scala a chiocciola.",
         "shortDescription": "Sei in una stanza con una scala a chiocciola.",
-        "interactors": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null
+        },
         "directions": {
           "e": "cucina",
           "s": "cellaAlchimista",
@@ -665,7 +668,10 @@
       "scalaChiocciolaNordEst": {
         "description": "Sei in una stanza con una scala a chiocciola.",
         "shortDescription": "Sei in una stanza con una scala a chiocciola.",
-        "interactors": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null
+        },
         "directions": {
           "o": "salaMusica",
           "a": "spaltiMuraNordEst"
@@ -674,7 +680,10 @@
       "scalaChiocciolaSudEst": {
         "description": "Sei in una stanza con una scala a chiocciola.",
         "shortDescription": "Sei in una stanza con una scala a chiocciola.",
-        "interactors": null,
+        "interactors": {
+          "gradini": null,
+          "scala": null
+        },
         "directions": {
           "o": "passaggio",
           "a": "spaltiMuraSudEst",
@@ -1387,8 +1396,31 @@
       "L27": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "L28",
           "s": "L31",
@@ -1401,8 +1433,31 @@
       "L28": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "L29",
           "s": "L31",
@@ -1415,8 +1470,31 @@
       "L29": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "L30",
           "s": "L31",
@@ -1432,8 +1510,31 @@
       "L30": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "L30",
           "s": "L30",
@@ -1446,8 +1547,31 @@
       "L31": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "L30",
           "s": "entrataLabirinto",
@@ -1460,8 +1584,31 @@
       "L32": {
         "description": "Sei nel labirinto.",
         "shortDescription": "Sei nel labirinto.",
-        "interactors": null,
-        "override": null,
+        "interactors": {
+          "labirinto": null
+        },
+        "override": {
+          "verbs": {
+            "lascia": {
+              "__fn__": true,
+              "source": "async (items) => {\n\t\t\t\t\t\t\tthis._rimuoviDaInventario(items[0], \"entrataLabirinto\");\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onDrop;\n\t\t\t\t\t\t}"
+            }
+          },
+          "commands": {
+            "esci": {
+              "__fn__": true,
+              "source": "async() => {\n\t\t\t\t\t\t\treturn i18n.AvventuraNelCastelloJS.commonRooms.labyrinth.onGetOut;\n\t\t\t\t\t\t}"
+            },
+            "pensa": {
+              "__fn__": true,
+              "source": "async() => this.stanzeComuni.labirinto.override.commands.pensa()"
+            },
+            "usaSenno": {
+              "__fn__": true,
+              "source": "async () => this.stanzeComuni.labirinto.override.commands.pensa()"
+            }
+          }
+        },
         "directions": {
           "n": "entrataLabirinto",
           "s": "L32",

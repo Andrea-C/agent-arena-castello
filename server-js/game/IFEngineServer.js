@@ -9,14 +9,15 @@
  * - Synchronous processing (no user input waiting)
  */
 
-// i18n is loaded dynamically based on player's language preference
-// Access via global.i18n which is set by loadI18nForLanguage before each request
-const getI18n = () => global.i18n;
 const Parser = require('./Parser');
 const Thesaurus = require('./Thesaurus');
 
 class IFEngineServer {
     constructor() {
+        // Per-instance i18n data — eliminates global.i18n race condition
+        // Set via setI18n() before processing each request
+        this.i18n = null;
+        
         // Output buffer - collects all output text
         this.outputBuffer = [];
         
@@ -93,13 +94,32 @@ class IFEngineServer {
                 },
                 basta: {
                     callback: async () => {
-                        this.print(getI18n().AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
+                        this.print(this._getI18n().AvventuraNelCastelloJSEngine.commands.stop.defaultMessage);
                         this.gameOver = true;
                         return { gameOver: true };
                     }
                 }
             }
         };
+    }
+
+    /**
+     * Set the i18n data for this engine instance.
+     * Must be called before processing each request to ensure the correct language.
+     */
+    setI18n(i18nData) {
+        this.i18n = i18nData;
+        // Also update Thesaurus so it uses instance i18n
+        if (this.Thesaurus) {
+            this.Thesaurus.setI18n(i18nData);
+        }
+    }
+
+    /**
+     * Get the current i18n data. Prefers instance-level, falls back to global.
+     */
+    _getI18n() {
+        return this.i18n || global.i18n;
     }
 
     // ============== Output Methods ==============
@@ -154,7 +174,7 @@ class IFEngineServer {
         this.Parser = new Parser(this.Thesaurus.verbs, this.Thesaurus.commands);
 
         if (this.datiAvventura === undefined) {
-            throw new Error(getI18n().IFEngine.warnings.notLoaded);
+            throw new Error(this._getI18n().IFEngine.warnings.notLoaded);
         }
 
         // Set key value for each object
@@ -292,7 +312,7 @@ class IFEngineServer {
                     let cosaVedo = Array.isArray(lista[i].label) ? 
                         lista[i].label[lista[i].status || 0] : 
                         lista[i].label;
-                    this.print(getI18n().AvventuraNelCastelloJSEngine.prefixLabels.ISee + " " + cosaVedo.trim() + ".");
+                    this.print(this._getI18n().AvventuraNelCastelloJSEngine.prefixLabels.ISee + " " + cosaVedo.trim() + ".");
                 }
             }
         }
@@ -317,7 +337,7 @@ class IFEngineServer {
         this.clearOutput();
         
         if (!input || input.trim().length === 0) {
-            this.print(getI18n().AvventuraNelCastelloJSEngine.messages.somethingSensible);
+            this.print(this._getI18n().AvventuraNelCastelloJSEngine.messages.somethingSensible);
             return this._buildResult();
         }
 
@@ -368,7 +388,7 @@ class IFEngineServer {
         input = input.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         
         // Apply transformation steps
-        for (let step of getI18n().AvventuraNelCastelloJSEngine.prepareInputSteps) {
+        for (let step of this._getI18n().AvventuraNelCastelloJSEngine.prepareInputSteps) {
             let pattern = RegExp(step.pattern, "g");
             input = input.replace(pattern, step.replaceWith);
         }
@@ -388,7 +408,7 @@ class IFEngineServer {
         
         if (typeof APO == 'string') {
             // command = verb, missing the rest
-            this.print(APO.charAt(0).toUpperCase() + APO.slice(1) + " " + getI18n().IFEngine.questions.what + " " + this.Thesaurus.defaultMessages.SII_PIU_SPECIFICO);
+            this.print(APO.charAt(0).toUpperCase() + APO.slice(1) + " " + this._getI18n().IFEngine.questions.what + " " + this.Thesaurus.defaultMessages.SII_PIU_SPECIFICO);
             return true;
         }
         
@@ -568,7 +588,7 @@ class IFEngineServer {
     async wtf(APO, wtf) {
         if (wtf.indexOf(" ") >= 0)
             wtf = wtf.substring(0, wtf.indexOf(" "));
-        this.print("   " + wtf.toUpperCase() + " " + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark + getI18n().IFEngine.questionMark);
+        this.print("   " + wtf.toUpperCase() + " " + this._getI18n().IFEngine.questionMark + this._getI18n().IFEngine.questionMark + this._getI18n().IFEngine.questionMark);
         return true;
     }
 
@@ -600,9 +620,9 @@ class IFEngineServer {
     async _inventario() {
         let output;
         if (Object.keys(this.inventario).length == 0) {
-            output = getI18n().IFEngine.messages.noObjects;
+            output = this._getI18n().IFEngine.messages.noObjects;
         } else {
-            output = "* " + getI18n().IFEngine.messages.carriedObjectsLabel + " *";
+            output = "* " + this._getI18n().IFEngine.messages.carriedObjectsLabel + " *";
             for (let i in this.inventario) {
                 let label = Array.isArray(this.inventario[i].label) ?
                     this.inventario[i].label[this.inventario[i].status || 0] :
@@ -635,7 +655,7 @@ class IFEngineServer {
             this._aggiungiInInventario(oggetto);
             this.print(this.Thesaurus.defaultMessages.FATTO);
         } else if (this.inventario[oggetto.key] !== undefined) {
-            this.print(getI18n().IFEngine.messages.alreadyHaveIt);
+            this.print(this._getI18n().IFEngine.messages.alreadyHaveIt);
         } else {
             this.print(this.Thesaurus.verbs.prendi.defaultMessage);
         }
@@ -672,9 +692,9 @@ class IFEngineServer {
 
     async _punti() {
         if (this.datiPunti === undefined || this.datiPunti.puntiAzione === undefined) {
-            this.print(getI18n().IFEngine.messages.noPoints);
+            this.print(this._getI18n().IFEngine.messages.noPoints);
         } else {
-            this.print(getI18n().IFEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax) + ".");
+            this.print(this._getI18n().IFEngine.messages.points(this.altriDati.punti, this.datiPunti.puntiMax) + ".");
         }
         return true;
     }
@@ -694,7 +714,7 @@ class IFEngineServer {
     // ============== Death ==============
 
     async die() {
-        this.print(getI18n().IFEngine.messages.death);
+        this.print(this._getI18n().IFEngine.messages.death);
         this.playerDied = true;
         this.gameOver = true;
         return false;
@@ -761,7 +781,7 @@ class IFEngineServer {
         }
         
         // Print the question
-        this.print(question + " (" + getI18n().IFEngine.yesOrNo.yes + "/" + getI18n().IFEngine.yesOrNo.no + ") ");
+        this.print(question + " (" + this._getI18n().IFEngine.yesOrNo.yes + "/" + this._getI18n().IFEngine.yesOrNo.no + ") ");
         
         // Store that we're waiting for a yes/no answer, along with the original input
         this.pendingQuestion = {
@@ -784,10 +804,10 @@ class IFEngineServer {
         const normalizedInput = input.toLowerCase().trim();
         
         if (normalizedInput === 's' || normalizedInput === 'si' || normalizedInput === 'sì' || 
-            normalizedInput === getI18n().IFEngine.yesOrNo.yes.toLowerCase()) {
+            normalizedInput === this._getI18n().IFEngine.yesOrNo.yes.toLowerCase()) {
             return true;
         } else if (normalizedInput === 'n' || normalizedInput === 'no' ||
-            normalizedInput === getI18n().IFEngine.yesOrNo.no.toLowerCase()) {
+            normalizedInput === this._getI18n().IFEngine.yesOrNo.no.toLowerCase()) {
             return false;
         }
         
@@ -973,7 +993,7 @@ class IFEngineServer {
     // ============== Instructions ==============
 
     async istruzioni() {
-        for (let instruction of getI18n().AvventuraNelCastelloJSEngine.instructions) {
+        for (let instruction of this._getI18n().AvventuraNelCastelloJSEngine.instructions) {
             this.print(instruction);
         }
     }
@@ -1033,7 +1053,7 @@ class IFEngineServer {
 
         // Check for i18n pattern override (enables multilingual object/interactor matching)
         if (key) {
-            const i18nPatterns = getI18n()?.AvventuraNelCastelloJS?.i18nPatterns;
+            const i18nPatterns = this._getI18n()?.AvventuraNelCastelloJS?.i18nPatterns;
             if (i18nPatterns && i18nPatterns[key]) {
                 pattern = i18nPatterns[key];
             }

@@ -633,6 +633,7 @@
       "__comment2": "Common interactor patterns",
       "gradini": "(peldaño|peldaños|escalón|escalones)",
       "scala": "(escalera|escaleras)",
+      "scale": "(escalera|escaleras)",
       "pareti": "(pared|paredes|muro|muros)",
       "armatura": "(armadura|armaduras)",
       "corridoio": "(pasillo|corredor)",

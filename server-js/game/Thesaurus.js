@@ -3,19 +3,33 @@
  * Adapted from source_app/IFEngine/js/Thesaurus.js for server-side use
  * 
  * i18n is loaded dynamically based on player's language preference.
- * Access via global.i18n which is set by loadI18nForLanguage before each request.
+ * Prefers per-instance i18n set via setI18n(), falls back to global.i18n.
  */
-
-// Getter for i18n to ensure we always get the current language data
-const getI18n = () => global.i18n;
 
 class Thesaurus {
     constructor() {
+        // Per-instance i18n reference (set by engine via setI18n)
+        this._i18n = null;
+        
         // Default messages, commands, and verbs are accessed dynamically via getters
         // Custom values can be set and will be merged with i18n values
         this._defaultMessages = null;
         this._commands = null;
         this._verbs = null;
+    }
+
+    /**
+     * Set the i18n data for this Thesaurus instance.
+     */
+    setI18n(i18nData) {
+        this._i18n = i18nData;
+    }
+
+    /**
+     * Get i18n data. Prefers instance, falls back to global.
+     */
+    _getI18n() {
+        return this._i18n || global.i18n;
     }
 
     // Stub methods for compatibility - actual loading happens via getters
@@ -30,7 +44,7 @@ class Thesaurus {
     // Dynamic getter for default messages - always uses current i18n
     // If custom messages were set, merge them with the i18n defaults
     get defaultMessages() {
-        const i18n = getI18n();
+        const i18n = this._getI18n();
         const i18nDefaults = {
             FATTO: i18n.Thesaurus.defaultMessages.done,
             PREFERISCO_DI_NO: i18n.Thesaurus.defaultMessages.preferNot,
@@ -64,7 +78,7 @@ class Thesaurus {
         }
         
         // Otherwise return the i18n defaults
-        const i18n = getI18n();
+        const i18n = this._getI18n();
         return {
             nord: {
                 movimento: true,
@@ -118,7 +132,7 @@ class Thesaurus {
         }
         
         // Otherwise return the i18n defaults
-        const i18n = getI18n();
+        const i18n = this._getI18n();
         const defaultMsgs = this.defaultMessages;
         return {
             apri: {

@@ -154,7 +154,7 @@ async def main():
     
     # 3. Create agent
     agent = Agent(
-        model='gemini-2.0-flash',
+        model='gemini-2.5-flash-lite',
         name='counter_agent',
         instruction="""Count conversations.
         

@@ -88,7 +88,7 @@ def get_current_time(city: str) -> dict:
 
 # Create the agent
 root_agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='time_agent',
     description="Tells the current time in a specified city.",
     instruction="""You are a helpful assistant that tells the current time in cities.
@@ -179,7 +179,7 @@ asyncio.run(main())
 
 ### Agent Components
 
-1. **model**: The LLM to use (e.g., 'gemini-2.0-flash', 'gemini-2.5-pro')
+1. **model**: The LLM to use (e.g., 'gemini-2.5-flash-lite', 'gemini-2.5-pro')
 2. **name**: Unique identifier for the agent
 3. **description**: What the agent does (used for delegation in multi-agent systems)
 4. **instruction**: Detailed guidance on how the agent should behave
@@ -222,7 +222,7 @@ def calculate_distance(city1: str, city2: str) -> dict:
 
 # Add multiple tools to your agent
 root_agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='travel_agent',
     tools=[get_current_time, search_weather, calculate_distance],
     instruction="..."
@@ -237,7 +237,7 @@ ADK provides several built-in tools:
 from google.adk.tools import google_search, code_execution
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='research_agent',
     tools=[google_search, code_execution],
     instruction="Use Google Search for facts and code execution for calculations."
@@ -252,7 +252,7 @@ from google.adk.agents import Agent, SequentialAgent
 # Step 1: Validate input
 validator = Agent(
     name="validator",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction="Check if the user input is valid.",
     output_key="validation_result"
 )
@@ -260,7 +260,7 @@ validator = Agent(
 # Step 2: Process data
 processor = Agent(
     name="processor",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction="Process the data if validation_result is 'valid'.",
     output_key="process_result"
 )
@@ -268,7 +268,7 @@ processor = Agent(
 # Step 3: Generate response
 responder = Agent(
     name="responder",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction="Generate a response based on process_result."
 )
 
@@ -285,7 +285,7 @@ pipeline = SequentialAgent(
 
 ```python
 qa_agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='qa_agent',
     instruction="Answer questions clearly and concisely."
 )
@@ -300,7 +300,7 @@ def fetch_user_data(user_id: str) -> dict:
     return {"user_id": user_id, "name": "John", "age": 30}
 
 data_agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='data_agent',
     tools=[fetch_user_data],
     instruction="Help users by fetching and analyzing their data."
@@ -313,20 +313,20 @@ data_agent = Agent(
 # Specialist agents
 billing_agent = Agent(
     name="billing",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     description="Handles billing and payment inquiries."
 )
 
 support_agent = Agent(
     name="support",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     description="Handles technical support issues."
 )
 
 # Coordinator that routes to specialists
 coordinator = Agent(
     name="coordinator",
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction="Route user requests to billing or support agents.",
     sub_agents=[billing_agent, support_agent]
 )
@@ -350,10 +350,10 @@ Solution: Check your `.env` file and ensure `GOOGLE_API_KEY` is set correctly.
 
 **Model Not Found:**
 ```
-ValueError: Unknown model: gemini-2.0-flash
+ValueError: Unknown model: gemini-2.5-flash-lite
 ```
 Solution: Check the model name. Available models include:
-- `gemini-2.0-flash`
+- `gemini-2.5-flash-lite`
 - `gemini-2.5-flash`
 - `gemini-2.5-pro`
 
@@ -369,7 +369,7 @@ Solution: Check the model name. Available models include:
 
 | Model | Speed | Capability | Best For |
 |-------|-------|------------|----------|
-| gemini-2.0-flash | Fast | Good | Simple tasks, chat, quick responses |
+| gemini-2.5-flash-lite | Fast | Good | Simple tasks, chat, quick responses |
 | gemini-2.5-flash | Fast | Better | General purpose, most use cases |
 | gemini-2.5-pro | Slower | Best | Complex reasoning, critical tasks |
 

@@ -11,7 +11,7 @@ Perform web searches using Google Search with Gemini.
 from google.adk.tools import google_search
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     tools=[google_search],
     instruction='Use Google Search for factual information'
 )
@@ -24,7 +24,7 @@ Execute Python code using Gemini's code execution capability.
 from google.adk.tools import code_execution
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     code_executor=code_execution,
     instruction='You can write and execute Python code to solve problems'
 )
@@ -133,7 +133,7 @@ from google.adk.tools import google_search, code_execution
 from google.adk.tools.third_party import tavily
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='research_agent',
     tools=[
         google_search,

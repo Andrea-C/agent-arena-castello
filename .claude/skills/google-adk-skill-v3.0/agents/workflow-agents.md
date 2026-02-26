@@ -13,21 +13,21 @@ from google.adk.agents import SequentialAgent, Agent
 
 step1 = Agent(
     name='validate',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Validate the input',
     output_key='validation_status'
 )
 
 step2 = Agent(
     name='process',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Process if {validation_status} is valid',
     output_key='result'
 )
 
 step3 = Agent(
     name='respond',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Generate response based on {result}'
 )
 

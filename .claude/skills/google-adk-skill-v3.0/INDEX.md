@@ -216,7 +216,7 @@ pip install google-adk
 from google.adk.agents import Agent
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     instruction='You are a helpful assistant.'
 )

@@ -174,7 +174,7 @@ class TerminationChecker(BaseAgent):
 ```python
 # Use in sequential workflow
 custom_agent = MyCustomAgent(name='custom')
-llm_agent = Agent(name='llm', model='gemini-2.0-flash')
+llm_agent = Agent(name='llm', model='gemini-2.5-flash-lite')
 
 workflow = SequentialAgent(
     name='workflow',

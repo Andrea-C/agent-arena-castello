@@ -78,7 +78,7 @@ def my_tool(param: str) -> dict:
     return {"status": "success", "result": f"Processed: {param}"}
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     description='Agent description for routing',
     instruction='Detailed behavior instructions',
@@ -93,14 +93,14 @@ from google.adk.agents import Agent, SequentialAgent
 
 step1 = Agent(
     name='fetcher',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Fetch data',
     output_key='data'  # Saves output to state['data']
 )
 
 step2 = Agent(
     name='processor',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Process data from {data}',  # Reads state['data']
     output_key='result'
 )
@@ -119,20 +119,20 @@ from google.adk.agents import Agent
 # Specialist agents
 billing = Agent(
     name='billing',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     description='Handles billing inquiries'
 )
 
 support = Agent(
     name='support',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     description='Handles technical support'
 )
 
 # Coordinator with LLM-driven delegation
 coordinator = Agent(
     name='coordinator',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Route requests to billing or support agents',
     sub_agents=[billing, support]
 )
@@ -286,7 +286,7 @@ loop = LoopAgent(
 ## Model Configuration
 
 ### Available Gemini Models
-- `gemini-2.0-flash` - Fast, good for most tasks
+- `gemini-2.5-flash-lite` - Fast, good for most tasks
 - `gemini-2.5-flash` - Faster, better general purpose
 - `gemini-2.5-pro` - Best capabilities, slower
 
@@ -298,7 +298,7 @@ ADK supports other models through appropriate configuration. See official docs f
 from google.genai import types
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     generate_content_config=types.GenerateContentConfig(
         temperature=0.2,  # Lower = more deterministic
         max_output_tokens=1000,
@@ -460,7 +460,7 @@ main_agent = Agent(
 
 ### Issue: Slow responses
 **Solution:** Consider:
-- Using faster model (gemini-2.0-flash)
+- Using faster model (gemini-2.5-flash-lite)
 - Implementing tool caching
 - Reducing context size
 - Parallel agent execution

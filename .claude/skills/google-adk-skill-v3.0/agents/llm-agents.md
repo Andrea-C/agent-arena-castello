@@ -15,7 +15,7 @@ LLM Agents are the core "thinking" components in ADK, powered by Large Language 
 from google.adk.agents import Agent  # or LlmAgent
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     description='What this agent does',
     instruction='Detailed behavior instructions',
@@ -29,7 +29,7 @@ agent = Agent(
 
 **`model`** (Required)
 - LLM to power the agent
-- Examples: `'gemini-2.0-flash'`, `'gemini-2.5-pro'`
+- Examples: `'gemini-2.5-flash-lite'`, `'gemini-2.5-pro'`
 
 **`name`** (Required)
 - Unique identifier
@@ -74,7 +74,7 @@ def get_weather(city: str) -> dict:
     return {"city": city, "temp": 72, "condition": "sunny"}
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='weather_agent',
     tools=[get_weather],
     instruction='Help users with weather information'
@@ -89,7 +89,7 @@ agent = Agent(
 from google.genai import types
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     generate_content_config=types.GenerateContentConfig(
         temperature=0.2,  # 0-1, lower = more deterministic
@@ -112,7 +112,7 @@ class CityInfo(BaseModel):
     population: str = Field(description="Estimated population")
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='structured_agent',
     output_schema=CityInfo,
     output_key='city_data',  # Saves to state['city_data']
@@ -180,7 +180,7 @@ agent = Agent(
 from google.adk.planners import PlanReActPlanner
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     planner=PlanReActPlanner(),
     tools=[...]
 )
@@ -192,7 +192,7 @@ agent = Agent(
 from google.adk.tools import code_execution
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     code_executor=code_execution,
     instruction='You can execute Python code to solve problems'
 )
@@ -227,7 +227,7 @@ def send_email(to: str, subject: str, body: str) -> dict:
     return {"status": "sent", "to": to}
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='customer_service_agent',
     description='Handles customer inquiries and sends responses',
     instruction="""You are a customer service agent.

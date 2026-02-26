@@ -29,7 +29,7 @@ from shared.memory_tools import save_note, read_notes
 
 # --- Configurazione Modello ------------------------------------------------
 # Opzione 1: Google Gemini (default, livello gratuito disponibile)
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-2.5-flash-lite"
 
 # Opzione 2: OpenRouter.ai (decommentare il blocco sotto e commentare l'Opzione 1)
 # Richiede OPENROUTER_API_KEY nel file .env e litellm installato (pip install litellm)

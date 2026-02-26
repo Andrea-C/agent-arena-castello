@@ -19,7 +19,7 @@ from shared.castello_tools import castello_register, castello_play, castello_sta
 
 # --- Model Configuration ---------------------------------------------------
 # Option 1: Google Gemini (default, free tier available)
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-2.5-flash-lite"
 
 # Option 2: OpenRouter.ai (uncomment the block below and comment out Option 1)
 # Requires OPENROUTER_API_KEY in .env and litellm installed (pip install litellm)

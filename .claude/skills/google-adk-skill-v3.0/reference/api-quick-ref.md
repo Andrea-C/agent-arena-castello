@@ -6,7 +6,7 @@
 from google.adk.agents import Agent
 
 agent = Agent(
-    model='gemini-2.0-flash',  # Required
+    model='gemini-2.5-flash-lite',  # Required
     name='agent_name',  # Required
     description='What it does',  # For routing
     instruction='Detailed behavior',  # Core instructions
@@ -191,7 +191,7 @@ from google.genai import types
 async def main():
     # Create components
     agent = Agent(
-        model='gemini-2.0-flash',
+        model='gemini-2.5-flash-lite',
         name='my_agent',
         instruction='You are helpful'
     )

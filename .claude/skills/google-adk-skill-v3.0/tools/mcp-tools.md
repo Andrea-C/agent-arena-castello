@@ -24,7 +24,7 @@ mcp_server_tool = mcp_tool.create_from_server(
 )
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     tools=[mcp_server_tool],
     instruction='Use MCP tool for external data access'
 )

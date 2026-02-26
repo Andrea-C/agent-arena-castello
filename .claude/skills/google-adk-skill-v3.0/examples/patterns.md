@@ -8,7 +8,7 @@ This file contains complete, runnable examples of common agent patterns.
 from google.adk.agents import Agent
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='qa_agent',
     instruction='Answer questions clearly and concisely.'
 )
@@ -30,7 +30,7 @@ def send_notification(user_id: str, message: str) -> dict:
     return {"status": "sent"}
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='assistant',
     tools=[search_database, send_notification],
     instruction="""Help users with their requests.
@@ -47,21 +47,21 @@ from google.adk.agents import Agent, SequentialAgent
 
 validator = Agent(
     name='validator',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Validate the input data',
     output_key='is_valid'
 )
 
 processor = Agent(
     name='processor',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Process data if {is_valid} is true',
     output_key='result'
 )
 
 responder = Agent(
     name='responder',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Generate response based on {result}'
 )
 
@@ -123,7 +123,7 @@ support = Agent(
 
 coordinator = Agent(
     name='helpdesk',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Route requests to billing or support agents',
     sub_agents=[billing, support]
 )
@@ -191,7 +191,7 @@ def analyze_data(data: str) -> dict:
     return {"insights": [...]}
 
 research_agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='researcher',
     tools=[google_search, code_execution, analyze_data],
     instruction="""You are a research assistant.

@@ -75,7 +75,7 @@ support_agent = Agent(
 
 coordinator = Agent(
     name='help_desk',
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     instruction='Route user requests: billing issues to billing agent, tech issues to support agent',
     sub_agents=[billing_agent, support_agent]
 )

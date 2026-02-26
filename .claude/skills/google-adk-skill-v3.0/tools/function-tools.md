@@ -23,7 +23,7 @@ def get_weather(city: str) -> dict:
     }
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='weather_agent',
     tools=[get_weather],  # Automatically wrapped as FunctionTool
     instruction='Help users with weather information'
@@ -417,7 +417,7 @@ async def search_products(
 
 # Use in agent
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='shopping_assistant',
     tools=[search_products],
     instruction="""Help users find products.

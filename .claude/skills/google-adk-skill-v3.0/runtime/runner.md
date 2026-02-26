@@ -13,7 +13,7 @@ import asyncio
 
 # 1. Create agent
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     instruction='You are a helpful assistant'
 )
@@ -182,14 +182,14 @@ USER_ID = 'user123'
 async def main():
     # Create agents
     agent1 = Agent(
-        model='gemini-2.0-flash',
+        model='gemini-2.5-flash-lite',
         name='agent1',
         instruction='Generate a random number and save it',
         output_key='random_number'
     )
     
     agent2 = Agent(
-        model='gemini-2.0-flash',
+        model='gemini-2.5-flash-lite',
         name='agent2',
         instruction='The random number is {random_number}. Double it.',
         output_key='doubled'

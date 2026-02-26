@@ -42,7 +42,7 @@ Gemini supports caching of context for repeated use:
 from google.genai import types
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     generate_content_config=types.GenerateContentConfig(
         cached_content=cached_content_object
     )

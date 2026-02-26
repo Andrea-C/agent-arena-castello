@@ -111,7 +111,7 @@ from google.adk.agents import Agent
 
 # Create a simple agent
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     instruction='You are a helpful assistant.',
     tools=[my_custom_function]

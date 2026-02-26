@@ -276,7 +276,7 @@ main_agent = Agent(tools=[tool], ...)
 ## Model Support
 
 ### Gemini Models (Optimized)
-- `gemini-2.0-flash` - Fast, good quality
+- `gemini-2.5-flash-lite` - Fast, good quality
 - `gemini-2.5-flash` - Faster, better quality
 - `gemini-2.5-pro` - Best quality, slower
 
@@ -340,7 +340,7 @@ from google.adk.agents import Agent
 
 # Simple agent
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='my_agent',
     instruction='You are a helpful assistant.'
 )
@@ -350,7 +350,7 @@ def my_tool(param: str) -> dict:
     return {"result": f"Processed: {param}"}
 
 agent = Agent(
-    model='gemini-2.0-flash',
+    model='gemini-2.5-flash-lite',
     name='tool_agent',
     tools=[my_tool],
     instruction='Use my_tool when needed.'
